@@ -136,7 +136,6 @@ public abstract class PatrolEnemyBase : MonoBehaviour
     {
         if (other.gameObject.CompareTag("LifeManager"))
         {
-
             Vector3 hitDirection = transform.position;
 
             lifeManager.RecieveDamage(damage, hitDirection, true);
