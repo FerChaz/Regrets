@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rigidBody = GetComponent<Rigidbody>();
-        respawn.respawnPosition = new Vector3(-20.0f, 3.0f, 0.0f);
+        respawn.respawnPosition = new Vector3(0.0f, 0.0f, 0.0f);
         transform.position = respawn.respawnPosition;
     }
 

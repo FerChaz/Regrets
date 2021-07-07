@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SignalSender : MonoBehaviour
+[CreateAssetMenu]
+public class SignalSender : ScriptableObject
 {
     public List<SignalListener> listeners = new List<SignalListener>();
 
