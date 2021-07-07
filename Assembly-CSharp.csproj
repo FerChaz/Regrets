@@ -56,8 +56,26 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< Updated upstream
     <Compile Include="Assets\Scripts\UI\Main Menu\MainMenu.cs" />
     <Compile Include="Assets\UI\PauseUI.cs" />
+=======
+    <Compile Include="Assets\Scripts\Doors\DoorController.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerCombatController.cs" />
+    <Compile Include="Assets\Scripts\Observer\SignalListener.cs" />
+    <Compile Include="Assets\Scripts\Scriptable Objects\RespawnPosition.cs" />
+    <Compile Include="Assets\Scripts\Scriptable Objects\SignalSender.cs" />
+    <Compile Include="Assets\Scripts\Player\LifeManager.cs" />
+    <Compile Include="Assets\Scripts\UI\FirstSelectedButton.cs" />
+    <Compile Include="Assets\Scripts\Camera\MainCamera.cs" />
+    <Compile Include="Assets\Scripts\Scriptable Objects\IntValue.cs" />
+    <Compile Include="Assets\Scripts\Enemies\Patrol\PatrolGroundedEnemy.cs" />
+    <Compile Include="Assets\Scripts\UI\Main Menu\MainMenu.cs" />
+    <Compile Include="Assets\Scripts\Player\SoulManager.cs" />
+    <Compile Include="Assets\Scripts\Enemies\Patrol\PatrolEnemyBase.cs" />
+    <Compile Include="Assets\Scripts\Enemies\Spikes\SpikesController.cs" />
+>>>>>>> Stashed changes
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -629,6 +647,12 @@
     </Reference>
     <Reference Include="System.Xml.Serialization">
       <HintPath>D:\Programas\Archivos de Programa\Unity\Editor\Data\NetStandard\compat\2.0.0\shims\netfx\System.Xml.Serialization.dll</HintPath>
+<<<<<<< Updated upstream
+=======
+    </Reference>
+    <Reference Include="Unity.2D.Sprite.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
+>>>>>>> Stashed changes
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>

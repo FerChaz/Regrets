@@ -300,8 +300,13 @@
     <Compile Include="Library\PackageCache\com.unity.shadergraph@10.5.0\Editor\Data\Nodes\Math\Basic\AddNode.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@10.5.0\Editor\Data\Nodes\Input\Basic\Vector4Node.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@10.5.0\Editor\Generation\Processors\ActiveFields.cs" />
+<<<<<<< Updated upstream
     <Compile Include="Library\PackageCache\com.unity.shadergraph@10.5.0\Editor\Data\Nodes\TitleAttribute.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@10.5.0\Editor\Drawing\Views\Slots\TextureArraySlotControlView.cs" />
+=======
+    <Compile Include="Library\PackageCache\com.unity.shadergraph@10.5.0\Editor\Drawing\Views\Slots\TextureArraySlotControlView.cs" />
+    <Compile Include="Library\PackageCache\com.unity.shadergraph@10.5.0\Editor\Data\Nodes\TitleAttribute.cs" />
+>>>>>>> Stashed changes
     <Compile Include="Library\PackageCache\com.unity.shadergraph@10.5.0\Editor\Util\ListUtilities.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@10.5.0\Editor\Drawing\EdgeConnectorListener.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@10.5.0\Editor\Data\SubGraph\SubGraphAsset.cs" />
