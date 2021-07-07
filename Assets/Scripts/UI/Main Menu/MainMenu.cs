@@ -7,9 +7,10 @@ public class MainMenu : MonoBehaviour
 {
     public GameObject opciones;
     public GameObject mainMenu;
+    public string nameScense;
     public void Play()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene(nameScense);
     }
     public void Options()
     {
