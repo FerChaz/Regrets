@@ -26,6 +26,12 @@ public class PlayerController : MonoBehaviour
 
     public RespawnPosition respawn;
 
+    public Transform cameraPosition;
+
+    public ParticleSystem dashParticles;
+
+    public int particleAmount;
+
     private bool
         canMove = true,
         isGrounded,
@@ -98,7 +104,7 @@ public class PlayerController : MonoBehaviour
             rigidBody.AddForce(movement, ForceMode.Impulse);
         }
 
-        // HACER UN TIMER Y QUE CUANDO SALTO EL MÁXIMO DAR UN VELOCIDAD DE CAÍDA
+        // HACER UN TIMER Y QUE CUANDO SALTO EL Mï¿½XIMO DAR UN VELOCIDAD DE CAï¿½DA
     }
 
     //-- DASH --------------------------------------------------
@@ -112,10 +118,12 @@ public class PlayerController : MonoBehaviour
             if (isFacingRight)
             {
                 rigidBody.AddForce(Vector3.right * dashForce, ForceMode.Impulse);
+                dashParticles.Emit(particleAmount);
             }
             else
             {
                 rigidBody.AddForce(Vector3.left * dashForce, ForceMode.Impulse);
+                dashParticles.Emit(particleAmount);
             }
 
             dashCooldown = 0.5f;
