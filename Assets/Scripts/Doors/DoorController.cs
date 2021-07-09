@@ -9,10 +9,14 @@ public class DoorController : MonoBehaviour
     [SerializeField] private int soulsToOpen;
 
     public GameObject canvas;
+    public GameObject panelSearch;
+    public GameObject panelOptions;
 
     public SoulManager souls;
 
     private BoxCollider doorCollider;
+
+    public int elevationWhenOpen;
 
     //-- START --------------------------------------------
 
@@ -35,6 +39,8 @@ public class DoorController : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         canvas.SetActive(false);
+        panelOptions.SetActive(false);
+        panelSearch.SetActive(true);
     }
 
     //-- OPEN DOOR ----------------------------------------
@@ -46,8 +52,7 @@ public class DoorController : MonoBehaviour
             souls.DiscountSouls(soulsToOpen);
             // Iniciar animacion
             doorCollider.enabled = false;
-            canvas.SetActive(false);
-            transform.Translate(Vector3.up * 3);
+            transform.Translate(Vector3.up * elevationWhenOpen);
         }
         else
         {

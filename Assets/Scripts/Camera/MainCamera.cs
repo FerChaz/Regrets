@@ -11,13 +11,16 @@ public class MainCamera : MonoBehaviour
     [SerializeField] private Vector2 maxPosition;
     [SerializeField] private Vector2 minPosition;
 
+    [SerializeField] private float multiplierX;
+    [SerializeField] private float multiplierY;
+
     private Vector3 targetPosition;
 
     private void LateUpdate()
     {
         if (transform.position != target.position)
         {
-            targetPosition.Set(target.position.x, target.position.y, transform.position.z);
+            targetPosition.Set(target.position.x + multiplierX, target.position.y + multiplierY, transform.position.z);
 
             // ESTABLECEMOS LOS LÍMITES
             //targetPosition.x = Mathf.Clamp(targetPosition.x, minPosition.x, maxPosition.x);

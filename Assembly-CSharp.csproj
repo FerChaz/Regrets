@@ -59,12 +59,14 @@
     <Compile Include="Assets\Scripts\Doors\DoorController.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerCombatController.cs" />
+    <Compile Include="Assets\Scripts\Checkpoint\Checkpoint.cs" />
     <Compile Include="Assets\Scripts\Observer\SignalListener.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\RespawnPosition.cs" />
     <Compile Include="Assets\Scripts\Enemies\Patrol\PatrolGroundedEnemy.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\SignalSender.cs" />
     <Compile Include="Assets\Scripts\Player\LifeManager.cs" />
     <Compile Include="Assets\Scripts\UI\FirstSelectedButton.cs" />
+    <Compile Include="Assets\Scripts\MainMenu\MainMenuManager.cs" />
     <Compile Include="Assets\Scripts\UI\Main Menu\MainMenu.cs" />
     <Compile Include="Assets\Scripts\Player\SoulManager.cs" />
     <Compile Include="Assets\Scripts\Camera\MainCamera.cs" />
@@ -72,7 +74,9 @@
     <Compile Include="Assets\Scripts\Observer\HeartManager.cs" />
     <Compile Include="Assets\Scripts\Enemies\Spikes\SpikesController.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\IntValue.cs" />
-    <Compile Include="Assets\Scripts\Checkpoint\Checkpoint.cs" />
+    <Compile Include="Assets\Scripts\UI\DeathFade.cs" />
+    <Compile Include="Assets\Scripts\Pause\PauseManager.cs" />
+    <Compile Include="Assets\Scripts\Enemies\Coins.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
