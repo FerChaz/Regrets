@@ -15,7 +15,8 @@ public class PlayerController : MonoBehaviour
         knockbackDuration,
         knockbackTime,
         knockbackCounter,
-        groundCheckRadius;
+        groundCheckRadius,
+        timeToWait;
 
     [SerializeField] private Vector3 knockbackForce;
 
@@ -127,16 +128,19 @@ public class PlayerController : MonoBehaviour
 
     private void Flip()
     {
-        inputDirection = Input.GetAxisRaw("Horizontal");
-        if (isFacingRight && inputDirection < 0)
+        if (canMove)
         {
-            isFacingRight = !isFacingRight;
-            transform.Rotate(0.0f, 180.0f, 0.0f);
-        }
-        else if (!isFacingRight && inputDirection > 0)
-        {
-            isFacingRight = !isFacingRight;
-            transform.Rotate(0.0f, 180.0f, 0.0f);
+            inputDirection = Input.GetAxisRaw("Horizontal");
+            if (isFacingRight && inputDirection < 0)
+            {
+                isFacingRight = !isFacingRight;
+                transform.Rotate(0.0f, 180.0f, 0.0f);
+            }
+            else if (!isFacingRight && inputDirection > 0)
+            {
+                isFacingRight = !isFacingRight;
+                transform.Rotate(0.0f, 180.0f, 0.0f);
+            }
         }
     }
 
@@ -144,8 +148,6 @@ public class PlayerController : MonoBehaviour
 
     public void KnockBackGetFromEnemy(Vector3 direction)
     {
-        canMove = false;
-        canJump = false;
 
         float directionX = direction.x;
 
@@ -160,22 +162,18 @@ public class PlayerController : MonoBehaviour
 
         rigidBody.AddForce(movement, ForceMode.Impulse);
 
-        canMove = true;
-        canJump = true;
+        StartCoroutine(WaitTime(timeToWait));
     }
 
     public void KnockBackGetFromSpikes(Vector3 respawnZone)
     {
-        canMove = false;
-        canJump = false;
 
         movement.Set(0.0f, knockbackForce.y, 0.0f);
         rigidBody.AddForce(movement, ForceMode.Impulse);
 
         transform.position = respawnZone;
 
-        canMove = true;
-        canJump = true;
+        StartCoroutine(WaitTime(timeToWait));
     }
 
     //-- OTHERS ------------------------------------------------
@@ -194,11 +192,28 @@ public class PlayerController : MonoBehaviour
 
     public void Respawn()
     {
+        StartCoroutine(WaitTime(timeToWait + 1f));
         transform.position = respawn.respawnPosition;
     }
 
-    IEnumerator WaitTime(int time)
+
+    public void ChangeCanDoAnyMovement()
     {
+        canMove = !canMove;
+        canJump = !canJump;
+        canDash = !canDash;
+    }
+
+    IEnumerator WaitTime(float time)
+    {
+        canMove = false;
+        canJump = false;
+        canDash = false;
+
         yield return new WaitForSeconds(time);
+
+        canMove = true;
+        canJump = true;
+        canDash = true;
     }
 }

@@ -24,6 +24,8 @@ public class LifeManager : MonoBehaviour
 
     private BoxCollider colliderLifeManager;
 
+    public GameObject deathFade;
+
     //-- START -------------------------------------------------
 
     private void Start()
@@ -85,6 +87,7 @@ public class LifeManager : MonoBehaviour
 
     private void Death()
     {
+        deathFade.SetActive(true);
         playerController.Respawn();
         currentHealth.initialValue = maxHealth;
         playerHealthSignal.Raise(); // CHANGE UI

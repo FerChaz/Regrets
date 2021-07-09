@@ -10,6 +10,7 @@ public class PatrolGroundedEnemy : PatrolEnemyBase
 
     private Rigidbody rbGroundEnemy;
 
+    public GameObject lootDrop;
 
     //-- START ---------------------------------------
 
@@ -73,7 +74,7 @@ public class PatrolGroundedEnemy : PatrolEnemyBase
 
     protected override void EnterDeadState()
     {
-        soulManager.AddSouls(soulsToDrop);
+        Instantiate(lootDrop, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 
