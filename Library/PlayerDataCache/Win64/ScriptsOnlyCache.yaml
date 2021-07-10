@@ -6,6 +6,7 @@ ScriptsOnlyBuild:
     - Coins
     - DeathFade
     - DoorController
+    - EndGame
     - FirstSelectedButton
     - HeartManager
     - IntValue
@@ -75,15 +76,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2830}
     - Class: 114
-      Script: {instanceID: 3026}
+      Script: {instanceID: 3028}
     - Class: 114
-      Script: {instanceID: 3118}
+      Script: {instanceID: 3120}
     - Class: 114
-      Script: {instanceID: 3394}
+      Script: {instanceID: 3396}
     - Class: 114
-      Script: {instanceID: 3530}
+      Script: {instanceID: 3532}
     - Class: 114
-      Script: {instanceID: 4206}
+      Script: {instanceID: 4208}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -127,6 +128,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
     - Class: 95
@@ -162,37 +165,35 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2938}
     - Class: 114
-      Script: {instanceID: 3026}
+      Script: {instanceID: 2982}
     - Class: 114
-      Script: {instanceID: 3040}
+      Script: {instanceID: 3028}
     - Class: 114
-      Script: {instanceID: 3118}
+      Script: {instanceID: 3042}
     - Class: 114
       Script: {instanceID: 3120}
     - Class: 114
-      Script: {instanceID: 3144}
+      Script: {instanceID: 3122}
     - Class: 114
-      Script: {instanceID: 3254}
+      Script: {instanceID: 3146}
     - Class: 114
-      Script: {instanceID: 3294}
+      Script: {instanceID: 3256}
     - Class: 114
-      Script: {instanceID: 3368}
+      Script: {instanceID: 3296}
     - Class: 114
-      Script: {instanceID: 3510}
+      Script: {instanceID: 3370}
     - Class: 114
-      Script: {instanceID: 3530}
+      Script: {instanceID: 3512}
     - Class: 114
-      Script: {instanceID: 3906}
+      Script: {instanceID: 3908}
     - Class: 114
-      Script: {instanceID: 3914}
+      Script: {instanceID: 3916}
     - Class: 114
-      Script: {instanceID: 4206}
+      Script: {instanceID: 4274}
     - Class: 114
-      Script: {instanceID: 4272}
+      Script: {instanceID: 4620}
     - Class: 114
-      Script: {instanceID: 4618}
-    - Class: 114
-      Script: {instanceID: 4636}
+      Script: {instanceID: 4638}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -376,7 +377,7 @@ ScriptsOnlyBuild:
     className: RawImage
   - hash:
       serializedVersion: 2
-      Hash: 67c7723242e5a834bd35339a0861fdf2
+      Hash: bb38512c44c72d9aeb5c97c9ea440539
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: DoorController
@@ -418,7 +419,7 @@ ScriptsOnlyBuild:
     className: CanvasScaler
   - hash:
       serializedVersion: 2
-      Hash: 9647435211d90343cd34981de709f556
+      Hash: bdd4c521e710e4de23faa54e21f80d6f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerCombatController
@@ -566,6 +567,12 @@ ScriptsOnlyBuild:
     assemblyName: Cinemachine.dll
     namespaceName: Cinemachine
     className: Cinemachine3rdPersonFollow
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EndGame
   - hash:
       serializedVersion: 2
       Hash: 748dd2a2a28da4e618912da5ac45684b

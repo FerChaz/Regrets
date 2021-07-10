@@ -38769,7 +38769,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d3b1e8dd2995754880965c145b945d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soulsToOpen: 1
+  soulsToOpen: 3
   canvas: {fileID: 1666065068}
   panelSearch: {fileID: 1871396452}
   panelOptions: {fileID: 1348122901}
