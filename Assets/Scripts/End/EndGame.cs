@@ -10,8 +10,13 @@ public class EndGame : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            SceneManager.LoadScene("MainMenu");
+            ChangeScene();
         }
+    }
+
+    public void ChangeScene()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 
 }
