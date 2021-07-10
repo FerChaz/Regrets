@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
         speedMovement,
         jumpForce,
         dashCooldown,
+        dashCooldownTimer,
         dashForce,
         knockbackDuration,
         knockbackTime,
@@ -52,14 +53,14 @@ public class PlayerController : MonoBehaviour
     {
         rigidBody = GetComponent<Rigidbody>();
         respawn.respawnPosition = new Vector3(0.0f, 0.0f, 0.0f);
-        //transform.position = respawn.respawnPosition;
+        transform.position = respawn.respawnPosition;
     }
 
     //-- UPDATE ------------------------------------------------
 
     private void Update()
     {
-        dashCooldown -= Time.deltaTime;
+        dashCooldownTimer -= Time.deltaTime;
         Flip();
         CheckGround();
     }
@@ -77,12 +78,12 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
-        if (Input.GetKey(KeyCode.A) && canMove)
+        if (Input.GetAxisRaw("Horizontal") < 0f && canMove)
         {
             movement.Set(-speedMovement, rigidBody.velocity.y, 0.0f);
             rigidBody.velocity = movement;
         }
-        else if (Input.GetKey(KeyCode.D) && canMove)
+        else if (Input.GetAxisRaw("Horizontal") > 0f && canMove)
         {
             movement.Set(speedMovement, rigidBody.velocity.y, 0.0f);
             rigidBody.velocity = movement;
@@ -98,20 +99,21 @@ public class PlayerController : MonoBehaviour
 
     private void Jump()
     {
-        if (Input.GetKey(KeyCode.Space) && isGrounded && canJump)
+        if (Input.GetButton("Jump") && isGrounded && canJump)
         {
             movement.Set(0.0f, jumpForce, 0.0f);
-            rigidBody.AddForce(movement, ForceMode.Impulse);
+            //rigidBody.AddForce(movement, ForceMode.Impulse);
+            rigidBody.velocity = movement;
         }
 
-        // HACER UN TIMER Y QUE CUANDO SALTO EL M�XIMO DAR UN VELOCIDAD DE CA�DA
+        // HACER UN TIMER Y QUE CUANDO SALTO EL MAXIMO DAR UN VELOCIDAD DE CAIDA
     }
 
     //-- DASH --------------------------------------------------
 
     private void Dash()
     {
-        if (Input.GetKey(KeyCode.E) && dashCooldown <= 0 && canDash)
+        if (Input.GetButton("Dash") && dashCooldownTimer <= 0 && canDash)
         {
             canMove = false;
             canJump = false;
@@ -126,7 +128,7 @@ public class PlayerController : MonoBehaviour
                 dashParticles.Emit(particleAmount);
             }
 
-            dashCooldown = 0.5f;
+            dashCooldownTimer = dashCooldown;
             canMove = true;
             canJump = true;
         }
@@ -181,6 +183,11 @@ public class PlayerController : MonoBehaviour
 
         transform.position = respawnZone;
 
+        if (!isFacingRight)
+        {
+            Flip();
+        }
+
         StartCoroutine(WaitTime(timeToWait));
     }
 
@@ -202,6 +209,11 @@ public class PlayerController : MonoBehaviour
     {
         StartCoroutine(WaitTime(timeToWait + 1f));
         transform.position = respawn.respawnPosition;
+
+        if (!isFacingRight)
+        {
+            Flip();
+        }
     }
 
 

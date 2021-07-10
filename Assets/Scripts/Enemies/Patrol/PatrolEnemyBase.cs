@@ -45,8 +45,6 @@ public abstract class PatrolEnemyBase : MonoBehaviour
 
     protected Vector3 movement;
 
-    public Material colorDamage;
-
     public SoulManager soulManager;
     public LifeManager lifeManager;
     public int damage;
@@ -96,7 +94,6 @@ public abstract class PatrolEnemyBase : MonoBehaviour
 
     protected abstract void Flip();
     protected abstract void GetDamage(float[] attackDetails);
-
     protected void SwitchState(State state)
     {
         switch (currentState)
