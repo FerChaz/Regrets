@@ -16,6 +16,13 @@ public class MouseOver : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     {
         text = GetComponent<Text>();
     }
+
+    void OnEnable()
+    {
+        text = GetComponent<Text>();
+        text.color = normalColor;
+    }
+
     public void OnPointerEnter(PointerEventData eventData)
     {
         text.color = hoverColor;

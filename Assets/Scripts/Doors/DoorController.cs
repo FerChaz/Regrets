@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DoorController : MonoBehaviour
 {
@@ -17,6 +18,8 @@ public class DoorController : MonoBehaviour
     private BoxCollider doorCollider;
 
     public int elevationWhenOpen;
+
+    public Text textToShow;
 
     //-- START --------------------------------------------
 
@@ -53,10 +56,11 @@ public class DoorController : MonoBehaviour
             // Iniciar animacion
             doorCollider.enabled = false;
             transform.Translate(Vector3.up * elevationWhenOpen);
+            textToShow.text = "You are free to continue";
         }
         else
         {
-            // Message "Not enough cash stranger"
+            textToShow.text = "Not enough cash stranger";
         }
     }
 }

@@ -12,6 +12,7 @@ public class PauseManager : MonoBehaviour
     {
         isActive = false;
         canvas.SetActive(false);
+        Cursor.visible = false;
     }
 
     // Update is called once per frame

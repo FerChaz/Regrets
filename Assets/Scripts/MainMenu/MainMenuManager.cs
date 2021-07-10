@@ -14,15 +14,16 @@ public class MainMenuManager : MonoBehaviour
 
     public void LoadScene(string NombreNivel)
     {
-        StartCoroutine(Transiciona(NombreNivel));
+        SceneManager.LoadScene(NombreNivel);
+        //StartCoroutine(Transiciona(NombreNivel));
     }
 
-    IEnumerator Transiciona(string scene)
+    /*IEnumerator Transiciona(string scene)
     {
-       // _transicionAnim.SetTrigger("Salida");
+        _transicionAnim.SetTrigger("Salida");
         yield return new WaitForSeconds(1);
         SceneManager.LoadScene(scene);
-    }
+    }*/
 
     public void QuitGame()
     {

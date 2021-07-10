@@ -1,0 +1,777 @@
+fileFormatVersion: 2
+guid: d11b32430bc55e643bbea24b7103d2ca
+ModelImporter:
+  serializedVersion: 20200
+  internalIDToNameTable:
+  - first:
+      74: -4802002151655971701
+    second: Blade|Adorno|Take 001|BaseLayer
+  - first:
+      74: -1715802407687463014
+    second: Blade|Blade|Take 001|BaseLayer
+  - first:
+      74: 328954877893936950
+    second: Blade|Cubo|Take 001|BaseLayer
+  - first:
+      74: 4764847770867522656
+    second: Blade|Ferrule 2|Take 001|BaseLayer
+  - first:
+      74: 35834570180541232
+    second: Blade|ferrule1|Take 001|BaseLayer
+  - first:
+      74: -8445206309983824808
+    second: Blade|handle|Take 001|BaseLayer
+  - first:
+      74: 6311496038822215660
+    second: Blade|Pommel|Take 001|BaseLayer
+  - first:
+      74: -2884359545881044589
+    second: Blade|wrappings2|Take 001|BaseLayer
+  - first:
+      74: 1054596057683666912
+    second: Blade|wrappings3|Take 001|BaseLayer
+  - first:
+      74: 1105531436820855511
+    second: Blade|wrappings4|Take 001|BaseLayer
+  - first:
+      74: -2898414667383281105
+    second: Blade|wrappings5|Take 001|BaseLayer
+  - first:
+      74: -1917439795215006724
+    second: Blade|wrappings6|Take 001|BaseLayer
+  - first:
+      74: 207977906254590652
+    second: Blade|wrappings7|Take 001|BaseLayer
+  - first:
+      74: -4690754544570307178
+    second: Blade|wrappings8|Take 001|BaseLayer
+  - first:
+      74: -12875199586868768
+    second: Blade|wrappings|Take 001|BaseLayer
+  - first:
+      74: 8608611488684573159
+    second: Adorno|Adorno|Take 001|BaseLayer
+  - first:
+      74: -3987391594161266298
+    second: Adorno|Blade|Take 001|BaseLayer
+  - first:
+      74: 4387130376288965916
+    second: Adorno|Cubo|Take 001|BaseLayer
+  - first:
+      74: -7437131699124016800
+    second: Adorno|Ferrule 2|Take 001|BaseLayer
+  - first:
+      74: 6728447202928666124
+    second: Adorno|ferrule1|Take 001|BaseLayer
+  - first:
+      74: -5025026339161380379
+    second: Adorno|handle|Take 001|BaseLayer
+  - first:
+      74: -3642262081588365818
+    second: Adorno|Pommel|Take 001|BaseLayer
+  - first:
+      74: 8914859941128688841
+    second: Adorno|wrappings2|Take 001|BaseLayer
+  - first:
+      74: -5417014836413967655
+    second: Adorno|wrappings3|Take 001|BaseLayer
+  - first:
+      74: -5003400180315508876
+    second: Adorno|wrappings4|Take 001|BaseLayer
+  - first:
+      74: -8030107936148364552
+    second: Adorno|wrappings5|Take 001|BaseLayer
+  - first:
+      74: 4954833195718914629
+    second: Adorno|wrappings6|Take 001|BaseLayer
+  - first:
+      74: 8403338982437115793
+    second: Adorno|wrappings7|Take 001|BaseLayer
+  - first:
+      74: 6998858233539871062
+    second: Adorno|wrappings8|Take 001|BaseLayer
+  - first:
+      74: -6040654471429409225
+    second: Adorno|wrappings|Take 001|BaseLayer
+  - first:
+      74: -8732328843002561182
+    second: Ferrule 2|Adorno|Take 001|BaseLayer
+  - first:
+      74: -2672904443185679218
+    second: Ferrule 2|Blade|Take 001|BaseLayer
+  - first:
+      74: 5998964240476171405
+    second: Ferrule 2|Cubo|Take 001|BaseLayer
+  - first:
+      74: 7837916761900212440
+    second: Ferrule 2|Ferrule 2|Take 001|BaseLayer
+  - first:
+      74: -1813099682601859219
+    second: Ferrule 2|ferrule1|Take 001|BaseLayer
+  - first:
+      74: -4255512231540645732
+    second: Ferrule 2|handle|Take 001|BaseLayer
+  - first:
+      74: 8639020295560875873
+    second: Ferrule 2|Pommel|Take 001|BaseLayer
+  - first:
+      74: -2308914134714091387
+    second: Ferrule 2|wrappings2|Take 001|BaseLayer
+  - first:
+      74: 8972145557034350449
+    second: Ferrule 2|wrappings3|Take 001|BaseLayer
+  - first:
+      74: -9057950287678890960
+    second: Ferrule 2|wrappings4|Take 001|BaseLayer
+  - first:
+      74: -7706417058139002258
+    second: Ferrule 2|wrappings5|Take 001|BaseLayer
+  - first:
+      74: 7192285773756919041
+    second: Ferrule 2|wrappings6|Take 001|BaseLayer
+  - first:
+      74: -8515209059568096470
+    second: Ferrule 2|wrappings7|Take 001|BaseLayer
+  - first:
+      74: 7703493564922589237
+    second: Ferrule 2|wrappings8|Take 001|BaseLayer
+  - first:
+      74: 4748305859151299077
+    second: Ferrule 2|wrappings|Take 001|BaseLayer
+  - first:
+      74: -8437985497839113898
+    second: ferrule1|Adorno|Take 001|BaseLayer
+  - first:
+      74: 2265588273142055136
+    second: ferrule1|Blade|Take 001|BaseLayer
+  - first:
+      74: -3131271457496532962
+    second: ferrule1|Cubo|Take 001|BaseLayer
+  - first:
+      74: 4054819378782329662
+    second: ferrule1|Ferrule 2|Take 001|BaseLayer
+  - first:
+      74: 2694571709025934954
+    second: ferrule1|ferrule1|Take 001|BaseLayer
+  - first:
+      74: 7194574027832833716
+    second: ferrule1|handle|Take 001|BaseLayer
+  - first:
+      74: 1852452531003341610
+    second: ferrule1|Pommel|Take 001|BaseLayer
+  - first:
+      74: -6857008620150952626
+    second: ferrule1|wrappings2|Take 001|BaseLayer
+  - first:
+      74: -7529827571661901653
+    second: ferrule1|wrappings3|Take 001|BaseLayer
+  - first:
+      74: -4365768724378504261
+    second: ferrule1|wrappings4|Take 001|BaseLayer
+  - first:
+      74: 6857907479110930379
+    second: ferrule1|wrappings5|Take 001|BaseLayer
+  - first:
+      74: 1623636427520028033
+    second: ferrule1|wrappings6|Take 001|BaseLayer
+  - first:
+      74: 4942403088556757539
+    second: ferrule1|wrappings7|Take 001|BaseLayer
+  - first:
+      74: 2546478961867784039
+    second: ferrule1|wrappings8|Take 001|BaseLayer
+  - first:
+      74: 3902603317583780767
+    second: ferrule1|wrappings|Take 001|BaseLayer
+  - first:
+      74: 368222968186261435
+    second: handle|Adorno|Take 001|BaseLayer
+  - first:
+      74: 2363239011792790973
+    second: handle|Blade|Take 001|BaseLayer
+  - first:
+      74: -8654223602883650234
+    second: handle|Cubo|Take 001|BaseLayer
+  - first:
+      74: -4433322738095741138
+    second: handle|Ferrule 2|Take 001|BaseLayer
+  - first:
+      74: 3534409861544454303
+    second: handle|ferrule1|Take 001|BaseLayer
+  - first:
+      74: 7232544547698736405
+    second: handle|handle|Take 001|BaseLayer
+  - first:
+      74: -8300196913833554365
+    second: handle|Pommel|Take 001|BaseLayer
+  - first:
+      74: -4429537361424998206
+    second: handle|wrappings2|Take 001|BaseLayer
+  - first:
+      74: 7949951930232514996
+    second: handle|wrappings3|Take 001|BaseLayer
+  - first:
+      74: 5715503407716783091
+    second: handle|wrappings4|Take 001|BaseLayer
+  - first:
+      74: 5985159414168358176
+    second: handle|wrappings5|Take 001|BaseLayer
+  - first:
+      74: 7635310627306322768
+    second: handle|wrappings6|Take 001|BaseLayer
+  - first:
+      74: -7845357259797342086
+    second: handle|wrappings7|Take 001|BaseLayer
+  - first:
+      74: -3550787702051450342
+    second: handle|wrappings8|Take 001|BaseLayer
+  - first:
+      74: -4407573680815589127
+    second: handle|wrappings|Take 001|BaseLayer
+  - first:
+      74: -5879293860666732617
+    second: wrappings|Adorno|Take 001|BaseLayer
+  - first:
+      74: -6455199941363966360
+    second: wrappings|Blade|Take 001|BaseLayer
+  - first:
+      74: 5953392096378239946
+    second: wrappings|Cubo|Take 001|BaseLayer
+  - first:
+      74: -2314648789307495707
+    second: wrappings|Ferrule 2|Take 001|BaseLayer
+  - first:
+      74: -8504371444043231562
+    second: wrappings|ferrule1|Take 001|BaseLayer
+  - first:
+      74: 3338215730554133442
+    second: wrappings|handle|Take 001|BaseLayer
+  - first:
+      74: 3490822937480503831
+    second: wrappings|Pommel|Take 001|BaseLayer
+  - first:
+      74: 7455742431952938145
+    second: wrappings|wrappings2|Take 001|BaseLayer
+  - first:
+      74: -7838958026050064462
+    second: wrappings|wrappings3|Take 001|BaseLayer
+  - first:
+      74: -442416321696452068
+    second: wrappings|wrappings4|Take 001|BaseLayer
+  - first:
+      74: 4329539014632880221
+    second: wrappings|wrappings5|Take 001|BaseLayer
+  - first:
+      74: 8872095013888699009
+    second: wrappings|wrappings6|Take 001|BaseLayer
+  - first:
+      74: 4092693700534914021
+    second: wrappings|wrappings7|Take 001|BaseLayer
+  - first:
+      74: 4702074139995868521
+    second: wrappings|wrappings8|Take 001|BaseLayer
+  - first:
+      74: -2269036166434257987
+    second: wrappings|wrappings|Take 001|BaseLayer
+  - first:
+      74: 4321227335483587466
+    second: wrappings3|Adorno|Take 001|BaseLayer
+  - first:
+      74: -6242447444456896223
+    second: wrappings3|Blade|Take 001|BaseLayer
+  - first:
+      74: -4065801074120484618
+    second: wrappings3|Cubo|Take 001|BaseLayer
+  - first:
+      74: -8178411083065063002
+    second: wrappings3|Ferrule 2|Take 001|BaseLayer
+  - first:
+      74: 7702885177532126593
+    second: wrappings3|ferrule1|Take 001|BaseLayer
+  - first:
+      74: 7623614565324391748
+    second: wrappings3|handle|Take 001|BaseLayer
+  - first:
+      74: 1469964715514614684
+    second: wrappings3|Pommel|Take 001|BaseLayer
+  - first:
+      74: 1826780165622569371
+    second: wrappings3|wrappings2|Take 001|BaseLayer
+  - first:
+      74: 2502538109250036383
+    second: wrappings3|wrappings3|Take 001|BaseLayer
+  - first:
+      74: 6887979207684955271
+    second: wrappings3|wrappings4|Take 001|BaseLayer
+  - first:
+      74: -5760145358510383644
+    second: wrappings3|wrappings5|Take 001|BaseLayer
+  - first:
+      74: -4909555538687596110
+    second: wrappings3|wrappings6|Take 001|BaseLayer
+  - first:
+      74: 3119526299251617933
+    second: wrappings3|wrappings7|Take 001|BaseLayer
+  - first:
+      74: 4329101268456707476
+    second: wrappings3|wrappings8|Take 001|BaseLayer
+  - first:
+      74: -6578612188522479571
+    second: wrappings3|wrappings|Take 001|BaseLayer
+  - first:
+      74: 2347407554676176426
+    second: wrappings4|Adorno|Take 001|BaseLayer
+  - first:
+      74: 8626847553057010311
+    second: wrappings4|Blade|Take 001|BaseLayer
+  - first:
+      74: -5970366939413511262
+    second: wrappings4|Cubo|Take 001|BaseLayer
+  - first:
+      74: -5370028364049408373
+    second: wrappings4|Ferrule 2|Take 001|BaseLayer
+  - first:
+      74: -4638988668808920024
+    second: wrappings4|ferrule1|Take 001|BaseLayer
+  - first:
+      74: -5129748228376496052
+    second: wrappings4|handle|Take 001|BaseLayer
+  - first:
+      74: -7130278081235770225
+    second: wrappings4|Pommel|Take 001|BaseLayer
+  - first:
+      74: 2765441332200862704
+    second: wrappings4|wrappings2|Take 001|BaseLayer
+  - first:
+      74: -828170243428275087
+    second: wrappings4|wrappings3|Take 001|BaseLayer
+  - first:
+      74: 2950083923154186304
+    second: wrappings4|wrappings4|Take 001|BaseLayer
+  - first:
+      74: -4220830482216498045
+    second: wrappings4|wrappings5|Take 001|BaseLayer
+  - first:
+      74: 6771196889373013027
+    second: wrappings4|wrappings6|Take 001|BaseLayer
+  - first:
+      74: -5545348400506313474
+    second: wrappings4|wrappings7|Take 001|BaseLayer
+  - first:
+      74: 2932202342906638623
+    second: wrappings4|wrappings8|Take 001|BaseLayer
+  - first:
+      74: -5468783768348738617
+    second: wrappings4|wrappings|Take 001|BaseLayer
+  - first:
+      74: 539341195783312364
+    second: wrappings5|Adorno|Take 001|BaseLayer
+  - first:
+      74: -4210906762620677779
+    second: wrappings5|Blade|Take 001|BaseLayer
+  - first:
+      74: 8664116026024351701
+    second: wrappings5|Cubo|Take 001|BaseLayer
+  - first:
+      74: 6977862317224803623
+    second: wrappings5|Ferrule 2|Take 001|BaseLayer
+  - first:
+      74: -3888726145713402401
+    second: wrappings5|ferrule1|Take 001|BaseLayer
+  - first:
+      74: 4102781576289657256
+    second: wrappings5|handle|Take 001|BaseLayer
+  - first:
+      74: -2879835529174797965
+    second: wrappings5|Pommel|Take 001|BaseLayer
+  - first:
+      74: 693222763431583635
+    second: wrappings5|wrappings2|Take 001|BaseLayer
+  - first:
+      74: 4573161183947642031
+    second: wrappings5|wrappings3|Take 001|BaseLayer
+  - first:
+      74: -6626449941306187073
+    second: wrappings5|wrappings4|Take 001|BaseLayer
+  - first:
+      74: -8193173144194441831
+    second: wrappings5|wrappings5|Take 001|BaseLayer
+  - first:
+      74: 4604488594724429913
+    second: wrappings5|wrappings6|Take 001|BaseLayer
+  - first:
+      74: -1944031606390165175
+    second: wrappings5|wrappings7|Take 001|BaseLayer
+  - first:
+      74: 2113280415114962364
+    second: wrappings5|wrappings8|Take 001|BaseLayer
+  - first:
+      74: 8351395673956665061
+    second: wrappings5|wrappings|Take 001|BaseLayer
+  - first:
+      74: 7281771993455559405
+    second: wrappings2|Adorno|Take 001|BaseLayer
+  - first:
+      74: 6622176197183908955
+    second: wrappings2|Blade|Take 001|BaseLayer
+  - first:
+      74: -7333429338873267129
+    second: wrappings2|Cubo|Take 001|BaseLayer
+  - first:
+      74: 8921505334653663625
+    second: wrappings2|Ferrule 2|Take 001|BaseLayer
+  - first:
+      74: 2047605507365971881
+    second: wrappings2|ferrule1|Take 001|BaseLayer
+  - first:
+      74: 6237140729275930875
+    second: wrappings2|handle|Take 001|BaseLayer
+  - first:
+      74: 8306642512100140695
+    second: wrappings2|Pommel|Take 001|BaseLayer
+  - first:
+      74: 7430795767447498505
+    second: wrappings2|wrappings2|Take 001|BaseLayer
+  - first:
+      74: -8426863859552860344
+    second: wrappings2|wrappings3|Take 001|BaseLayer
+  - first:
+      74: -3082169426496658726
+    second: wrappings2|wrappings4|Take 001|BaseLayer
+  - first:
+      74: -8611138772858756417
+    second: wrappings2|wrappings5|Take 001|BaseLayer
+  - first:
+      74: 4756966063467227280
+    second: wrappings2|wrappings6|Take 001|BaseLayer
+  - first:
+      74: 6543195166985149915
+    second: wrappings2|wrappings7|Take 001|BaseLayer
+  - first:
+      74: 3181348666974380671
+    second: wrappings2|wrappings8|Take 001|BaseLayer
+  - first:
+      74: 5197460905198713501
+    second: wrappings2|wrappings|Take 001|BaseLayer
+  - first:
+      74: -5204685697715015141
+    second: wrappings6|Adorno|Take 001|BaseLayer
+  - first:
+      74: 2716670005980672700
+    second: wrappings6|Blade|Take 001|BaseLayer
+  - first:
+      74: 7459378427574793324
+    second: wrappings6|Cubo|Take 001|BaseLayer
+  - first:
+      74: -9160048588556669814
+    second: wrappings6|Ferrule 2|Take 001|BaseLayer
+  - first:
+      74: 876383107697922809
+    second: wrappings6|ferrule1|Take 001|BaseLayer
+  - first:
+      74: 2559023222167620427
+    second: wrappings6|handle|Take 001|BaseLayer
+  - first:
+      74: 1305413467492405098
+    second: wrappings6|Pommel|Take 001|BaseLayer
+  - first:
+      74: 1036676470688152003
+    second: wrappings6|wrappings2|Take 001|BaseLayer
+  - first:
+      74: -8616886792854704207
+    second: wrappings6|wrappings3|Take 001|BaseLayer
+  - first:
+      74: 8466582628805228500
+    second: wrappings6|wrappings4|Take 001|BaseLayer
+  - first:
+      74: -8522968386189782880
+    second: wrappings6|wrappings5|Take 001|BaseLayer
+  - first:
+      74: -6593976559018376607
+    second: wrappings6|wrappings6|Take 001|BaseLayer
+  - first:
+      74: -6287232579008876952
+    second: wrappings6|wrappings7|Take 001|BaseLayer
+  - first:
+      74: -3799551742137253740
+    second: wrappings6|wrappings8|Take 001|BaseLayer
+  - first:
+      74: 2327979161076059170
+    second: wrappings6|wrappings|Take 001|BaseLayer
+  - first:
+      74: -7681473039153571047
+    second: wrappings7|Adorno|Take 001|BaseLayer
+  - first:
+      74: -2432081670198243286
+    second: wrappings7|Blade|Take 001|BaseLayer
+  - first:
+      74: -7046432699526412703
+    second: wrappings7|Cubo|Take 001|BaseLayer
+  - first:
+      74: 6127801868118254736
+    second: wrappings7|Ferrule 2|Take 001|BaseLayer
+  - first:
+      74: -8686800121287238393
+    second: wrappings7|ferrule1|Take 001|BaseLayer
+  - first:
+      74: 3102134027686849653
+    second: wrappings7|handle|Take 001|BaseLayer
+  - first:
+      74: 3290677594371347740
+    second: wrappings7|Pommel|Take 001|BaseLayer
+  - first:
+      74: 8476234800750796515
+    second: wrappings7|wrappings2|Take 001|BaseLayer
+  - first:
+      74: -763080217688573538
+    second: wrappings7|wrappings3|Take 001|BaseLayer
+  - first:
+      74: -6370100940693116923
+    second: wrappings7|wrappings4|Take 001|BaseLayer
+  - first:
+      74: 8349081945957121496
+    second: wrappings7|wrappings5|Take 001|BaseLayer
+  - first:
+      74: -6172665543868437625
+    second: wrappings7|wrappings6|Take 001|BaseLayer
+  - first:
+      74: 40341290181930548
+    second: wrappings7|wrappings7|Take 001|BaseLayer
+  - first:
+      74: -8675094219524050642
+    second: wrappings7|wrappings8|Take 001|BaseLayer
+  - first:
+      74: -1524388379813594827
+    second: wrappings7|wrappings|Take 001|BaseLayer
+  - first:
+      74: 3693585382206538109
+    second: wrappings8|Adorno|Take 001|BaseLayer
+  - first:
+      74: 3368522375763994934
+    second: wrappings8|Blade|Take 001|BaseLayer
+  - first:
+      74: -6539504619154947442
+    second: wrappings8|Cubo|Take 001|BaseLayer
+  - first:
+      74: -9066636846153976089
+    second: wrappings8|Ferrule 2|Take 001|BaseLayer
+  - first:
+      74: 197162606646844496
+    second: wrappings8|ferrule1|Take 001|BaseLayer
+  - first:
+      74: -5454605090883254317
+    second: wrappings8|handle|Take 001|BaseLayer
+  - first:
+      74: -8416749149834318260
+    second: wrappings8|Pommel|Take 001|BaseLayer
+  - first:
+      74: -4474054716131064680
+    second: wrappings8|wrappings2|Take 001|BaseLayer
+  - first:
+      74: -3942259589504006145
+    second: wrappings8|wrappings3|Take 001|BaseLayer
+  - first:
+      74: -7288620483617763330
+    second: wrappings8|wrappings4|Take 001|BaseLayer
+  - first:
+      74: -1879636969341955961
+    second: wrappings8|wrappings5|Take 001|BaseLayer
+  - first:
+      74: 6359687730460333056
+    second: wrappings8|wrappings6|Take 001|BaseLayer
+  - first:
+      74: -6814287317650851847
+    second: wrappings8|wrappings7|Take 001|BaseLayer
+  - first:
+      74: -752129667671631780
+    second: wrappings8|wrappings8|Take 001|BaseLayer
+  - first:
+      74: -588317992312940532
+    second: wrappings8|wrappings|Take 001|BaseLayer
+  - first:
+      74: -7198749078977958226
+    second: Pommel|Adorno|Take 001|BaseLayer
+  - first:
+      74: -4402568961542801769
+    second: Pommel|Blade|Take 001|BaseLayer
+  - first:
+      74: 6530870699943055690
+    second: Pommel|Cubo|Take 001|BaseLayer
+  - first:
+      74: -3727510518439276094
+    second: Pommel|Ferrule 2|Take 001|BaseLayer
+  - first:
+      74: 7856499310264507744
+    second: Pommel|ferrule1|Take 001|BaseLayer
+  - first:
+      74: 7181491296672866846
+    second: Pommel|handle|Take 001|BaseLayer
+  - first:
+      74: -4622219791361428888
+    second: Pommel|Pommel|Take 001|BaseLayer
+  - first:
+      74: 4524007021528042930
+    second: Pommel|wrappings2|Take 001|BaseLayer
+  - first:
+      74: -4080271125468608232
+    second: Pommel|wrappings3|Take 001|BaseLayer
+  - first:
+      74: 8151502607591867251
+    second: Pommel|wrappings4|Take 001|BaseLayer
+  - first:
+      74: -7159096323204594818
+    second: Pommel|wrappings5|Take 001|BaseLayer
+  - first:
+      74: 6298743674357681858
+    second: Pommel|wrappings6|Take 001|BaseLayer
+  - first:
+      74: -4516482990646778413
+    second: Pommel|wrappings7|Take 001|BaseLayer
+  - first:
+      74: 3273302202492882138
+    second: Pommel|wrappings8|Take 001|BaseLayer
+  - first:
+      74: 3190479328299289865
+    second: Pommel|wrappings|Take 001|BaseLayer
+  - first:
+      74: 1952780835934746055
+    second: Cubo|Adorno|Take 001|BaseLayer
+  - first:
+      74: -3967225383985572085
+    second: Cubo|Blade|Take 001|BaseLayer
+  - first:
+      74: 6626675483189415663
+    second: Cubo|Cubo|Take 001|BaseLayer
+  - first:
+      74: 3456736162546971523
+    second: Cubo|Ferrule 2|Take 001|BaseLayer
+  - first:
+      74: 8142475111549786513
+    second: Cubo|ferrule1|Take 001|BaseLayer
+  - first:
+      74: -1496387457941804505
+    second: Cubo|handle|Take 001|BaseLayer
+  - first:
+      74: 2047523293353926207
+    second: Cubo|Pommel|Take 001|BaseLayer
+  - first:
+      74: 7686769806993715484
+    second: Cubo|wrappings2|Take 001|BaseLayer
+  - first:
+      74: -8401731956560538348
+    second: Cubo|wrappings3|Take 001|BaseLayer
+  - first:
+      74: 6744346357067114082
+    second: Cubo|wrappings4|Take 001|BaseLayer
+  - first:
+      74: -5917966826710749042
+    second: Cubo|wrappings5|Take 001|BaseLayer
+  - first:
+      74: 1336513047595282446
+    second: Cubo|wrappings6|Take 001|BaseLayer
+  - first:
+      74: 7212468519353085338
+    second: Cubo|wrappings7|Take 001|BaseLayer
+  - first:
+      74: 3174431266819787322
+    second: Cubo|wrappings8|Take 001|BaseLayer
+  - first:
+      74: -8164471646406147985
+    second: Cubo|wrappings|Take 001|BaseLayer
+  externalObjects: {}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
