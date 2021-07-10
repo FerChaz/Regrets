@@ -12,13 +12,14 @@ public class PatrolGroundedEnemy : PatrolEnemyBase
 
     public GameObject lootDrop;
 
+    public ChangeColorDamage model;
+    
     //-- START ---------------------------------------
 
     private void Start()
     {
         rbGroundEnemy = GetComponent<Rigidbody>();
         currentHealth = maxHealth;
-        colorDamage.color = Color.white;
     }
 
     //-- WALKING STATE -------------------------------
@@ -60,7 +61,7 @@ public class PatrolGroundedEnemy : PatrolEnemyBase
     {
         if (Time.time >= knockbackStartTime + knockbackDuration)
         {
-            colorDamage.color = Color.white;
+            model.ChangeColor(true);
             SwitchState(State.Moving);
         }
     }
@@ -94,7 +95,7 @@ public class PatrolGroundedEnemy : PatrolEnemyBase
     {
         currentHealth -= attackDetails[0]; // Attack Damage is in the first index always
 
-        colorDamage.color = Color.red;
+        model.ChangeColor(false);
 
         if (currentHealth > 0.0f) // Enemy still alive
         {
