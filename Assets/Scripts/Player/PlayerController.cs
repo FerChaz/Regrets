@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     private float
         speedMovement,
         jumpForce,
+        fallingForce,
         dashCooldown,
         dashCooldownTimer,
         dashForce,
@@ -47,6 +48,11 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody rigidBody;
 
+    //-- BRIDGES -----------------------------------------------
+
+    public BridgePlayerAnimator bridgePlayerAnimator;
+    public BridgePlayerAudio bridgePlayerAudio;
+
     //-- START -------------------------------------------------
 
     void Start()
@@ -82,16 +88,23 @@ public class PlayerController : MonoBehaviour
         {
             movement.Set(-speedMovement, rigidBody.velocity.y, 0.0f);
             rigidBody.velocity = movement;
+
+            bridgePlayerAnimator.PlayAnimation("Moving");          // MOVE ANIMATION
+
         }
         else if (Input.GetAxisRaw("Horizontal") > 0f && canMove)
         {
             movement.Set(speedMovement, rigidBody.velocity.y, 0.0f);
             rigidBody.velocity = movement;
+
+            bridgePlayerAnimator.PlayAnimation("Moving");          // MOVE ANIMATION
         }
         else
         {
             movement.Set(0.0f, rigidBody.velocity.y, 0.0f);
             rigidBody.velocity = movement;
+
+            //bridgePlayerAnimator.PlayAnimation("Idle");            // IDLE ANIMATION
         }
     }
 
@@ -102,11 +115,17 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButton("Jump") && isGrounded && canJump)
         {
             movement.Set(0.0f, jumpForce, 0.0f);
-            //rigidBody.AddForce(movement, ForceMode.Impulse);
-            rigidBody.velocity = movement;
-        }
+            rigidBody.AddForce(movement, ForceMode.Impulse);
 
-        // HACER UN TIMER Y QUE CUANDO SALTO EL MAXIMO DAR UN VELOCIDAD DE CAIDA
+            bridgePlayerAnimator.PlayAnimation("Jumping");          // JUMP ANIMATION
+            bridgePlayerAudio.ReproduceFX("Jump");                  // JUMP FX
+        }
+        //else if (rigidBody.velocity.y < 0f){} 
+        else
+        {
+            rigidBody.AddForce(fallingForce * Physics.gravity);
+            // AVISAR AL ANIMATOR QUE NO ESTA CAYENDO
+        }
     }
 
     //-- DASH --------------------------------------------------
@@ -127,6 +146,9 @@ public class PlayerController : MonoBehaviour
                 rigidBody.AddForce(Vector3.left * dashForce, ForceMode.Impulse);
                 dashParticles.Emit(particleAmount);
             }
+
+            bridgePlayerAnimator.PlayAnimation("Dashing");          // DASH ANIMATION
+            bridgePlayerAudio.ReproduceFX("Dash");                  // DASH FX
 
             dashCooldownTimer = dashCooldown;
             canMove = true;
@@ -172,6 +194,9 @@ public class PlayerController : MonoBehaviour
 
         rigidBody.AddForce(movement, ForceMode.Impulse);
 
+        bridgePlayerAnimator.PlayAnimation("GettingDamage");          // KNOCKBACK / GET DAMAGE ANIMATION
+        bridgePlayerAudio.ReproduceFX("KnockBack");                   // KNOCKBACK / GET DAMAGE FX
+
         StartCoroutine(WaitTime(timeToWait));
     }
 
@@ -180,6 +205,9 @@ public class PlayerController : MonoBehaviour
 
         movement.Set(0.0f, knockbackForce.y, 0.0f);
         rigidBody.AddForce(movement, ForceMode.Impulse);
+
+        bridgePlayerAnimator.PlayAnimation("GettingDamage");          // KNOCKBACK / GET DAMAGE ANIMATION
+        bridgePlayerAudio.ReproduceFX("KnockBack");                   // KNOCKBACK / GET DAMAGE FX
 
         transform.position = respawnZone;
 
@@ -207,13 +235,16 @@ public class PlayerController : MonoBehaviour
 
     public void Respawn()
     {
-        StartCoroutine(WaitTime(timeToWait + 1f));
+        // CAMBIAR PARA QUE NO SE PUEDA MOVER JUSTO CUANDO MUERE Y HACER UN FADE
+
         transform.position = respawn.respawnPosition;
 
         if (!isFacingRight)
         {
             Flip();
         }
+
+        StartCoroutine(WaitTime(timeToWait + 1f));
     }
 
 
@@ -223,6 +254,7 @@ public class PlayerController : MonoBehaviour
         canJump = !canJump;
         canDash = !canDash;
     }
+
 
     IEnumerator WaitTime(float time)
     {

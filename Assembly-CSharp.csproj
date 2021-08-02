@@ -80,6 +80,11 @@
     <Compile Include="Assets\Scripts\Observer\HeartManager.cs" />
     <Compile Include="Assets\Scripts\Enemies\Spikes\SpikesController.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\IntValue.cs" />
+    <Compile Include="Assets\Scripts\Player\AnimationsBridges\BridgePlayerAnimator.cs" />
+    <Compile Include="Assets\Scripts\Player\AnimationsBridges\BridgeAnimator.cs" />
+    <Compile Include="Assets\Scripts\Player\AnimationsBridges\AnimatorSource.cs" />
+    <Compile Include="Assets\Scripts\Player\AudioBridges\BridgePlayerAudio.cs" />
+    <Compile Include="Assets\Scripts\Player\AudioBridges\FXSource.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
