@@ -63,6 +63,11 @@ public class PlayerCombatController : MonoBehaviour
                 CheckAttackHitBox();
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            TryToExecute();
+        }
     }
 
     private void CheckAttackHitBox()
@@ -76,6 +81,19 @@ public class PlayerCombatController : MonoBehaviour
             collider.transform.SendMessage("GetDamage", attackDetails);
         }
     }
+
+    private void TryToExecute()
+    {
+        Collider[] detectedObjects = Physics.OverlapSphere(attackHitBoxPos.position, attack1Radius, whatIsDamageable);
+
+
+        foreach (Collider collider in detectedObjects)
+        {
+            collider.transform.SendMessage("Execute");
+            //Instantiate hit particle
+        }
+    }
+
 
     private void OnDrawGizmos()
     {
