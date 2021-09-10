@@ -4,56 +4,67 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    //-- VARIABLES ---------------------------------------------
+    //-- VARIABLES -----------------------------------------------------------------------------------------------------------------
 
-    [SerializeField]
-    private float
-        speedMovement,
-        jumpForce,
-        fallingForce,
-        dashCooldown,
-        dashCooldownTimer,
-        dashForce,
-        knockbackDuration,
-        knockbackTime,
-        knockbackCounter,
-        groundCheckRadius,
-        timeToWait;
+    [Header("Movement Variables")]
+    [SerializeField] private float speedMovement;
+    private Vector3 movement;
+    private float inputDirection;
+    private bool isFacingRight = true;
+    private bool canMove = true;
 
+    [Header("Jump Variables")]
+    [SerializeField] private float jumpForce;
+    [SerializeField] private float fallingForce;
+    private bool canJump = true;
+
+    [Header("Dash Variables")]
+    [SerializeField] private float dashCooldown;
+    [SerializeField] private float dashCooldownTimer;
+    [SerializeField] private float dashForce;
+    [SerializeField] private float lastDash;
+    [SerializeField] private float dashTimeLeft;
+    [SerializeField] private float dashTime;
+    private bool canDash = true;
+    private bool isDashing;
+
+    [Header("Knockback Variables")]
+    [SerializeField] private float knockbackDuration;
+    [SerializeField] private float knockbackTime;
+    [SerializeField] private float knockbackCounter;
     [SerializeField] private Vector3 knockbackForce;
+    private bool knockback;
 
-    [SerializeField] LayerMask whatIsGround;
-
+    [Header("Ground Check")]
+    [SerializeField] private float groundCheckRadius;
     public Transform groundCheck;
+    [SerializeField] LayerMask whatIsGround;
+    private bool isGrounded;
 
+    [Header("Coroutine to wait time variables")]
+    [SerializeField] private float timeToWait = 1;
+
+    [Header("Respawn")]
     public RespawnPosition respawn;
 
+    [Header("Camera")]
     public Transform cameraPosition;
 
+    [Header("Particles")]
     public ParticleSystem dashParticles;
-
     public int particleAmount;
 
-    private bool
-        canMove = true,
-        isGrounded,
-        canDash = true,
-        canJump = true,
-        knockback,
-        isFacingRight = true;
-
-    private float inputDirection;
-
-    private Vector3 movement;
-
+    [Header("Components")]
     private Rigidbody rigidBody;
 
-    //-- BRIDGES -----------------------------------------------
+    //-- BRIDGES -------------------------------------------------------------------------------------------------------------------
 
+    [Header("Bridges")]
     public BridgePlayerAnimator bridgePlayerAnimator;
     public BridgePlayerAudio bridgePlayerAudio;
 
-    //-- START -------------------------------------------------
+
+    //-- START & UPDATE ------------------------------------------------------------------------------------------------------------
 
     void Start()
     {
@@ -62,11 +73,8 @@ public class PlayerController : MonoBehaviour
         transform.position = respawn.respawnPosition;
     }
 
-    //-- UPDATE ------------------------------------------------
-
     private void Update()
     {
-        dashCooldownTimer -= Time.deltaTime;
         Flip();
         CheckGround();
     }
@@ -79,6 +87,8 @@ public class PlayerController : MonoBehaviour
     }
 
     //-- CHECKINPUT --------------------------------------------
+
+    // PATRON COMMAND
 
     //-- MOVE --------------------------------------------------
 
@@ -130,7 +140,11 @@ public class PlayerController : MonoBehaviour
 
     //-- DASH --------------------------------------------------
 
-    private void Dash()
+    /*          VIEJO DASH
+     * 
+     * 
+     * 
+     * private void Dash()
     {
         if (Input.GetButton("Dash") && dashCooldownTimer <= 0 && canDash)
         {
@@ -154,7 +168,48 @@ public class PlayerController : MonoBehaviour
             canMove = true;
             canJump = true;
         }
+    }*/
+
+
+    private void Dash()
+    {
+        if (Input.GetButton("Dash") && canDash && (Time.time >= (lastDash + dashCooldown)))
+        {
+            isDashing = true;
+            dashTimeLeft = dashTime;
+            lastDash = Time.time;
+        }
+
+        if (isDashing)
+        {
+            if (dashTimeLeft > 0)
+            {
+                canMove = false;
+                canJump = false;
+
+                rigidBody.velocity.Set(rigidBody.velocity.x, 0.0f, 0.0f);
+
+                if (isFacingRight)
+                {
+                    rigidBody.AddForce(Vector3.right * dashForce, ForceMode.Impulse);
+                }
+                else
+                {
+                    rigidBody.AddForce(Vector3.left * dashForce, ForceMode.Impulse);
+                }
+
+                dashTimeLeft -= Time.deltaTime;
+            }
+
+            if (dashTimeLeft <= 0)
+            {
+                isDashing = false;
+                canMove = true;
+                canJump = true;
+            }
+        }
     }
+
 
     //-- FLIP --------------------------------------------------
 
@@ -264,8 +319,6 @@ public class PlayerController : MonoBehaviour
 
         yield return new WaitForSeconds(time);
 
-        canMove = true;
-        canJump = true;
-        canDash = true;
+        ChangeCanDoAnyMovement();
     }
 }

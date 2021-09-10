@@ -4,45 +4,54 @@ using UnityEngine;
 
 public class LifeManager : MonoBehaviour
 {
+    //-- VARIABLES -----------------------------------------------------------------------------------------------------------------
 
-    //-- VARIABLES ---------------------------------------------
+    [Header("Life")]
+    public int maxLife;
+    public IntValue currentLife;
 
-    [SerializeField] private GameObject model;
+    [Header("Invulnerability Variables")]
     [SerializeField] private float invincibilityDeltaTime;
-
-    public int maxHealth;
-
     public float invulnerabilityTime;
-
     private bool invulnerability;
 
-    public IntValue currentHealth;
-
-    public SignalSender playerHealthSignal;
-
-    public PlayerController playerController;
-
+    [Header("Components")]
+    [SerializeField] private GameObject model;
     private BoxCollider colliderLifeManager;
 
+    [Header("SignalSender")]
+    public SignalSender playerHealthSignal;
+
+    [Header("Player Scripts")]
+    public PlayerController playerController;
+    public SoulManager soulsController;
+
+    [Header("Fade")]
     public GameObject deathFade;
 
-    //-- START -------------------------------------------------
+    [Header("Recover")]
+    public RecoverSoul soulsToRecover;
+    public GameObject modelToShow;
+
+
+    //-- START ---------------------------------------------------------------------------------------------------------------------
 
     private void Start()
     {
-        currentHealth.initialValue = maxHealth;
+        currentLife.initialValue = maxLife;
         colliderLifeManager = GetComponent<BoxCollider>();
     }
 
-    //-- MODIFIERS ---------------------------------------------
+
+    //-- MODIFIERS -----------------------------------------------------------------------------------------------------------------
 
     public void RestoreLife(int life)
     {
-        currentHealth.initialValue += life;
+        currentLife.initialValue += life;
 
-        if (currentHealth.initialValue > maxHealth)
+        if (currentLife.initialValue > maxLife)
         {
-            currentHealth.initialValue = maxHealth;
+            currentLife.initialValue = maxLife;
         }
 
         playerHealthSignal.Raise(); // CHANGE UI
@@ -51,17 +60,17 @@ public class LifeManager : MonoBehaviour
 
     public void AddMaxLife(int life)
     {
-        maxHealth += life;
-        currentHealth.initialValue = maxHealth;
+        maxLife += life;                        // FALTA CAMBIAR LA UI
+        currentLife.initialValue = maxLife;
     }
 
     public void RecieveDamage(int damage, Vector3 direction, bool isEnemy)
     {
         if (!invulnerability)
         {
-            currentHealth.initialValue -= damage;
+            currentLife.initialValue -= damage;
 
-            if (currentHealth.initialValue > 0)
+            if (currentLife.initialValue > 0)
             {
 
                 playerHealthSignal.Raise(); // CHANGE UI
@@ -88,8 +97,19 @@ public class LifeManager : MonoBehaviour
     private void Death()
     {
         deathFade.SetActive(true);
+
+        // ACTIVAR ANIMACION
+        int totalSouls = soulsController.TotalSouls();
+
+        // MODIFICAR PARA TENER UNA VARIABLE (PUEDE SER UN SCRIPTABLE OBJECT) QUE MANTENGA LA ÚLTIMA POSICION "CAMINABLE"
+        soulsToRecover.deathPosition = transform.position;
+        soulsToRecover.deathPosition.y += 2.5f;
+        soulsToRecover.totalSouls = totalSouls;
+        soulsController.DiscountSouls(totalSouls);
+        modelToShow.SetActive(true);
+
         playerController.Respawn();
-        currentHealth.initialValue = maxHealth;
+        currentLife.initialValue = maxLife;
         playerHealthSignal.Raise(); // CHANGE UI
     }
 

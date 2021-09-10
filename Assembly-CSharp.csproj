@@ -56,11 +56,15 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Enemies\FlyEnemies\States\FallenFlyEnemyState.cs" />
+    <Compile Include="Assets\Scripts\Enemies\FlyEnemies\States\DeathFlyEnemyState.cs" />
+    <Compile Include="Assets\Scripts\Enemies\FlyEnemies\FlyEnemyCombatController.cs" />
     <Compile Include="Assets\Scripts\Enemies\GroundEnemies\States\PatrolGroundEnemyState.cs" />
     <Compile Include="Assets\Scripts\Enemies\GroundEnemies\States\FallenGroundEnemyState.cs" />
     <Compile Include="Assets\Scripts\UI\DeathFade.cs" />
     <Compile Include="Assets\Scripts\Enemies\GroundEnemies\States\ChaseGroundEnemyState.cs" />
     <Compile Include="Assets\Scripts\Doors\DoorController.cs" />
+    <Compile Include="Assets\Scripts\Enemies\FlyEnemies\States\KnockbackFlyEnemyState.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Player\AnimationsBridges\AnimatorSource.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerCombatController.cs" />
@@ -73,8 +77,12 @@
     <Compile Include="Assets\Scripts\Checkpoint\Checkpoint.cs" />
     <Compile Include="Assets\Scripts\Observer\SignalListener.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\RespawnPosition.cs" />
+    <Compile Include="Assets\Scripts\Enemies\FlyEnemies\FlyEnemyFSM.cs" />
+    <Compile Include="Assets\Scripts\Enemies\FlyEnemies\States\ChargeFlyEnemyState.cs" />
+    <Compile Include="Assets\Scripts\Enemies\FlyEnemies\FlyEnemyController.cs" />
     <Compile Include="Assets\Scripts\Enemies\Patrol\PatrolGroundedEnemy.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\SignalSender.cs" />
+    <Compile Include="Assets\Scripts\Enemies\FlyEnemies\States\IdleFlyEnemyState.cs" />
     <Compile Include="Assets\Scripts\Player\LifeManager.cs" />
     <Compile Include="Assets\Scripts\Enemies\GroundEnemies\States\DeathGroundEnemyState.cs" />
     <Compile Include="Assets\Scripts\Enemies\GroundEnemies\GroundEnemyPatrolFSM.cs" />
@@ -84,6 +92,7 @@
     <Compile Include="Assets\Scripts\UI\Main Menu\MainMenu.cs" />
     <Compile Include="Assets\Scripts\FSM\FiniteStateMachine.cs" />
     <Compile Include="Assets\Scripts\Enemies\GroundEnemies\GroundEnemyCombatController.cs" />
+    <Compile Include="Assets\Scripts\Enemies\FlyEnemies\States\ChaseFlyEnemyState.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemyLifeController.cs" />
     <Compile Include="Assets\Scripts\Player\SoulManager.cs" />
     <Compile Include="Assets\Scripts\Camera\MainCamera.cs" />
@@ -96,15 +105,8 @@
     <Compile Include="Assets\Scripts\Player\AudioBridges\FXSource.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\IntValue.cs" />
     <Compile Include="Assets\Scripts\Player\AudioBridges\BridgePlayerAudio.cs" />
-    <Compile Include="Assets\Scripts\Enemies\FlyEnemies\FlyEnemyController.cs" />
-    <Compile Include="Assets\Scripts\Enemies\FlyEnemies\FlyEnemyFSM.cs" />
-    <Compile Include="Assets\Scripts\Enemies\FlyEnemies\States\ChargeFlyEnemyState.cs" />
-    <Compile Include="Assets\Scripts\Enemies\FlyEnemies\States\ChaseFlyEnemyState.cs" />
-    <Compile Include="Assets\Scripts\Enemies\FlyEnemies\States\FallenFlyEnemyState.cs" />
-    <Compile Include="Assets\Scripts\Enemies\FlyEnemies\States\IdleFlyEnemyState.cs" />
-    <Compile Include="Assets\Scripts\Enemies\FlyEnemies\States\KnockbackFlyEnemyState.cs" />
-    <Compile Include="Assets\Scripts\Enemies\FlyEnemies\FlyEnemyCombatController.cs" />
-    <Compile Include="Assets\Scripts\Enemies\FlyEnemies\States\DeathFlyEnemyState.cs" />
+    <Compile Include="Assets\Scripts\Scriptable Objects\RecoverSoul.cs" />
+    <Compile Include="Assets\Scripts\DeathRecover\DeathRecoverSoul.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
