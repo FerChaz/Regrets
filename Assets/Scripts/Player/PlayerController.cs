@@ -20,7 +20,6 @@ public class PlayerController : MonoBehaviour
 
     [Header("Dash Variables")]
     [SerializeField] private float dashCooldown;
-    [SerializeField] private float dashCooldownTimer;
     [SerializeField] private float dashForce;
     [SerializeField] private float lastDash;
     [SerializeField] private float dashTimeLeft;
@@ -57,6 +56,8 @@ public class PlayerController : MonoBehaviour
     [Header("Components")]
     private Rigidbody rigidBody;
 
+    public Vector3 lastPositionInGround;
+
     //-- BRIDGES -------------------------------------------------------------------------------------------------------------------
 
     [Header("Bridges")]
@@ -77,6 +78,7 @@ public class PlayerController : MonoBehaviour
     {
         Flip();
         CheckGround();
+        LastPositionInGround();
     }
 
     private void FixedUpdate()
@@ -140,37 +142,6 @@ public class PlayerController : MonoBehaviour
 
     //-- DASH --------------------------------------------------
 
-    /*          VIEJO DASH
-     * 
-     * 
-     * 
-     * private void Dash()
-    {
-        if (Input.GetButton("Dash") && dashCooldownTimer <= 0 && canDash)
-        {
-            canMove = false;
-            canJump = false;
-            if (isFacingRight)
-            {
-                rigidBody.AddForce(Vector3.right * dashForce, ForceMode.Impulse);
-                dashParticles.Emit(particleAmount);
-            }
-            else
-            {
-                rigidBody.AddForce(Vector3.left * dashForce, ForceMode.Impulse);
-                dashParticles.Emit(particleAmount);
-            }
-
-            bridgePlayerAnimator.PlayAnimation("Dashing");          // DASH ANIMATION
-            bridgePlayerAudio.ReproduceFX("Dash");                  // DASH FX
-
-            dashCooldownTimer = dashCooldown;
-            canMove = true;
-            canJump = true;
-        }
-    }*/
-
-
     private void Dash()
     {
         if (Input.GetButton("Dash") && canDash && (Time.time >= (lastDash + dashCooldown)))
@@ -192,10 +163,12 @@ public class PlayerController : MonoBehaviour
                 if (isFacingRight)
                 {
                     rigidBody.AddForce(Vector3.right * dashForce, ForceMode.Impulse);
+                    dashParticles.Emit(particleAmount);
                 }
                 else
                 {
                     rigidBody.AddForce(Vector3.left * dashForce, ForceMode.Impulse);
+                    dashParticles.Emit(particleAmount);
                 }
 
                 dashTimeLeft -= Time.deltaTime;
@@ -275,6 +248,15 @@ public class PlayerController : MonoBehaviour
     }
 
     //-- OTHERS ------------------------------------------------
+
+    public void LastPositionInGround()
+    {
+        if (isGrounded)
+        {
+            lastPositionInGround = transform.position;
+        }
+    }
+
 
     private void CheckGround()
     {

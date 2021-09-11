@@ -18,7 +18,6 @@ public class DeathRecoverSoul : MonoBehaviour
         particle.Play();
     }
 
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))

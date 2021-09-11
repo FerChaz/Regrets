@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Checkpoint : MonoBehaviour
 {
-
     public RespawnPosition respawn;
 
     public ParticleSystem particle;

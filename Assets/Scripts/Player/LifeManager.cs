@@ -58,6 +58,12 @@ public class LifeManager : MonoBehaviour
 
     }
 
+    public void RestoreMaxLife()
+    {
+        currentLife.initialValue = maxLife;
+        playerHealthSignal.Raise(); // CHANGE UI
+    }
+
     public void AddMaxLife(int life)
     {
         maxLife += life;                        // FALTA CAMBIAR LA UI
@@ -66,23 +72,31 @@ public class LifeManager : MonoBehaviour
 
     public void RecieveDamage(int damage, Vector3 direction, bool isEnemy)
     {
-        if (!invulnerability)
+        if (!isEnemy)                                               // Spikes
+        {
+            
+            currentLife.initialValue -= damage;
+            playerHealthSignal.Raise();
+
+            if (currentLife.initialValue > 0)
+            {
+                playerController.KnockBackGetFromSpikes(direction);
+            }
+            else
+            {
+                Death();
+            }                
+
+            StartCoroutine(Invulnerability());
+        } 
+        else if (!invulnerability)
         {
             currentLife.initialValue -= damage;
 
             if (currentLife.initialValue > 0)
             {
-
                 playerHealthSignal.Raise(); // CHANGE UI
-
-                if (isEnemy)
-                {
-                    playerController.KnockBackGetFromEnemy(direction);
-                }
-                else //-- IS A SPIKE
-                {
-                    playerController.KnockBackGetFromSpikes(direction);
-                }
+                playerController.KnockBackGetFromEnemy(direction);
 
             }
             else
@@ -102,7 +116,8 @@ public class LifeManager : MonoBehaviour
         int totalSouls = soulsController.TotalSouls();
 
         // MODIFICAR PARA TENER UNA VARIABLE (PUEDE SER UN SCRIPTABLE OBJECT) QUE MANTENGA LA ÚLTIMA POSICION "CAMINABLE"
-        soulsToRecover.deathPosition = transform.position;
+        
+        soulsToRecover.deathPosition = playerController.lastPositionInGround;
         soulsToRecover.deathPosition.y += 2.5f;
         soulsToRecover.totalSouls = totalSouls;
         soulsController.DiscountSouls(totalSouls);
@@ -118,7 +133,6 @@ public class LifeManager : MonoBehaviour
 
     IEnumerator Invulnerability()
     {
-
         invulnerability = true;
         colliderLifeManager.enabled = false;
 
@@ -132,6 +146,7 @@ public class LifeManager : MonoBehaviour
             {
                 ScaleModelTo(Vector3.one);
             }
+            
             yield return new WaitForSeconds(invincibilityDeltaTime);
         }
 
