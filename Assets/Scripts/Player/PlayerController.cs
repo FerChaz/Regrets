@@ -58,6 +58,7 @@ public class PlayerController : MonoBehaviour
 
     public Vector3 lastPositionInGround;
 
+    private AudioManager audioManager;
     //-- BRIDGES -------------------------------------------------------------------------------------------------------------------
 
     [Header("Bridges")]
@@ -72,6 +73,7 @@ public class PlayerController : MonoBehaviour
         rigidBody = GetComponent<Rigidbody>();
         respawn.respawnPosition = new Vector3(0.0f, 0.0f, 0.0f);
         transform.position = respawn.respawnPosition;
+        audioManager = GetComponent<AudioManager>();
     }
 
     private void Update()
@@ -79,6 +81,7 @@ public class PlayerController : MonoBehaviour
         Flip();
         CheckGround();
         LastPositionInGround();
+        ChekTagGround();
     }
 
     private void FixedUpdate()
@@ -257,7 +260,32 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void ChekTagGround()
+    {
+        /*RaycastHit hit;
+        if (Physics.Raycast(transform.position, Vector3.up*-1,out hit,1.2f))
+        {
 
+            Debug.Log($"Colision con{hit.transform.gameObject.tag}");
+            if (hit.transform.gameObject.tag == "Brick") { 
+                audioManager.SelectAudio(0, 0.5f); 
+                }
+            if (hit.transform.gameObject.tag == "Wood") audioManager.SelectAudio(1, 0.5f);
+            if (hit.transform.gameObject.tag == "Ground") audioManager.SelectAudio(2, 0.5f);
+            if (hit.transform.gameObject.tag == "Stone") audioManager.SelectAudio(3, 0.5f);
+            if (hit.transform.gameObject.tag == "Untagged") audioManager.SelectAudio(4, 0.5f);
+        }*/
+
+    }
+    public void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "Brick") audioManager.SelectAudio(1, 0.5f);
+        else if (other.tag == "Wood") audioManager.SelectAudio(1, 0.5f);
+        else if(other.tag == "Ground") audioManager.SelectAudio(2, 0.5f);
+        else if (other.tag == "Stone") audioManager.SelectAudio(3, 0.5f);
+        else if(other.tag == "Untagged") audioManager.SelectAudio(4, 0.5f);
+
+    }
     private void CheckGround()
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundCheckRadius, whatIsGround);

@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - LifeManager
+  - Brick
+  - Wood
+  - Ground
+  - Stone
   layers:
   - Default
   - TransparentFX
