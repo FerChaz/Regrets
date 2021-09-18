@@ -1,23 +1,34 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
-    - ChangeColorDamage
+    - AnimatorSource
+    - AudioManager
+    - BridgePlayerAnimator
+    - BridgePlayerAudio
     - Checkpoint
-    - Coins
     - DeathFade
+    - DeathRecoverSoul
     - DoorController
     - EndGame
+    - EnemyLifeController
+    - FXSource
     - FirstSelectedButton
+    - FlyEnemyCombatController
+    - FlyEnemyController
+    - FlyEnemyFSM
+    - GroundEnemyCombatController
+    - GroundEnemyPatrolController
+    - GroundEnemyPatrolFSM
     - HeartManager
     - IntValue
     - LifeManager
     - MainCamera
     - MainMenuManager
     - MouseOver
-    - PatrolGroundedEnemy
     - PauseManager
     - PlayerCombatController
     - PlayerController
+    - RecoverSoul
     - RespawnPosition
     - SignalListener
     - SignalSender
@@ -66,25 +77,25 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1696}
+      Script: {instanceID: 1714}
     - Class: 114
-      Script: {instanceID: 2220}
+      Script: {instanceID: 2246}
     - Class: 114
-      Script: {instanceID: 2538}
+      Script: {instanceID: 2572}
     - Class: 114
-      Script: {instanceID: 2664}
+      Script: {instanceID: 2700}
     - Class: 114
-      Script: {instanceID: 2830}
+      Script: {instanceID: 2866}
     - Class: 114
-      Script: {instanceID: 3028}
+      Script: {instanceID: 3064}
     - Class: 114
-      Script: {instanceID: 3120}
+      Script: {instanceID: 3158}
     - Class: 114
-      Script: {instanceID: 3396}
+      Script: {instanceID: 3442}
     - Class: 114
-      Script: {instanceID: 3532}
+      Script: {instanceID: 3582}
     - Class: 114
-      Script: {instanceID: 4208}
+      Script: {instanceID: 4276}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -143,66 +154,90 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1696}
+      Script: {instanceID: 1714}
     - Class: 114
-      Script: {instanceID: 1872}
+      Script: {instanceID: 1892}
     - Class: 114
-      Script: {instanceID: 2174}
+      Script: {instanceID: 1990}
     - Class: 114
-      Script: {instanceID: 2220}
+      Script: {instanceID: 2200}
     - Class: 114
-      Script: {instanceID: 2370}
+      Script: {instanceID: 2246}
     - Class: 114
-      Script: {instanceID: 2470}
+      Script: {instanceID: 2398}
     - Class: 114
-      Script: {instanceID: 2538}
+      Script: {instanceID: 2488}
     - Class: 114
-      Script: {instanceID: 2546}
+      Script: {instanceID: 2502}
     - Class: 114
-      Script: {instanceID: 2550}
+      Script: {instanceID: 2514}
     - Class: 114
-      Script: {instanceID: 2664}
+      Script: {instanceID: 2572}
     - Class: 114
-      Script: {instanceID: 2820}
+      Script: {instanceID: 2580}
     - Class: 114
-      Script: {instanceID: 2830}
+      Script: {instanceID: 2610}
     - Class: 114
-      Script: {instanceID: 2938}
+      Script: {instanceID: 2700}
     - Class: 114
-      Script: {instanceID: 2982}
+      Script: {instanceID: 2856}
     - Class: 114
-      Script: {instanceID: 3028}
+      Script: {instanceID: 2866}
     - Class: 114
-      Script: {instanceID: 3042}
+      Script: {instanceID: 3018}
     - Class: 114
-      Script: {instanceID: 3120}
+      Script: {instanceID: 3064}
     - Class: 114
-      Script: {instanceID: 3122}
+      Script: {instanceID: 3078}
     - Class: 114
-      Script: {instanceID: 3146}
+      Script: {instanceID: 3080}
     - Class: 114
-      Script: {instanceID: 3256}
+      Script: {instanceID: 3158}
     - Class: 114
-      Script: {instanceID: 3296}
+      Script: {instanceID: 3160}
     - Class: 114
-      Script: {instanceID: 3370}
+      Script: {instanceID: 3184}
     - Class: 114
-      Script: {instanceID: 3512}
+      Script: {instanceID: 3186}
     - Class: 114
-      Script: {instanceID: 3908}
+      Script: {instanceID: 3226}
     - Class: 114
-      Script: {instanceID: 3916}
+      Script: {instanceID: 3340}
     - Class: 114
-      Script: {instanceID: 4274}
+      Script: {instanceID: 3416}
     - Class: 114
-      Script: {instanceID: 4620}
+      Script: {instanceID: 3502}
     - Class: 114
-      Script: {instanceID: 4638}
+      Script: {instanceID: 3562}
+    - Class: 114
+      Script: {instanceID: 3806}
+    - Class: 114
+      Script: {instanceID: 3888}
+    - Class: 114
+      Script: {instanceID: 3928}
+    - Class: 114
+      Script: {instanceID: 3970}
+    - Class: 114
+      Script: {instanceID: 3978}
+    - Class: 114
+      Script: {instanceID: 4266}
+    - Class: 114
+      Script: {instanceID: 4342}
+    - Class: 114
+      Script: {instanceID: 4690}
+    - Class: 114
+      Script: {instanceID: 4702}
+    - Class: 114
+      Script: {instanceID: 4710}
+    - Class: 114
+      Script: {instanceID: 4902}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
       Script: {instanceID: 0}
     - Class: 134
+      Script: {instanceID: 0}
+    - Class: 135
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
@@ -327,6 +362,12 @@ ScriptsOnlyBuild:
     className: CinemachineCameraOffset
   - hash:
       serializedVersion: 2
+      Hash: d726fd6a97d6b363dbb48a2e9283168a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FlyEnemyCombatController
+  - hash:
+      serializedVersion: 2
       Hash: 6225eb0973ab0af667bc5f9d1b1b18de
     assemblyName: Cinemachine.dll
     namespaceName: Cinemachine
@@ -399,16 +440,28 @@ ScriptsOnlyBuild:
     className: CinemachineOrbitalTransposer
   - hash:
       serializedVersion: 2
+      Hash: c7f10223fdc6855a9c6d258a73f16734
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DeathRecoverSoul
+  - hash:
+      serializedVersion: 2
       Hash: 5f170942ee57c7a568f5bcfc7521adea
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools
     className: EnumerableTestState
   - hash:
       serializedVersion: 2
-      Hash: fce980690d79180618752e1905b5d456
+      Hash: 430a9582a31ea0220c5f80d11312cdd4
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AnimatorSource
   - hash:
       serializedVersion: 2
       Hash: 62824bb9557c7e987502f2fbd2a26819
@@ -445,6 +498,12 @@ ScriptsOnlyBuild:
     assemblyName: Cinemachine.dll
     namespaceName: Cinemachine
     className: CinemachineSameAsFollowTarget
+  - hash:
+      serializedVersion: 2
+      Hash: 043e100367d0fb4af0e0bddfae1551d6
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GroundEnemyPatrolController
   - hash:
       serializedVersion: 2
       Hash: c8f1a224e0a43adc56c91864de822dd3
@@ -591,6 +650,12 @@ ScriptsOnlyBuild:
     className: Scrollbar
   - hash:
       serializedVersion: 2
+      Hash: 26c1e2cbf241c210e598dd3e1a691736
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: BridgePlayerAnimator
+  - hash:
+      serializedVersion: 2
       Hash: e9766e598a228950e8ef2fd60f00eb3b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -657,6 +722,18 @@ ScriptsOnlyBuild:
     className: RespawnPosition
   - hash:
       serializedVersion: 2
+      Hash: de89dbae56b1c314d012a433aefa2f8c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FlyEnemyFSM
+  - hash:
+      serializedVersion: 2
+      Hash: fbb4507898f4c196f86462180b88a6e1
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FlyEnemyController
+  - hash:
+      serializedVersion: 2
       Hash: 4fd8bf02e3089425d3502e26c44ba31a
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -699,7 +776,7 @@ ScriptsOnlyBuild:
     className: CinemachinePixelPerfect
   - hash:
       serializedVersion: 2
-      Hash: 72a93f72f4c25d42f98eac292bbfdff5
+      Hash: 1639da96345e8b92541a246ec52e83d9
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: LifeManager
@@ -733,6 +810,12 @@ ScriptsOnlyBuild:
     assemblyName: Cinemachine.dll
     namespaceName: Cinemachine
     className: CinemachineFixedSignal
+  - hash:
+      serializedVersion: 2
+      Hash: 070358f7f693920503733d4cec5dcaa1
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GroundEnemyPatrolFSM
   - hash:
       serializedVersion: 2
       Hash: 611bc970ee9dc090779a3fac6a18fac6
@@ -801,6 +884,12 @@ ScriptsOnlyBuild:
     className: MainMenu
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FiniteStateMachine
+  - hash:
+      serializedVersion: 2
       Hash: 7c792393fb82488bd20139dcc5ba26d8
     assemblyName: Cinemachine.dll
     namespaceName: Cinemachine
@@ -843,6 +932,12 @@ ScriptsOnlyBuild:
     className: CinemachineIndependentImpulseListener
   - hash:
       serializedVersion: 2
+      Hash: b32f61b825a3b0d803bce1f4d6a7cf11
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GroundEnemyCombatController
+  - hash:
+      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -855,10 +950,22 @@ ScriptsOnlyBuild:
     className: CinemachineTrackedDolly
   - hash:
       serializedVersion: 2
+      Hash: 13afedec6d881a091dfb03150f678e01
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AudioManager
+  - hash:
+      serializedVersion: 2
       Hash: aba7b2852ef61d175dd9602e7723d5e5
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Mask
+  - hash:
+      serializedVersion: 2
+      Hash: 4794bd2d519f6bfb6312c84805f685d9
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EnemyLifeController
   - hash:
       serializedVersion: 2
       Hash: e6d75f1a9bc0c6f7085df0baa077e688
@@ -957,6 +1064,18 @@ ScriptsOnlyBuild:
     className: CinemachineHardLockToTarget
   - hash:
       serializedVersion: 2
+      Hash: 26c1e2cbf241c210e598dd3e1a691736
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: BridgeAnimator
+  - hash:
+      serializedVersion: 2
+      Hash: 2c2e07ad01b4a9cc62117d023395f27a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: RecoverSoul
+  - hash:
+      serializedVersion: 2
       Hash: 2817ca294d966b0ab287608814baf6f1
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -999,6 +1118,12 @@ ScriptsOnlyBuild:
     className: TMP_ScrollbarEventHandler
   - hash:
       serializedVersion: 2
+      Hash: 1eb7cdf318c739fb5116effa2e62b020
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PauseUI
+  - hash:
+      serializedVersion: 2
       Hash: 32fce7b97c39bff4b4f6c0f53f7e6bf1
     assemblyName: Cinemachine.dll
     namespaceName: Cinemachine
@@ -1027,6 +1152,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SpikesController
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FXSource
   - hash:
       serializedVersion: 2
       Hash: b10612224b582cd177bed03a471aed85
@@ -1075,8 +1206,14 @@ ScriptsOnlyBuild:
     assemblyName: Cinemachine.dll
     namespaceName: Cinemachine
     className: CinemachineBlendListCamera
+  - hash:
+      serializedVersion: 2
+      Hash: 424ecfdc51897abd3bcc01949f7cdfd8
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: BridgePlayerAudio
   platform: 19
   scenePathNames:
   - Assets/Scenes/MainMenu.unity
   - Assets/Scenes/PrototypeScene.unity
-  playerPath: C:/Users/Chris/Desktop/UPC/Prototipo 1/Build/Regrets.exe
+  playerPath: C:/Users/Chris/Desktop/UPC/Prototipo 1/BuildPrueba/Regrets.exe

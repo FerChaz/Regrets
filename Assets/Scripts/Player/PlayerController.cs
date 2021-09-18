@@ -73,7 +73,7 @@ public class PlayerController : MonoBehaviour
         rigidBody = GetComponent<Rigidbody>();
         respawn.respawnPosition = new Vector3(0.0f, 0.0f, 0.0f);
         transform.position = respawn.respawnPosition;
-        audioManager = GetComponent<AudioManager>();
+        //audioManager = GetComponent<AudioManager>();
     }
 
     private void Update()
@@ -81,7 +81,7 @@ public class PlayerController : MonoBehaviour
         Flip();
         CheckGround();
         LastPositionInGround();
-        ChekTagGround();
+        //CheckTagGround();
     }
 
     private void FixedUpdate()
@@ -104,7 +104,7 @@ public class PlayerController : MonoBehaviour
             movement.Set(-speedMovement, rigidBody.velocity.y, 0.0f);
             rigidBody.velocity = movement;
 
-            bridgePlayerAnimator.PlayAnimation("Moving");          // MOVE ANIMATION
+            //bridgePlayerAnimator.PlayAnimation("Moving");          // MOVE ANIMATION
 
         }
         else if (Input.GetAxisRaw("Horizontal") > 0f && canMove)
@@ -112,7 +112,7 @@ public class PlayerController : MonoBehaviour
             movement.Set(speedMovement, rigidBody.velocity.y, 0.0f);
             rigidBody.velocity = movement;
 
-            bridgePlayerAnimator.PlayAnimation("Moving");          // MOVE ANIMATION
+            //bridgePlayerAnimator.PlayAnimation("Moving");          // MOVE ANIMATION
         }
         else
         {
@@ -132,8 +132,8 @@ public class PlayerController : MonoBehaviour
             movement.Set(0.0f, jumpForce, 0.0f);
             rigidBody.AddForce(movement, ForceMode.Impulse);
 
-            bridgePlayerAnimator.PlayAnimation("Jumping");          // JUMP ANIMATION
-            bridgePlayerAudio.ReproduceFX("Jump");                  // JUMP FX
+            //bridgePlayerAnimator.PlayAnimation("Jumping");          // JUMP ANIMATION
+            //bridgePlayerAudio.ReproduceFX("Jump");                  // JUMP FX
         }
         //else if (rigidBody.velocity.y < 0f){} 
         else
@@ -225,8 +225,8 @@ public class PlayerController : MonoBehaviour
 
         rigidBody.AddForce(movement, ForceMode.Impulse);
 
-        bridgePlayerAnimator.PlayAnimation("GettingDamage");          // KNOCKBACK / GET DAMAGE ANIMATION
-        bridgePlayerAudio.ReproduceFX("KnockBack");                   // KNOCKBACK / GET DAMAGE FX
+        //bridgePlayerAnimator.PlayAnimation("GettingDamage");          // KNOCKBACK / GET DAMAGE ANIMATION
+        //bridgePlayerAudio.ReproduceFX("KnockBack");                   // KNOCKBACK / GET DAMAGE FX
 
         StartCoroutine(WaitTime(timeToWait));
     }
@@ -237,8 +237,8 @@ public class PlayerController : MonoBehaviour
         movement.Set(0.0f, knockbackForce.y, 0.0f);
         rigidBody.AddForce(movement, ForceMode.Impulse);
 
-        bridgePlayerAnimator.PlayAnimation("GettingDamage");          // KNOCKBACK / GET DAMAGE ANIMATION
-        bridgePlayerAudio.ReproduceFX("KnockBack");                   // KNOCKBACK / GET DAMAGE FX
+        //bridgePlayerAnimator.PlayAnimation("GettingDamage");          // KNOCKBACK / GET DAMAGE ANIMATION
+        //bridgePlayerAudio.ReproduceFX("KnockBack");                   // KNOCKBACK / GET DAMAGE FX
 
         transform.position = respawnZone;
 
@@ -260,7 +260,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void ChekTagGround()
+    private void CheckTagGround()
     {
         /*RaycastHit hit;
         if (Physics.Raycast(transform.position, Vector3.up*-1,out hit,1.2f))
@@ -277,7 +277,8 @@ public class PlayerController : MonoBehaviour
         }*/
 
     }
-    public void OnTriggerStay(Collider other)
+
+    /*public void OnTriggerStay(Collider other)
     {
         if (other.tag == "Brick") audioManager.SelectAudio(1, 0.5f);
         else if (other.tag == "Wood") audioManager.SelectAudio(1, 0.5f);
@@ -285,7 +286,8 @@ public class PlayerController : MonoBehaviour
         else if (other.tag == "Stone") audioManager.SelectAudio(3, 0.5f);
         else if(other.tag == "Untagged") audioManager.SelectAudio(4, 0.5f);
 
-    }
+    }*/
+
     private void CheckGround()
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundCheckRadius, whatIsGround);
