@@ -58,7 +58,7 @@ public class PlayerController : MonoBehaviour
 
     public Vector3 lastPositionInGround;
 
-    private AudioManager audioManager;
+    //private AudioManager audioManager;
     //-- BRIDGES -------------------------------------------------------------------------------------------------------------------
 
     [Header("Bridges")]
