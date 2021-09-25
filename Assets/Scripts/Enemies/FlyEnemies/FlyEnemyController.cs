@@ -54,6 +54,13 @@ public class FlyEnemyController : MonoBehaviour
     public float distanceToPlayer;
 
 
+    //-- ON ENABLE ------------------------------------------------------------------------------------------------------------------
+
+    private void OnEnable()
+    {
+        player = GameObject.Find("Player");
+    }
+
     //-- START & UPDATE ------------------------------------------------------------------------------------------------------------
 
     private void Start()
@@ -61,7 +68,7 @@ public class FlyEnemyController : MonoBehaviour
         rigidBody = GetComponent<Rigidbody>();
         //_animator = GetComponent<Animator>();
 
-        facingDirection = 1;
+        //facingDirection = 1;
         alreadyFall = false;
         executed = false;
 

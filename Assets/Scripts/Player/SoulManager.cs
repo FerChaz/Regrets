@@ -5,15 +5,16 @@ using UnityEngine.UI;
 
 public class SoulManager : MonoBehaviour
 {
+    //-- VARIABLES -----------------------------------------------------------------------------------------------------------------
 
-    //-- VARIABLES ---------------------------------------------
-
+    [Header("Total Souls")]
     public IntValue soulCount;
 
+    [Header("UI")]
     public Text coinHUD;
 
 
-    //-- START -------------------------------------------------
+    //-- START ---------------------------------------------------------------------------------------------------------------------
 
     private void Start()
     {
@@ -21,7 +22,7 @@ public class SoulManager : MonoBehaviour
         coinHUD.text = soulCount.initialValue.ToString();
     }
 
-    //-- MODIFIERS ---------------------------------------------
+    //-- MODIFIERS -----------------------------------------------------------------------------------------------------------------
 
     public void AddSouls(int souls)
     {
@@ -39,4 +40,5 @@ public class SoulManager : MonoBehaviour
     {
         return soulCount.initialValue;
     }
+
 }

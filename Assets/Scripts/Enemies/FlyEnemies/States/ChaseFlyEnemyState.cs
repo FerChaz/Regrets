@@ -20,6 +20,7 @@ public class ChaseFlyEnemyState : State
         if (_enemyController != null)
         {
             _enemyController.isAnyStateRunning = true;
+            _enemyController.material.color = Color.blue;
         }
     }
 
@@ -39,6 +40,9 @@ public class ChaseFlyEnemyState : State
         }
     }
 
-    public override void ExitState() {}
+    public override void ExitState() 
+    {
+        _enemyController.material.color = Color.white;
+    }
 
 }

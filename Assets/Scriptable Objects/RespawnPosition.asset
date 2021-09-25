@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf54c43ab66a9cc40a424ad1ab7338fc, type: 3}
   m_Name: RespawnPosition
   m_EditorClassIdentifier: 
-  respawnPosition: {x: 0, y: 0, z: 0}
+  respawnPosition: {x: -283, y: -1.81, z: 0}

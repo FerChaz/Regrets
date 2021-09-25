@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float jumpForce;
     [SerializeField] private float fallingForce;
     private bool canJump = true;
+    //private bool finishKeyJump;
 
     [Header("Dash Variables")]
     [SerializeField] private float dashCooldown;
@@ -26,6 +27,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float dashTime;
     private bool canDash = true;
     private bool isDashing;
+    public bool dashEnabled;
 
     [Header("Knockback Variables")]
     [SerializeField] private float knockbackDuration;
@@ -39,6 +41,7 @@ public class PlayerController : MonoBehaviour
     public Transform groundCheck;
     [SerializeField] LayerMask whatIsGround;
     private bool isGrounded;
+    public Vector3 lastPositionInGround;
 
     [Header("Coroutine to wait time variables")]
     [SerializeField] private float timeToWait = 1;
@@ -56,9 +59,9 @@ public class PlayerController : MonoBehaviour
     [Header("Components")]
     private Rigidbody rigidBody;
 
-    public Vector3 lastPositionInGround;
-
     //private AudioManager audioManager;
+
+
     //-- BRIDGES -------------------------------------------------------------------------------------------------------------------
 
     [Header("Bridges")]
@@ -71,8 +74,8 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rigidBody = GetComponent<Rigidbody>();
-        respawn.respawnPosition = new Vector3(0.0f, 0.0f, 0.0f);
-        transform.position = respawn.respawnPosition;
+        respawn.respawnPosition = new Vector3(-283f, -1.81f, 0.0f);
+        //transform.position = respawn.respawnPosition;
         //audioManager = GetComponent<AudioManager>();
     }
 
@@ -88,14 +91,18 @@ public class PlayerController : MonoBehaviour
     {
         Move();
         Jump();
-        Dash();
+
+        if (dashEnabled)
+        {
+            Dash();
+        }
     }
 
-    //-- CHECKINPUT --------------------------------------------
+    //-- CHECKINPUT ----------------------------------------------------------------------------------------------------------------
 
     // PATRON COMMAND
-
-    //-- MOVE --------------------------------------------------
+    
+    //-- MOVE ----------------------------------------------------------------------------------------------------------------------
 
     private void Move()
     {
@@ -122,8 +129,8 @@ public class PlayerController : MonoBehaviour
             //bridgePlayerAnimator.PlayAnimation("Idle");            // IDLE ANIMATION
         }
     }
-
-    //-- JUMP --------------------------------------------------
+    
+    //-- JUMP ----------------------------------------------------------------------------------------------------------------------
 
     private void Jump()
     {
@@ -132,6 +139,7 @@ public class PlayerController : MonoBehaviour
             movement.Set(0.0f, jumpForce, 0.0f);
             rigidBody.AddForce(movement, ForceMode.Impulse);
 
+            //finishKeyJump = false;
             //bridgePlayerAnimator.PlayAnimation("Jumping");          // JUMP ANIMATION
             //bridgePlayerAudio.ReproduceFX("Jump");                  // JUMP FX
         }
@@ -141,9 +149,16 @@ public class PlayerController : MonoBehaviour
             rigidBody.AddForce(fallingForce * Physics.gravity);
             // AVISAR AL ANIMATOR QUE NO ESTA CAYENDO
         }
-    }
 
-    //-- DASH --------------------------------------------------
+
+        if (Input.GetButtonUp("Jump"))
+        {
+            //finishKeyJump = true;
+        }
+
+    }
+    
+    //-- DASH ----------------------------------------------------------------------------------------------------------------------
 
     private void Dash()
     {
@@ -186,8 +201,8 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-
-    //-- FLIP --------------------------------------------------
+    
+    //-- FLIP ----------------------------------------------------------------------------------------------------------------------
 
     private void Flip()
     {
@@ -206,8 +221,8 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-
-    //-- KNOCKBACK ---------------------------------------------
+    
+    //-- KNOCKBACK -----------------------------------------------------------------------------------------------------------------
 
     public void KnockBackGetFromEnemy(Vector3 direction)
     {
@@ -250,7 +265,13 @@ public class PlayerController : MonoBehaviour
         StartCoroutine(WaitTime(timeToWait));
     }
 
-    //-- OTHERS ------------------------------------------------
+    
+    //-- CHECKGROUND----------------------------------------------------------------------------------------------------------------
+
+    private void CheckGround()
+    {
+        isGrounded = Physics.CheckSphere(groundCheck.position, groundCheckRadius, whatIsGround);
+    }
 
     public void LastPositionInGround()
     {
@@ -260,6 +281,26 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+
+    //-- RESPAWN -------------------------------------------------------------------------------------------------------------------
+
+    public void Respawn()
+    {
+        // CAMBIAR PARA QUE NO SE PUEDA MOVER JUSTO CUANDO MUERE Y HACER UN FADE
+
+        transform.position = respawn.respawnPosition;
+
+        if (!isFacingRight)
+        {
+            Flip();
+        }
+
+        StartCoroutine(WaitTime(timeToWait + 1f));
+    }
+
+    
+    //-- AUDIO ---------------------------------------------------------------------------------------------------------------------
+    
     private void CheckTagGround()
     {
         /*RaycastHit hit;
@@ -288,40 +329,7 @@ public class PlayerController : MonoBehaviour
 
     }*/
 
-    private void CheckGround()
-    {
-        isGrounded = Physics.CheckSphere(groundCheck.position, groundCheckRadius, whatIsGround);
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.blue;
-        Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
-    }
-
-
-    public void Respawn()
-    {
-        // CAMBIAR PARA QUE NO SE PUEDA MOVER JUSTO CUANDO MUERE Y HACER UN FADE
-
-        transform.position = respawn.respawnPosition;
-
-        if (!isFacingRight)
-        {
-            Flip();
-        }
-
-        StartCoroutine(WaitTime(timeToWait + 1f));
-    }
-
-
-    public void ChangeCanDoAnyMovement()
-    {
-        canMove = !canMove;
-        canJump = !canJump;
-        canDash = !canDash;
-    }
-
+    //-- OTHERS --------------------------------------------------------------------------------------------------------------------
 
     IEnumerator WaitTime(float time)
     {
@@ -332,5 +340,19 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(time);
 
         ChangeCanDoAnyMovement();
+    }
+
+    public void ChangeCanDoAnyMovement()
+    {
+        canMove = !canMove;
+        canJump = !canJump;
+        canDash = !canDash;
+    }
+
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
     }
 }

@@ -19,7 +19,7 @@ public class ChaseGroundEnemyState : State
 
         if (_enemyController != null) 
         {
-            Debug.Log($"Init Chase State");
+            _enemyController.material.color = Color.blue;
         }
     }
 
@@ -52,7 +52,7 @@ public class ChaseGroundEnemyState : State
 
     public override void ExitState() 
     {
-        Debug.Log($"Exit Chase State");
+        _enemyController.material.color = Color.white;
     }
 
 

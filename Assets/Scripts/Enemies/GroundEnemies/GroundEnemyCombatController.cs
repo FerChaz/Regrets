@@ -13,6 +13,13 @@ public class GroundEnemyCombatController : MonoBehaviour
 
     public int damage;
 
+    //-- ON ENABLE ------------------------------------------------------------------------------------------------------------------
+
+    private void OnEnable()
+    {
+        _playerLife = FindObjectOfType<LifeManager>();
+    }
+
     //-- DO DAMAGE -----------------------------------------------------------------------------------------------------------------
 
     public void OnTriggerEnter(Collider other)
@@ -51,10 +58,13 @@ public class GroundEnemyCombatController : MonoBehaviour
 
     public void Execute()
     {
-        _playerLife.RestoreLife(1);
-        enemyFSM.StopAllCoroutines();
-        Destroy(gameObject);
-        enemyFSM.Death();
+        if (enemyController.executed)
+        {
+            _playerLife.RestoreLife(1);
+            enemyFSM.StopAllCoroutines();
+            Destroy(gameObject);
+            enemyFSM.Death();
+        }
     }
 
 }

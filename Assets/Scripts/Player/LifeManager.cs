@@ -40,6 +40,8 @@ public class LifeManager : MonoBehaviour
     {
         currentLife.initialValue = maxLife;
         colliderLifeManager = GetComponent<BoxCollider>();
+
+        playerController = GetComponentInParent<PlayerController>();
     }
 
 

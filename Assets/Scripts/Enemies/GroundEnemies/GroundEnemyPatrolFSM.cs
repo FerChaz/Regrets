@@ -33,6 +33,12 @@ public class GroundEnemyPatrolFSM : FiniteStateMachine
      * 
      */
 
+    //-- ON ENABLE ------------------------------------------------------------------------------------------------------------------
+
+    private void OnEnable()
+    {
+       _player = GameObject.Find("Player");
+    }
 
     //-- START ---------------------------------------------------------------------------------------------------------------------
 
@@ -41,7 +47,6 @@ public class GroundEnemyPatrolFSM : FiniteStateMachine
         SwitchState(_patrolState, _enemyController);
         StartCoroutine(PatrolControlCoroutine());
     }
-
 
     //-- COROUTINES ----------------------------------------------------------------------------------------------------------------
 

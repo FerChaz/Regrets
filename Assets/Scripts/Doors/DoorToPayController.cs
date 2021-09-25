@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DoorController : MonoBehaviour
+public class DoorToPayController : MonoBehaviour
 {
     //-- VARIABLE -----------------------------------------
 
@@ -26,6 +26,7 @@ public class DoorController : MonoBehaviour
     private void Start()
     {
         doorCollider = GetComponent<BoxCollider>();
+        souls = FindObjectOfType<SoulManager>();
     }
 
     //-- ENABLE/DISABLE -----------------------------------

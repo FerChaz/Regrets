@@ -9,6 +9,13 @@ public class SpikesController : MonoBehaviour
 
     public GameObject respawnZone;
 
+    //-- ON ENABLE ------------------------------------------------------------------------------------------------------------------
+
+    private void OnEnable()
+    {
+        lifeManager = FindObjectOfType<LifeManager>();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("LifeManager"))

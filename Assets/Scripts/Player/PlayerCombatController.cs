@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class PlayerCombatController : MonoBehaviour
 {
-
-    //-- VARIABLES ---------------------------------------------
+    //-- VARIABLES -----------------------------------------------------------------------------------------------------------------
 
     [SerializeField] private bool combatEnabled = true;
 
@@ -23,7 +22,7 @@ public class PlayerCombatController : MonoBehaviour
 
     private float[] attackDetails = new float[2];
 
-    //-- START -------------------------------------------------
+    //-- START & UPDATE ------------------------------------------------------------------------------------------------------------
 
     private void Start()
     {
@@ -31,8 +30,6 @@ public class PlayerCombatController : MonoBehaviour
         weaponAnimator = weapon.GetComponent<Animator>();
 
     }
-
-    //-- UPDATE ------------------------------------------------
 
     private void Update()
     {
@@ -47,6 +44,9 @@ public class PlayerCombatController : MonoBehaviour
             weapon.SetActive(false);
         }
     }
+
+    //-- ATTACK --------------------------------------------------------------------------------------------------------------------
+    // HAY QUE HACER OTRO SCRIPT SOLO PARA LA KATANA
 
     private void CheckCombatInput()
     {
@@ -82,6 +82,8 @@ public class PlayerCombatController : MonoBehaviour
         }
     }
 
+    //-- EXECUTED ------------------------------------------------------------------------------------------------------------------
+
     private void TryToExecute()
     {
         Collider[] detectedObjects = Physics.OverlapSphere(attackHitBoxPos.position, attack1Radius, whatIsDamageable);
@@ -95,10 +97,13 @@ public class PlayerCombatController : MonoBehaviour
     }
 
 
+    //-- AUXILIAR ------------------------------------------------------------------------------------------------------------------
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(attackHitBoxPos.position, attack1Radius);
     }
+
 
 }

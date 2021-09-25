@@ -23,6 +23,7 @@ public class ChargeFlyEnemyState : State
         {
             _enemyController.isAnyStateRunning = true;
             _totalChargeTime = 5;
+            _enemyController.material.color = Color.green;
         }
     }
 
@@ -45,5 +46,8 @@ public class ChargeFlyEnemyState : State
 
     }
 
-    public override void ExitState() {}
+    public override void ExitState()
+    {
+        _enemyController.material.color = Color.white;
+    }
 }

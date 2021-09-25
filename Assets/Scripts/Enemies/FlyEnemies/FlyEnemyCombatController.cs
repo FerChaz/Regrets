@@ -13,6 +13,13 @@ public class FlyEnemyCombatController : MonoBehaviour
 
     public int damage;
 
+    //-- ON ENABLE ------------------------------------------------------------------------------------------------------------------
+
+    private void OnEnable()
+    {
+        _playerLife = FindObjectOfType<LifeManager>();
+    }
+
     //-- DO DAMAGE -----------------------------------------------------------------------------------------------------------------
 
     public void OnTriggerEnter(Collider other)

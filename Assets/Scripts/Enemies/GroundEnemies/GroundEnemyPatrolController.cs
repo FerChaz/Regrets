@@ -7,7 +7,7 @@ public class GroundEnemyPatrolController : MonoBehaviour
     //-- VARIABLES ------------------------------------------------------------------
 
     [Header("Movement Variables")]
-    public int facingDirection = 1;
+    public int facingDirection;
     public int speed;
 
     [Header("Components")]
@@ -18,12 +18,12 @@ public class GroundEnemyPatrolController : MonoBehaviour
     [Header("Ground Check Variables")]
     [SerializeField] private Transform _groundCheck;
     [SerializeField] private float _groundCheckDistance;
-    public bool groundDetected;
+    public bool groundDetected = true;
 
     [Header("Wall Check Variables")]
     [SerializeField] private Transform _wallCheck;
     [SerializeField] private float _wallCheckDistance;
-    public bool wallDetected;
+    public bool wallDetected = false;
 
     [SerializeField] private LayerMask _whatIsGround;
 
@@ -46,6 +46,13 @@ public class GroundEnemyPatrolController : MonoBehaviour
     public GameObject player;
     public float distanceToPlayer;
 
+    //-- ON ENABLE ------------------------------------------------------------------------------------------------------------------
+
+    private void OnEnable()
+    {
+        player = GameObject.Find("Player");
+    }
+
     //-- START & UPDATE ------------------------------------------------------------------------------------------------------------
 
     private void Start()
@@ -53,7 +60,7 @@ public class GroundEnemyPatrolController : MonoBehaviour
         rigidBody = GetComponent<Rigidbody>();
         //_animator = GetComponent<Animator>();
 
-        facingDirection = 1;
+        //facingDirection = 1;
         alreadyFall = false;
         executed = false;
 

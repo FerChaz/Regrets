@@ -16,10 +16,7 @@ public class PatrolGroundEnemyState : State
     {
         _enemyController = param as GroundEnemyPatrolController;
 
-        if (_enemyController != null) 
-        {
-            Debug.Log($"Init Patrol State");
-        }
+        //if (_enemyController != null)  {}
     }
 
     public override void UpdateState(float delta)
@@ -27,10 +24,7 @@ public class PatrolGroundEnemyState : State
         ApplyMovement();
     }
 
-    public override void ExitState() 
-    {
-        Debug.Log($"Exit Patrol State");
-    }
+    public override void ExitState() {}
 
 
     //-- AUXILIAR ------------------------------------------------------------------------------------------------------------------
