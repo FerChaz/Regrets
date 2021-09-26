@@ -38,6 +38,7 @@ public class FlyEnemyController : MonoBehaviour
     public bool isAnyStateRunning = true;
     public bool canCheck;
     public bool executed;
+    public bool isFall = false;
     public bool alreadyFall;
 
     [Header("Chase & Attack Variables")]

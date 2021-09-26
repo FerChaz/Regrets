@@ -9,6 +9,7 @@ TagManager:
   - Wood
   - Ground
   - Stone
+  - Spikes
   layers:
   - Default
   - TransparentFX

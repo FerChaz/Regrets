@@ -22,9 +22,9 @@ public class GroundEnemyCombatController : MonoBehaviour
 
     //-- DO DAMAGE -----------------------------------------------------------------------------------------------------------------
 
-    public void OnTriggerEnter(Collider other)
+    public void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.CompareTag("LifeManager"))
+        if (other.gameObject.CompareTag("LifeManager") && !enemyController.isFall)
         {
             Vector3 hitDirection = transform.position;
 
@@ -58,13 +58,26 @@ public class GroundEnemyCombatController : MonoBehaviour
 
     public void Execute()
     {
-        if (enemyController.executed)
+        if (enemyController.isFall)
         {
+            enemyController.executed = true;
             _playerLife.RestoreLife(1);
             enemyFSM.StopAllCoroutines();
-            Destroy(gameObject);
+            enemyFSM.Death();
+            //Destroy(gameObject);
+        }
+    }
+
+    //-- SPIKES --------------------------------------------------------------------------------------------------------------------
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Spikes"))
+        {
+            enemyFSM.StopAllCoroutines();
             enemyFSM.Death();
         }
     }
+
 
 }

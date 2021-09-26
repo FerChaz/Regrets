@@ -24,7 +24,7 @@ public class FlyEnemyCombatController : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("LifeManager"))
+        if (other.gameObject.CompareTag("LifeManager") && !enemyController.isFall)
         {
             Vector3 hitDirection = transform.position;
 
@@ -56,11 +56,29 @@ public class FlyEnemyCombatController : MonoBehaviour
         }
     }
 
+    //-- EXECUTE -------------------------------------------------------------------------------------------------------------------
+
     public void Execute()
     {
-        _playerLife.RestoreLife(1);
-        enemyFSM.StopAllCoroutines();
-        //Destroy(gameObject);
-        enemyFSM.Death();
+        if (enemyController.isFall)
+        {
+            enemyController.executed = true;
+            _playerLife.RestoreLife(1);
+            enemyFSM.StopAllCoroutines();
+            enemyFSM.Death();
+            //Destroy(gameObject);
+        }
     }
+
+    //-- SPIKES --------------------------------------------------------------------------------------------------------------------
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Spikes"))
+        {
+            enemyFSM.StopAllCoroutines();
+            enemyFSM.Death();
+        }
+    }
+
 }

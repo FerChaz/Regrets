@@ -31,6 +31,7 @@ public class GroundEnemyPatrolController : MonoBehaviour
     public bool isAnyStateRunning = true;
     public bool executed;
     public bool alreadyFall;
+    public bool isFall = false;
     public bool canCheck;
     public float timeToRecover = 5;
 
