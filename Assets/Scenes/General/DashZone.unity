@@ -1730,7 +1730,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyController: {fileID: 63671945}
-  _player: {fileID: 0}
   _enemyLife: {fileID: 1491122839}
 --- !u!114 &63671945
 MonoBehaviour:
@@ -1760,6 +1759,7 @@ MonoBehaviour:
   isAnyStateRunning: 1
   executed: 0
   alreadyFall: 0
+  isFall: 0
   canCheck: 0
   timeToRecover: 5
   chaseVelocity: 5
@@ -1933,7 +1933,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 75199834}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -94.67, y: 23.37, z: 343.71655}
+  m_LocalPosition: {x: -172.5, y: 34.5, z: 343.71655}
   m_LocalScale: {x: 4.7002335, y: 4.4058504, z: 12.74}
   m_Children: []
   m_Father: {fileID: 1141536162}
@@ -7210,7 +7210,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyController: {fileID: 312213614}
-  _player: {fileID: 0}
   _enemyLife: {fileID: 1716492142}
 --- !u!114 &312213614
 MonoBehaviour:
@@ -7240,6 +7239,7 @@ MonoBehaviour:
   isAnyStateRunning: 1
   executed: 0
   alreadyFall: 0
+  isFall: 0
   canCheck: 0
   timeToRecover: 5
   chaseVelocity: 5
@@ -7812,7 +7812,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyController: {fileID: 340114335}
-  _player: {fileID: 0}
   _enemyLife: {fileID: 1476324898}
 --- !u!114 &340114335
 MonoBehaviour:
@@ -7842,6 +7841,7 @@ MonoBehaviour:
   isAnyStateRunning: 1
   executed: 0
   alreadyFall: 0
+  isFall: 0
   canCheck: 0
   timeToRecover: 5
   chaseVelocity: 5
@@ -8980,7 +8980,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyController: {fileID: 369997716}
-  _player: {fileID: 0}
   _enemyLife: {fileID: 1592214828}
 --- !u!114 &369997716
 MonoBehaviour:
@@ -9010,6 +9009,7 @@ MonoBehaviour:
   isAnyStateRunning: 1
   executed: 0
   alreadyFall: 0
+  isFall: 0
   canCheck: 0
   timeToRecover: 5
   chaseVelocity: 5
@@ -12862,7 +12862,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyController: {fileID: 563849597}
-  _player: {fileID: 0}
   _enemyLife: {fileID: 1407363127}
 --- !u!114 &563849597
 MonoBehaviour:
@@ -12892,6 +12891,7 @@ MonoBehaviour:
   isAnyStateRunning: 1
   executed: 0
   alreadyFall: 0
+  isFall: 0
   canCheck: 0
   timeToRecover: 5
   chaseVelocity: 5
@@ -13923,7 +13923,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyController: {fileID: 609477028}
-  _player: {fileID: 0}
   _enemyLife: {fileID: 985138527}
 --- !u!114 &609477028
 MonoBehaviour:
@@ -13953,6 +13952,7 @@ MonoBehaviour:
   isAnyStateRunning: 1
   executed: 0
   alreadyFall: 0
+  isFall: 0
   canCheck: 0
   timeToRecover: 5
   chaseVelocity: 5
@@ -17760,6 +17760,7 @@ MonoBehaviour:
   isAnyStateRunning: 1
   canCheck: 0
   executed: 0
+  isFall: 0
   alreadyFall: 0
   chaseSpeed: 7
   chaseRadius: 17.31
@@ -18018,6 +18019,7 @@ MonoBehaviour:
   isAnyStateRunning: 1
   canCheck: 0
   executed: 0
+  isFall: 0
   alreadyFall: 0
   chaseSpeed: 7
   chaseRadius: 17.31
@@ -19741,7 +19743,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyController: {fileID: 817598095}
-  _player: {fileID: 0}
   _enemyLife: {fileID: 1287209463}
 --- !u!114 &817598095
 MonoBehaviour:
@@ -19771,6 +19772,7 @@ MonoBehaviour:
   isAnyStateRunning: 1
   executed: 0
   alreadyFall: 0
+  isFall: 0
   canCheck: 0
   timeToRecover: 5
   chaseVelocity: 5
@@ -22480,7 +22482,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyController: {fileID: 902609401}
-  _player: {fileID: 0}
   _enemyLife: {fileID: 1320037474}
 --- !u!114 &902609401
 MonoBehaviour:
@@ -22510,6 +22511,7 @@ MonoBehaviour:
   isAnyStateRunning: 1
   executed: 0
   alreadyFall: 0
+  isFall: 0
   canCheck: 0
   timeToRecover: 5
   chaseVelocity: 5
@@ -23836,7 +23838,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyController: {fileID: 955887526}
-  _player: {fileID: 0}
   _enemyLife: {fileID: 2012450826}
 --- !u!114 &955887526
 MonoBehaviour:
@@ -23866,6 +23867,7 @@ MonoBehaviour:
   isAnyStateRunning: 1
   executed: 0
   alreadyFall: 0
+  isFall: 0
   canCheck: 0
   timeToRecover: 5
   chaseVelocity: 5
@@ -24022,7 +24024,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyController: {fileID: 957507735}
-  _player: {fileID: 0}
   _enemyLife: {fileID: 830246461}
 --- !u!114 &957507735
 MonoBehaviour:
@@ -24052,6 +24053,7 @@ MonoBehaviour:
   isAnyStateRunning: 1
   executed: 0
   alreadyFall: 0
+  isFall: 0
   canCheck: 0
   timeToRecover: 5
   chaseVelocity: 5
@@ -24538,7 +24540,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyController: {fileID: 982743310}
-  _player: {fileID: 0}
   _enemyLife: {fileID: 1121914646}
 --- !u!114 &982743310
 MonoBehaviour:
@@ -24568,6 +24569,7 @@ MonoBehaviour:
   isAnyStateRunning: 1
   executed: 0
   alreadyFall: 0
+  isFall: 0
   canCheck: 0
   timeToRecover: 5
   chaseVelocity: 5
@@ -25635,7 +25637,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyController: {fileID: 1018295215}
-  _player: {fileID: 0}
   _enemyLife: {fileID: 629061492}
 --- !u!114 &1018295215
 MonoBehaviour:
@@ -25665,6 +25666,7 @@ MonoBehaviour:
   isAnyStateRunning: 1
   executed: 0
   alreadyFall: 0
+  isFall: 0
   canCheck: 0
   timeToRecover: 5
   chaseVelocity: 5
@@ -26551,7 +26553,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyController: {fileID: 1041636912}
-  _player: {fileID: 0}
   _enemyLife: {fileID: 2041578972}
 --- !u!114 &1041636912
 MonoBehaviour:
@@ -26581,6 +26582,7 @@ MonoBehaviour:
   isAnyStateRunning: 1
   executed: 0
   alreadyFall: 0
+  isFall: 0
   canCheck: 0
   timeToRecover: 5
   chaseVelocity: 5
@@ -27219,6 +27221,7 @@ MonoBehaviour:
   isAnyStateRunning: 1
   canCheck: 0
   executed: 0
+  isFall: 0
   alreadyFall: 0
   chaseSpeed: 7
   chaseRadius: 17.31
@@ -27779,7 +27782,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyController: {fileID: 1072344146}
-  _player: {fileID: 0}
   _enemyLife: {fileID: 597236623}
 --- !u!114 &1072344146
 MonoBehaviour:
@@ -27809,6 +27811,7 @@ MonoBehaviour:
   isAnyStateRunning: 1
   executed: 0
   alreadyFall: 0
+  isFall: 0
   canCheck: 0
   timeToRecover: 5
   chaseVelocity: 5
@@ -28561,7 +28564,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyController: {fileID: 1090936880}
-  _player: {fileID: 0}
   _enemyLife: {fileID: 2140312517}
 --- !u!114 &1090936880
 MonoBehaviour:
@@ -28591,6 +28593,7 @@ MonoBehaviour:
   isAnyStateRunning: 1
   executed: 0
   alreadyFall: 0
+  isFall: 0
   canCheck: 0
   timeToRecover: 5
   chaseVelocity: 5
@@ -30509,7 +30512,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyController: {fileID: 1209075042}
-  _player: {fileID: 0}
   _enemyLife: {fileID: 236995775}
 --- !u!114 &1209075042
 MonoBehaviour:
@@ -30539,6 +30541,7 @@ MonoBehaviour:
   isAnyStateRunning: 1
   executed: 0
   alreadyFall: 0
+  isFall: 0
   canCheck: 0
   timeToRecover: 5
   chaseVelocity: 5
@@ -34146,6 +34149,7 @@ MonoBehaviour:
   isAnyStateRunning: 1
   canCheck: 0
   executed: 0
+  isFall: 0
   alreadyFall: 0
   chaseSpeed: 7
   chaseRadius: 17.31
@@ -41215,7 +41219,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyController: {fileID: 1675314930}
-  _player: {fileID: 0}
   _enemyLife: {fileID: 2099283483}
 --- !u!114 &1675314930
 MonoBehaviour:
@@ -41245,6 +41248,7 @@ MonoBehaviour:
   isAnyStateRunning: 1
   executed: 0
   alreadyFall: 0
+  isFall: 0
   canCheck: 0
   timeToRecover: 5
   chaseVelocity: 5
@@ -41528,7 +41532,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyController: {fileID: 1685250767}
-  _player: {fileID: 0}
   _enemyLife: {fileID: 1281844274}
 --- !u!114 &1685250767
 MonoBehaviour:
@@ -41558,6 +41561,7 @@ MonoBehaviour:
   isAnyStateRunning: 1
   executed: 0
   alreadyFall: 0
+  isFall: 0
   canCheck: 0
   timeToRecover: 5
   chaseVelocity: 5
@@ -42272,7 +42276,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyController: {fileID: 1701277117}
-  _player: {fileID: 0}
   _enemyLife: {fileID: 2094044523}
 --- !u!114 &1701277117
 MonoBehaviour:
@@ -42302,6 +42305,7 @@ MonoBehaviour:
   isAnyStateRunning: 1
   executed: 0
   alreadyFall: 0
+  isFall: 0
   canCheck: 0
   timeToRecover: 5
   chaseVelocity: 5
@@ -47834,6 +47838,7 @@ MonoBehaviour:
   isAnyStateRunning: 1
   canCheck: 0
   executed: 0
+  isFall: 0
   alreadyFall: 0
   chaseSpeed: 7
   chaseRadius: 17.31
@@ -49003,7 +49008,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyController: {fileID: 1979485441}
-  _player: {fileID: 0}
   _enemyLife: {fileID: 1648409609}
 --- !u!114 &1979485441
 MonoBehaviour:
@@ -49033,6 +49037,7 @@ MonoBehaviour:
   isAnyStateRunning: 1
   executed: 0
   alreadyFall: 0
+  isFall: 0
   canCheck: 0
   timeToRecover: 5
   chaseVelocity: 5
@@ -52286,6 +52291,7 @@ MonoBehaviour:
   isAnyStateRunning: 1
   canCheck: 0
   executed: 0
+  isFall: 0
   alreadyFall: 0
   chaseSpeed: 7
   chaseRadius: 17.31
@@ -52656,7 +52662,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyController: {fileID: 2110942529}
-  _player: {fileID: 0}
   _enemyLife: {fileID: 847517400}
 --- !u!114 &2110942529
 MonoBehaviour:
@@ -52686,6 +52691,7 @@ MonoBehaviour:
   isAnyStateRunning: 1
   executed: 0
   alreadyFall: 0
+  isFall: 0
   canCheck: 0
   timeToRecover: 5
   chaseVelocity: 5

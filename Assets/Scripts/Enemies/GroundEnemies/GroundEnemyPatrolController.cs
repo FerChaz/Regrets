@@ -29,8 +29,8 @@ public class GroundEnemyPatrolController : MonoBehaviour
 
     [Header("States Variables")]
     public bool isAnyStateRunning = true;
-    public bool executed;
-    public bool alreadyFall;
+    public bool executed = false;
+    public bool alreadyFall = false;
     public bool isFall = false;
     public bool canCheck;
     public float timeToRecover = 5;
@@ -61,14 +61,10 @@ public class GroundEnemyPatrolController : MonoBehaviour
         rigidBody = GetComponent<Rigidbody>();
         //_animator = GetComponent<Animator>();
 
-        //facingDirection = 1;
-        alreadyFall = false;
-        executed = false;
-
         material = GetComponent<Renderer>().material;
         material.color = Color.white;
 
-        distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
+        //distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
     }
 
     private void Update()

@@ -47,7 +47,8 @@ public class GroundEnemyCombatController : MonoBehaviour
         {
             if (enemyController.alreadyFall)
             {
-                Destroy(gameObject);
+                enemyFSM.StopAllCoroutines();
+                enemyFSM.Death();
             }
             else
             {

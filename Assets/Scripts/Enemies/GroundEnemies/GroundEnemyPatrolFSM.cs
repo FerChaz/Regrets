@@ -7,7 +7,7 @@ public class GroundEnemyPatrolFSM : FiniteStateMachine
     //-- VARIABLES -----------------------------------------------------------------------------------------------------------------
 
     [SerializeField] private GroundEnemyPatrolController _enemyController;
-    [SerializeField] private GameObject _player;
+    //[SerializeField] private GameObject _player;
     [SerializeField] private EnemyLifeController _enemyLife;
 
 
@@ -35,10 +35,10 @@ public class GroundEnemyPatrolFSM : FiniteStateMachine
 
     //-- ON ENABLE ------------------------------------------------------------------------------------------------------------------
 
-    private void OnEnable()
+    /*private void OnEnable()
     {
        _player = GameObject.Find("Player");
-    }
+    }*/
 
     //-- START ---------------------------------------------------------------------------------------------------------------------
 

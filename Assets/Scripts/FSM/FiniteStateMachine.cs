@@ -56,6 +56,7 @@ public class FiniteStateMachine : MonoBehaviour
 
         updateState(Time.deltaTime);
     }
+
     protected bool IsStateRunning(Type state)
     {
         return (currentState.GetType() == state);

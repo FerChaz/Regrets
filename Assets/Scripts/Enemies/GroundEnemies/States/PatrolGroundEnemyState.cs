@@ -15,8 +15,6 @@ public class PatrolGroundEnemyState : State
     public override void InitState<T>(T param)
     {
         _enemyController = param as GroundEnemyPatrolController;
-
-        //if (_enemyController != null)  {}
     }
 
     public override void UpdateState(float delta)
@@ -31,6 +29,7 @@ public class PatrolGroundEnemyState : State
 
     private void ApplyMovement()
     {
+        // SI ESTA CAYENDO QUE NO SE DE VUELTA
         if (!(_enemyController.groundDetected) || _enemyController.wallDetected)
         {
             _enemyController.Flip();
