@@ -11,4 +11,5 @@ public class AdditiveScenesInfo : ScriptableObject
     public Vector2 cameraMinPosition;
     public Vector2 cameraMaxPosition;
 
+    public string actualScene;
 }

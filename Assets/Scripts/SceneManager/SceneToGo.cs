@@ -1,17 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SceneToGo : MonoBehaviour
 {
-    public string sceneToGo;
+    // Este script es cuando salimos de una escena y pasamos a la siguiente
 
+    [Header("SceneToGoData")]
+    public string sceneToGo;
     public List<string> additiveScenesInSceneToGo;
+    public Vector3 playerPosition;
+
+    [Header("ScriptableObject")]
     public AdditiveScenesInfo additiveScenesInSceneToGoScriptableObject;
 
-    private AdditiveSceneManager _sceneManager;
 
-    public Vector3 playerPosition;
+    private AdditiveSceneManager _sceneManager;
+    private string _actualScene;
 
     private void Start()
     {
@@ -22,14 +28,19 @@ public class SceneToGo : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            _sceneManager.UnloadActualScenesInAdditive(sceneToGo);
+            _actualScene = SceneManager.GetActiveScene().name;
+            additiveScenesInSceneToGoScriptableObject.playerPositionToGo = playerPosition;
+
+            // ADDITIVE SCENE MANAGER
+            _sceneManager.ChangeScene(sceneToGo);
+
+            _sceneManager.UnloadScenesInAdditive(sceneToGo);
 
             additiveScenesInSceneToGoScriptableObject.additiveScenes.Clear();
             additiveScenesInSceneToGoScriptableObject.additiveScenes = additiveScenesInSceneToGo;
 
-            additiveScenesInSceneToGoScriptableObject.playerPositionToGo = playerPosition;
+            _sceneManager.UnloadActualScene(_actualScene);
 
-            _sceneManager.ChangeScene(sceneToGo);
         }
     }
 }

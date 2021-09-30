@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Checkpoint : MonoBehaviour
 {
-    public RespawnPosition respawn;
+    public RespawnInfo respawn;
 
     public ParticleSystem particle;
 
@@ -15,12 +16,10 @@ public class Checkpoint : MonoBehaviour
             if(transform.position != respawn.respawnPosition)
             {
                 respawn.respawnPosition = transform.position;
+                respawn.sceneToRespawn = SceneManager.GetActiveScene().name;
                 particle.Play();
             }
         }
     }
 
-    // 
-    // particula = other.GetComponentInChildren<ParticleSystem>();
-    // 
 }

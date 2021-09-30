@@ -30,7 +30,7 @@ public class LifeManager : MonoBehaviour
     public GameObject deathFade;
 
     [Header("Recover")]
-    public RecoverSoul soulsToRecover;
+    public RecoverSoulsInfo soulsToRecover;
     public GameObject modelToShow;
 
 
@@ -115,16 +115,6 @@ public class LifeManager : MonoBehaviour
         deathFade.SetActive(true);
 
         // ACTIVAR ANIMACION
-        int totalSouls = soulsController.TotalSouls();
-
-        // MODIFICAR PARA TENER UNA VARIABLE (PUEDE SER UN SCRIPTABLE OBJECT) QUE MANTENGA LA ÚLTIMA POSICION "CAMINABLE"
-        
-        soulsToRecover.deathPosition = playerController.lastPositionInGround;
-        soulsToRecover.deathPosition.y += 2.5f;
-        soulsToRecover.totalSouls = totalSouls;
-        soulsController.DiscountSouls(totalSouls);
-        modelToShow.SetActive(true);
-
         playerController.Respawn();
         currentLife.initialValue = maxLife;
         playerHealthSignal.Raise(); // CHANGE UI

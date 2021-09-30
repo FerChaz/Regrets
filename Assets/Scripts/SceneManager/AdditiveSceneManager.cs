@@ -5,11 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class AdditiveSceneManager : MonoBehaviour
 {
+    [Header("ScriptableObject")]
     public AdditiveScenesInfo additiveScenesScriptableObject;
 
+    [Header("DontDestroyOnLoad")]
     public GameObject playerToLoad;
     public GameObject cameraToLoad;
 
+    [Header("AdditiveScenes")]
     public List<string> additiveScenes;
 
     private void Start()
@@ -26,8 +29,6 @@ public class AdditiveSceneManager : MonoBehaviour
         DontDestroyOnLoad(playerToLoad);
         DontDestroyOnLoad(cameraToLoad);
 
-        SceneManager.LoadScene(sceneToGo);
-
         playerToLoad.transform.position = additiveScenesScriptableObject.playerPositionToGo;
     }
 
@@ -40,7 +41,7 @@ public class AdditiveSceneManager : MonoBehaviour
         }
     }
 
-    public void UnloadActualScenesInAdditive(string sceneToGo)
+    public void UnloadScenesInAdditive(string sceneToGo)
     {
         for (int i = 0; i < additiveScenes.Count; i++)
         {
@@ -49,6 +50,11 @@ public class AdditiveSceneManager : MonoBehaviour
                 SceneManager.UnloadSceneAsync(additiveScenes[i]);
             }
         }
+    }
+
+    public void UnloadActualScene(string sceneToUnload)
+    {
+        SceneManager.UnloadSceneAsync(sceneToUnload);
     }
 
 }

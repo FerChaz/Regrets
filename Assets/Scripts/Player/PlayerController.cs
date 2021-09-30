@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float dashTime;
     private bool canDash = true;
     private bool isDashing;
-    public bool dashEnabled;
+    public bool dashEnabled = true;
 
     [Header("Knockback Variables")]
     [SerializeField] private float knockbackDuration;
@@ -47,7 +47,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float timeToWait = 1;
 
     [Header("Respawn")]
-    public RespawnPosition respawn;
+    public RespawnInfo respawn;
+    public DeathRespawnAndRecover deathRespawn;
 
     [Header("Camera")]
     public Transform cameraPosition;
@@ -77,6 +78,8 @@ public class PlayerController : MonoBehaviour
         respawn.respawnPosition = new Vector3(-283f, -1.81f, 0.0f);
         //transform.position = respawn.respawnPosition;
         //audioManager = GetComponent<AudioManager>();
+
+        deathRespawn = GetComponent<DeathRespawnAndRecover>();
     }
 
     private void Update()
@@ -91,11 +94,8 @@ public class PlayerController : MonoBehaviour
     {
         Move();
         Jump();
-
-        if (dashEnabled)
-        {
-            Dash();
-        }
+        Dash();
+        
     }
 
     //-- CHECKINPUT ----------------------------------------------------------------------------------------------------------------
@@ -288,7 +288,7 @@ public class PlayerController : MonoBehaviour
     {
         // CAMBIAR PARA QUE NO SE PUEDA MOVER JUSTO CUANDO MUERE Y HACER UN FADE
 
-        transform.position = respawn.respawnPosition;
+        deathRespawn.Respawn();
 
         if (!isFacingRight)
         {

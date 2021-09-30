@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class ChargeAdditiveScenes : MonoBehaviour
 {
+    // Este script es cuando recien entramos a una escena
+
+    [Header("EnableAndDisableObjects")]
     public GameObject activableObjects;
     public List<GameObject> otherEntrances;
+
+
     private AdditiveSceneManager sceneManager;
 
     private void Start()
