@@ -33985,7 +33985,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 858348fd4503dfe4e85cbe71f91cf807, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLife: 3
+  maxLife: 20
   currentLife: 0
 --- !u!4 &1799022546
 Transform:

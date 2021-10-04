@@ -117,7 +117,7 @@ public class FlyEnemyFSM : FiniteStateMachine
 
         if (IsStateRunning(_knockbackState.GetType()))
         {
-            ResetInitValues(_knockbackState, _enemyController);
+            ResetInitValues(_enemyController);
         }
         else
         {

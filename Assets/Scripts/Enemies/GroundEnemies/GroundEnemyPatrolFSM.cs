@@ -84,7 +84,16 @@ public class GroundEnemyPatrolFSM : FiniteStateMachine
     {
         StopAllCoroutines();
 
-        SwitchState(_knockbackState, _enemyController);
+        if (IsStateRunning(_knockbackState.GetType()))
+        {
+            ResetInitValues(_enemyController);
+            Debug.Log($"Entra aca");
+        }
+        else
+        {
+            SwitchState(_knockbackState, _enemyController);
+        }
+
         StartCoroutine(KnockBackControlCoroutine());
     }
 

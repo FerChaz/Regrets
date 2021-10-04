@@ -22,9 +22,10 @@ public class KnockbackGroundEnemyState : State
 
         if (_enemyController != null)
         {
+            Debug.Log($"Init Knockback State");
             _enemyController.isAnyStateRunning = true;
             ApplyKnockback();
-            _timeToWait = 0.8f;
+            _timeToWait = 5f;
             _knockbackTime = _enemyController.knockbackDuration;
             _enemyController.material.color = Color.red;
         }

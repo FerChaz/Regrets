@@ -36,7 +36,7 @@ public class FiniteStateMachine : MonoBehaviour
         updateState = currentState.UpdateState;
     }
 
-    protected virtual void ResetInitValues<T>(State state, T param)
+    protected virtual void ResetInitValues<T>(T param)
     {
         if (currentState != null)
         {
