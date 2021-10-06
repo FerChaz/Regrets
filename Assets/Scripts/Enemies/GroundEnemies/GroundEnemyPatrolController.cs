@@ -29,7 +29,7 @@ public class GroundEnemyPatrolController : MonoBehaviour
 
     [Header("States Variables")]
     public bool isAnyStateRunning = true;
-    public bool executed = false;
+    //public bool executed = false;
     public bool alreadyFall = false;
     public bool isFall = false;
     public bool canCheck;

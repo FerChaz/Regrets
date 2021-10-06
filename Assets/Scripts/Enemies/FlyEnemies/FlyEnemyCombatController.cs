@@ -10,6 +10,7 @@ public class FlyEnemyCombatController : MonoBehaviour
     [SerializeField] private FlyEnemyController enemyController;
     [SerializeField] private EnemyLifeController _enemyLife;
     [SerializeField] private LifeManager _playerLife;
+    [SerializeField] private SoulManager _playerSouls;
 
     public int damage;
 
@@ -18,6 +19,7 @@ public class FlyEnemyCombatController : MonoBehaviour
     private void OnEnable()
     {
         _playerLife = FindObjectOfType<LifeManager>();
+        _playerSouls = FindObjectOfType<SoulManager>();
     }
 
     //-- DO DAMAGE -----------------------------------------------------------------------------------------------------------------
@@ -47,7 +49,8 @@ public class FlyEnemyCombatController : MonoBehaviour
         {
             if (enemyController.alreadyFall)
             {
-                Destroy(gameObject);
+                _playerSouls.AddSouls(2);
+                enemyFSM.Death();
             }
             else
             {
@@ -62,11 +65,10 @@ public class FlyEnemyCombatController : MonoBehaviour
     {
         if (enemyController.isFall)
         {
-            enemyController.executed = true;
+            //enemyController.executed = true;
             _playerLife.RestoreLife(1);
-            enemyFSM.StopAllCoroutines();
+            _playerSouls.AddSouls(2);
             enemyFSM.Death();
-            //Destroy(gameObject);
         }
     }
 
@@ -76,7 +78,7 @@ public class FlyEnemyCombatController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Spikes"))
         {
-            enemyFSM.StopAllCoroutines();
+            _playerSouls.AddSouls(2);
             enemyFSM.Death();
         }
     }

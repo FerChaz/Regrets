@@ -87,7 +87,6 @@ public class GroundEnemyPatrolFSM : FiniteStateMachine
         if (IsStateRunning(_knockbackState.GetType()))
         {
             ResetInitValues(_enemyController);
-            Debug.Log($"Entra aca");
         }
         else
         {
@@ -134,22 +133,26 @@ public class GroundEnemyPatrolFSM : FiniteStateMachine
             yield return null;
         }
 
-        if (_enemyController.executed)
-        {
-            Death();
-        }
-        else if (_enemyController.distanceToPlayer < _enemyController.chaseRadius)
+        //if (_enemyController.executed)
+        //{
+        //    Death();
+        //}
+        //else 
+
+        _enemyLife.RestoreTotalLife();
+
+        if (_enemyController.distanceToPlayer < _enemyController.chaseRadius)
         {
             SwitchState(_chaseState, _enemyController);
             StartCoroutine(ChaseControlCoroutine());
-            _enemyLife.RestoreTotalLife();
         }
         else
         {
             SwitchState(_patrolState, _enemyController);
             StartCoroutine(PatrolControlCoroutine());
-            _enemyLife.RestoreTotalLife();
         }
+
+        
     }
 
 

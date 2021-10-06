@@ -10,6 +10,7 @@ public class GroundEnemyCombatController : MonoBehaviour
     [SerializeField] private GroundEnemyPatrolController enemyController;
     [SerializeField] private EnemyLifeController _enemyLife;
     [SerializeField] private LifeManager _playerLife;
+    [SerializeField] private SoulManager _playerSouls;
 
     public int damage;
 
@@ -18,6 +19,7 @@ public class GroundEnemyCombatController : MonoBehaviour
     private void OnEnable()
     {
         _playerLife = FindObjectOfType<LifeManager>();
+        _playerSouls = FindObjectOfType<SoulManager>();
     }
 
     //-- DO DAMAGE -----------------------------------------------------------------------------------------------------------------
@@ -47,7 +49,7 @@ public class GroundEnemyCombatController : MonoBehaviour
         {
             if (enemyController.alreadyFall)
             {
-                enemyFSM.StopAllCoroutines();
+                _playerSouls.AddSouls(1);
                 enemyFSM.Death();
             }
             else
@@ -61,11 +63,10 @@ public class GroundEnemyCombatController : MonoBehaviour
     {
         if (enemyController.isFall)
         {
-            enemyController.executed = true;
+            //enemyController.executed = true;
             _playerLife.RestoreLife(1);
-            enemyFSM.StopAllCoroutines();
+            _playerSouls.AddSouls(1);
             enemyFSM.Death();
-            //Destroy(gameObject);
         }
     }
 
@@ -75,7 +76,7 @@ public class GroundEnemyCombatController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Spikes"))
         {
-            enemyFSM.StopAllCoroutines();
+            _playerSouls.AddSouls(1);
             enemyFSM.Death();
         }
     }

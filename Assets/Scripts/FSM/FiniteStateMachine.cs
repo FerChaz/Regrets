@@ -38,7 +38,7 @@ public class FiniteStateMachine : MonoBehaviour
 
     protected virtual void ResetInitValues<T>(T param)
     {
-        if (currentState != null)
+        if (currentState == null)
         {
             return;
         }

@@ -7133,6 +7133,7 @@ MonoBehaviour:
   additiveScenesScriptableObject: {fileID: 11400000, guid: f345fc04864938a4b8f05d6929e96ad6, type: 2}
   playerToLoad: {fileID: 0}
   cameraToLoad: {fileID: 0}
+  canvasToLoad: {fileID: 0}
   additiveScenes: []
 --- !u!4 &515897401
 Transform:
@@ -9842,7 +9843,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d3b1e8dd2995754880965c145b945d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soulsToOpen: 3
+  soulsToOpen: 10
   canvas: {fileID: 1256661965}
   panelSearch: {fileID: 485626414}
   panelOptions: {fileID: 1375070822}
@@ -9860,8 +9861,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 11.057556, y: 2.9184904, z: 11.687441}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 11.057556, y: 1.3906341, z: 11.687441}
+  m_Center: {x: 0, y: -0.7639282, z: 0}
 --- !u!4 &773204814
 Transform:
   m_ObjectHideFlags: 0
@@ -14311,9 +14312,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: ChangeCanDoAnyMovement
+      - m_Target: {fileID: 773204812}
+        m_TargetAssemblyTypeName: DoorToPayController, Assembly-CSharp
+        m_MethodName: EnableDisablePlayerMovement
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -17237,8 +17238,8 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1256661965}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 54.90592}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 485626415}
@@ -17249,7 +17250,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 266.04614, y: 149.54176}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1256661967
@@ -21451,9 +21452,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: ChangeCanDoAnyMovement
+      - m_Target: {fileID: 773204812}
+        m_TargetAssemblyTypeName: DoorToPayController, Assembly-CSharp
+        m_MethodName: EnableDisablePlayerMovement
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -21461,7 +21462,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &1658815927
 MonoBehaviour:
@@ -25122,9 +25123,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: ChangeCanDoAnyMovement
+      - m_Target: {fileID: 773204812}
+        m_TargetAssemblyTypeName: DoorToPayController, Assembly-CSharp
+        m_MethodName: EnableDisablePlayerMovement
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -21,12 +21,15 @@ public class DoorToPayController : MonoBehaviour
 
     public Text textToShow;
 
+    private PlayerController player;
+
     //-- START --------------------------------------------
 
     private void Start()
     {
         doorCollider = GetComponent<BoxCollider>();
         souls = FindObjectOfType<SoulManager>();
+        player = FindObjectOfType<PlayerController>();
     }
 
     //-- ENABLE/DISABLE -----------------------------------
@@ -63,5 +66,12 @@ public class DoorToPayController : MonoBehaviour
         {
             textToShow.text = "Not enough cash stranger";
         }
+    }
+
+    //-- ENABLE/DISABLE PLAYER MOVEMENT
+
+    public void EnableDisablePlayerMovement()
+    {
+        player.ChangeCanDoAnyMovement();
     }
 }

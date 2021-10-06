@@ -164,27 +164,28 @@ public class FlyEnemyFSM : FiniteStateMachine
             yield return null;
         }
 
-        if (_enemyController.executed)
-        {
-            Death();
-        }
-        else if (_enemyController.distanceToPlayer < _enemyController.chaseRadius && _enemyController.distanceToPlayer > _enemyController.attackRadius)
+        //if (_enemyController.executed)
+        //{
+        //    Death();
+        //}
+        //else
+        _enemyLife.RestoreTotalLife();
+
+        if (_enemyController.distanceToPlayer < _enemyController.chaseRadius && _enemyController.distanceToPlayer > _enemyController.attackRadius)
         {
             SwitchState(_chaseState, _enemyController);
             StartCoroutine(ChaseControlCoroutine());
-            _enemyLife.RestoreTotalLife();
+            
         }
         else if (_enemyController.distanceToPlayer <= _enemyController.attackRadius)
         {
             SwitchState(_chargeState, _enemyController);
             StartCoroutine(ChaseControlCoroutine());
-            _enemyLife.RestoreTotalLife();
         }
         else
         {
             SwitchState(_idleState, _enemyController);
             StartCoroutine(IdleControlCoroutine());
-            _enemyLife.RestoreTotalLife();
         }
     }
 

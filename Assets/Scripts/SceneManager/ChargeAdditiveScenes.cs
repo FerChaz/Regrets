@@ -10,8 +10,9 @@ public class ChargeAdditiveScenes : MonoBehaviour
     public GameObject activableObjects;
     public List<GameObject> otherEntrances;
 
-
     private AdditiveSceneManager sceneManager;
+
+    // FALTARIA ACTUALIZAR LOS LIMITES DE LA CAMARA ACA
 
     private void Start()
     {

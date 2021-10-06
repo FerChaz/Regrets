@@ -11,6 +11,7 @@ public class AdditiveSceneManager : MonoBehaviour
     [Header("DontDestroyOnLoad")]
     public GameObject playerToLoad;
     public GameObject cameraToLoad;
+    public GameObject canvasToLoad;
 
     [Header("AdditiveScenes")]
     public List<string> additiveScenes;
@@ -19,6 +20,7 @@ public class AdditiveSceneManager : MonoBehaviour
     {
         playerToLoad = GameObject.Find("Player");
         cameraToLoad = GameObject.Find("Main Camera");
+        canvasToLoad = GameObject.Find("Canvas");
 
         additiveScenes = additiveScenesScriptableObject.additiveScenes;
     }
@@ -28,6 +30,7 @@ public class AdditiveSceneManager : MonoBehaviour
     {
         DontDestroyOnLoad(playerToLoad);
         DontDestroyOnLoad(cameraToLoad);
+        DontDestroyOnLoad(canvasToLoad);
 
         playerToLoad.transform.position = additiveScenesScriptableObject.playerPositionToGo;
     }
@@ -40,6 +43,13 @@ public class AdditiveSceneManager : MonoBehaviour
             SceneManager.LoadSceneAsync(additiveScenes[i], LoadSceneMode.Additive);
         }
     }
+
+    public void LoadSceneInAdditive(string sceneToLoad)
+    {
+        SceneManager.LoadSceneAsync(sceneToLoad, LoadSceneMode.Additive);
+    }
+
+
 
     public void UnloadScenesInAdditive(string sceneToGo)
     {

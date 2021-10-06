@@ -9,6 +9,10 @@ public class StartingScene : MonoBehaviour
     public AdditiveScenesInfo additiveScenesScriptableObject;
     public List<string> scenesToLoadInAdditive;
 
+    public GameObject _loadingCanvas;
+
+    private string intro = "Intro";
+
     public Vector3 playerPosition;
 
     private void Start()
@@ -19,8 +23,9 @@ public class StartingScene : MonoBehaviour
 
         // ADDITIVE SCENE MANAGER
         sceneManager.additiveScenes = scenesToLoadInAdditive;
-        sceneManager.LoadScenesInAdditive();
-        sceneManager.ChangeScene("Intro");
+        sceneManager.LoadSceneInAdditive(intro);
+        sceneManager.ChangeScene(intro);
 
+        _loadingCanvas.SetActive(false);
     }
 }

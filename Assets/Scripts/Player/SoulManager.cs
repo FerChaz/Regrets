@@ -18,7 +18,7 @@ public class SoulManager : MonoBehaviour
 
     private void Start()
     {
-        soulCount.initialValue = 5;
+        soulCount.initialValue = 0;
         coinHUD.text = soulCount.initialValue.ToString();
     }
 

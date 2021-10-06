@@ -22774,7 +22774,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1044446117
 Transform:
   m_ObjectHideFlags: 0
@@ -23794,6 +23794,7 @@ MonoBehaviour:
   additiveScenesScriptableObject: {fileID: 11400000, guid: f345fc04864938a4b8f05d6929e96ad6, type: 2}
   playerToLoad: {fileID: 0}
   cameraToLoad: {fileID: 0}
+  canvasToLoad: {fileID: 0}
   additiveScenes: []
 --- !u!4 &1144193833
 Transform:
@@ -32834,7 +32835,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   isAnyStateRunning: 1
-  executed: 0
   alreadyFall: 0
   isFall: 0
   canCheck: 0
@@ -32956,6 +32956,7 @@ MonoBehaviour:
   enemyController: {fileID: 1730370760}
   _enemyLife: {fileID: 1799022545}
   _playerLife: {fileID: 0}
+  _playerSouls: {fileID: 0}
   damage: 1
 --- !u!1001 &1735553201
 PrefabInstance:
@@ -35612,13 +35613,14 @@ GameObject:
   - component: {fileID: 1893825711}
   - component: {fileID: 1893825713}
   - component: {fileID: 1893825712}
+  - component: {fileID: 1893825714}
   m_Layer: 0
   m_Name: Entrance
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1893825711
 Transform:
   m_ObjectHideFlags: 0
@@ -35627,7 +35629,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1893825710}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -19.93, y: 0, z: 0}
+  m_LocalPosition: {x: -225.22, y: -1.44, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1144193833}
@@ -35661,6 +35663,18 @@ MonoBehaviour:
   activableObjects: {fileID: 2007860528}
   otherEntrances:
   - {fileID: 1044446116}
+--- !u!114 &1893825714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1893825710}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b95702a242504a48b930af805a8eb9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1898220874
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37178,7 +37192,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2007860529
 Transform:
   m_ObjectHideFlags: 0
@@ -38197,7 +38211,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2118403454
 MonoBehaviour:
   m_ObjectHideFlags: 0

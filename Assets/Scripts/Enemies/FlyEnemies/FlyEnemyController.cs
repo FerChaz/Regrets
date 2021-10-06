@@ -37,7 +37,7 @@ public class FlyEnemyController : MonoBehaviour
     [Header("States Variables")]
     public bool isAnyStateRunning = true;
     public bool canCheck;
-    public bool executed;
+    //public bool executed;
     public bool isFall = false;
     public bool alreadyFall;
 
@@ -71,7 +71,7 @@ public class FlyEnemyController : MonoBehaviour
 
         //facingDirection = 1;
         alreadyFall = false;
-        executed = false;
+        //executed = false;
 
         material = GetComponent<Renderer>().material;
         material.color = Color.white;

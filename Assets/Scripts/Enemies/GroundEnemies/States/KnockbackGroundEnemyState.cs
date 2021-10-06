@@ -22,7 +22,6 @@ public class KnockbackGroundEnemyState : State
 
         if (_enemyController != null)
         {
-            Debug.Log($"Init Knockback State");
             _enemyController.isAnyStateRunning = true;
             ApplyKnockback();
             _timeToWait = 5f;
@@ -44,7 +43,7 @@ public class KnockbackGroundEnemyState : State
 
         if (_knockbackTime > 0)
         {
-            _movement.Set(_enemyController.knockbackForce * _direction, 0.0f, 0.0f);
+            _movement.Set(_enemyController.knockbackForce * _direction, _enemyController.rigidBody.velocity.y, 0.0f);
             _enemyController.rigidBody.velocity = _movement;
             _knockbackTime -= delta;
         }

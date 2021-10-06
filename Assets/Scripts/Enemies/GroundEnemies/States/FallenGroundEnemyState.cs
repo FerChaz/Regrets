@@ -35,7 +35,7 @@ public class FallenGroundEnemyState : State
 
     public override void UpdateState(float delta)
     {
-        if (_enemyController.executed || _timeToRecover <= 0)
+        if (_timeToRecover <= 0)       // (_enemyController.executed || _timeToRecover <= 0)
         {
             _enemyController.alreadyFall = true;
             _enemyController.isAnyStateRunning = false;
