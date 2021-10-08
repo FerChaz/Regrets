@@ -26,7 +26,7 @@ public class AdditiveSceneManager : MonoBehaviour
     }
 
 
-    public void ChangeScene(string sceneToGo)
+    public void ChangeScene()
     {
         DontDestroyOnLoad(playerToLoad);
         DontDestroyOnLoad(cameraToLoad);

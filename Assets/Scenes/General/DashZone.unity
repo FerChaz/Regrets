@@ -1700,6 +1700,7 @@ MonoBehaviour:
   enemyController: {fileID: 63671945}
   _enemyLife: {fileID: 1491122839}
   _playerLife: {fileID: 0}
+  _playerSouls: {fileID: 0}
   damage: 1
 --- !u!54 &63671943
 Rigidbody:
@@ -1757,7 +1758,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   isAnyStateRunning: 1
-  executed: 0
   alreadyFall: 0
   isFall: 0
   canCheck: 0
@@ -7180,6 +7180,7 @@ MonoBehaviour:
   enemyController: {fileID: 312213614}
   _enemyLife: {fileID: 1716492142}
   _playerLife: {fileID: 0}
+  _playerSouls: {fileID: 0}
   damage: 1
 --- !u!54 &312213612
 Rigidbody:
@@ -7237,7 +7238,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   isAnyStateRunning: 1
-  executed: 0
   alreadyFall: 0
   isFall: 0
   canCheck: 0
@@ -7782,6 +7782,7 @@ MonoBehaviour:
   enemyController: {fileID: 340114335}
   _enemyLife: {fileID: 1476324898}
   _playerLife: {fileID: 0}
+  _playerSouls: {fileID: 0}
   damage: 1
 --- !u!54 &340114333
 Rigidbody:
@@ -7839,7 +7840,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   isAnyStateRunning: 1
-  executed: 0
   alreadyFall: 0
   isFall: 0
   canCheck: 0
@@ -8950,6 +8950,7 @@ MonoBehaviour:
   enemyController: {fileID: 369997716}
   _enemyLife: {fileID: 1592214828}
   _playerLife: {fileID: 0}
+  _playerSouls: {fileID: 0}
   damage: 1
 --- !u!54 &369997714
 Rigidbody:
@@ -9007,7 +9008,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   isAnyStateRunning: 1
-  executed: 0
   alreadyFall: 0
   isFall: 0
   canCheck: 0
@@ -12832,6 +12832,7 @@ MonoBehaviour:
   enemyController: {fileID: 563849597}
   _enemyLife: {fileID: 1407363127}
   _playerLife: {fileID: 0}
+  _playerSouls: {fileID: 0}
   damage: 1
 --- !u!54 &563849595
 Rigidbody:
@@ -12889,7 +12890,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   isAnyStateRunning: 1
-  executed: 0
   alreadyFall: 0
   isFall: 0
   canCheck: 0
@@ -13893,6 +13893,7 @@ MonoBehaviour:
   enemyController: {fileID: 609477028}
   _enemyLife: {fileID: 985138527}
   _playerLife: {fileID: 0}
+  _playerSouls: {fileID: 0}
   damage: 1
 --- !u!54 &609477026
 Rigidbody:
@@ -13950,7 +13951,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   isAnyStateRunning: 1
-  executed: 0
   alreadyFall: 0
   isFall: 0
   canCheck: 0
@@ -17711,6 +17711,7 @@ MonoBehaviour:
   enemyController: {fileID: 761842813}
   _enemyLife: {fileID: 1508686123}
   _playerLife: {fileID: 0}
+  _playerSouls: {fileID: 0}
   damage: 1
 --- !u!114 &761842812
 MonoBehaviour:
@@ -17759,7 +17760,6 @@ MonoBehaviour:
     m_Bits: 64
   isAnyStateRunning: 1
   canCheck: 0
-  executed: 0
   isFall: 0
   alreadyFall: 0
   chaseSpeed: 7
@@ -17970,6 +17970,7 @@ MonoBehaviour:
   enemyController: {fileID: 764421854}
   _enemyLife: {fileID: 1787611613}
   _playerLife: {fileID: 0}
+  _playerSouls: {fileID: 0}
   damage: 1
 --- !u!114 &764421853
 MonoBehaviour:
@@ -18018,7 +18019,6 @@ MonoBehaviour:
     m_Bits: 64
   isAnyStateRunning: 1
   canCheck: 0
-  executed: 0
   isFall: 0
   alreadyFall: 0
   chaseSpeed: 7
@@ -19713,6 +19713,7 @@ MonoBehaviour:
   enemyController: {fileID: 817598095}
   _enemyLife: {fileID: 1287209463}
   _playerLife: {fileID: 0}
+  _playerSouls: {fileID: 0}
   damage: 1
 --- !u!54 &817598093
 Rigidbody:
@@ -19770,7 +19771,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   isAnyStateRunning: 1
-  executed: 0
   alreadyFall: 0
   isFall: 0
   canCheck: 0
@@ -22452,6 +22452,7 @@ MonoBehaviour:
   enemyController: {fileID: 902609401}
   _enemyLife: {fileID: 1320037474}
   _playerLife: {fileID: 0}
+  _playerSouls: {fileID: 0}
   damage: 1
 --- !u!54 &902609399
 Rigidbody:
@@ -22509,7 +22510,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   isAnyStateRunning: 1
-  executed: 0
   alreadyFall: 0
   isFall: 0
   canCheck: 0
@@ -23808,6 +23808,7 @@ MonoBehaviour:
   enemyController: {fileID: 955887526}
   _enemyLife: {fileID: 2012450826}
   _playerLife: {fileID: 0}
+  _playerSouls: {fileID: 0}
   damage: 1
 --- !u!54 &955887524
 Rigidbody:
@@ -23865,7 +23866,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   isAnyStateRunning: 1
-  executed: 0
   alreadyFall: 0
   isFall: 0
   canCheck: 0
@@ -23994,6 +23994,7 @@ MonoBehaviour:
   enemyController: {fileID: 957507735}
   _enemyLife: {fileID: 830246461}
   _playerLife: {fileID: 0}
+  _playerSouls: {fileID: 0}
   damage: 1
 --- !u!54 &957507733
 Rigidbody:
@@ -24051,7 +24052,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   isAnyStateRunning: 1
-  executed: 0
   alreadyFall: 0
   isFall: 0
   canCheck: 0
@@ -24510,6 +24510,7 @@ MonoBehaviour:
   enemyController: {fileID: 982743310}
   _enemyLife: {fileID: 1121914646}
   _playerLife: {fileID: 0}
+  _playerSouls: {fileID: 0}
   damage: 1
 --- !u!54 &982743308
 Rigidbody:
@@ -24567,7 +24568,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   isAnyStateRunning: 1
-  executed: 0
   alreadyFall: 0
   isFall: 0
   canCheck: 0
@@ -25607,6 +25607,7 @@ MonoBehaviour:
   enemyController: {fileID: 1018295215}
   _enemyLife: {fileID: 629061492}
   _playerLife: {fileID: 0}
+  _playerSouls: {fileID: 0}
   damage: 1
 --- !u!54 &1018295213
 Rigidbody:
@@ -25664,7 +25665,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   isAnyStateRunning: 1
-  executed: 0
   alreadyFall: 0
   isFall: 0
   canCheck: 0
@@ -26523,6 +26523,7 @@ MonoBehaviour:
   enemyController: {fileID: 1041636912}
   _enemyLife: {fileID: 2041578972}
   _playerLife: {fileID: 0}
+  _playerSouls: {fileID: 0}
   damage: 1
 --- !u!54 &1041636910
 Rigidbody:
@@ -26580,7 +26581,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   isAnyStateRunning: 1
-  executed: 0
   alreadyFall: 0
   isFall: 0
   canCheck: 0
@@ -27172,6 +27172,7 @@ MonoBehaviour:
   enemyController: {fileID: 1059433549}
   _enemyLife: {fileID: 1743434582}
   _playerLife: {fileID: 0}
+  _playerSouls: {fileID: 0}
   damage: 1
 --- !u!114 &1059433548
 MonoBehaviour:
@@ -27220,7 +27221,6 @@ MonoBehaviour:
     m_Bits: 64
   isAnyStateRunning: 1
   canCheck: 0
-  executed: 0
   isFall: 0
   alreadyFall: 0
   chaseSpeed: 7
@@ -27752,6 +27752,7 @@ MonoBehaviour:
   enemyController: {fileID: 1072344146}
   _enemyLife: {fileID: 597236623}
   _playerLife: {fileID: 0}
+  _playerSouls: {fileID: 0}
   damage: 1
 --- !u!54 &1072344144
 Rigidbody:
@@ -27809,7 +27810,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   isAnyStateRunning: 1
-  executed: 0
   alreadyFall: 0
   isFall: 0
   canCheck: 0
@@ -28265,6 +28265,67 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 52bd415e8a4c00443a1c4e86c280cd34, type: 3}
   m_PrefabInstance: {fileID: 1085076839}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1085273316
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6896665038082074468, guid: 8af40d9a049a44945b674cba3bfeece9, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6896665038082074468, guid: 8af40d9a049a44945b674cba3bfeece9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -216.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6896665038082074468, guid: 8af40d9a049a44945b674cba3bfeece9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6896665038082074468, guid: 8af40d9a049a44945b674cba3bfeece9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6896665038082074468, guid: 8af40d9a049a44945b674cba3bfeece9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6896665038082074468, guid: 8af40d9a049a44945b674cba3bfeece9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6896665038082074468, guid: 8af40d9a049a44945b674cba3bfeece9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6896665038082074468, guid: 8af40d9a049a44945b674cba3bfeece9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6896665038082074468, guid: 8af40d9a049a44945b674cba3bfeece9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6896665038082074468, guid: 8af40d9a049a44945b674cba3bfeece9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6896665038082074468, guid: 8af40d9a049a44945b674cba3bfeece9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6896665038082074521, guid: 8af40d9a049a44945b674cba3bfeece9, type: 3}
+      propertyPath: m_Name
+      value: RecoverSouls
+      objectReference: {fileID: 0}
+    - target: {fileID: 6896665038082074522, guid: 8af40d9a049a44945b674cba3bfeece9, type: 3}
+      propertyPath: sceneOfGameObject
+      value: DashZone
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8af40d9a049a44945b674cba3bfeece9, type: 3}
 --- !u!1 &1085431923
 GameObject:
   m_ObjectHideFlags: 0
@@ -28297,6 +28358,7 @@ MonoBehaviour:
   additiveScenesScriptableObject: {fileID: 11400000, guid: f345fc04864938a4b8f05d6929e96ad6, type: 2}
   playerToLoad: {fileID: 0}
   cameraToLoad: {fileID: 0}
+  canvasToLoad: {fileID: 0}
   additiveScenes: []
 --- !u!4 &1085431925
 Transform:
@@ -28534,6 +28596,7 @@ MonoBehaviour:
   enemyController: {fileID: 1090936880}
   _enemyLife: {fileID: 2140312517}
   _playerLife: {fileID: 0}
+  _playerSouls: {fileID: 0}
   damage: 1
 --- !u!54 &1090936878
 Rigidbody:
@@ -28591,7 +28654,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   isAnyStateRunning: 1
-  executed: 0
   alreadyFall: 0
   isFall: 0
   canCheck: 0
@@ -30482,6 +30544,7 @@ MonoBehaviour:
   enemyController: {fileID: 1209075042}
   _enemyLife: {fileID: 236995775}
   _playerLife: {fileID: 0}
+  _playerSouls: {fileID: 0}
   damage: 1
 --- !u!54 &1209075040
 Rigidbody:
@@ -30539,7 +30602,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   isAnyStateRunning: 1
-  executed: 0
   alreadyFall: 0
   isFall: 0
   canCheck: 0
@@ -34100,6 +34162,7 @@ MonoBehaviour:
   enemyController: {fileID: 1360501684}
   _enemyLife: {fileID: 105696232}
   _playerLife: {fileID: 0}
+  _playerSouls: {fileID: 0}
   damage: 1
 --- !u!114 &1360501683
 MonoBehaviour:
@@ -34148,7 +34211,6 @@ MonoBehaviour:
     m_Bits: 64
   isAnyStateRunning: 1
   canCheck: 0
-  executed: 0
   isFall: 0
   alreadyFall: 0
   chaseSpeed: 7
@@ -41189,6 +41251,7 @@ MonoBehaviour:
   enemyController: {fileID: 1675314930}
   _enemyLife: {fileID: 2099283483}
   _playerLife: {fileID: 0}
+  _playerSouls: {fileID: 0}
   damage: 1
 --- !u!54 &1675314928
 Rigidbody:
@@ -41246,7 +41309,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   isAnyStateRunning: 1
-  executed: 0
   alreadyFall: 0
   isFall: 0
   canCheck: 0
@@ -41502,6 +41564,7 @@ MonoBehaviour:
   enemyController: {fileID: 1685250767}
   _enemyLife: {fileID: 1281844274}
   _playerLife: {fileID: 0}
+  _playerSouls: {fileID: 0}
   damage: 1
 --- !u!54 &1685250765
 Rigidbody:
@@ -41559,7 +41622,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   isAnyStateRunning: 1
-  executed: 0
   alreadyFall: 0
   isFall: 0
   canCheck: 0
@@ -42246,6 +42308,7 @@ MonoBehaviour:
   enemyController: {fileID: 1701277117}
   _enemyLife: {fileID: 2094044523}
   _playerLife: {fileID: 0}
+  _playerSouls: {fileID: 0}
   damage: 1
 --- !u!54 &1701277115
 Rigidbody:
@@ -42303,7 +42366,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   isAnyStateRunning: 1
-  executed: 0
   alreadyFall: 0
   isFall: 0
   canCheck: 0
@@ -43592,8 +43654,8 @@ MonoBehaviour:
   additiveScenesInSceneToGo:
   - DashZone
   - Conexion
-  additiveScenesInSceneToGoScriptableObject: {fileID: 11400000, guid: f345fc04864938a4b8f05d6929e96ad6, type: 2}
   playerPosition: {x: 72, y: -331, z: 0}
+  additiveScenesInSceneToGoScriptableObject: {fileID: 11400000, guid: f345fc04864938a4b8f05d6929e96ad6, type: 2}
 --- !u!1001 &1743688187
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47149,6 +47211,53 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 52bd415e8a4c00443a1c4e86c280cd34, type: 3}
   m_PrefabInstance: {fileID: 1873150238}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1876130905
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1876130907}
+  - component: {fileID: 1876130906}
+  m_Layer: 0
+  m_Name: LimboController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1876130906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1876130905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f2a0376761296349b4b8d32c17bda84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  limboInfo: {fileID: 11400000, guid: 4ca05c4432d5c7c4fb7410f830c269c0, type: 2}
+  _playerToLoad: {fileID: 0}
+  _cameraToLoad: {fileID: 0}
+  _canvasToLoad: {fileID: 0}
+--- !u!4 &1876130907
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1876130905}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 34.33694, y: -81.69032, z: -69.3579}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1881381153
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47789,6 +47898,7 @@ MonoBehaviour:
   enemyController: {fileID: 1911364503}
   _enemyLife: {fileID: 1210192459}
   _playerLife: {fileID: 0}
+  _playerSouls: {fileID: 0}
   damage: 1
 --- !u!114 &1911364502
 MonoBehaviour:
@@ -47837,7 +47947,6 @@ MonoBehaviour:
     m_Bits: 64
   isAnyStateRunning: 1
   canCheck: 0
-  executed: 0
   isFall: 0
   alreadyFall: 0
   chaseSpeed: 7
@@ -48978,6 +49087,7 @@ MonoBehaviour:
   enemyController: {fileID: 1979485441}
   _enemyLife: {fileID: 1648409609}
   _playerLife: {fileID: 0}
+  _playerSouls: {fileID: 0}
   damage: 1
 --- !u!54 &1979485439
 Rigidbody:
@@ -49035,7 +49145,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   isAnyStateRunning: 1
-  executed: 0
   alreadyFall: 0
   isFall: 0
   canCheck: 0
@@ -51460,8 +51569,8 @@ MonoBehaviour:
   - DashZone
   - Conexion
   - PreBoss
-  additiveScenesInSceneToGoScriptableObject: {fileID: 11400000, guid: f345fc04864938a4b8f05d6929e96ad6, type: 2}
   playerPosition: {x: 65, y: -104, z: 0}
+  additiveScenesInSceneToGoScriptableObject: {fileID: 11400000, guid: f345fc04864938a4b8f05d6929e96ad6, type: 2}
 --- !u!1001 &2086611554
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -52242,6 +52351,7 @@ MonoBehaviour:
   enemyController: {fileID: 2105760694}
   _enemyLife: {fileID: 1966057676}
   _playerLife: {fileID: 0}
+  _playerSouls: {fileID: 0}
   damage: 1
 --- !u!114 &2105760693
 MonoBehaviour:
@@ -52290,7 +52400,6 @@ MonoBehaviour:
     m_Bits: 64
   isAnyStateRunning: 1
   canCheck: 0
-  executed: 0
   isFall: 0
   alreadyFall: 0
   chaseSpeed: 7
@@ -52632,6 +52741,7 @@ MonoBehaviour:
   enemyController: {fileID: 2110942529}
   _enemyLife: {fileID: 847517400}
   _playerLife: {fileID: 0}
+  _playerSouls: {fileID: 0}
   damage: 1
 --- !u!54 &2110942527
 Rigidbody:
@@ -52689,7 +52799,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   isAnyStateRunning: 1
-  executed: 0
   alreadyFall: 0
   isFall: 0
   canCheck: 0

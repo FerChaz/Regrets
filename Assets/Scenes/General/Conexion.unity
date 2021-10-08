@@ -3664,6 +3664,7 @@ MonoBehaviour:
   additiveScenesScriptableObject: {fileID: 11400000, guid: f345fc04864938a4b8f05d6929e96ad6, type: 2}
   playerToLoad: {fileID: 0}
   cameraToLoad: {fileID: 0}
+  canvasToLoad: {fileID: 0}
   additiveScenes: []
 --- !u!4 &594889495
 Transform:
@@ -5617,6 +5618,114 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 929853890}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &934206083
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 934206085}
+  - component: {fileID: 934206084}
+  m_Layer: 0
+  m_Name: LimboController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &934206084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 934206083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f2a0376761296349b4b8d32c17bda84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  limboInfo: {fileID: 11400000, guid: 4ca05c4432d5c7c4fb7410f830c269c0, type: 2}
+  _playerToLoad: {fileID: 0}
+  _cameraToLoad: {fileID: 0}
+  _canvasToLoad: {fileID: 0}
+--- !u!4 &934206085
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 934206083}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 34.33694, y: -81.69032, z: -69.3579}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &974247672
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6896665038082074468, guid: 8af40d9a049a44945b674cba3bfeece9, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6896665038082074468, guid: 8af40d9a049a44945b674cba3bfeece9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -216.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6896665038082074468, guid: 8af40d9a049a44945b674cba3bfeece9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6896665038082074468, guid: 8af40d9a049a44945b674cba3bfeece9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6896665038082074468, guid: 8af40d9a049a44945b674cba3bfeece9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6896665038082074468, guid: 8af40d9a049a44945b674cba3bfeece9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6896665038082074468, guid: 8af40d9a049a44945b674cba3bfeece9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6896665038082074468, guid: 8af40d9a049a44945b674cba3bfeece9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6896665038082074468, guid: 8af40d9a049a44945b674cba3bfeece9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6896665038082074468, guid: 8af40d9a049a44945b674cba3bfeece9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6896665038082074468, guid: 8af40d9a049a44945b674cba3bfeece9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6896665038082074521, guid: 8af40d9a049a44945b674cba3bfeece9, type: 3}
+      propertyPath: m_Name
+      value: RecoverSouls
+      objectReference: {fileID: 0}
+    - target: {fileID: 6896665038082074522, guid: 8af40d9a049a44945b674cba3bfeece9, type: 3}
+      propertyPath: sceneOfGameObject
+      value: Conexion
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8af40d9a049a44945b674cba3bfeece9, type: 3}
 --- !u!1001 &991280297
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -28,11 +28,13 @@ public class SceneToGo : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            _actualScene = SceneManager.GetActiveScene().name;
+            _actualScene = additiveScenesInSceneToGoScriptableObject.actualScene;
             additiveScenesInSceneToGoScriptableObject.playerPositionToGo = playerPosition;
 
             // ADDITIVE SCENE MANAGER
-            _sceneManager.ChangeScene(sceneToGo);
+            _sceneManager.ChangeScene();
+
+            additiveScenesInSceneToGoScriptableObject.actualScene = sceneToGo;
 
             _sceneManager.UnloadScenesInAdditive(sceneToGo);
 

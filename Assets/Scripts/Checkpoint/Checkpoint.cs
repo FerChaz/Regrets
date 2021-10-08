@@ -5,20 +5,44 @@ using UnityEngine.SceneManagement;
 
 public class Checkpoint : MonoBehaviour
 {
-    public RespawnInfo respawn;
+    public RespawnInfo respawnInfo;
+    public List<string> scenesToChargeInAdditive;
+    public AdditiveScenesInfo additiveScenesInSceneToGoScriptableObject;
 
     public ParticleSystem particle;
 
+    public GameObject objectsToActivate;
+    public List<GameObject> entrancesToDisable;
+
+    
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            if(transform.position != respawn.respawnPosition)
+            if (respawnInfo.isRespawning)
             {
-                respawn.respawnPosition = transform.position;
-                respawn.sceneToRespawn = SceneManager.GetActiveScene().name;
+                respawnInfo.isRespawning = false;
+                Revive();
+            }
+            else if (respawnInfo.respawnPosition != transform.position)              // Si la informacion del respawn esta en otro respawn la actualizo
+            {
+                respawnInfo.respawnPosition = transform.position;
+                respawnInfo.sceneToRespawn = additiveScenesInSceneToGoScriptableObject.actualScene;
+                respawnInfo.additiveScenesToCharge = scenesToChargeInAdditive;
+                respawnInfo.checkpointActivename = gameObject.name;
+
                 particle.Play();
             }
+        }
+    }
+
+    public void Revive()
+    {
+        objectsToActivate.SetActive(true);
+
+        foreach (GameObject entrance in entrancesToDisable)
+        {
+            entrance.SetActive(false);
         }
     }
 

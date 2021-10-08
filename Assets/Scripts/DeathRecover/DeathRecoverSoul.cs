@@ -11,24 +11,26 @@ public class DeathRecoverSoul : MonoBehaviour
     public SoulManager soulController;
     public ParticleSystem particle;
 
+    public string sceneOfGameObject;
 
     // JUGAR CON AWAKE, START, ON ENABLE
 
 
-    // CUANDO PREGUNTAMOS POR LA ESCENA PREGUNTAR SI NO ES NULL
-    private void Start()
+    private void Awake()
     {
-        if (recoverData.deathScene != SceneManager.GetActiveScene().name)
+        if (recoverData.deathScene != sceneOfGameObject)       // Almacenar en otro lado el nombre de la escena por las additive scenes
         {
             gameObject.SetActive(false);
         }
-        else
-        {
-            soulController = FindObjectOfType<SoulManager>();
-            transform.position = recoverData.deathPosition;
-            _totalSouls = recoverData.totalSouls;
-            particle.Play();
-        }
+    }
+    
+    // CUANDO PREGUNTAMOS POR LA ESCENA PREGUNTAR SI NO ES NULL
+    private void Start()
+    {
+        soulController = FindObjectOfType<SoulManager>();
+        transform.position = recoverData.deathPosition;
+        _totalSouls = recoverData.totalSouls;
+        particle.Play();
     }
 
 

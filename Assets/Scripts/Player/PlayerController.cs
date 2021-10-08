@@ -282,13 +282,13 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    //-- RESPAWN -------------------------------------------------------------------------------------------------------------------
+    //-- DEATH ---------------------------------------------------------------------------------------------------------------------
 
-    public void Respawn()
+    public void Death()
     {
         // CAMBIAR PARA QUE NO SE PUEDA MOVER JUSTO CUANDO MUERE Y HACER UN FADE
 
-        deathRespawn.Respawn();
+        deathRespawn.Death();
 
         if (!isFacingRight)
         {

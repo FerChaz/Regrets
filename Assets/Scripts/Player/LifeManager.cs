@@ -115,7 +115,7 @@ public class LifeManager : MonoBehaviour
         deathFade.SetActive(true);
 
         // ACTIVAR ANIMACION
-        playerController.Respawn();
+        playerController.Death();
         currentLife.initialValue = maxLife;
         playerHealthSignal.Raise(); // CHANGE UI
     }

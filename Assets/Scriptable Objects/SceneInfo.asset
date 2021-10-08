@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0b783448fe4734348a02e2a8e7d50ce3, type: 3}
-  m_Name: AdditiveSceneInfo
+  m_Name: SceneInfo
   m_EditorClassIdentifier: 
   additiveScenes:
   - Intro
   playerPositionToGo: {x: -89, y: 0, z: 0}
   cameraMinPosition: {x: 0, y: 0}
   cameraMaxPosition: {x: 0, y: 0}
+  actualScene: Intro
