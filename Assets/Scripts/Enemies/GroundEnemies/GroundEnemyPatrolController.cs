@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GroundEnemyPatrolController : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class GroundEnemyPatrolController : MonoBehaviour
     public Rigidbody rigidBody;
     public Material material;
     //public Animator _animator;
+    public GameObject model;
 
     [Header("Ground Check Variables")]
     [SerializeField] private Transform _groundCheck;
@@ -29,7 +31,6 @@ public class GroundEnemyPatrolController : MonoBehaviour
 
     [Header("States Variables")]
     public bool isAnyStateRunning = true;
-    //public bool executed = false;
     public bool alreadyFall = false;
     public bool isFall = false;
     public bool canCheck;
@@ -42,6 +43,10 @@ public class GroundEnemyPatrolController : MonoBehaviour
     [Header("Knockback Variables")]
     public float knockbackForce = 3;
     public float knockbackDuration = 1;
+
+    [Header("Canvas Variables")]
+    public GameObject canvas;
+    public Image canvasImage;
 
     [Header("Player")]
     public GameObject player;
@@ -81,8 +86,16 @@ public class GroundEnemyPatrolController : MonoBehaviour
     public void Flip()
     {
         facingDirection *= -1;
-        transform.Rotate(0.0f, 180.0f, 0.0f);
+        model.transform.Rotate(0.0f, 180.0f, 0.0f);
     }
+
+    public void CanvasTimeController(float timeToPass)
+    {
+        float totalTime = 5f;
+        float normalicedActualBar = timeToPass / totalTime;
+        canvasImage.fillAmount = normalicedActualBar;
+    }
+
 
     private void OnDrawGizmos()
     {

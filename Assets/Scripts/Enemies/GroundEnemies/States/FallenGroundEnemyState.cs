@@ -28,6 +28,8 @@ public class FallenGroundEnemyState : State
             _enemyController.rigidBody.velocity = _movement;
 
             _enemyController.material.color = Color.black;
+
+            _enemyController.canvas.SetActive(true);
             // ACTIVAR ANIMACION O EFECTO DE PARTICULAS
             // ACTIVAR CANVAS DE EJECUTAR
         }
@@ -43,6 +45,7 @@ public class FallenGroundEnemyState : State
         else
         {
             _timeToRecover -= delta;
+            _enemyController.CanvasTimeController(_timeToRecover);
         }
     }
 
@@ -50,6 +53,7 @@ public class FallenGroundEnemyState : State
     {
         _enemyController.isFall = false;
         _enemyController.material.color = Color.white;
+        _enemyController.canvas.SetActive(true);
         // DESACTIVAR CANVAS
     }
 
