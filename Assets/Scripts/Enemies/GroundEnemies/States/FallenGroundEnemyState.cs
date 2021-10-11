@@ -22,6 +22,7 @@ public class FallenGroundEnemyState : State
         {
             _enemyController.isAnyStateRunning = true;
             _enemyController.isFall = true;
+
             _timeToRecover = _enemyController.timeToRecover;
 
             _movement.Set(0.0f, _enemyController.rigidBody.velocity.y, 0.0f);
@@ -31,13 +32,12 @@ public class FallenGroundEnemyState : State
 
             _enemyController.canvas.SetActive(true);
             // ACTIVAR ANIMACION O EFECTO DE PARTICULAS
-            // ACTIVAR CANVAS DE EJECUTAR
         }
     }
 
     public override void UpdateState(float delta)
     {
-        if (_timeToRecover <= 0)       // (_enemyController.executed || _timeToRecover <= 0)
+        if (_timeToRecover <= 0)
         {
             _enemyController.alreadyFall = true;
             _enemyController.isAnyStateRunning = false;
@@ -53,8 +53,7 @@ public class FallenGroundEnemyState : State
     {
         _enemyController.isFall = false;
         _enemyController.material.color = Color.white;
-        _enemyController.canvas.SetActive(true);
-        // DESACTIVAR CANVAS
+        _enemyController.canvas.SetActive(false);
     }
 
 }

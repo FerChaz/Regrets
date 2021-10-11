@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float dashTime;
     private bool canDash = true;
     private bool isDashing;
-    public bool dashEnabled = true;
+    public bool dashEnabled;        // Guardar en persistencia
 
     [Header("Knockback Variables")]
     [SerializeField] private float knockbackDuration;
@@ -94,7 +94,12 @@ public class PlayerController : MonoBehaviour
     {
         Move();
         Jump();
-        Dash();
+
+        if (dashEnabled)
+        {
+            Dash();
+        }
+       
         
     }
 

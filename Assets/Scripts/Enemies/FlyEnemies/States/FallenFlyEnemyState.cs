@@ -9,7 +9,7 @@ public class FallenFlyEnemyState : State
     private FlyEnemyController _enemyController;
     private Vector3 _movement;
 
-    private float _timeToRecover = 5;
+    private float _timeToRecover;
 
 
     //-- INIT, UPDATE & EXIT -------------------------------------------------------------------------------------------------------
@@ -22,20 +22,22 @@ public class FallenFlyEnemyState : State
         {
             _enemyController.isAnyStateRunning = true;
             _enemyController.isFall = true;
-            _timeToRecover = 5;
+
+            _timeToRecover = _enemyController.timeToRecover;
 
             _movement.Set(0.0f, 0.0f, 0.0f);
             _enemyController.rigidBody.velocity = _movement;
 
             _enemyController.material.color = Color.black;
+
+            _enemyController.canvas.SetActive(true);
             // ACTIVAR ANIMACION O EFECTO DE PARTICULAS
-            // ACTIVAR CANVAS DE EJECUTAR
         }
     }
 
     public override void UpdateState(float delta)
     {
-        if (_timeToRecover <= 0)           //(_enemyController.executed || _timeToRecover <= 0)
+        if (_timeToRecover <= 0)
         {
             _enemyController.alreadyFall = true;
             _enemyController.isAnyStateRunning = false;
@@ -44,6 +46,7 @@ public class FallenFlyEnemyState : State
         {
             
             _timeToRecover -= delta;
+            _enemyController.CanvasTimeController(_timeToRecover);
         }
 
         if (!_enemyController.groundDetected)
@@ -61,5 +64,6 @@ public class FallenFlyEnemyState : State
     {
         _enemyController.isFall = false;
         _enemyController.material.color = Color.white;
+        _enemyController.canvas.SetActive(false);
     }
 }

@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1680
     height: 967
   m_ShowMode: 4
-  m_Title: Project
+  m_Title: Scene
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -122,7 +122,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 62
+  controlID: 133
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 63
+  controlID: 62
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -172,7 +172,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 64
+  controlID: 63
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -398,20 +398,20 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 82470000
+      m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: f8e0feff1eedfeff6409ffff8e15ffff5e31ffff3832ffff943effff5c5affffe25affffde66fffffe82ffffc69fffffd0acffffaeb0ffff32ccffffeedbfffffce9ffff18f8ffff3c5f0000646000006c73000012a000003aa1000076af00009eb000001cc3000044c400007ed20000a6d300009ed4000038de000060df0000
+      m_ExpandedIDs: 08eff7ff50fbf7ff8afbf7ff5804f8ff748ff8ffd299f8ffc09cf8fffca9f8ff44e4f8ffdaecf8ffe8f0f8ff9af4f8ff64fff8ff9c02f9ffb414f9ff241df9ff5280f9ff6a80f9ff0089f9fff48bf9ff7894f9ff3a9ef9fffaaef9ff6cf7f9ff8203fafffe15faffda1ffaff6c2dfaff1636faff8643faff2a4dfaff5c4dfaffbe4dfaff4050faff0a55faff3c61faffa871faff8080faff0c8bfaffd28bfaff8294faff2cabfaffd0acfaff6ab5faffa0b5faffccc2faff9ec3faffbcc6faff42d1faff02e0faff2eedfaffccf5faff5ef9faffbe08fbff5e11fbff1a1ffbff802cfbff6c3cfbffd649fbff8a59fbffb666fbff3e71fbffb47efcff4087fcff7e87fcff2a88fcff388efcff76a8fcff3ae1fcfffeeffcff2afdfcff1e0dfdff4e23fdff1032fdff54a5fdff56d1fdff782bfeff2443feffa843feff0c50feff0654feffe463feff4e7bfeff2e8cfeff1c9cfeffdcabfeff58c3feff66d2feff96fcfeff9809ffff3e15ffff2016ffffde21fffffc30ffffca3bffff463dffff0242fffffa4effff6a61ffffbe6effffc286ffffea92ffffe2aaffff04b6ffff80c2ffffd6c8ffff00c9ffff8ae7ffff4ee8ffff4efaffff50fbfffff4ffffff6a440000744500001a4600006a6e0000589e00009cb00000104d0100844e0100f2710100c67201008c9b010038e9010064f1010068f40100c2fa0100dc080200b0bd0200aa1703008608040076140400f6140400601504002e200400022c0400ee350400be250500baf00500
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: LimboController
-        m_OriginalName: LimboController
+        m_Name: ------ PLATFORMS ------
+        m_OriginalName: ------ PLATFORMS ------
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 24786
+        m_UserData: 392234
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
         m_OriginalEventType: 0
@@ -460,9 +460,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -209.32744, y: -0.13428044, z: -6.771405}
+    m_Target: {x: -194.74695, y: -222.116, z: -38.593353}
     speed: 2
-    m_Value: {x: -209.32744, y: -0.13428044, z: -6.771405}
+    m_Value: {x: -194.74695, y: -222.116, z: -38.593353}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -513,9 +513,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 7.500443
+    m_Target: 181.02084
     speed: 2
-    m_Value: 7.500443
+    m_Value: 181.02084
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -533,7 +533,7 @@ MonoBehaviour:
     m_FarClip: 10000
     m_DynamicClip: 1
     m_OcclusionCulling: 0
-  m_LastSceneViewRotation: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
+  m_LastSceneViewRotation: {x: 0.1360824, y: 0.023149962, z: -0.004934533, w: 0.9904155}
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
@@ -673,22 +673,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Scenes/General
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Scenes/General
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Chris\Documents\GitHub\Regrets
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: 14470000
-    m_LastClickedID: 18196
-    m_ExpandedIDs: 0000000010470000124700001447000016470000184700001a4700001c4700001e470000204700002e4700004447000000ca9a3b
+    scrollPos: {x: 0, y: 290}
+    m_SelectedIDs: ce420000
+    m_LastClickedID: 17102
+    m_ExpandedIDs: 000000009442000096420000984200009a4200009c4200009e420000a0420000a2420000a4420000a6420000ae420000be420000cc4200006a72000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -716,7 +716,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000010470000124700001447000016470000184700001a4700001c4700001e47000020470000
+    m_ExpandedIDs: 000000009442000096420000984200009a4200009c4200009e420000a0420000a2420000a4420000a6420000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -744,7 +744,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c623000064bf000074bf0000fac100009a4700000000000062490000ca150000c6150000d2150000
+    m_ExpandedInstanceIDs: c623000064bf000074bf0000fac100009a4700000000000062490000ca150000c6150000d21500009c4a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -824,7 +824,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 53160
+  m_LastSelectedObjectID: 127180
 --- !u!114 &19
 MonoBehaviour:
   m_ObjectHideFlags: 52

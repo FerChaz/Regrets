@@ -23,9 +23,12 @@ public class KnockbackGroundEnemyState : State
         if (_enemyController != null)
         {
             _enemyController.isAnyStateRunning = true;
-            ApplyKnockback();
-            _timeToWait = 5f;
+
+            ApplyKnockbackDirection();
+
+            _timeToWait = _enemyController.knockbackStateDuration;
             _knockbackTime = _enemyController.knockbackDuration;
+
             _enemyController.material.color = Color.red;
         }
     }
@@ -62,7 +65,7 @@ public class KnockbackGroundEnemyState : State
     
     //-- AUXILIAR ------------------------------------------------------------------------------------------------------------------
 
-    private void ApplyKnockback()
+    private void ApplyKnockbackDirection()
     {
         _movement.Set(0.0f, 0.0f, 0.0f);
         _enemyController.rigidBody.velocity = _movement;

@@ -11,8 +11,8 @@ public class KnockbackFlyEnemyState : State
 
     private float _knockbackDirectionX;
     private float _knockbackDirectionY;
-    private float _timeToWait = 0.8f;
-    private float _knockbackTime = 0.5f;
+    private float _timeToWait;
+    private float _knockbackTime;
 
 
     //-- INIT, UPDATE & EXIT -------------------------------------------------------------------------------------------------------
@@ -24,10 +24,12 @@ public class KnockbackFlyEnemyState : State
         if (_enemyController != null)
         {
             _enemyController.isAnyStateRunning = true;
-            ApplyKnockbackDirection();
-            _timeToWait = 0.8f;
 
+            ApplyKnockbackDirection();
+
+            _timeToWait = _enemyController.knockbackStateDuration;
             _knockbackTime = _enemyController.knockbackDuration;
+
             _enemyController.material.color = Color.red;
         }
     }

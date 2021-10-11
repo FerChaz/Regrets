@@ -27,12 +27,15 @@ EditorBuildSettings:
     path: Assets/Scenes/General/PreBoss.unity
     guid: 5de58bbe1f92a5a4bb265e88343bcf81
   - enabled: 1
-    path: Assets/Scenes/Boss Room.unity
+    path: Assets/Scenes/BossRoom.unity
     guid: a3ecb538b1c283f42b03996cc4f26a6a
   - enabled: 1
     path: Assets/Scenes/Limbo/Limbo1.unity
     guid: 1f92b22483ae45640a11e4c24b89bf78
   - enabled: 1
     path: Assets/Scenes/Limbo/Limbo2.unity
-    guid: 9cbb0d081254ed24bb1a9f3efae19977
+    guid: f1c17f74c68b7574baf00f87dbd0c7dc
+  - enabled: 1
+    path: Assets/Scenes/Start.unity
+    guid: 68dca89fb76b6594089c615d127e5930
   m_configObjects: {}

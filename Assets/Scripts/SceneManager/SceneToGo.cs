@@ -19,9 +19,13 @@ public class SceneToGo : MonoBehaviour
     private AdditiveSceneManager _sceneManager;
     private string _actualScene;
 
+    [Header("Fade")]
+    public TransicionFade transicionFade;
+
     private void Start()
     {
         _sceneManager = GetComponentInParent<AdditiveSceneManager>();
+        transicionFade = FindObjectOfType<TransicionFade>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -33,6 +37,8 @@ public class SceneToGo : MonoBehaviour
 
             // ADDITIVE SCENE MANAGER
             _sceneManager.ChangeScene();
+
+            transicionFade.gameObject.SetActive(true);
 
             additiveScenesInSceneToGoScriptableObject.actualScene = sceneToGo;
 

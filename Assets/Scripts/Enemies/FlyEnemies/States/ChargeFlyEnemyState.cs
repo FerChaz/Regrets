@@ -10,7 +10,7 @@ public class ChargeFlyEnemyState : State
     private Vector3 _movement;
     private Vector3 _chargeDirection;
 
-    private float _totalChargeTime = 5;
+    private float _totalChargeTime;
 
 
     //-- INIT, UPDATE & EXIT -------------------------------------------------------------------------------------------------------
@@ -22,7 +22,9 @@ public class ChargeFlyEnemyState : State
         if (_enemyController != null)
         {
             _enemyController.isAnyStateRunning = true;
-            _totalChargeTime = 5;
+
+            _totalChargeTime = _enemyController.chargeTime;
+
             _enemyController.material.color = Color.green;
         }
     }
@@ -34,7 +36,7 @@ public class ChargeFlyEnemyState : State
             _chargeDirection = _enemyController.player.transform.position - _enemyController.transform.position;
             _chargeDirection.Normalize();
 
-            _movement = _chargeDirection * _enemyController.chaseSpeed;
+            _movement = _chargeDirection * _enemyController.chargeSpeed;
             _enemyController.rigidBody.AddForce(_movement);
 
             _totalChargeTime -= delta;

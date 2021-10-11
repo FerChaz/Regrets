@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FlyEnemyController : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class FlyEnemyController : MonoBehaviour
     [Header("Components")]
     public Rigidbody rigidBody;
     public Material material;
+    public GameObject model;
     //public Animator animator;
 
     [Header("Ground Check Variables")]
@@ -37,18 +39,25 @@ public class FlyEnemyController : MonoBehaviour
     [Header("States Variables")]
     public bool isAnyStateRunning = true;
     public bool canCheck;
-    //public bool executed;
     public bool isFall = false;
     public bool alreadyFall;
+    public float timeToRecover = 5;
 
     [Header("Chase & Attack Variables")]
     public int chaseSpeed;
+    public int chargeSpeed;
     public float chaseRadius = 8.6f;
     public float attackRadius = 4.0f;
+    public float chargeTime = 5.0f;
 
     [Header("Knockback Variables")]
     public float knockbackForce = 3;
     public float knockbackDuration = 1;
+    public float knockbackStateDuration;
+
+    [Header("Canvas Variables")]
+    public GameObject canvas;
+    public Image canvasImage;
 
     [Header("Player")]
     public GameObject player;
@@ -69,14 +78,8 @@ public class FlyEnemyController : MonoBehaviour
         rigidBody = GetComponent<Rigidbody>();
         //_animator = GetComponent<Animator>();
 
-        //facingDirection = 1;
-        alreadyFall = false;
-        //executed = false;
-
         material = GetComponent<Renderer>().material;
         material.color = Color.white;
-
-        distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
     }
 
     private void Update()
@@ -94,7 +97,13 @@ public class FlyEnemyController : MonoBehaviour
     public void Flip()
     {
         facingDirection *= -1;
-        transform.Rotate(0.0f, 180.0f, 0.0f);
+        model.transform.Rotate(0.0f, 180.0f, 0.0f);
+    }
+
+    public void CanvasTimeController(float timeToPass)
+    {
+        float normalicedActualBar = timeToPass / knockbackStateDuration;
+        canvasImage.fillAmount = normalicedActualBar;
     }
 
     private void OnDrawGizmos()

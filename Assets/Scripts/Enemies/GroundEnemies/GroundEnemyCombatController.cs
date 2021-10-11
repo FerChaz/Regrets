@@ -13,6 +13,7 @@ public class GroundEnemyCombatController : MonoBehaviour
     [SerializeField] private SoulManager _playerSouls;
 
     public int damage;
+    public int soulsToDrop;
 
     //-- ON ENABLE ------------------------------------------------------------------------------------------------------------------
 
@@ -49,7 +50,7 @@ public class GroundEnemyCombatController : MonoBehaviour
         {
             if (enemyController.alreadyFall)
             {
-                _playerSouls.AddSouls(1);
+                _playerSouls.AddSouls(soulsToDrop);
                 enemyFSM.Death();
             }
             else
@@ -63,9 +64,8 @@ public class GroundEnemyCombatController : MonoBehaviour
     {
         if (enemyController.isFall)
         {
-            //enemyController.executed = true;
             _playerLife.RestoreLife(1);
-            _playerSouls.AddSouls(1);
+            _playerSouls.AddSouls(soulsToDrop);
             enemyFSM.Death();
         }
     }
@@ -76,7 +76,7 @@ public class GroundEnemyCombatController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Spikes"))
         {
-            _playerSouls.AddSouls(1);
+            _playerSouls.AddSouls(soulsToDrop);
             enemyFSM.Death();
         }
     }

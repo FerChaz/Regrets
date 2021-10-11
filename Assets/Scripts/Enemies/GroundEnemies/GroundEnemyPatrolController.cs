@@ -14,8 +14,8 @@ public class GroundEnemyPatrolController : MonoBehaviour
     [Header("Components")]
     public Rigidbody rigidBody;
     public Material material;
-    //public Animator _animator;
     public GameObject model;
+    //public Animator _animator;
 
     [Header("Ground Check Variables")]
     [SerializeField] private Transform _groundCheck;
@@ -43,6 +43,7 @@ public class GroundEnemyPatrolController : MonoBehaviour
     [Header("Knockback Variables")]
     public float knockbackForce = 3;
     public float knockbackDuration = 1;
+    public float knockbackStateDuration;
 
     [Header("Canvas Variables")]
     public GameObject canvas;
@@ -68,8 +69,6 @@ public class GroundEnemyPatrolController : MonoBehaviour
 
         material = GetComponent<Renderer>().material;
         material.color = Color.white;
-
-        //distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
     }
 
     private void Update()
@@ -91,8 +90,7 @@ public class GroundEnemyPatrolController : MonoBehaviour
 
     public void CanvasTimeController(float timeToPass)
     {
-        float totalTime = 5f;
-        float normalicedActualBar = timeToPass / totalTime;
+        float normalicedActualBar = timeToPass / knockbackStateDuration;
         canvasImage.fillAmount = normalicedActualBar;
     }
 
