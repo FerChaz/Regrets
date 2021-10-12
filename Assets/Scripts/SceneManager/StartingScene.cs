@@ -28,5 +28,6 @@ public class StartingScene : MonoBehaviour
         additiveScenesScriptableObject.actualScene = intro;
 
         _loadingCanvas.SetActive(false);
+        sceneManager.UnloadActualScene("Start");
     }
 }

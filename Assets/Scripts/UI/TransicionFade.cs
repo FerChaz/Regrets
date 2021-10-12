@@ -11,9 +11,12 @@ public class TransicionFade : MonoBehaviour
     public float flashSpeed;
     private Color flashColor = Color.black;
 
+    private bool isDark;
+
     private void OnEnable()
     {
         damageImage.color = flashColor;
+        isDark = true;
         StartCoroutine(Deactivate());
     }
 
@@ -21,12 +24,23 @@ public class TransicionFade : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        damageImage.color = Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime); // CAMBIAR POR UNA ANIMACIÓN
+        if (isDark)
+        {
+            damageImage.color = Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime); // CAMBIAR POR UNA ANIMACIÓN
+        }
+        
+    }
+
+    public void IsDark()
+    {
+        damageImage.color = flashColor;
+        isDark = true;
+        StartCoroutine(Deactivate());
     }
 
     IEnumerator Deactivate()
     {
         yield return new WaitForSeconds(2);
-        gameObject.SetActive(false);
+        isDark = false;
     }
 }

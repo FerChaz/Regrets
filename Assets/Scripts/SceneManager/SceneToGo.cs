@@ -38,7 +38,7 @@ public class SceneToGo : MonoBehaviour
             // ADDITIVE SCENE MANAGER
             _sceneManager.ChangeScene();
 
-            transicionFade.gameObject.SetActive(true);
+            transicionFade.IsDark();
 
             additiveScenesInSceneToGoScriptableObject.actualScene = sceneToGo;
 
