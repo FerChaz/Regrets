@@ -98,6 +98,7 @@
     <Compile Include="Assets\Scripts\Player\LifeManager.cs" />
     <Compile Include="Assets\Scripts\Enemies\GroundEnemies\GroundEnemyDeath.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\AdditiveScenesInfo.cs" />
+    <Compile Include="Assets\ComboAttacksScript.cs" />
     <Compile Include="Assets\Scripts\Chest\Chest.cs" />
     <Compile Include="Assets\Scripts\Enemies\GroundEnemies\States\DeathGroundEnemyState.cs" />
     <Compile Include="Assets\Scripts\Enemies\GroundEnemies\GroundEnemyPatrolFSM.cs" />
@@ -118,6 +119,7 @@
     <Compile Include="Assets\Scripts\Camera\MainCamera.cs" />
     <Compile Include="Assets\Scripts\Enemies\Patrol\PatrolEnemyBase.cs" />
     <Compile Include="Assets\Scripts\FSM\State.cs" />
+    <Compile Include="Assets\Scripts\Walls &amp; Doors\InvisibleWall.cs" />
     <Compile Include="Assets\Scripts\Limbo\Quests\LimboTimeCuest.cs" />
     <Compile Include="Assets\Scripts\Player\AnimationsBridges\BridgeAnimator.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\RecoverSoulsInfo.cs" />
@@ -131,7 +133,6 @@
     <Compile Include="Assets\Scripts\Player\AudioBridges\FXSource.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\IntValue.cs" />
     <Compile Include="Assets\Scripts\Player\AudioBridges\BridgePlayerAudio.cs" />
-    <Compile Include="Assets\Scripts\Walls &amp; Doors\InvisibleWall.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Fantasy Adventure Environment\Shaders\VS_InstancedIndirect.cginc" />
