@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\UI\TransicionFade.cs" />
     <Compile Include="Assets\Scripts\Enemies\GroundEnemies\States\ChaseGroundEnemyState.cs" />
     <Compile Include="Assets\Scripts\Limbo\LimboController.cs" />
+    <Compile Include="Assets\Animations\Animations\Kaori\Attack\Scripts\IdleBehaviour.cs" />
     <Compile Include="Assets\Scripts\Walls &amp; Doors\DoorToPayController.cs" />
     <Compile Include="Assets\Scripts\Enemies\FlyEnemies\States\KnockbackFlyEnemyState.cs" />
     <Compile Include="Assets\Scripts\Player\Habilities\EnableDash.cs" />
@@ -98,7 +99,7 @@
     <Compile Include="Assets\Scripts\Player\LifeManager.cs" />
     <Compile Include="Assets\Scripts\Enemies\GroundEnemies\GroundEnemyDeath.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\AdditiveScenesInfo.cs" />
-    <Compile Include="Assets\ComboAttacksScript.cs" />
+    <Compile Include="Assets\Animations\Animations\Kaori\Attack\Scripts\ComboAttacksScript.cs" />
     <Compile Include="Assets\Scripts\Chest\Chest.cs" />
     <Compile Include="Assets\Scripts\Enemies\GroundEnemies\States\DeathGroundEnemyState.cs" />
     <Compile Include="Assets\Scripts\Enemies\GroundEnemies\GroundEnemyPatrolFSM.cs" />
@@ -109,6 +110,7 @@
     <Compile Include="Assets\Scripts\FSM\FiniteStateMachine.cs" />
     <Compile Include="Assets\Scripts\SceneManager\AdditiveSceneManager.cs" />
     <Compile Include="Assets\Scripts\Enemies\GroundEnemies\GroundEnemyCombatController.cs" />
+    <Compile Include="Assets\Animations\Animations\Kaori\Attack\Scripts\Transition1Behaviour.cs" />
     <Compile Include="Assets\Scripts\SceneManager\StartingScene.cs" />
     <Compile Include="Assets\Scripts\Enemies\FlyEnemies\States\ChaseFlyEnemyState.cs" />
     <Compile Include="Assets\Scripts\Player\AudioBridges\AudioManager.cs" />
@@ -132,6 +134,7 @@
     <Compile Include="Assets\Scripts\Enemies\Spikes\SpikesController.cs" />
     <Compile Include="Assets\Scripts\Player\AudioBridges\FXSource.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\IntValue.cs" />
+    <Compile Include="Assets\Animations\Animations\Kaori\Attack\Scripts\Transition2Behaviour.cs" />
     <Compile Include="Assets\Scripts\Player\AudioBridges\BridgePlayerAudio.cs" />
   </ItemGroup>
   <ItemGroup>
