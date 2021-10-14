@@ -60,7 +60,7 @@ public class PlayerCombatController : MonoBehaviour
                 ParticleSystem weaponTrails = weapon.GetComponentInChildren(typeof(ParticleSystem), true) as ParticleSystem;
                 weaponTrails.Play();
 
-                playerAnimator.SetBool("Attacking", true);
+                //playerAnimator.SetBool("Attacking", true);
                 
                 //playerAnimator.Play("Katana-hit");
                 weaponHideCooldown = 3;

@@ -2,20 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ComboAttacksScript : StateMachineBehaviour
+public class IdleBehaviour : StateMachineBehaviour
 {
-    public GameObject player;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
-    //override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    
-    //}
+    override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+       if (!ComboAttacksScript.instance.canReciveInput)
+       {
+           ComboAttacksScript.instance.AttackInputManager();
+       } 
+    }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
-    //override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    
-    //}
+    override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        if (ComboAttacksScript.instance.inputReceived)
+        {
+            animator.SetTrigger("Attack1");
+            ComboAttacksScript.instance.AttackInputManager();
+            ComboAttacksScript.instance.inputReceived = false;
+        }
+    }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
