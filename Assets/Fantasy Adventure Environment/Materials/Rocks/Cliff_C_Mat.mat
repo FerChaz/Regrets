@@ -8,8 +8,8 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Cliff_C_Mat
-  m_Shader: {fileID: 4800000, guid: 456a96ef22c5f494db8f3f42751d051e, type: 3}
-  m_ShaderKeywords: _EMISSION
+  m_Shader: {fileID: 4800000, guid: 4e923ccb8e9e00643bc6127460e918ad, type: 3}
+  m_ShaderKeywords: _EMISSION _RIMTOGGLE_ON _RIMTYPE_NORMAL _SHADOWHLIGHTTOGGLE_ON
   m_LightmapFlags: 5
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
@@ -19,6 +19,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _B:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _CoverageAlbedo:
         m_Texture: {fileID: 2800000, guid: 6dc430d5c113ab14c91065b0117acafb, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -35,8 +39,20 @@ Material:
         m_Texture: {fileID: 2800000, guid: 06bdf21e154425948b0978955fd687b4, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _G:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _Globalalbedo:
         m_Texture: {fileID: 2800000, guid: 90c15e788b01a3646a1f0b65505c9972, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _LimTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Maintex:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Objectalbedo:
@@ -49,6 +65,14 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _PigmentMap:
         m_Texture: {fileID: 1574344641, guid: 1d897bcb600b6fe4985220cd34d54f67, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _R:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SSSTex:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SnowAlbedo:
@@ -66,14 +90,37 @@ Material:
     m_Floats:
     - _CoverageAmount: 1
     - _CoverageTiling: 8
+    - _Cutoff: 0.5
     - _Detailstrength: 0.28
+    - _EmissionMult: 0
+    - _FirstShadowSmooth: 0
+    - _FirstShadowSmoothoffset: 0
+    - _FirstShadowThre: 0.5
     - _Float4: 0.13
-    - _Globaltiling: 0.163
+    - _Globaltiling: 0.13
+    - _Inline: 1
     - _MaskClipValue: 0.5
+    - _OutlineWidth: 0.053
+    - _RimScale: 0.36
+    - _RimToggle: 1
+    - _Rimoffset: 0.106
+    - _Rimtype: 0
     - _Roughness: 0.276
+    - _SceondShadowThre: 0.5
+    - _ShadowhlightToggle: 1
     - _SnowCover: 1
     - _SnowTiling: 7
+    - _SpecMulti: 1
+    - _Specgloss: 5.647059
     - __dirty: 0
     m_Colors:
-    - _GlobalColor: {r: 1, g: 1, b: 1, a: 1}
-    - _ObjectColor: {r: 0.86764705, g: 0.86764705, b: 0.86764705, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
+    - _FirstShadowColor: {r: 0.12793398, g: 0.072075486, b: 0.191, a: 0}
+    - _GlobalColor: {r: 0.21001221, g: 0.09545213, b: 0.5188679, a: 1}
+    - _MainColor: {r: 0.09310378, g: 0.05245284, b: 0.139, a: 0}
+    - _ObjectColor: {r: 0.5183659, g: 0.28034887, b: 0.9433962, a: 1}
+    - _OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+    - _RimColor: {r: 0.15003774, g: 0.08452831, b: 0.22399999, a: 0}
+    - _SecondShadowColor: {r: 0, g: 0, b: 0, a: 0}
+    - _Specolor: {r: 0, g: 0, b: 0, a: 0}
+  m_BuildTextureStacks: []

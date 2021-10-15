@@ -6091,7 +6091,7 @@ MonoBehaviour:
   maxPosition: {x: 0, y: 0}
   minPosition: {x: 0, y: 0}
   multiplierX: -0.77
-  multiplierY: 1.43
+  multiplierY: 4.27
 --- !u!81 &499729788
 AudioListener:
   m_ObjectHideFlags: 0
@@ -6151,7 +6151,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 499729786}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -282.13, y: 2.9000015, z: -32.09}
+  m_LocalPosition: {x: -282.13, y: 2.9000015, z: -22.73}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1649525781}
@@ -7895,7 +7895,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.90400004, y: 0.09900001}
   m_AnchorMax: {x: 0.9850001, y: 0.2}
-  m_AnchoredPosition: {x: 0, y: -0.40011597}
+  m_AnchoredPosition: {x: 0, y: -0.40008545}
   m_SizeDelta: {x: -0.3999939, y: 0.19999695}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1298674779
