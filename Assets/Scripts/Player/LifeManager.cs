@@ -33,6 +33,7 @@ public class LifeManager : MonoBehaviour
     public RecoverSoulsInfo soulsToRecover;
     public GameObject modelToShow;
 
+    private Vector3 _scale;
 
     //-- START ---------------------------------------------------------------------------------------------------------------------
 
@@ -42,6 +43,8 @@ public class LifeManager : MonoBehaviour
         colliderLifeManager = GetComponent<BoxCollider>();
 
         playerController = GetComponentInParent<PlayerController>();
+
+        _scale = model.transform.localScale;
     }
 
 
@@ -130,19 +133,19 @@ public class LifeManager : MonoBehaviour
 
         for (float i = 0; i < invulnerabilityTime; i += invincibilityDeltaTime)
         {
-            if (model.transform.localScale == Vector3.one)
+            if (model.transform.localScale == _scale)
             {
                 ScaleModelTo(Vector3.zero);
             }
             else
             {
-                ScaleModelTo(Vector3.one);
+                ScaleModelTo(_scale);
             }
             
             yield return new WaitForSeconds(invincibilityDeltaTime);
         }
 
-        ScaleModelTo(Vector3.one);
+        ScaleModelTo(_scale);
         invulnerability = false;
         colliderLifeManager.enabled = true;
     }

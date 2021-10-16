@@ -170,6 +170,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButton("Dash") && canDash && (Time.time >= (lastDash + dashCooldown)))
         {
             isDashing = true;
+            rigidBody.useGravity = false;
             dashTimeLeft = dashTime;
             lastDash = Time.time;
         }
@@ -200,6 +201,7 @@ public class PlayerController : MonoBehaviour
             if (dashTimeLeft <= 0)
             {
                 isDashing = false;
+                rigidBody.useGravity = true;
                 canMove = true;
                 canJump = true;
             }

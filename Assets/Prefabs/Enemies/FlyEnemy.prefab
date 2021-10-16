@@ -504,7 +504,7 @@ MonoBehaviour:
   roofDetected: 0
   _whatIsGround:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 1088
   isAnyStateRunning: 1
   canCheck: 0
   isFall: 0

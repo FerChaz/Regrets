@@ -38,12 +38,14 @@ public class LimboController : MonoBehaviour
         if (_random == 1)
         {
             SceneManager.LoadSceneAsync("Limbo1", LoadSceneMode.Additive);
+            limboInfo.limboScene = "Limbo1";
 
             _playerToLoad.transform.position = limboInfo.positionToGoInLimbo1;
         }
         else
         {
             SceneManager.LoadSceneAsync("Limbo2", LoadSceneMode.Additive);
+            limboInfo.limboScene = "Limbo2";
 
             _playerToLoad.transform.position = limboInfo.positionToGoInLimbo2;
         }

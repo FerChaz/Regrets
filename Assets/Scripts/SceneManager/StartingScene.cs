@@ -15,8 +15,19 @@ public class StartingScene : MonoBehaviour
 
     public Vector3 playerPosition;
 
+    [Header("Fade")]
+    public GameObject transicionFade;
+    public Animator transicionFadeAnimator;
+
     private void Start()
     {
+        transicionFade = GameObject.Find("TransitionCanvas");
+        transicionFadeAnimator = transicionFade.GetComponentInChildren<Animator>();
+
+        //transicionFadeAnimator.SetTrigger("ToBlack");
+        transicionFadeAnimator.SetBool("FromBlackBool", false);
+        transicionFadeAnimator.SetBool("ToBlackBool", true);
+
         additiveScenesScriptableObject.additiveScenes.Clear();
         additiveScenesScriptableObject.additiveScenes = scenesToLoadInAdditive;
         additiveScenesScriptableObject.playerPositionToGo = playerPosition;
@@ -28,6 +39,9 @@ public class StartingScene : MonoBehaviour
         additiveScenesScriptableObject.actualScene = intro;
 
         _loadingCanvas.SetActive(false);
+
+        
+
         sceneManager.UnloadActualScene("Start");
     }
 }

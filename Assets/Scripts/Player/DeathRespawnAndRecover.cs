@@ -30,6 +30,8 @@ public class DeathRespawnAndRecover : MonoBehaviour
     private string _sceneToRespawn;
     private Vector3 _positionToRespawn;
 
+    public LimboInfo limboInfo;
+
     private void Start()
     {
         playerController = GetComponent<PlayerController>();
@@ -51,6 +53,8 @@ public class DeathRespawnAndRecover : MonoBehaviour
         {
             isFirstDead = true;
             Respawn();
+
+            sceneManager.UnloadActualScene(limboInfo.limboScene);
         }
     }
 

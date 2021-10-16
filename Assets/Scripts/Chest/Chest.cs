@@ -10,7 +10,7 @@ public class Chest : MonoBehaviour
 
     private Animator _chestAnimator;
 
-    private bool _isClosed;
+    public bool _isClosed;
 
     private void Start()
     {
@@ -22,6 +22,7 @@ public class Chest : MonoBehaviour
     {
         if (_isClosed)
         {
+            Debug.Log($"Funciona");
             _isClosed = false;
             soulManager.AddSouls(totalSouls);
             // Activar animacion

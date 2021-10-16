@@ -84,6 +84,7 @@ public class PlayerCombatController : MonoBehaviour
         foreach (Collider collider in detectedObjects)
         {
             collider.transform.SendMessage("GetDamage", attackDetails);
+            Debug.Log($"{collider.gameObject.name}");
         }
     }
 

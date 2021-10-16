@@ -31,7 +31,11 @@ public class Checkpoint : MonoBehaviour
                 respawnInfo.additiveScenesToCharge = scenesToChargeInAdditive;
                 respawnInfo.checkpointActivename = gameObject.name;
 
-                particle.Play();
+                if (particle.gameObject.active)
+                {
+                    particle.Play();
+                }
+                
             }
         }
     }

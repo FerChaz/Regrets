@@ -7,6 +7,7 @@ public class ExitLimbo : MonoBehaviour
     public LimboInfo limboInfo;
 
     public PlayerController player;
+    public AdditiveSceneManager sceneManager;
 
     private void Start()
     {
@@ -23,6 +24,8 @@ public class ExitLimbo : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             player.transform.position = limboInfo.deathPosition;
+
+            sceneManager.UnloadActualScene(limboInfo.limboScene);
         }
     }
 

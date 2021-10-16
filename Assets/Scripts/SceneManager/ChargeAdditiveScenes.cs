@@ -12,11 +12,17 @@ public class ChargeAdditiveScenes : MonoBehaviour
 
     private AdditiveSceneManager sceneManager;
 
+    [Header("Fade")]
+    public GameObject transicionFade;
+    public Animator transicionFadeAnimator;
+
     // FALTARIA ACTUALIZAR LOS LIMITES DE LA CAMARA ACA
 
     private void Start()
     {
         sceneManager = GetComponentInParent<AdditiveSceneManager>();
+        transicionFade = GameObject.Find("TransitionCanvas");
+        transicionFadeAnimator = transicionFade.GetComponentInChildren<Animator>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -32,6 +38,10 @@ public class ChargeAdditiveScenes : MonoBehaviour
 
             sceneManager.additiveScenes = sceneManager.additiveScenesScriptableObject.additiveScenes;
             sceneManager.LoadScenesInAdditive();
+
+            //transicionFadeAnimator.SetTrigger("FromBlack");
+            transicionFadeAnimator.SetBool("ToBlackBool", false);
+            transicionFadeAnimator.SetBool("FromBlackBool", true);
 
             gameObject.SetActive(false);
         }
