@@ -8,7 +8,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <ProjectGuid>{1016F5F0-060B-B050-A0C6-70F8A7F6D951}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -103,6 +104,7 @@
     <Compile Include="Assets\Scripts\Scriptable Objects\SignalSender.cs" />
     <Compile Include="Assets\Scripts\Enemies\FlyEnemies\States\IdleFlyEnemyState.cs" />
     <Compile Include="Assets\Scripts\Limbo\Quests\LimboDestroyEnemiesQuest.cs" />
+    <Compile Include="Assets\Scripts\MainMenu\ExitMenu.cs" />
     <Compile Include="Assets\Scripts\SceneManager\ChargeAdditiveScenes.cs" />
     <Compile Include="Assets\Scripts\Player\LifeManager.cs" />
     <Compile Include="Assets\Scripts\Enemies\GroundEnemies\GroundEnemyDeath.cs" />
@@ -147,6 +149,8 @@
     <Compile Include="Assets\Scripts\Scriptable Objects\IntValue.cs" />
     <Compile Include="Assets\Animations\Animations\Kaori\Attack\Scripts\Transition2Behaviour.cs" />
     <Compile Include="Assets\Scripts\Player\AudioBridges\BridgePlayerAudio.cs" />
+    <Compile Include="Assets\Scripts\SceneManager\Simple\SimpleStartingSceneManager.cs" />
+    <Compile Include="Assets\Scripts\Scriptable Objects\StringValue.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Fantasy Adventure Environment\Shaders\VS_InstancedIndirect.cginc" />

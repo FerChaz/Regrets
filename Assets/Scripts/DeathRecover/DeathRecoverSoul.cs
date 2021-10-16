@@ -18,7 +18,7 @@ public class DeathRecoverSoul : MonoBehaviour
 
     private void Awake()
     {
-        if (recoverData.deathScene != sceneOfGameObject)       // Almacenar en otro lado el nombre de la escena por las additive scenes
+        if (recoverData.deathScene != sceneOfGameObject || recoverData.needRecover)       // Almacenar en otro lado el nombre de la escena por las additive scenes
         {
             gameObject.SetActive(false);
         }
@@ -39,6 +39,7 @@ public class DeathRecoverSoul : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             soulController.AddSouls(_totalSouls);
+            recoverData.needRecover = false;
             gameObject.SetActive(false);
         }
     }

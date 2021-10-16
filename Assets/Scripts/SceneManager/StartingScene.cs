@@ -21,12 +21,12 @@ public class StartingScene : MonoBehaviour
 
     private void Start()
     {
-        transicionFade = GameObject.Find("TransitionCanvas");
-        transicionFadeAnimator = transicionFade.GetComponentInChildren<Animator>();
+        //transicionFade = GameObject.Find("TransitionCanvas");
+        //transicionFadeAnimator = transicionFade.GetComponentInChildren<Animator>();
 
         //transicionFadeAnimator.SetTrigger("ToBlack");
-        transicionFadeAnimator.SetBool("FromBlackBool", false);
-        transicionFadeAnimator.SetBool("ToBlackBool", true);
+        //transicionFadeAnimator.SetBool("FromBlackBool", false);
+        //transicionFadeAnimator.SetBool("ToBlackBool", true);
 
         additiveScenesScriptableObject.additiveScenes.Clear();
         additiveScenesScriptableObject.additiveScenes = scenesToLoadInAdditive;
@@ -34,7 +34,12 @@ public class StartingScene : MonoBehaviour
 
         // ADDITIVE SCENE MANAGER
         sceneManager.additiveScenes = scenesToLoadInAdditive;
+
         sceneManager.LoadSceneInAdditive(intro);
+
+
+
+
         sceneManager.ChangeScene();
         additiveScenesScriptableObject.actualScene = intro;
 

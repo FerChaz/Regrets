@@ -11,4 +11,6 @@ public class RecoverSoulsInfo : ScriptableObject
 
     public string deathScene;
     public string respawnScene;
+
+    public bool needRecover;
 }

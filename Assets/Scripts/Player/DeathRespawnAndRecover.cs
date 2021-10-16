@@ -31,6 +31,7 @@ public class DeathRespawnAndRecover : MonoBehaviour
     private Vector3 _positionToRespawn;
 
     public LimboInfo limboInfo;
+    public StringValue actualSceneName;
 
     private void Start()
     {
@@ -38,15 +39,18 @@ public class DeathRespawnAndRecover : MonoBehaviour
         soulsController = GetComponentInChildren<SoulManager>();
 
         isFirstDead = true;
+
     }
 
     public void Death()
     {
         limbo = FindObjectOfType<LimboController>();
+
         if (isFirstDead)
         {
-            deathPosition = transform.position;
+            deathPosition = playerController.lastPositionInGround;
             isFirstDead = false;
+            limboInfo.deathScene = actualSceneName.actualScene;
             limbo.ChargeLimboScene(deathPosition);
         }
         else
@@ -54,18 +58,30 @@ public class DeathRespawnAndRecover : MonoBehaviour
             isFirstDead = true;
             Respawn();
 
-            sceneManager.UnloadActualScene(limboInfo.limboScene);
+            //sceneManager.UnloadActualScene(limboInfo.limboScene);
         }
     }
 
 
     public void Respawn()
     {
-        _actualScene = additiveScenesInSceneToGoScriptableObject.actualScene;
+        AssignRecoverSoulData();
+
+        DontDestroyOnLoad(playerToLoad);
+        DontDestroyOnLoad(cameraToLoad);
+        DontDestroyOnLoad(canvasToLoad);
+
+        SceneManager.LoadScene(respawnInfo.sceneToRespawn);
+
+        playerToLoad.transform.position = respawnInfo.respawnPosition;
+
+
+
+        /*_actualScene = additiveScenesInSceneToGoScriptableObject.actualScene;
         _sceneToRespawn = respawnInfo.sceneToRespawn;
         _positionToRespawn = respawnInfo.respawnPosition;
 
-        AssignRecoverSoulData();
+        
         respawnInfo.isRespawning = true;
 
         // Si estoy en la misma escena que el respawn
@@ -92,7 +108,7 @@ public class DeathRespawnAndRecover : MonoBehaviour
             additiveScenesInSceneToGoScriptableObject.additiveScenes = respawnInfo.additiveScenesToCharge;
 
             sceneManager.UnloadActualScene(_actualScene);
-        }
+        }*/
         
         // ANIMACION Y EFECTOS DE FADE
     }
@@ -100,12 +116,14 @@ public class DeathRespawnAndRecover : MonoBehaviour
 
     private void AssignRecoverSoulData()
     {
+        soulRecoveryData.needRecover = true;
+
         _totalSoulsToRecover = soulsController.TotalSouls();
 
         soulRecoveryData.deathPosition = deathPosition;
         soulRecoveryData.deathPosition.y += 2.5f;
 
-        soulRecoveryData.deathScene = additiveScenesInSceneToGoScriptableObject.actualScene;
+        soulRecoveryData.deathScene = actualSceneName.actualScene;
         soulRecoveryData.totalSouls = _totalSoulsToRecover;
 
         soulsController.DiscountSouls(_totalSoulsToRecover);

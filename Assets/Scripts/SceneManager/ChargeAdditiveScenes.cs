@@ -21,8 +21,8 @@ public class ChargeAdditiveScenes : MonoBehaviour
     private void Start()
     {
         sceneManager = GetComponentInParent<AdditiveSceneManager>();
-        transicionFade = GameObject.Find("TransitionCanvas");
-        transicionFadeAnimator = transicionFade.GetComponentInChildren<Animator>();
+        //transicionFade = GameObject.Find("TransitionCanvas");
+        //transicionFadeAnimator = transicionFade.GetComponentInChildren<Animator>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -40,8 +40,8 @@ public class ChargeAdditiveScenes : MonoBehaviour
             sceneManager.LoadScenesInAdditive();
 
             //transicionFadeAnimator.SetTrigger("FromBlack");
-            transicionFadeAnimator.SetBool("ToBlackBool", false);
-            transicionFadeAnimator.SetBool("FromBlackBool", true);
+            //transicionFadeAnimator.SetBool("ToBlackBool", false);
+            //transicionFadeAnimator.SetBool("FromBlackBool", true);
 
             gameObject.SetActive(false);
         }

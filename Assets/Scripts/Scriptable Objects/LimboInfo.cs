@@ -11,4 +11,6 @@ public class LimboInfo : ScriptableObject
     public Vector3 deathPosition;
 
     public string limboScene;
+
+    public string deathScene;
 }

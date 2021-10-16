@@ -26,8 +26,8 @@ public class SceneToGo : MonoBehaviour
     private void Start()
     {
         _sceneManager = GetComponentInParent<AdditiveSceneManager>();
-        transicionFade = GameObject.Find("TransitionCanvas");
-        transicionFadeAnimator = transicionFade.GetComponentInChildren<Animator>();
+        //transicionFade = GameObject.Find("TransitionCanvas");
+        //transicionFadeAnimator = transicionFade.GetComponentInChildren<Animator>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -35,8 +35,8 @@ public class SceneToGo : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             //transicionFadeAnimator.SetTrigger("ToBlack");
-            transicionFadeAnimator.SetBool("FromBlackBool", false);
-            transicionFadeAnimator.SetBool("ToBlackBool", true);
+            //transicionFadeAnimator.SetBool("FromBlackBool", false);
+            //transicionFadeAnimator.SetBool("ToBlackBool", true);
 
             _actualScene = additiveScenesInSceneToGoScriptableObject.actualScene;
             additiveScenesInSceneToGoScriptableObject.playerPositionToGo = playerPosition;

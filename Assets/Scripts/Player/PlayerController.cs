@@ -76,7 +76,6 @@ public class PlayerController : MonoBehaviour
     {
         rigidBody = GetComponent<Rigidbody>();
         respawn.respawnPosition = new Vector3(-283f, -1.81f, 0.0f);
-        //transform.position = respawn.respawnPosition;
         //audioManager = GetComponent<AudioManager>();
 
         deathRespawn = GetComponent<DeathRespawnAndRecover>();
@@ -153,12 +152,6 @@ public class PlayerController : MonoBehaviour
         {
             rigidBody.AddForce(fallingForce * Physics.gravity);
             // AVISAR AL ANIMATOR QUE NO ESTA CAYENDO
-        }
-
-
-        if (Input.GetButtonUp("Jump"))
-        {
-            //finishKeyJump = true;
         }
 
     }

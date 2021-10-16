@@ -22,7 +22,7 @@ public class LimboController : MonoBehaviour
         _cameraToLoad = GameObject.Find("Main Camera");
         _canvasToLoad = GameObject.Find("Canvas");
 
-        _random = Random.Range(1, 3);
+        _random = 1;
     }
 
     // DESACTIVAR ENEMIGOS, Y TODO LO QUE SE MUEVA
@@ -37,10 +37,10 @@ public class LimboController : MonoBehaviour
 
         if (_random == 1)
         {
-            SceneManager.LoadSceneAsync("Limbo1", LoadSceneMode.Additive);
             limboInfo.limboScene = "Limbo1";
-
+            SceneManager.LoadScene("Limbo1");
             _playerToLoad.transform.position = limboInfo.positionToGoInLimbo1;
+
         }
         else
         {
