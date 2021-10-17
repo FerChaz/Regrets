@@ -8,10 +8,16 @@ public class PlayerController : MonoBehaviour
 
     [Header("Movement Variables")]
     [SerializeField] private float speedMovement;
+    [SerializeField] private GameObject playerModel;
+    [SerializeField] private Animator playerAnimator;
     private Vector3 movement;
     private float inputDirection;
     private bool isFacingRight = true;
     private bool canMove = true;
+    private Vector3 playerRotation;
+    private Vector3 playerRotationBack;
+    private Vector3 fixedPlayerRotation;
+    private Vector3 fixedPlayerRotationBack;
 
     [Header("Jump Variables")]
     [SerializeField] private float jumpForce;
@@ -79,6 +85,26 @@ public class PlayerController : MonoBehaviour
         //audioManager = GetComponent<AudioManager>();
 
         deathRespawn = GetComponent<DeathRespawnAndRecover>();
+        playerRotation = new Vector3(
+            playerModel.transform.eulerAngles.x,
+            playerModel.transform.eulerAngles.y,
+            playerModel.transform.eulerAngles.z
+        );
+        playerRotationBack = new Vector3(
+            playerModel.transform.eulerAngles.x,
+            playerModel.transform.eulerAngles.y - 180,
+            playerModel.transform.eulerAngles.z
+        );
+        fixedPlayerRotation = new Vector3(
+            playerModel.transform.eulerAngles.x,
+            playerModel.transform.eulerAngles.y - 40,
+            playerModel.transform.eulerAngles.z
+        );
+        fixedPlayerRotationBack = new Vector3(
+            playerModel.transform.eulerAngles.x,
+            playerModel.transform.eulerAngles.y - 220,
+            playerModel.transform.eulerAngles.z
+        );
     }
 
     private void Update()
@@ -112,23 +138,36 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetAxisRaw("Horizontal") < 0f && canMove)
         {
+            playerModel.transform.eulerAngles = fixedPlayerRotationBack;
             movement.Set(-speedMovement, rigidBody.velocity.y, 0.0f);
             rigidBody.velocity = movement;
+            playerAnimator.SetBool("Movement", true);
 
             //bridgePlayerAnimator.PlayAnimation("Moving");          // MOVE ANIMATION
 
         }
         else if (Input.GetAxisRaw("Horizontal") > 0f && canMove)
         {
+            playerModel.transform.eulerAngles = fixedPlayerRotation;
             movement.Set(speedMovement, rigidBody.velocity.y, 0.0f);
             rigidBody.velocity = movement;
+            playerAnimator.SetBool("Movement", true);
 
             //bridgePlayerAnimator.PlayAnimation("Moving");          // MOVE ANIMATION
         }
         else
         {
+            if (!isFacingRight)
+            {
+                playerModel.transform.eulerAngles = playerRotationBack;
+            }
+            else
+            {
+                playerModel.transform.eulerAngles = playerRotation;
+            }
             movement.Set(0.0f, rigidBody.velocity.y, 0.0f);
             rigidBody.velocity = movement;
+            playerAnimator.SetBool("Movement", false);
 
             //bridgePlayerAnimator.PlayAnimation("Idle");            // IDLE ANIMATION
         }

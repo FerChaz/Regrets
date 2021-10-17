@@ -69,7 +69,7 @@ public class PlayerCombatController : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.D))
         {
             TryToExecute();
         }
