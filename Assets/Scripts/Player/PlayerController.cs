@@ -6,14 +6,16 @@ public class PlayerController : MonoBehaviour
 {
     //-- VARIABLES -----------------------------------------------------------------------------------------------------------------
 
-    [Header("Movement Variables")]
-    [SerializeField] private float speedMovement;
+    
+    
     [SerializeField] private GameObject playerModel;
     [SerializeField] private Animator playerAnimator;
-    private Vector3 movement;
-    private float inputDirection;
-    private bool isFacingRight = true;
-    private bool canMove = true;
+    protected Vector3 movement;
+    protected float inputDirection;
+    protected bool isFacingRight = true;
+    protected bool canMove = true;
+
+
     private Vector3 playerRotation;
     private Vector3 playerRotationBack;
     private Vector3 fixedPlayerRotation;
@@ -64,7 +66,7 @@ public class PlayerController : MonoBehaviour
     public int particleAmount;
 
     [Header("Components")]
-    private Rigidbody rigidBody;
+    protected Rigidbody rigidBody;
 
     //private AudioManager audioManager;
 
@@ -109,6 +111,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        CheckInput();
         Flip();
         CheckGround();
         LastPositionInGround();
@@ -130,13 +133,20 @@ public class PlayerController : MonoBehaviour
 
     //-- CHECKINPUT ----------------------------------------------------------------------------------------------------------------
 
+    private void CheckInput()
+    {
+        inputDirection = Input.GetAxisRaw("Horizontal");
+    }
+
     // PATRON COMMAND
-    
+
     //-- MOVE ----------------------------------------------------------------------------------------------------------------------
+
+    [SerializeField] private float speedMovement;
 
     private void Move()
     {
-        if (Input.GetAxisRaw("Horizontal") < 0f && canMove)
+        if (inputDirection < 0f && canMove)
         {
             playerModel.transform.eulerAngles = fixedPlayerRotationBack;
             movement.Set(-speedMovement, rigidBody.velocity.y, 0.0f);
@@ -146,7 +156,7 @@ public class PlayerController : MonoBehaviour
             //bridgePlayerAnimator.PlayAnimation("Moving");          // MOVE ANIMATION
 
         }
-        else if (Input.GetAxisRaw("Horizontal") > 0f && canMove)
+        else if (inputDirection > 0f && canMove)
         {
             playerModel.transform.eulerAngles = fixedPlayerRotation;
             movement.Set(speedMovement, rigidBody.velocity.y, 0.0f);
@@ -247,7 +257,7 @@ public class PlayerController : MonoBehaviour
     {
         if (canMove)
         {
-            inputDirection = Input.GetAxisRaw("Horizontal");
+            //inputDirection = Input.GetAxisRaw("Horizontal");
             if (isFacingRight && inputDirection < 0)
             {
                 isFacingRight = !isFacingRight;

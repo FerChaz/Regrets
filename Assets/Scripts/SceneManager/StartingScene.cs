@@ -34,18 +34,12 @@ public class StartingScene : MonoBehaviour
 
         // ADDITIVE SCENE MANAGER
         sceneManager.additiveScenes = scenesToLoadInAdditive;
-
         sceneManager.LoadSceneInAdditive(intro);
-
-
-
 
         sceneManager.ChangeScene();
         additiveScenesScriptableObject.actualScene = intro;
 
         _loadingCanvas.SetActive(false);
-
-        
 
         sceneManager.UnloadActualScene("Start");
     }
