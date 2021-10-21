@@ -74,6 +74,7 @@
     <Compile Include="Assets\Scripts\Walls &amp; Doors\DoorToPayController.cs" />
     <Compile Include="Assets\Scripts\Enemies\FlyEnemies\States\KnockbackFlyEnemyState.cs" />
     <Compile Include="Assets\Scripts\Player\Habilities\Dash\EnableDash.cs" />
+    <Compile Include="Assets\Scripts\Player\Habilities\Move\PlayerMove.cs" />
     <Compile Include="Assets\Scripts\DeathRecover\DeathRecoverSoul.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\LimboInfo.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
@@ -97,6 +98,7 @@
     <Compile Include="Assets\Scripts\Observer\SignalListener.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\RespawnInfo.cs" />
     <Compile Include="Assets\Scripts\Enemies\FlyEnemies\FlyEnemyFSM.cs" />
+    <Compile Include="Assets\Scripts\Player\Habilities\Dash\PlayerDash.cs" />
     <Compile Include="Assets\Scripts\Enemies\FlyEnemies\States\ChargeFlyEnemyState.cs" />
     <Compile Include="Assets\Scripts\Enemies\FlyEnemies\FlyEnemyController.cs" />
     <Compile Include="Assets\Scripts\Enemies\Patrol\PatrolGroundedEnemy.cs" />
@@ -105,7 +107,7 @@
     <Compile Include="Assets\Scripts\Limbo\Quests\LimboDestroyEnemiesQuest.cs" />
     <Compile Include="Assets\Scripts\MainMenu\ExitMenu.cs" />
     <Compile Include="Assets\Scripts\SceneManager\ChargeAdditiveScenes.cs" />
-    <Compile Include="Assets\Scripts\Player\LifeManager.cs" />
+    <Compile Include="Assets\Scripts\Player\Components\LifeManager.cs" />
     <Compile Include="Assets\Scripts\Enemies\GroundEnemies\GroundEnemyDeath.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\AdditiveScenesInfo.cs" />
     <Compile Include="Assets\Animations\Animations\Kaori\Attack\Scripts\ComboAttacksScript.cs" />
@@ -127,7 +129,7 @@
     <Compile Include="Assets\Scripts\Player\AudioBridges\AudioManager.cs" />
     <Compile Include="Assets\Scripts\UI\CheckCamera.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemyLifeController.cs" />
-    <Compile Include="Assets\Scripts\Player\SoulManager.cs" />
+    <Compile Include="Assets\Scripts\Player\Components\SoulManager.cs" />
     <Compile Include="Assets\Scripts\Enemies\FlyEnemies\FlyEnemyDeath.cs" />
     <Compile Include="Assets\Scripts\Camera\MainCamera.cs" />
     <Compile Include="Assets\Scripts\Enemies\Patrol\PatrolEnemyBase.cs" />
@@ -138,6 +140,7 @@
     <Compile Include="Assets\Scripts\Scriptable Objects\RecoverSoulsInfo.cs" />
     <Compile Include="Assets\UI\Scripts\MouseOver.cs" />
     <Compile Include="Assets\Scripts\Observer\HeartManager.cs" />
+    <Compile Include="Assets\Scripts\Player\Habilities\Jump\PlayerJump.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\StringValue.cs" />
     <Compile Include="Assets\UI\PauseUI.cs" />
     <Compile Include="Assets\Scripts\SceneManager\Simple\SimpleSceneManager.cs" />
@@ -150,9 +153,7 @@
     <Compile Include="Assets\Scripts\Scriptable Objects\IntValue.cs" />
     <Compile Include="Assets\Animations\Animations\Kaori\Attack\Scripts\Transition2Behaviour.cs" />
     <Compile Include="Assets\Scripts\Player\AudioBridges\BridgePlayerAudio.cs" />
-    <Compile Include="Assets\Scripts\Player\Habilities\Dash\PlayerDash.cs" />
-    <Compile Include="Assets\Scripts\Player\Habilities\Jump\PlayerJump.cs" />
-    <Compile Include="Assets\Scripts\Player\Habilities\Move\PlayerMove.cs" />
+    <Compile Include="Assets\Scripts\Player\Knockback\PlayerKnockback.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Fantasy Adventure Environment\Shaders\VS_InstancedIndirect.cginc" />

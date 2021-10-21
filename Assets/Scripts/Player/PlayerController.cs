@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
     [Header("Jump Variables")]
     [SerializeField] private float jumpForce;
     [SerializeField] private float fallingForce;
-    private bool canJump = true;
+    protected bool canJump = true;
     //private bool finishKeyJump;
 
     [Header("Dash Variables")]
@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float lastDash;
     [SerializeField] private float dashTimeLeft;
     [SerializeField] private float dashTime;
-    private bool canDash = true;
+    protected bool canDash = true;
     private bool isDashing;
     public bool dashEnabled;        // Guardar en persistencia
 
@@ -48,11 +48,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float groundCheckRadius;
     public Transform groundCheck;
     [SerializeField] LayerMask whatIsGround;
-    private bool isGrounded;
+    protected bool isGrounded;
     public Vector3 lastPositionInGround;
 
     [Header("Coroutine to wait time variables")]
-    [SerializeField] private float timeToWait = 1;
+    [SerializeField] protected float timeToWait = 1;
 
     [Header("Respawn")]
     public RespawnInfo respawn;
@@ -253,7 +253,7 @@ public class PlayerController : MonoBehaviour
     
     //-- FLIP ----------------------------------------------------------------------------------------------------------------------
 
-    private void Flip()
+    protected void Flip()
     {
         if (canMove)
         {
@@ -273,7 +273,7 @@ public class PlayerController : MonoBehaviour
     
     //-- KNOCKBACK -----------------------------------------------------------------------------------------------------------------
 
-    public void KnockBackGetFromEnemy(Vector3 direction)
+    /*public void KnockBackGetFromEnemy(Vector3 direction)
     {
 
         float directionX = direction.x;
@@ -292,7 +292,7 @@ public class PlayerController : MonoBehaviour
         //bridgePlayerAnimator.PlayAnimation("GettingDamage");          // KNOCKBACK / GET DAMAGE ANIMATION
         //bridgePlayerAudio.ReproduceFX("KnockBack");                   // KNOCKBACK / GET DAMAGE FX
 
-        StartCoroutine(WaitTime(timeToWait));
+        WaitTime(timeToWait);
     }
 
     public void KnockBackGetFromSpikes(Vector3 respawnZone)
@@ -311,8 +311,8 @@ public class PlayerController : MonoBehaviour
             Flip();
         }
 
-        StartCoroutine(WaitTime(timeToWait));
-    }
+        WaitTime(timeToWait);
+    }*/
 
     
     //-- CHECKGROUND----------------------------------------------------------------------------------------------------------------
@@ -344,7 +344,7 @@ public class PlayerController : MonoBehaviour
             Flip();
         }
 
-        StartCoroutine(WaitTime(timeToWait + 1f));
+        WaitTime(timeToWait + 1f);
     }
 
     
@@ -380,7 +380,11 @@ public class PlayerController : MonoBehaviour
 
     //-- OTHERS --------------------------------------------------------------------------------------------------------------------
 
-    IEnumerator WaitTime(float time)
+    protected void WaitTime(float time) {
+        StartCoroutine(WaitTimeCO(time));
+    }
+
+    IEnumerator WaitTimeCO(float time)
     {
         canMove = false;
         canJump = false;

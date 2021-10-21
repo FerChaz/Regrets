@@ -9,6 +9,14 @@ public class PlayerMove : PlayerController
     [Header("Movement Variables")]
     [SerializeField] private float speedMovement;
 
+    //-- START & UPDATE ------------------------------------------------------------------------------------------------------------
+
+    private void Update()
+    {
+        Move();
+    }
+
+    //-- MOVE ----------------------------------------------------------------------------------------------------------------------
 
     private void Move()
     {
