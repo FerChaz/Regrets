@@ -45,8 +45,8 @@ public abstract class PatrolEnemyBase : MonoBehaviour
 
     protected Vector3 movement;
 
-    public SoulManager soulManager;
-    public LifeManager lifeManager;
+    public SoulController soulManager;
+    public LifeController lifeManager;
     public int damage;
     public int soulsToDrop;
 

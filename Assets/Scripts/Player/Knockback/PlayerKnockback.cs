@@ -2,14 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerKnockback : PlayerController
+public class PlayerKnockback : PlayerHabilities
 {
     //-- VARIABLES -----------------------------------------------------------------------------------------------------------------
 
     [Header("Knockback Variables")]
-    [SerializeField] private float knockbackDuration;
-    [SerializeField] private float knockbackTime;
-    [SerializeField] private float knockbackCounter;
     [SerializeField] private Vector3 knockbackForce;
 
 
@@ -29,12 +26,12 @@ public class PlayerKnockback : PlayerController
             movement.Set(knockbackForce.x, knockbackForce.y, 0.0f);
         }
 
-        rigidBody.AddForce(movement, ForceMode.Impulse);
+        _player.rigidBody.AddForce(movement, ForceMode.Impulse);
 
         //bridgePlayerAnimator.PlayAnimation("GettingDamage");          // KNOCKBACK / GET DAMAGE ANIMATION
         //bridgePlayerAudio.ReproduceFX("KnockBack");                   // KNOCKBACK / GET DAMAGE FX
 
-        WaitTime(timeToWait);
+        _player.WaitTime(_player.timeToWait);
     }
 
     //-- SPIKES KNOCKBACK ----------------------------------------------------------------------------------------------------------
@@ -43,16 +40,16 @@ public class PlayerKnockback : PlayerController
     {
 
         movement.Set(0.0f, knockbackForce.y, 0.0f);
-        rigidBody.AddForce(movement, ForceMode.Impulse);
+        _player.rigidBody.AddForce(movement, ForceMode.Impulse);
 
         //bridgePlayerAnimator.PlayAnimation("GettingDamage");          // KNOCKBACK / GET DAMAGE ANIMATION
         //bridgePlayerAudio.ReproduceFX("KnockBack");                   // KNOCKBACK / GET DAMAGE FX
 
         transform.position = respawnZone;
 
-        if (!isFacingRight)
+        if (!_player.isFacingRight)
         {
-            Flip();
+            _player.Flip();
         }
 
         //StartCoroutine(WaitTime(timeToWait));

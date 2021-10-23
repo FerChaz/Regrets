@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpikesController : MonoBehaviour
 {
-    public LifeManager lifeManager;
+    public LifeController lifeController;
     public int damage;
 
     public GameObject respawnZone;
@@ -13,7 +13,7 @@ public class SpikesController : MonoBehaviour
 
     private void OnEnable()
     {
-        lifeManager = FindObjectOfType<LifeManager>();
+        lifeController = FindObjectOfType<LifeController>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -21,7 +21,7 @@ public class SpikesController : MonoBehaviour
         if (other.gameObject.CompareTag("LifeManager"))
         {
             Vector3 respawnPosition = respawnZone.transform.position;
-            lifeManager.RecieveDamage(damage, respawnPosition, false);
+            lifeController.RecieveDamage(damage, respawnPosition, false);
         }
     }
 }

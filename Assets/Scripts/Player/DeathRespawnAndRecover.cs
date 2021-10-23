@@ -18,7 +18,7 @@ public class DeathRespawnAndRecover : MonoBehaviour
 
     [Header("Controllers")]
     public PlayerController playerController;
-    public SoulManager soulsController;
+    public SoulController soulsController;
     public LimboController limbo;
 
     private int _totalSoulsToRecover;
@@ -36,7 +36,7 @@ public class DeathRespawnAndRecover : MonoBehaviour
     private void Start()
     {
         playerController = GetComponent<PlayerController>();
-        soulsController = GetComponentInChildren<SoulManager>();
+        soulsController = GetComponentInChildren<SoulController>();
 
         isFirstDead = true;
 

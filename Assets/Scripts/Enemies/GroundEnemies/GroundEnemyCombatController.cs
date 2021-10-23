@@ -9,8 +9,8 @@ public class GroundEnemyCombatController : MonoBehaviour
     [SerializeField] private GroundEnemyPatrolFSM enemyFSM;
     [SerializeField] private GroundEnemyPatrolController enemyController;
     [SerializeField] private EnemyLifeController _enemyLife;
-    [SerializeField] private LifeManager _playerLife;
-    [SerializeField] private SoulManager _playerSouls;
+    [SerializeField] private LifeController _playerLife;
+    [SerializeField] private SoulController _playerSouls;
 
     public int damage;
     public int soulsToDrop;
@@ -19,8 +19,8 @@ public class GroundEnemyCombatController : MonoBehaviour
 
     private void OnEnable()
     {
-        _playerLife = FindObjectOfType<LifeManager>();
-        _playerSouls = FindObjectOfType<SoulManager>();
+        _playerLife = FindObjectOfType<LifeController>();
+        _playerSouls = FindObjectOfType<SoulController>();
     }
 
     //-- DO DAMAGE -----------------------------------------------------------------------------------------------------------------

@@ -8,7 +8,7 @@ public class DeathRecoverSoul : MonoBehaviour
     public RecoverSoulsInfo recoverData;
     private int _totalSouls;
 
-    public SoulManager soulController;
+    public SoulController soulController;
     public ParticleSystem particle;
 
     public string sceneOfGameObject;
@@ -27,7 +27,7 @@ public class DeathRecoverSoul : MonoBehaviour
     // CUANDO PREGUNTAMOS POR LA ESCENA PREGUNTAR SI NO ES NULL
     private void Start()
     {
-        soulController = FindObjectOfType<SoulManager>();
+        soulController = FindObjectOfType<SoulController>();
         transform.position = recoverData.deathPosition;
         _totalSouls = recoverData.totalSouls;
         particle.Play();

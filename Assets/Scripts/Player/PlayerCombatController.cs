@@ -16,8 +16,8 @@ public class PlayerCombatController : MonoBehaviour
     [SerializeField] private LayerMask whatIsDamageable;
 
     public GameObject weapon;
-    public GameObject player;
-    private Animator playerAnimator;
+    //public GameObject player;
+    //private Animator playerAnimator;
     private float weaponHideCooldown;
 
 
@@ -28,7 +28,7 @@ public class PlayerCombatController : MonoBehaviour
     private void Start()
     {
         attackDetails[0] = attackDamage;
-        playerAnimator = player.GetComponent<Animator>();
+        //playerAnimator = player.GetComponent<Animator>();
 
     }
 
@@ -84,7 +84,6 @@ public class PlayerCombatController : MonoBehaviour
         foreach (Collider collider in detectedObjects)
         {
             collider.transform.SendMessage("GetDamage", attackDetails);
-            Debug.Log($"{collider.gameObject.name}");
         }
     }
 

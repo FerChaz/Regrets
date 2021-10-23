@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerDash : PlayerController
+public class PlayerDash : PlayerHabilities
 {
     //-- VARIABLES -----------------------------------------------------------------------------------------------------------------
 
@@ -12,7 +12,9 @@ public class PlayerDash : PlayerController
     [SerializeField] private float lastDash;
     [SerializeField] private float dashTimeLeft;
     [SerializeField] private float dashTime;
+
     private bool isDashing;
+    private bool dashEnabled;       // Guardar en persistencia
 
     //-- START & UPDATE ------------------------------------------------------------------------------------------------------------
 
@@ -29,10 +31,10 @@ public class PlayerDash : PlayerController
 
     private void Dash()
     {
-        if (Input.GetButton("Dash") && canDash && (Time.time >= (lastDash + dashCooldown)))
+        if (Input.GetButton("Dash") && _player.canDash && (Time.time >= (lastDash + dashCooldown)))
         {
             isDashing = true;
-            rigidBody.useGravity = false;
+            _player.rigidBody.useGravity = false;
             dashTimeLeft = dashTime;
             lastDash = Time.time;
         }
@@ -41,20 +43,20 @@ public class PlayerDash : PlayerController
         {
             if (dashTimeLeft > 0)
             {
-                canMove = false;
-                canJump = false;
+                _player.canMove = false;
+                _player.canJump = false;
 
-                rigidBody.velocity.Set(rigidBody.velocity.x, 0.0f, 0.0f);
+                _player.rigidBody.velocity.Set(_player.rigidBody.velocity.x, 0.0f, 0.0f);
 
-                if (isFacingRight)
+                if (_player.isFacingRight)
                 {
-                    rigidBody.AddForce(Vector3.right * dashForce, ForceMode.Impulse);
-                    dashParticles.Emit(particleAmount);
+                    _player.rigidBody.AddForce(Vector3.right * dashForce, ForceMode.Impulse);
+                    _player.dashParticles.Emit(_player.particleAmount);
                 }
                 else
                 {
-                    rigidBody.AddForce(Vector3.left * dashForce, ForceMode.Impulse);
-                    dashParticles.Emit(particleAmount);
+                    _player.rigidBody.AddForce(Vector3.left * dashForce, ForceMode.Impulse);
+                    _player.dashParticles.Emit(_player.particleAmount);
                 }
 
                 dashTimeLeft -= Time.deltaTime;
@@ -63,11 +65,18 @@ public class PlayerDash : PlayerController
             if (dashTimeLeft <= 0)
             {
                 isDashing = false;
-                rigidBody.useGravity = true;
-                canMove = true;
-                canJump = true;
+                _player.rigidBody.useGravity = true;
+                _player.canMove = true;
+                _player.canJump = true;
             }
         }
+    }
+
+    //-- ENABLE DASH ---------------------------------------------------------------------------------------------------------------
+
+    public void EnableDash()
+    {
+        dashEnabled = true;
     }
 
 }

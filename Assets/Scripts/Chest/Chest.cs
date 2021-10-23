@@ -6,7 +6,7 @@ public class Chest : MonoBehaviour
 {
 
     public int totalSouls;
-    public SoulManager soulManager;
+    public SoulController soulManager;
 
     private Animator _chestAnimator;
 
@@ -15,7 +15,7 @@ public class Chest : MonoBehaviour
     private void Start()
     {
         //_chestAnimator = GetComponent<Animator>();
-        soulManager = FindObjectOfType<SoulManager>();
+        soulManager = FindObjectOfType<SoulController>();
     }
 
     public void GetDamage(float[] damage)

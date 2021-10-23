@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerJump : PlayerController
+public class PlayerJump : PlayerHabilities
 {
     //-- VARIABLES -----------------------------------------------------------------------------------------------------------------
 
@@ -10,9 +10,10 @@ public class PlayerJump : PlayerController
     [SerializeField] private float jumpForce;
     [SerializeField] private float fallingForce;
 
+
     //-- START & UPDATE ------------------------------------------------------------------------------------------------------------
 
-    private void Update()
+    private void FixedUpdate()
     {
         Jump();
     }
@@ -21,18 +22,22 @@ public class PlayerJump : PlayerController
 
     private void Jump()
     {
-        if (Input.GetButton("Jump") && isGrounded && canJump)
+        if (Input.GetButton("Jump") && _player.isGrounded && _player.canJump)
         {
             movement.Set(0.0f, jumpForce, 0.0f);
-            rigidBody.AddForce(movement, ForceMode.Impulse);
+            _player.rigidBody.AddForce(movement, ForceMode.Impulse);
 
             //finishKeyJump = false;
             //bridgePlayerAnimator.PlayAnimation("Jumping");          // JUMP ANIMATION
             //bridgePlayerAudio.ReproduceFX("Jump");                  // JUMP FX
         }
-        else if (rigidBody.velocity.y < 0f)
+        //else if (rigidBody.velocity.y < 0f)
+        //{
+        //    rigidBody.AddForce(fallingForce * Physics.gravity);
+        //} 
+        else
         {
-            rigidBody.AddForce(fallingForce * Physics.gravity);
-        } 
+            _player.rigidBody.AddForce(fallingForce * Physics.gravity);
+        }
     }
 }

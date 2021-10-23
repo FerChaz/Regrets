@@ -13,7 +13,7 @@ public class DoorToPayController : MonoBehaviour
     public GameObject panelSearch;
     public GameObject panelOptions;
 
-    public SoulManager souls;
+    public SoulController souls;
 
     private BoxCollider doorCollider;
 
@@ -28,7 +28,7 @@ public class DoorToPayController : MonoBehaviour
     private void Start()
     {
         doorCollider = GetComponent<BoxCollider>();
-        souls = FindObjectOfType<SoulManager>();
+        souls = FindObjectOfType<SoulController>();
         player = FindObjectOfType<PlayerController>();
     }
 

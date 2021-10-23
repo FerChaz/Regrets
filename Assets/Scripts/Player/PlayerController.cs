@@ -6,67 +6,46 @@ public class PlayerController : MonoBehaviour
 {
     //-- VARIABLES -----------------------------------------------------------------------------------------------------------------
 
-    
-    
+    [Header("Model & Animations")]
     [SerializeField] private GameObject playerModel;
     [SerializeField] private Animator playerAnimator;
-    protected Vector3 movement;
-    protected float inputDirection;
-    protected bool isFacingRight = true;
-    protected bool canMove = true;
-
-
     private Vector3 playerRotation;
     private Vector3 playerRotationBack;
     private Vector3 fixedPlayerRotation;
     private Vector3 fixedPlayerRotationBack;
 
+
+    public float inputDirection;
+    public bool isFacingRight = true;
+    public bool canMove = true;
+
+
     [Header("Jump Variables")]
-    [SerializeField] private float jumpForce;
-    [SerializeField] private float fallingForce;
-    protected bool canJump = true;
-    //private bool finishKeyJump;
+    public bool canJump = true;
 
     [Header("Dash Variables")]
-    [SerializeField] private float dashCooldown;
-    [SerializeField] private float dashForce;
-    [SerializeField] private float lastDash;
-    [SerializeField] private float dashTimeLeft;
-    [SerializeField] private float dashTime;
-    protected bool canDash = true;
-    private bool isDashing;
-    public bool dashEnabled;        // Guardar en persistencia
-
-    [Header("Knockback Variables")]
-    [SerializeField] private float knockbackDuration;
-    [SerializeField] private float knockbackTime;
-    [SerializeField] private float knockbackCounter;
-    [SerializeField] private Vector3 knockbackForce;
-    private bool knockback;
+    public bool canDash = true;
 
     [Header("Ground Check")]
     [SerializeField] private float groundCheckRadius;
     public Transform groundCheck;
     [SerializeField] LayerMask whatIsGround;
-    protected bool isGrounded;
+    public bool isGrounded;
     public Vector3 lastPositionInGround;
 
-    [Header("Coroutine to wait time variables")]
-    [SerializeField] protected float timeToWait = 1;
+    [Header("Coroutine to wait time Variables")]
+    [SerializeField] public float timeToWait = 1;
 
     [Header("Respawn")]
     public RespawnInfo respawn;
     public DeathRespawnAndRecover deathRespawn;
-
-    [Header("Camera")]
-    public Transform cameraPosition;
 
     [Header("Particles")]
     public ParticleSystem dashParticles;
     public int particleAmount;
 
     [Header("Components")]
-    protected Rigidbody rigidBody;
+    public Rigidbody rigidBody;
 
     //private AudioManager audioManager;
 
@@ -121,14 +100,6 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         Move();
-        Jump();
-
-        if (dashEnabled)
-        {
-            Dash();
-        }
-       
-        
     }
 
     //-- CHECKINPUT ----------------------------------------------------------------------------------------------------------------
@@ -142,15 +113,11 @@ public class PlayerController : MonoBehaviour
 
     //-- MOVE ----------------------------------------------------------------------------------------------------------------------
 
-    [SerializeField] private float speedMovement;
-
     private void Move()
     {
         if (inputDirection < 0f && canMove)
         {
             playerModel.transform.eulerAngles = fixedPlayerRotationBack;
-            movement.Set(-speedMovement, rigidBody.velocity.y, 0.0f);
-            rigidBody.velocity = movement;
             playerAnimator.SetBool("Movement", true);
 
             //bridgePlayerAnimator.PlayAnimation("Moving");          // MOVE ANIMATION
@@ -159,8 +126,6 @@ public class PlayerController : MonoBehaviour
         else if (inputDirection > 0f && canMove)
         {
             playerModel.transform.eulerAngles = fixedPlayerRotation;
-            movement.Set(speedMovement, rigidBody.velocity.y, 0.0f);
-            rigidBody.velocity = movement;
             playerAnimator.SetBool("Movement", true);
 
             //bridgePlayerAnimator.PlayAnimation("Moving");          // MOVE ANIMATION
@@ -175,85 +140,16 @@ public class PlayerController : MonoBehaviour
             {
                 playerModel.transform.eulerAngles = playerRotation;
             }
-            movement.Set(0.0f, rigidBody.velocity.y, 0.0f);
-            rigidBody.velocity = movement;
             playerAnimator.SetBool("Movement", false);
 
             //bridgePlayerAnimator.PlayAnimation("Idle");            // IDLE ANIMATION
         }
     }
     
-    //-- JUMP ----------------------------------------------------------------------------------------------------------------------
-
-    private void Jump()
-    {
-        if (Input.GetButton("Jump") && isGrounded && canJump)
-        {
-            movement.Set(0.0f, jumpForce, 0.0f);
-            rigidBody.AddForce(movement, ForceMode.Impulse);
-
-            //finishKeyJump = false;
-            //bridgePlayerAnimator.PlayAnimation("Jumping");          // JUMP ANIMATION
-            //bridgePlayerAudio.ReproduceFX("Jump");                  // JUMP FX
-        }
-        //else if (rigidBody.velocity.y < 0f){} 
-        else
-        {
-            rigidBody.AddForce(fallingForce * Physics.gravity);
-            // AVISAR AL ANIMATOR QUE NO ESTA CAYENDO
-        }
-
-    }
-    
-    //-- DASH ----------------------------------------------------------------------------------------------------------------------
-
-    private void Dash()
-    {
-        if (Input.GetButton("Dash") && canDash && (Time.time >= (lastDash + dashCooldown)))
-        {
-            isDashing = true;
-            rigidBody.useGravity = false;
-            dashTimeLeft = dashTime;
-            lastDash = Time.time;
-        }
-
-        if (isDashing)
-        {
-            if (dashTimeLeft > 0)
-            {
-                canMove = false;
-                canJump = false;
-
-                rigidBody.velocity.Set(rigidBody.velocity.x, 0.0f, 0.0f);
-
-                if (isFacingRight)
-                {
-                    rigidBody.AddForce(Vector3.right * dashForce, ForceMode.Impulse);
-                    dashParticles.Emit(particleAmount);
-                }
-                else
-                {
-                    rigidBody.AddForce(Vector3.left * dashForce, ForceMode.Impulse);
-                    dashParticles.Emit(particleAmount);
-                }
-
-                dashTimeLeft -= Time.deltaTime;
-            }
-
-            if (dashTimeLeft <= 0)
-            {
-                isDashing = false;
-                rigidBody.useGravity = true;
-                canMove = true;
-                canJump = true;
-            }
-        }
-    }
-
     
     //-- FLIP ----------------------------------------------------------------------------------------------------------------------
 
-    protected void Flip()
+    public void Flip()
     {
         if (canMove)
         {
@@ -270,50 +166,6 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-    
-    //-- KNOCKBACK -----------------------------------------------------------------------------------------------------------------
-
-    /*public void KnockBackGetFromEnemy(Vector3 direction)
-    {
-
-        float directionX = direction.x;
-
-        if (directionX >= transform.position.x)
-        {
-            movement.Set(knockbackForce.x * -1, knockbackForce.y, 0.0f);
-        }
-        else
-        {
-            movement.Set(knockbackForce.x, knockbackForce.y, 0.0f);
-        }
-
-        rigidBody.AddForce(movement, ForceMode.Impulse);
-
-        //bridgePlayerAnimator.PlayAnimation("GettingDamage");          // KNOCKBACK / GET DAMAGE ANIMATION
-        //bridgePlayerAudio.ReproduceFX("KnockBack");                   // KNOCKBACK / GET DAMAGE FX
-
-        WaitTime(timeToWait);
-    }
-
-    public void KnockBackGetFromSpikes(Vector3 respawnZone)
-    {
-
-        movement.Set(0.0f, knockbackForce.y, 0.0f);
-        rigidBody.AddForce(movement, ForceMode.Impulse);
-
-        //bridgePlayerAnimator.PlayAnimation("GettingDamage");          // KNOCKBACK / GET DAMAGE ANIMATION
-        //bridgePlayerAudio.ReproduceFX("KnockBack");                   // KNOCKBACK / GET DAMAGE FX
-
-        transform.position = respawnZone;
-
-        if (!isFacingRight)
-        {
-            Flip();
-        }
-
-        WaitTime(timeToWait);
-    }*/
-
     
     //-- CHECKGROUND----------------------------------------------------------------------------------------------------------------
 
@@ -380,7 +232,7 @@ public class PlayerController : MonoBehaviour
 
     //-- OTHERS --------------------------------------------------------------------------------------------------------------------
 
-    protected void WaitTime(float time) {
+    public void WaitTime(float time) {
         StartCoroutine(WaitTimeCO(time));
     }
 

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMove : PlayerController
+public class PlayerMove : PlayerHabilities
 {
     //-- VARIABLES -----------------------------------------------------------------------------------------------------------------
 
@@ -20,20 +20,20 @@ public class PlayerMove : PlayerController
 
     private void Move()
     {
-        if (inputDirection < 0f && canMove)
+        if (_player.inputDirection < 0f && _player.canMove)
         {
-            movement.Set(-speedMovement, rigidBody.velocity.y, 0.0f);
+            movement.Set(-speedMovement, _player.rigidBody.velocity.y, 0.0f);
         }
-        else if (inputDirection > 0f && canMove)
+        else if (_player.inputDirection > 0f && _player.canMove)
         {
-            movement.Set(speedMovement, rigidBody.velocity.y, 0.0f);
+            movement.Set(speedMovement, _player.rigidBody.velocity.y, 0.0f);
         }
         else
         {
-            movement.Set(0.0f, rigidBody.velocity.y, 0.0f);
+            movement.Set(0.0f, _player.rigidBody.velocity.y, 0.0f);
         }
 
-        rigidBody.velocity = movement;
+        _player.rigidBody.velocity = movement;
     }
 
 }

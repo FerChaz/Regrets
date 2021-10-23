@@ -88,6 +88,7 @@
     <Compile Include="Assets\Scripts\Enemies\GroundEnemies\GroundEnemyPatrolController.cs" />
     <Compile Include="Assets\AmplifyShaderEditor\Examples\Official\Smear\Smear.cs" />
     <Compile Include="Assets\AmplifyShaderEditor\Examples\Community\ForceShield\ForceShieldShootBall.cs" />
+    <Compile Include="Assets\Scripts\Player\Knockback\PlayerKnockback.cs" />
     <Compile Include="Assets\Scripts\Pause\PauseManager.cs" />
     <Compile Include="Assets\Scripts\Walls &amp; Doors\BreakableDoorController.cs" />
     <Compile Include="Assets\AmplifyShaderEditor\Examples\Community\Volumetric Pixelization\VolumetricSphere.cs" />
@@ -107,7 +108,7 @@
     <Compile Include="Assets\Scripts\Limbo\Quests\LimboDestroyEnemiesQuest.cs" />
     <Compile Include="Assets\Scripts\MainMenu\ExitMenu.cs" />
     <Compile Include="Assets\Scripts\SceneManager\ChargeAdditiveScenes.cs" />
-    <Compile Include="Assets\Scripts\Player\Components\LifeManager.cs" />
+    <Compile Include="Assets\Scripts\Player\Components\LifeController.cs" />
     <Compile Include="Assets\Scripts\Enemies\GroundEnemies\GroundEnemyDeath.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\AdditiveScenesInfo.cs" />
     <Compile Include="Assets\Animations\Animations\Kaori\Attack\Scripts\ComboAttacksScript.cs" />
@@ -129,7 +130,7 @@
     <Compile Include="Assets\Scripts\Player\AudioBridges\AudioManager.cs" />
     <Compile Include="Assets\Scripts\UI\CheckCamera.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemyLifeController.cs" />
-    <Compile Include="Assets\Scripts\Player\Components\SoulManager.cs" />
+    <Compile Include="Assets\Scripts\Player\Components\SoulController.cs" />
     <Compile Include="Assets\Scripts\Enemies\FlyEnemies\FlyEnemyDeath.cs" />
     <Compile Include="Assets\Scripts\Camera\MainCamera.cs" />
     <Compile Include="Assets\Scripts\Enemies\Patrol\PatrolEnemyBase.cs" />
@@ -153,7 +154,7 @@
     <Compile Include="Assets\Scripts\Scriptable Objects\IntValue.cs" />
     <Compile Include="Assets\Animations\Animations\Kaori\Attack\Scripts\Transition2Behaviour.cs" />
     <Compile Include="Assets\Scripts\Player\AudioBridges\BridgePlayerAudio.cs" />
-    <Compile Include="Assets\Scripts\Player\Knockback\PlayerKnockback.cs" />
+    <Compile Include="Assets\Scripts\Player\Habilities\PlayerHabilities.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Fantasy Adventure Environment\Shaders\VS_InstancedIndirect.cginc" />

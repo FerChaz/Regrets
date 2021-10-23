@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class FlyEnemyDeath : MonoBehaviour
 {
-    public SoulManager playerSouls;
-    public LifeManager playerLife;
+    public SoulController playerSouls;
+    public LifeController playerLife;
     public FlyEnemyFSM flyEnemyFSM;
     public EnemyLifeController flyEnemyLife;
 
