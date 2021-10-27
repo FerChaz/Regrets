@@ -10,6 +10,8 @@ public class PlayerJump : PlayerHabilities
     [SerializeField] private float jumpForce;
     [SerializeField] private float fallingForce;
 
+    private float speedY;
+
 
     //-- START & UPDATE ------------------------------------------------------------------------------------------------------------
 
@@ -26,9 +28,9 @@ public class PlayerJump : PlayerHabilities
         {
             movement.Set(0.0f, jumpForce, 0.0f);
             _player.rigidBody.AddForce(movement, ForceMode.Impulse);
+            playerAnimatorController.Jump();
 
             //finishKeyJump = false;
-            //bridgePlayerAnimator.PlayAnimation("Jumping");          // JUMP ANIMATION
             //bridgePlayerAudio.ReproduceFX("Jump");                  // JUMP FX
         }
         //else if (rigidBody.velocity.y < 0f)
@@ -39,5 +41,8 @@ public class PlayerJump : PlayerHabilities
         {
             _player.rigidBody.AddForce(fallingForce * Physics.gravity);
         }
+
+        speedY = _player.rigidBody.velocity.y;
+        playerAnimatorController.Fall(speedY);
     }
 }

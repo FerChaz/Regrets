@@ -118,17 +118,11 @@ public class PlayerController : MonoBehaviour
         if (inputDirection < 0f && canMove)
         {
             playerModel.transform.eulerAngles = fixedPlayerRotationBack;
-            playerAnimator.SetBool("Movement", true);
-
-            //bridgePlayerAnimator.PlayAnimation("Moving");          // MOVE ANIMATION
 
         }
         else if (inputDirection > 0f && canMove)
         {
             playerModel.transform.eulerAngles = fixedPlayerRotation;
-            playerAnimator.SetBool("Movement", true);
-
-            //bridgePlayerAnimator.PlayAnimation("Moving");          // MOVE ANIMATION
         }
         else
         {
@@ -140,9 +134,6 @@ public class PlayerController : MonoBehaviour
             {
                 playerModel.transform.eulerAngles = playerRotation;
             }
-            playerAnimator.SetBool("Movement", false);
-
-            //bridgePlayerAnimator.PlayAnimation("Idle");            // IDLE ANIMATION
         }
     }
     
@@ -153,7 +144,6 @@ public class PlayerController : MonoBehaviour
     {
         if (canMove)
         {
-            //inputDirection = Input.GetAxisRaw("Horizontal");
             if (isFacingRight && inputDirection < 0)
             {
                 isFacingRight = !isFacingRight;

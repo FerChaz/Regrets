@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class StartingScene : MonoBehaviour
 {
-    public AdditiveSceneManager sceneManager;
+    public SceneController sceneManager;
     public AdditiveScenesInfo additiveScenesScriptableObject;
     public List<string> scenesToLoadInAdditive;
 
@@ -28,19 +28,13 @@ public class StartingScene : MonoBehaviour
         //transicionFadeAnimator.SetBool("FromBlackBool", false);
         //transicionFadeAnimator.SetBool("ToBlackBool", true);
 
-        additiveScenesScriptableObject.additiveScenes.Clear();
-        additiveScenesScriptableObject.additiveScenes = scenesToLoadInAdditive;
-        additiveScenesScriptableObject.playerPositionToGo = playerPosition;
-
         // ADDITIVE SCENE MANAGER
-        sceneManager.additiveScenes = scenesToLoadInAdditive;
-        sceneManager.LoadSceneInAdditive(intro);
+        sceneManager.LoadSingleSceneInAdditive(intro);
 
-        sceneManager.ChangeScene();
-        additiveScenesScriptableObject.actualScene = intro;
+        sceneManager.ChangePlayerPosition(playerPosition);
 
         _loadingCanvas.SetActive(false);
 
-        sceneManager.UnloadActualScene("Start");
+        sceneManager.UnloadSingleSceneInAdditive("Start");
     }
 }

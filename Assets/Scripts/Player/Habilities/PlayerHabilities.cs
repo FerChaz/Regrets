@@ -9,11 +9,13 @@ public class PlayerHabilities : MonoBehaviour
 
     [Header("Bridges")]
     public BridgePlayerAnimator bridgePlayerAnimator;
+    public PlayerAnimatorController playerAnimatorController;
 
     protected Vector3 movement;
 
     private void Start()
     {
         _player = GetComponent<PlayerController>();
+        playerAnimatorController = GetComponentInChildren<PlayerAnimatorController>();
     }
 }

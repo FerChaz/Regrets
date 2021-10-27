@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731713, g: 0.13414736, b: 0.12107852, a: 1}
+  m_IndirectSpecularColor: {r: 0.1273174, g: 0.13414761, b: 0.12107885, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -198,6 +198,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 29318910}
+  - component: {fileID: 29318911}
   m_Layer: 9
   m_Name: Canvas
   m_TagString: Untagged
@@ -223,6 +224,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &29318911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 29318909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4186bd2d38d6d544bbcf5663877e8379, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &88219580
 GameObject:
   m_ObjectHideFlags: 0
@@ -6243,11 +6256,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98a250a82c7d95a4c996641dd0f89d52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  additiveScenesScriptableObject: {fileID: 11400000, guid: f345fc04864938a4b8f05d6929e96ad6, type: 2}
   playerToLoad: {fileID: 1537300084}
   cameraToLoad: {fileID: 499729786}
   canvasToLoad: {fileID: 0}
-  additiveScenes: []
 --- !u!114 &540182172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12877,7 +12888,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1537300084}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b688d7120167b7b4fa2f9d34aa1bc238, type: 3}
   m_Name: 
@@ -13145,6 +13156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bridgePlayerAnimator: {fileID: 0}
+  playerAnimatorController: {fileID: 0}
   knockbackForce: {x: 150, y: 10, z: 0}
 --- !u!114 &1537300095
 MonoBehaviour:
@@ -13159,6 +13171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bridgePlayerAnimator: {fileID: 0}
+  playerAnimatorController: {fileID: 0}
   jumpForce: 20
   fallingForce: 3
 --- !u!114 &1537300096
@@ -13174,6 +13187,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bridgePlayerAnimator: {fileID: 0}
+  playerAnimatorController: {fileID: 0}
   speedMovement: 10
 --- !u!114 &1537300097
 MonoBehaviour:
@@ -13188,6 +13202,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bridgePlayerAnimator: {fileID: 0}
+  playerAnimatorController: {fileID: 0}
   dashCooldown: 1
   dashForce: 60
   lastDash: 0
@@ -16131,6 +16146,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4892642472235598839}
   - component: {fileID: 1514903493648472461}
+  - component: {fileID: 5237115494077028686}
+  - component: {fileID: 5237115494077028687}
   m_Layer: 0
   m_Name: kaori-pelo-run-v3
   m_TagString: Untagged
@@ -16138,6 +16155,31 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &5237115494077028686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5237115494077028685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ba0b63e4516f0944ad32434d372d8d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5237115494077028687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5237115494077028685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5977b4a2d69ad844a88e042abebd9ad3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  comboPossible: 1
 --- !u!4 &5242377824580999839
 Transform:
   m_ObjectHideFlags: 0
