@@ -104,9 +104,9 @@
     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.6.5\Editor\Editors\CinemachineBlenderSettingsEditor.cs" />
     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.6.5\Editor\Editors\CinemachineSmoothPathEditor.cs" />
     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.6.5\Editor\Editors\CinemachineBrainEditor.cs" />
-    <Compile Include="Library\PackageCache\com.unity.cinemachine@2.6.5\Editor\Editors\CinemachineMixingCameraEditor.cs" />
-    <Compile Include="Library\PackageCache\com.unity.cinemachine@2.6.5\Editor\Utility\InspectorUtility.cs" />
     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.6.5\Editor\Editors\CinemachineComposerEditor.cs" />
+    <Compile Include="Library\PackageCache\com.unity.cinemachine@2.6.5\Editor\Utility\InspectorUtility.cs" />
+    <Compile Include="Library\PackageCache\com.unity.cinemachine@2.6.5\Editor\Editors\CinemachineMixingCameraEditor.cs" />
     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.6.5\Editor\PropertyDrawers\VcamTargetPropertyDrawer.cs" />
     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.6.5\Editor\Windows\WaveformWindow.cs" />
     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.6.5\Editor\Utility\BaseEditor.cs" />
@@ -119,8 +119,8 @@
     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.6.5\Editor\Editors\CinemachineStateDrivenCameraEditor.cs" />
     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.6.5\Editor\Editors\CinemachineSameAsFollowTargetEditor.cs" />
     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.6.5\Editor\Editors\CinemachineBasicMultiChannelPerlinEditor.cs" />
-    <Compile Include="Library\PackageCache\com.unity.cinemachine@2.6.5\Editor\Timeline\CinemachineShotClipEditor.cs" />
     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.6.5\Editor\Experimental\CinemachineNewFreeLookEditor.cs" />
+    <Compile Include="Library\PackageCache\com.unity.cinemachine@2.6.5\Editor\Timeline\CinemachineShotClipEditor.cs" />
     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.6.5\Editor\Timeline\CinemachineShotEditor.cs" />
   </ItemGroup>
   <ItemGroup>
