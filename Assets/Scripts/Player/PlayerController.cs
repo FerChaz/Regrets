@@ -47,6 +47,11 @@ public class PlayerController : MonoBehaviour
     [Header("Components")]
     public Rigidbody rigidBody;
 
+    [Header("Gravity")]
+    public float gravityScale = 1.0f;
+    public float globalGravity = -9.81f;
+    private Vector3 _gravity;
+
     //private AudioManager audioManager;
 
 
@@ -62,6 +67,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rigidBody = GetComponent<Rigidbody>();
+        rigidBody.useGravity = false;
         respawn.respawnPosition = new Vector3(-283f, -1.81f, 0.0f);
         //audioManager = GetComponent<AudioManager>();
 
@@ -100,6 +106,9 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         Move();
+
+        _gravity = globalGravity * gravityScale * Vector3.up;
+        rigidBody.AddForce(_gravity, ForceMode.Acceleration);
     }
 
     //-- CHECKINPUT ----------------------------------------------------------------------------------------------------------------
@@ -136,8 +145,10 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-    
-    
+
+    //-- GRAVITY -------------------------------------------------------------------------------------------------------------------
+
+
     //-- FLIP ----------------------------------------------------------------------------------------------------------------------
 
     public void Flip()

@@ -12,12 +12,46 @@ public class PlayerJump : PlayerHabilities
 
     private float speedY;
 
-
     //-- START & UPDATE ------------------------------------------------------------------------------------------------------------
+
+    
+
+    public float fallMultiplier = 2.5f;
+    public float lowJumpMultiplier = 2f;
+    public float jumpVelocity;
+
+    private bool jumpRequest;
+
+    private void Update()
+    {
+        if (Input.GetButtonDown("Jump") && _player.isGrounded && _player.canJump)
+        {
+            jumpRequest = true;
+        }
+
+        if(_player.rigidBody.velocity.y < 0.0f)
+        {
+            _player.gravityScale = fallMultiplier;
+        }
+        else if (_player.rigidBody.velocity.y >= 0.0f)
+        {
+            _player.gravityScale = lowJumpMultiplier;
+        }
+
+        speedY = _player.rigidBody.velocity.y;
+        playerAnimatorController.Fall(speedY);
+    }
 
     private void FixedUpdate()
     {
-        Jump();
+        //Jump();
+        if (jumpRequest)
+        {
+            _player.rigidBody.AddForce(Vector3.up * jumpVelocity, ForceMode.Impulse);
+            playerAnimatorController.Jump();
+            jumpRequest = false;
+        }
+        
     }
 
     //-- JUMP ----------------------------------------------------------------------------------------------------------------------
@@ -42,7 +76,8 @@ public class PlayerJump : PlayerHabilities
             _player.rigidBody.AddForce(fallingForce * Physics.gravity);
         }
 
-        speedY = _player.rigidBody.velocity.y;
-        playerAnimatorController.Fall(speedY);
+        ;
     }
+
+
 }
