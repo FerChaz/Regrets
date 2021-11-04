@@ -14,7 +14,7 @@ public class PlayerDash : PlayerHabilities
     [SerializeField] private float dashTime;
 
     private bool isDashing;
-    public bool dashEnabled;       // Guardar en persistencia
+    private bool dashEnabled;       // Guardar en persistencia
 
     //-- START & UPDATE ------------------------------------------------------------------------------------------------------------
 
