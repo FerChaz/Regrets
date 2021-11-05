@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -19410,11 +19410,11 @@ Transform:
   - {fileID: 1403534276}
   - {fileID: 797918536}
   - {fileID: 568310876}
-  - {fileID: 2087594503}
   - {fileID: 1783607453}
   - {fileID: 386342435}
   - {fileID: 295058656}
   - {fileID: 386887865}
+  - {fileID: 2087594503}
   - {fileID: 905224093}
   - {fileID: 1362569794}
   - {fileID: 208370813}
@@ -31513,6 +31513,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 281574811}
+  - {fileID: 2015090639}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -38920,6 +38921,67 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1973622328}
   m_Mesh: {fileID: -1843689209865246678, guid: 2b6811fa7cf56e548bee98315faf1211, type: 3}
+--- !u!1001 &1995952407
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1442047758}
+    m_Modifications:
+    - target: {fileID: 3424993957496358274, guid: 09345d6bab12b3b4cb0d1ae3745b7193, type: 3}
+      propertyPath: m_Name
+      value: Waterfall
+      objectReference: {fileID: 0}
+    - target: {fileID: 3424993957496358276, guid: 09345d6bab12b3b4cb0d1ae3745b7193, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3424993957496358276, guid: 09345d6bab12b3b4cb0d1ae3745b7193, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 222.40176
+      objectReference: {fileID: 0}
+    - target: {fileID: 3424993957496358276, guid: 09345d6bab12b3b4cb0d1ae3745b7193, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -55.600822
+      objectReference: {fileID: 0}
+    - target: {fileID: 3424993957496358276, guid: 09345d6bab12b3b4cb0d1ae3745b7193, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 77
+      objectReference: {fileID: 0}
+    - target: {fileID: 3424993957496358276, guid: 09345d6bab12b3b4cb0d1ae3745b7193, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3424993957496358276, guid: 09345d6bab12b3b4cb0d1ae3745b7193, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3424993957496358276, guid: 09345d6bab12b3b4cb0d1ae3745b7193, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3424993957496358276, guid: 09345d6bab12b3b4cb0d1ae3745b7193, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3424993957496358276, guid: 09345d6bab12b3b4cb0d1ae3745b7193, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3424993957496358276, guid: 09345d6bab12b3b4cb0d1ae3745b7193, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3424993957496358276, guid: 09345d6bab12b3b4cb0d1ae3745b7193, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3424993957496358277, guid: 09345d6bab12b3b4cb0d1ae3745b7193, type: 3}
+      propertyPath: MaxDistance
+      value: 259.14
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 09345d6bab12b3b4cb0d1ae3745b7193, type: 3}
 --- !u!1 &1996425557
 GameObject:
   m_ObjectHideFlags: 0
@@ -39414,6 +39476,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2013997175}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &2015090639 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3424993957496358276, guid: 09345d6bab12b3b4cb0d1ae3745b7193, type: 3}
+  m_PrefabInstance: {fileID: 1995952407}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2016616138
 GameObject:
   m_ObjectHideFlags: 0
