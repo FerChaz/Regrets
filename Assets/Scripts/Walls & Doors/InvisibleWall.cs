@@ -27,7 +27,6 @@ public class InvisibleWall : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            //StartCoroutine(Fade(Color.clear, material.color));
             material.color = _flashColor;
         }
     }
@@ -36,7 +35,6 @@ public class InvisibleWall : MonoBehaviour
     {
         for (float ft = 5f; ft >= 0; ft -= 0.1f)
         {
-            //material.color = Color.Lerp(inicial, final, flashSpeed * Time.deltaTime);
             Color c = material.color;
             c.a = ft;
             material.color = c;

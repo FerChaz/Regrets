@@ -2,61 +2,38 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 public class SceneController : MonoBehaviour
 {
-    [Header("DontDestroyOnLoad")]
+
     public GameObject playerToLoad;
-    public GameObject cameraToLoad;
-    public GameObject canvasToLoad;
 
-    private void Start()
-    {
-        playerToLoad = FindObjectOfType<PlayerController>().gameObject;
-        cameraToLoad = FindObjectOfType<MainCamera>().gameObject;
-        canvasToLoad = FindObjectOfType<MainCanvas>().gameObject;
-    }
-
+    private UnityAction _onTaskComplete;
 
     public void ChangePlayerPosition(Vector3 positionToGo)
     {
-        DontDestroyOnLoad(playerToLoad);
-        DontDestroyOnLoad(cameraToLoad);
-        DontDestroyOnLoad(canvasToLoad);
-
         playerToLoad.transform.position = positionToGo;
     }
 
-
-    public void LoadMultipleScenesInAdditive(List<string> scenesToLoad)
+    public void LoadSceneInAdditive(string sceneToLoad, UnityAction callback)
     {
-        for (int i = 0; i < scenesToLoad.Count; i++)
-        {
-            SceneManager.LoadSceneAsync(scenesToLoad[i], LoadSceneMode.Additive);
-        }
+        _onTaskComplete = callback;
+        AsyncOperation asyncOp = SceneManager.LoadSceneAsync(sceneToLoad, LoadSceneMode.Additive);
+        asyncOp.completed += OnAsyncOpCompleted;
     }
 
-    public void LoadSingleSceneInAdditive(string sceneToLoad)
+    public void UnloadSceneInAdditive(string sceneToUnload, UnityAction callback)
     {
-        SceneManager.LoadSceneAsync(sceneToLoad, LoadSceneMode.Additive);
+        _onTaskComplete = callback;
+        AsyncOperation asyncOp = SceneManager.UnloadSceneAsync(sceneToUnload);
+        asyncOp.completed += OnAsyncOpCompleted;
     }
 
-
-
-    public void UnloadMultipleScenesInAdditive(List<string> scenesToUnload, string sceneToGo)
+    private void OnAsyncOpCompleted(AsyncOperation obj)
     {
-        for (int i = 0; i < scenesToUnload.Count; i++)
-        {
-            if (scenesToUnload[i] != sceneToGo)
-            {
-                SceneManager.UnloadSceneAsync(scenesToUnload[i]);
-            }
-        }
-    }
-
-    public void UnloadSingleSceneInAdditive(string sceneToUnload)
-    {
-        SceneManager.UnloadSceneAsync(sceneToUnload);
+        Debug.Log($"Se completo {obj}");
+        _onTaskComplete?.Invoke();
     }
 
 }
