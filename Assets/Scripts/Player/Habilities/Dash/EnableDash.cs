@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnableDash : MonoBehaviour
 {
-    private PlayerDash _playerDash;
+    //private PlayerDash _playerDash;
 
     private bool dashAlreadyActive; // Guardar en persistencia
 
@@ -18,14 +18,14 @@ public class EnableDash : MonoBehaviour
 
     private void Start()
     {
-        _playerDash = FindObjectOfType<PlayerDash>();
+        //_playerDash = FindObjectOfType<PlayerDash>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            _playerDash.EnableDash();
+            //_playerDash.EnableDash();
             dashAlreadyActive = true;
             // Activar algun canvas que muestre como usarlo, o algun efecto
             this.gameObject.SetActive(false);
