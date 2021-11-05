@@ -9,7 +9,7 @@ public class DeathRespawnAndRecover : MonoBehaviour
     public RespawnInfo respawnInfo;
     public RecoverSoulsInfo soulRecoveryData;
     public AdditiveScenesInfo additiveScenesInSceneToGoScriptableObject;
-    public SceneController sceneManager;
+    //public SceneController sceneManager;
 
     [Header("DontDestroyOnLoad")]
     public GameObject playerToLoad;
