@@ -16,8 +16,8 @@ public class PlayerCombatController : MonoBehaviour
     [SerializeField] private LayerMask whatIsDamageable;
 
     public GameObject weapon;
-    //public GameObject player;
-    //private Animator playerAnimator;
+    public GameObject player;
+    private Animator playerAnimator;
     private float weaponHideCooldown;
 
 
@@ -28,7 +28,7 @@ public class PlayerCombatController : MonoBehaviour
     private void Start()
     {
         attackDetails[0] = attackDamage;
-        //playerAnimator = player.GetComponent<Animator>();
+        playerAnimator = player.GetComponent<Animator>();
 
     }
 
@@ -61,7 +61,7 @@ public class PlayerCombatController : MonoBehaviour
                 weaponTrails.Play();
 
                 //playerAnimator.SetBool("Attacking", true);
-                
+                //playerAnimator.SetTrigger("Attack");
                 //playerAnimator.Play("Katana-hit");
                 weaponHideCooldown = 3;
 

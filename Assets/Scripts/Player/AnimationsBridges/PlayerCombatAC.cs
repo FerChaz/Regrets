@@ -6,7 +6,7 @@ public class PlayerCombatAC : MonoBehaviour
 {
     private Animator _animator;
 
-    public bool comboPossible;
+    public bool comboPossible = false;
 
     private const string ATTACK = "Attack";
     private const string COMBO = "Combo";

@@ -14,12 +14,12 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 0
-  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  m_FogMode: 3
+  m_Fog: 1
+  m_FogColor: {r: 0.5176471, g: 0.13333334, b: 0.4509804, a: 1}
+  m_FogMode: 1
   m_FogDensity: 0.01
-  m_LinearFogStart: 0
-  m_LinearFogEnd: 300
+  m_LinearFogStart: 20
+  m_LinearFogEnd: 115
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.1273174, g: 0.13414761, b: 0.12107885, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731713, g: 0.13414736, b: 0.12107852, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5309,7 +5309,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
   m_AnchorMin: {x: 0.738876, y: 0}
   m_AnchorMax: {x: 1, y: 0.11012066}
-  m_AnchoredPosition: {x: 2, y: 6.5}
+  m_AnchoredPosition: {x: 2, y: 6.500183}
   m_SizeDelta: {x: 204.79999, y: 183.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &201806601
@@ -6175,7 +6175,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.26286048, g: 0.28170615, b: 0.31132078, a: 0}
+  m_BackGroundColor: {r: 0.5372549, g: 0.40000004, b: 0.9960785, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -13015,6 +13015,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   weapon: {fileID: 3928635820296684815}
+  player: {fileID: 0}
 --- !u!114 &1537300089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13120,7 +13121,6 @@ MonoBehaviour:
   respawnInfo: {fileID: 11400000, guid: f109a9748cb379b4d8e8478798f474ad, type: 2}
   soulRecoveryData: {fileID: 11400000, guid: 0d55266bc5806974a9620bf273e65772, type: 2}
   additiveScenesInSceneToGoScriptableObject: {fileID: 11400000, guid: f345fc04864938a4b8f05d6929e96ad6, type: 2}
-  sceneManager: {fileID: 0}
   playerToLoad: {fileID: 1537300084}
   cameraToLoad: {fileID: 499729786}
   canvasToLoad: {fileID: 29318909}
@@ -13192,7 +13192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bridgePlayerAnimator: {fileID: 0}
-  playerAnimatorController: {fileID: 0}
+  playerAnimatorController: {fileID: 5237115494077028686}
   dashCooldown: 1
   dashForce: 60
   lastDash: 0
