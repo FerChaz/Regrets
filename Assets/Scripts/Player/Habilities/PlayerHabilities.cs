@@ -13,7 +13,7 @@ public class PlayerHabilities : MonoBehaviour
 
     protected Vector3 movement;
 
-    private void Start()
+    protected virtual void Start()
     {
         _player = GetComponent<PlayerController>();
         playerAnimatorController = GetComponentInChildren<PlayerAnimatorController>();

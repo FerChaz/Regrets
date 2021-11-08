@@ -72,6 +72,7 @@
     <Compile Include="Assets\Scripts\Enemies\GroundEnemies\States\ChaseGroundEnemyState.cs" />
     <Compile Include="Assets\Animations\Animations\Kaori\Attack\Scripts\IdleBehaviour.cs" />
     <Compile Include="Assets\Scripts\Limbo\LimboController.cs" />
+    <Compile Include="Assets\MeleeWeaponTrail\Scripts\MeleeWeaponTrail.cs" />
     <Compile Include="Assets\Scripts\Walls &amp; Doors\DoorToPayController.cs" />
     <Compile Include="Assets\Scripts\Enemies\FlyEnemies\States\KnockbackFlyEnemyState.cs" />
     <Compile Include="Assets\Scripts\Player\Habilities\Dash\EnableDash.cs" />
@@ -89,6 +90,7 @@
     <Compile Include="Assets\Scripts\Enemies\GroundEnemies\GroundEnemyPatrolController.cs" />
     <Compile Include="Assets\AmplifyShaderEditor\Examples\Official\Smear\Smear.cs" />
     <Compile Include="Assets\Scripts\Player\Habilities\PlayerHabilities.cs" />
+    <Compile Include="Assets\MeleeWeaponTrail\Scripts\Interpolate.cs" />
     <Compile Include="Assets\AmplifyShaderEditor\Examples\Community\ForceShield\ForceShieldShootBall.cs" />
     <Compile Include="Assets\Scripts\Player\Knockback\PlayerKnockback.cs" />
     <Compile Include="Assets\Scripts\Pause\PauseManager.cs" />
@@ -99,6 +101,7 @@
     <Compile Include="Assets\Scripts\End\EndGame.cs" />
     <Compile Include="Assets\Scripts\Player\AnimationsBridges\BridgePlayerAnimator.cs" />
     <Compile Include="Assets\Scripts\Checkpoint\Checkpoint.cs" />
+    <Compile Include="Assets\Scripts\Player\AnimationsBridges\PlayerCombatAC.cs" />
     <Compile Include="Assets\Scripts\Observer\SignalListener.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\RespawnInfo.cs" />
     <Compile Include="Assets\Scripts\Enemies\FlyEnemies\FlyEnemyFSM.cs" />
@@ -157,7 +160,6 @@
     <Compile Include="Assets\Scripts\Scriptable Objects\IntValue.cs" />
     <Compile Include="Assets\Animations\Animations\Kaori\Attack\Scripts\Transition2Behaviour.cs" />
     <Compile Include="Assets\Scripts\Player\AudioBridges\BridgePlayerAudio.cs" />
-    <Compile Include="Assets\Scripts\Player\AnimationsBridges\PlayerCombatAC.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Fantasy Adventure Environment\Shaders\VS_InstancedIndirect.cginc" />
@@ -288,6 +290,7 @@
     <None Include="Assets\AmplifyShaderEditor\Plugins\EditorResources\Previews\Preview_TexturePropertyNode.shader" />
     <None Include="Assets\AmplifyShaderEditor\Plugins\EditorResources\Previews\Preview_TangentSignVertexDataNode.shader" />
     <None Include="Assets\AmplifyShaderEditor\Examples\Official\TemplateExamples\Particles\HeatHaze\ParticlesTest.shader" />
+    <None Include="Assets\MeleeWeaponTrail\README.txt" />
     <None Include="Assets\AmplifyShaderEditor\Examples\Official\TemplateExamples\PostProcess\FilmGrain\FilmGrain.shader" />
     <None Include="Assets\AmplifyShaderEditor\Plugins\EditorResources\Previews\Preview_SimplifiedFModOpNode.shader" />
     <None Include="Assets\Shaders\CellShader.shader" />

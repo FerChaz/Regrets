@@ -4,28 +4,20 @@ using UnityEngine;
 
 public class EntryScene : MonoBehaviour
 {
-    // Este script es cuando recien entramos a una escena
-
     [Header("EnableAndDisableObjects")]
     public GameObject activableObjects;
     public List<GameObject> otherEntrances;
 
-    private SceneController sceneManager;
+    public SceneController _sceneManager;
 
-    [Header("Fade")]
-    public GameObject transicionFade;
-    public Animator transicionFadeAnimator;
+    public List<string> additiveScenes;
 
-    [Header("Additives Scenes")]
-    List<string> additiveScenes;
-    // FALTARIA ACTUALIZAR LOS LIMITES DE LA CAMARA ACA
 
     private void Start()
     {
-        sceneManager = GetComponentInParent<SceneController>();
-        //transicionFade = GameObject.Find("TransitionCanvas");
-        //transicionFadeAnimator = transicionFade.GetComponentInChildren<Animator>();
+        _sceneManager = FindObjectOfType<SceneController>();
     }
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -33,18 +25,22 @@ public class EntryScene : MonoBehaviour
         {
             activableObjects.SetActive(true);               // Enable enemies
 
-            for(int i = 0; i < otherEntrances.Count; i++)
+            for (int i = 0; i < otherEntrances.Count; i++)
             {
                 otherEntrances[i].SetActive(false);         // Disable other entrances
             }
 
-            sceneManager.LoadMultipleScenesInAdditive(additiveScenes);
-
-            //transicionFadeAnimator.SetTrigger("FromBlack");
-            //transicionFadeAnimator.SetBool("ToBlackBool", false);
-            //transicionFadeAnimator.SetBool("FromBlackBool", true);
+            foreach (string scene in additiveScenes)
+            {
+                _sceneManager.LoadSceneInAdditive(scene, OnSceneComplete);
+            }
 
             gameObject.SetActive(false);
         }
+    }
+
+    private void OnSceneComplete()
+    {
+        Debug.Log("OnScene async complete");
     }
 }

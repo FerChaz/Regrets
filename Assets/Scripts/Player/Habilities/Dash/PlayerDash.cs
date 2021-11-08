@@ -13,7 +13,7 @@ public class PlayerDash : PlayerHabilities
     [SerializeField] private float dashTimeLeft;
     [SerializeField] private float dashTime;
 
-    private bool isDashing;
+    public bool isDashing;
     public bool dashEnabled;       // Guardar en persistencia
 
     //-- START & UPDATE ------------------------------------------------------------------------------------------------------------
@@ -33,8 +33,15 @@ public class PlayerDash : PlayerHabilities
     {
         if (Input.GetButton("Dash") && _player.canDash && (Time.time >= (lastDash + dashCooldown)))
         {
+            _player.canMove = false;
+            _player.canJump = false;
+
+
+            _player.gravityScale = 0;
+            _player.rigidBody.velocity = Vector3.zero;
+
             isDashing = true;
-            _player.rigidBody.useGravity = false;
+
             dashTimeLeft = dashTime;
             lastDash = Time.time;
         }
@@ -43,9 +50,6 @@ public class PlayerDash : PlayerHabilities
         {
             if (dashTimeLeft > 0)
             {
-                _player.canMove = false;
-                _player.canJump = false;
-
                 _player.rigidBody.velocity.Set(_player.rigidBody.velocity.x, 0.0f, 0.0f);
 
                 if (_player.isFacingRight)
@@ -65,7 +69,7 @@ public class PlayerDash : PlayerHabilities
             if (dashTimeLeft <= 0)
             {
                 isDashing = false;
-                _player.rigidBody.useGravity = true;
+                _player.gravityScale = 8f;                      // lowJumpMultiplier in PlayerJump
                 _player.canMove = true;
                 _player.canJump = true;
             }

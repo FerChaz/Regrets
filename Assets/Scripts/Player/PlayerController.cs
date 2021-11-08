@@ -106,9 +106,7 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         Move();
-
-        _gravity = globalGravity * gravityScale * Vector3.up;
-        rigidBody.AddForce(_gravity, ForceMode.Acceleration);
+        SetGravity();
     }
 
     //-- CHECKINPUT ----------------------------------------------------------------------------------------------------------------
@@ -148,6 +146,11 @@ public class PlayerController : MonoBehaviour
 
     //-- GRAVITY -------------------------------------------------------------------------------------------------------------------
 
+    private void SetGravity()
+    {
+        _gravity = globalGravity * gravityScale * Vector3.up;
+        rigidBody.AddForce(_gravity, ForceMode.Acceleration);
+    }
 
     //-- FLIP ----------------------------------------------------------------------------------------------------------------------
 
@@ -255,10 +258,14 @@ public class PlayerController : MonoBehaviour
         canDash = !canDash;
     }
 
+#if UNITY_EDITOR
 
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
     }
+
+#endif
+
 }

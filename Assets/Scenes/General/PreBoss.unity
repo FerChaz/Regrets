@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.1273174, g: 0.13414761, b: 0.12107885, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -233,7 +233,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &10528681
 Transform:
   m_ObjectHideFlags: 0
@@ -244,8 +244,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 440013247}
+  m_Children: []
   m_Father: {fileID: 1641889491}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -497,7 +496,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &17583291
 Transform:
   m_ObjectHideFlags: 0
@@ -709,7 +708,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &183114058
 Transform:
   m_ObjectHideFlags: 0
@@ -749,13 +748,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13c7724bf26eff44ab34a614750d8481, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToGo: BossRoom
-  additiveScenesInSceneToGo:
-  - PreBoss
-  playerPosition: {x: 65, y: -9, z: 0}
-  additiveScenesInSceneToGoScriptableObject: {fileID: 11400000, guid: f345fc04864938a4b8f05d6929e96ad6, type: 2}
-  transicionFade: {fileID: 0}
-  transicionFadeAnimator: {fileID: 0}
+  scenesToUnload:
+  - MainLevel
+  - Boss
+  playerPositionToGo: {x: 0, y: 0, z: 0}
+  _sceneManager: {fileID: 0}
+  _actualScene: PreBoss
 --- !u!1 &202245464
 GameObject:
   m_ObjectHideFlags: 0
@@ -1724,99 +1722,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 419889037}
   m_Mesh: {fileID: 2888993943308179373, guid: 600a77e5d2d977244a235224b55f5223, type: 3}
---- !u!1 &440013245
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 440013247}
-  - component: {fileID: 440013246}
-  m_Layer: 0
-  m_Name: Directional Light
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!108 &440013246
-Light:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 440013245}
-  m_Enabled: 1
-  serializedVersion: 10
-  m_Type: 1
-  m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
-  m_Range: 10
-  m_SpotAngle: 30
-  m_InnerSpotAngle: 21.80208
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 2
-    m_Resolution: -1
-    m_CustomResolution: -1
-    m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
-    m_CullingMatrixOverride:
-      e00: 1
-      e01: 0
-      e02: 0
-      e03: 0
-      e10: 0
-      e11: 1
-      e12: 0
-      e13: 0
-      e20: 0
-      e21: 0
-      e22: 1
-      e23: 0
-      e30: 0
-      e31: 0
-      e32: 0
-      e33: 1
-    m_UseCullingMatrixOverride: 0
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingLayerMask: 1
-  m_Lightmapping: 4
-  m_LightShadowCasterMode: 0
-  m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
-  m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
---- !u!4 &440013247
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 440013245}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 10528681}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &470937449
 GameObject:
   m_ObjectHideFlags: 0
@@ -2218,6 +2123,7 @@ MonoBehaviour:
   playerHealthSignal: {fileID: 11400000, guid: 36a3af5f6fe30f14591bdf25c8015f35, type: 2}
   playerController: {fileID: 1278501422}
   soulsController: {fileID: 0}
+  knockbackController: {fileID: 0}
   deathFade: {fileID: 1101773519}
   soulsToRecover: {fileID: 11400000, guid: 0d55266bc5806974a9620bf273e65772, type: 2}
   modelToShow: {fileID: 0}
@@ -8578,7 +8484,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1278501420}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 73.665695, y: 73.01446, z: 202.9188}
+  m_LocalPosition: {x: 667.6657, y: -37.185543, z: 202.9188}
   m_LocalScale: {x: 1, y: 1.875, z: 1}
   m_Children:
   - {fileID: 551159232}
@@ -8607,31 +8513,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa26f5ff274b5454e99c75873352db6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedMovement: 10
-  jumpForce: 10
-  fallingForce: 3
-  dashCooldown: 1
-  dashForce: 60
-  lastDash: 0
-  dashTimeLeft: 0
-  dashTime: 0.15
-  dashEnabled: 0
-  knockbackDuration: 0
-  knockbackTime: 0
-  knockbackCounter: 0
-  knockbackForce: {x: 100, y: 5, z: 0}
+  playerModel: {fileID: 0}
+  playerAnimator: {fileID: 0}
+  inputDirection: 0
+  isFacingRight: 1
+  canMove: 1
+  canJump: 1
+  canDash: 1
   groundCheckRadius: 0.2
   groundCheck: {fileID: 1229926861}
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
+  isGrounded: 0
   lastPositionInGround: {x: 0, y: 0, z: 0}
   timeToWait: 1
   respawn: {fileID: 11400000, guid: f109a9748cb379b4d8e8478798f474ad, type: 2}
   deathRespawn: {fileID: 0}
-  cameraPosition: {fileID: 470937450}
   dashParticles: {fileID: 2141501042}
   particleAmount: 50
+  rigidBody: {fileID: 0}
+  gravityScale: 1
+  globalGravity: -9.81
   bridgePlayerAnimator: {fileID: 1387300971}
   bridgePlayerAudio: {fileID: 1583125512}
 --- !u!114 &1278501423
@@ -8664,7 +8567,6 @@ MonoBehaviour:
   respawnInfo: {fileID: 11400000, guid: f109a9748cb379b4d8e8478798f474ad, type: 2}
   soulRecoveryData: {fileID: 11400000, guid: 0d55266bc5806974a9620bf273e65772, type: 2}
   additiveScenesInSceneToGoScriptableObject: {fileID: 11400000, guid: f345fc04864938a4b8f05d6929e96ad6, type: 2}
-  sceneManager: {fileID: 0}
   playerToLoad: {fileID: 1278501420}
   cameraToLoad: {fileID: 1894604029}
   canvasToLoad: {fileID: 888877436}
@@ -10345,7 +10247,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &1895851202
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15478,14 +15380,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3065212829890134014}
-  - component: {fileID: 3065212829890134015}
   m_Layer: 0
   m_Name: ChangeScene
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3065212829890134014
 Transform:
   m_ObjectHideFlags: 0
@@ -15504,23 +15405,6 @@ Transform:
   m_Father: {fileID: 886492407}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3065212829890134015
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3065212829890134000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98a250a82c7d95a4c996641dd0f89d52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  additiveScenesScriptableObject: {fileID: 11400000, guid: f345fc04864938a4b8f05d6929e96ad6, type: 2}
-  playerToLoad: {fileID: 0}
-  cameraToLoad: {fileID: 0}
-  canvasToLoad: {fileID: 0}
-  additiveScenes: []
 --- !u!114 &3065212830086086757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15548,8 +15432,10 @@ MonoBehaviour:
   activableObjects: {fileID: 10528680}
   otherEntrances:
   - {fileID: 3065212831069751155}
-  transicionFade: {fileID: 0}
-  transicionFadeAnimator: {fileID: 0}
+  _sceneManager: {fileID: 0}
+  additiveScenes:
+  - MainLevel
+  - Boss
 --- !u!65 &3065212830086086759
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15595,7 +15481,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &3065212831069751152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15611,8 +15497,10 @@ MonoBehaviour:
   activableObjects: {fileID: 10528680}
   otherEntrances:
   - {fileID: 3065212830086086777}
-  transicionFade: {fileID: 0}
-  transicionFadeAnimator: {fileID: 0}
+  _sceneManager: {fileID: 0}
+  additiveScenes:
+  - MainLevel
+  - Boss
 --- !u!65 &3065212831069751153
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15634,7 +15522,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3065212831069751155}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 511.81, y: -22.07, z: 0}
+  m_LocalPosition: {x: 505.3, y: -22.07, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3065212829890134014}
@@ -15670,16 +15558,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13c7724bf26eff44ab34a614750d8481, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToGo: MainLevel
-  additiveScenesInSceneToGo:
-  - Intro
-  - DashZone
-  - PreBoss
-  - Conexion
-  playerPosition: {x: 345, y: -21, z: 0}
-  additiveScenesInSceneToGoScriptableObject: {fileID: 11400000, guid: f345fc04864938a4b8f05d6929e96ad6, type: 2}
-  transicionFade: {fileID: 0}
-  transicionFadeAnimator: {fileID: 0}
+  scenesToUnload:
+  - MainLevel
+  - Boss
+  playerPositionToGo: {x: 350, y: -20, z: 0}
+  _sceneManager: {fileID: 0}
+  _actualScene: PreBoss
 --- !u!65 &3065212831145481677
 BoxCollider:
   m_ObjectHideFlags: 0
