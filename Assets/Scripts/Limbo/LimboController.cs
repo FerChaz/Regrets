@@ -6,22 +6,16 @@ using UnityEngine.SceneManagement;
 
 public class LimboController : MonoBehaviour
 {
+    public SceneController sceneController;
+
     public LimboInfo limboInfo;
 
     private int _random;
 
-    public GameObject _playerToLoad;
-    public GameObject _cameraToLoad;
-    public GameObject _canvasToLoad;
-
-    
 
     private void Start()
     {
-        _playerToLoad = GameObject.Find("Player");
-        _cameraToLoad = GameObject.Find("Main Camera");
-        _canvasToLoad = GameObject.Find("Canvas");
-
+        sceneController = FindObjectOfType<SceneController>();
         _random = 1;
     }
 
@@ -31,25 +25,24 @@ public class LimboController : MonoBehaviour
     {
         limboInfo.deathPosition = position;
 
-        DontDestroyOnLoad(_playerToLoad);
-        DontDestroyOnLoad(_cameraToLoad);
-        DontDestroyOnLoad(_canvasToLoad);
-
         if (_random == 1)
         {
             limboInfo.limboScene = "Limbo1";
-            SceneManager.LoadScene("Limbo1");
-            _playerToLoad.transform.position = limboInfo.positionToGoInLimbo1;
+            sceneController.LoadSceneInAdditive("Limbo1", OnSceneComplete);
+            sceneController.ChangePlayerPosition(limboInfo.positionToGoInLimbo1);
 
         }
         else
         {
-            SceneManager.LoadSceneAsync("Limbo2", LoadSceneMode.Additive);
             limboInfo.limboScene = "Limbo2";
-
-            _playerToLoad.transform.position = limboInfo.positionToGoInLimbo2;
+            sceneController.LoadSceneInAdditive("Limbo2", OnSceneComplete);
+            sceneController.ChangePlayerPosition(limboInfo.positionToGoInLimbo2);
         }
     }
 
+    private void OnSceneComplete()
+    {
+        Debug.Log("OnScene async complete");
+    }
 
 }

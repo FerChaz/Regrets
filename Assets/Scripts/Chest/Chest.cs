@@ -8,13 +8,13 @@ public class Chest : MonoBehaviour
     public int totalSouls;
     public SoulController soulManager;
 
-    private Animator _chestAnimator;
+    public Animator _chestAnimator;
 
     public bool _isClosed;
 
     private void Start()
     {
-        //_chestAnimator = GetComponent<Animator>();
+        _chestAnimator = GetComponentInChildren<Animator>();
         soulManager = FindObjectOfType<SoulController>();
     }
 
@@ -25,6 +25,8 @@ public class Chest : MonoBehaviour
             Debug.Log($"Funciona");
             _isClosed = false;
             soulManager.AddSouls(totalSouls);
+
+            _chestAnimator.SetBool("Open", true);
             // Activar animacion
         }
     }

@@ -14,16 +14,17 @@ public class LimboCuestEnemy : MonoBehaviour
     [Header("Enemigos")]
     [SerializeField] private int cantEnemy;
     [SerializeField] private string nameComponentEnemy;
+    public IntValue cantEnemies;
 
     private void Start()
     {
-        cantEnemy = GameObject.Find(nameComponentEnemy).transform.childCount;
-        cont.text=($"{cantEnemy}");
+        cantEnemies.initialValue = GameObject.Find(nameComponentEnemy).transform.childCount;
+        cont.text=($"{cantEnemies.initialValue}");
     }
 
     private void Update()
     {
-        cantEnemy = GameObject.Find(nameComponentEnemy).transform.childCount;
+        cantEnemy = GameObject.Find(nameComponentEnemy).transform.childCount;               // ARREGLAR URGENTE
         cont.text = ($"{cantEnemy}");
         KillTotalEnemies();
     }

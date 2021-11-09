@@ -77,7 +77,7 @@
     <Compile Include="Assets\Scripts\Enemies\FlyEnemies\States\KnockbackFlyEnemyState.cs" />
     <Compile Include="Assets\Scripts\Player\Habilities\Dash\EnableDash.cs" />
     <Compile Include="Assets\Scripts\Player\Habilities\Move\PlayerMove.cs" />
-    <Compile Include="Assets\Scripts\DeathRecover\DeathRecoverSoul.cs" />
+    <Compile Include="Assets\Scripts\Respawn\DeathRecoverSoul.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\LimboInfo.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Player\AnimationsBridges\AnimatorSource.cs" />
@@ -160,6 +160,7 @@
     <Compile Include="Assets\Scripts\Scriptable Objects\IntValue.cs" />
     <Compile Include="Assets\Animations\Animations\Kaori\Attack\Scripts\Transition2Behaviour.cs" />
     <Compile Include="Assets\Scripts\Player\AudioBridges\BridgePlayerAudio.cs" />
+    <Compile Include="Assets\Scripts\Respawn\RespawnController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Fantasy Adventure Environment\Shaders\VS_InstancedIndirect.cginc" />

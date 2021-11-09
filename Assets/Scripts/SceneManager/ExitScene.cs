@@ -11,6 +11,7 @@ public class ExitScene : MonoBehaviour
 
     public SceneController _sceneManager;
     public string _actualScene;
+    public string sceneToGo;
 
 
     private void Start()
@@ -24,7 +25,10 @@ public class ExitScene : MonoBehaviour
         {
             foreach (string scene in scenesToUnload)
             {
-                _sceneManager.UnloadSceneInAdditive(scene, OnSceneComplete);
+                if(scene != sceneToGo)                                           // Mejorar la comparacion de strings
+                {
+                    _sceneManager.UnloadSceneInAdditive(scene, OnSceneComplete);
+                }
             }
 
             _sceneManager.ChangePlayerPosition(playerPositionToGo);
