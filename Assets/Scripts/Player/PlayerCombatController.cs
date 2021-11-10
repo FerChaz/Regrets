@@ -28,7 +28,7 @@ public class PlayerCombatController : MonoBehaviour
     private void Start()
     {
         attackDetails[0] = attackDamage;
-        playerAnimator = player.GetComponent<Animator>();
+        playerAnimator = player.GetComponentInChildren<Animator>();
 
     }
 
@@ -57,15 +57,17 @@ public class PlayerCombatController : MonoBehaviour
             if (combatEnabled)
             {
                 weapon.SetActive(true);
-                ParticleSystem weaponTrails = weapon.GetComponentInChildren(typeof(ParticleSystem), true) as ParticleSystem;
-                weaponTrails.Play();
+                //ParticleSystem weaponTrails = weapon.GetComponentInChildren(typeof(ParticleSystem), true) as ParticleSystem;
+                //weaponTrails.Play();
 
                 //playerAnimator.SetBool("Attacking", true);
                 //playerAnimator.SetTrigger("Attack");
                 //playerAnimator.Play("Katana-hit");
                 weaponHideCooldown = 3;
 
-                CheckAttackHitBox();
+                playerAnimator.SetTrigger("Attack");
+
+                //CheckAttackHitBox();
             }
         }
 
@@ -104,11 +106,14 @@ public class PlayerCombatController : MonoBehaviour
 
     //-- AUXILIAR ------------------------------------------------------------------------------------------------------------------
 
+#if UNITY_EDITOR
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(attackHitBoxPos.position, attack1Radius);
     }
 
+#endif
 
 }

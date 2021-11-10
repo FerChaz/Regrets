@@ -258,6 +258,14 @@ public class PlayerController : MonoBehaviour
         canDash = !canDash;
     }
 
+    public void CanDoAnyMovement(bool canDo)
+    {
+        canMove = canDo;
+        canJump = canDo;
+        canDash = canDo;
+    }
+
+
 #if UNITY_EDITOR
 
     private void OnDrawGizmos()

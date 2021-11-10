@@ -49,13 +49,14 @@ public class FiniteStateMachine : MonoBehaviour
 
     protected virtual void Update()
     {
-        if (currentState == null)
+        if(currentState == null)
         {
             return;
         }
 
         updateState(Time.deltaTime);
     }
+
 
     protected bool IsStateRunning(Type state)
     {

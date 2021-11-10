@@ -44,7 +44,7 @@ public class Dialogue : MonoBehaviour
 
             yield return null;
 
-            yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.X));
+            yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.UpArrow));
         }
 
         if (dialogObject.HasResponses)
@@ -66,7 +66,7 @@ public class Dialogue : MonoBehaviour
         {
             yield return null;
 
-            if (Input.GetKeyDown(KeyCode.X))
+            if (Input.GetKeyDown(KeyCode.UpArrow))
             {
                 typeWriterEffect.Stop();
             }

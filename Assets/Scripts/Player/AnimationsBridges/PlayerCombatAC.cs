@@ -11,6 +11,8 @@ public class PlayerCombatAC : MonoBehaviour
     private const string ATTACK = "Attack";
     private const string COMBO = "Combo";
 
+    public KatanaController katana;
+
     private void Start()
     {
         _animator = GetComponent<Animator>();
@@ -50,5 +52,15 @@ public class PlayerCombatAC : MonoBehaviour
         comboPossible = false;
     }
 
+
+    public void EnableCollider()
+    {
+        katana.weaponCollider.enabled = true;
+    }
+
+    public void DisableCollider()
+    {
+        katana.weaponCollider.enabled = false;
+    }
 
 }

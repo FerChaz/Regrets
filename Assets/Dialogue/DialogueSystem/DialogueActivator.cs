@@ -1,4 +1,5 @@
-/*
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class DialogueActivator : MonoBehaviour, Interactable
@@ -10,20 +11,21 @@ public class DialogueActivator : MonoBehaviour, Interactable
         this.dialogObject = dialogObject;
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter(Collider other)
     {
-        
-        if (other.CompareTag("Player") && other.TryGetComponent(out Movimiento player))
+        if (other.CompareTag("Player") && other.TryGetComponent(out BlockMovement player))
         {
-            
+            Debug.Log($"Hola");
             player.interactable = this;
         }
     }
 
-    private void OnTriggerExit2D(Collider2D other)
+
+    private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player") && other.TryGetComponent(out Movimiento player))
+        if (other.CompareTag("Player") && other.TryGetComponent(out BlockMovement player))
         {
+            Debug.Log($"Chau");
             if (player.interactable is DialogueActivator dialogueActivator && dialogueActivator == this)
             {
                 player.interactable = null; 
@@ -31,7 +33,7 @@ public class DialogueActivator : MonoBehaviour, Interactable
         }
     }
 
-    public void Interact(Movimiento player)
+    public void Interact(BlockMovement player)
     {
         foreach (DialogueResponseEvents responseEvents in GetComponents<DialogueResponseEvents>())
         {
@@ -45,4 +47,4 @@ public class DialogueActivator : MonoBehaviour, Interactable
         player.Dialogue.ShowDialogue(dialogObject);
     }
 }
-*/
+
