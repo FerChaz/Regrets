@@ -11,9 +11,11 @@ public class EntryScene : MonoBehaviour
     public SceneController _sceneManager;
 
     public List<string> additiveScenes;
+    public string actualScene;
 
+    public AdditiveScenesInfo sceneInfo;
 
-    private void Start()
+    private void Awake()
     {
         _sceneManager = FindObjectOfType<SceneController>();
     }
@@ -23,6 +25,8 @@ public class EntryScene : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            ActualiceSceneInfo();
+
             activableObjects.SetActive(true);               // Enable enemies
 
             for (int i = 0; i < otherEntrances.Count; i++)
@@ -39,8 +43,15 @@ public class EntryScene : MonoBehaviour
         }
     }
 
+
+    private void ActualiceSceneInfo()
+    {
+        sceneInfo.additiveScenes = additiveScenes;
+        sceneInfo.actualScene = actualScene;
+    }
+
     private void OnSceneComplete()
     {
-        Debug.Log("OnScene async complete");
+        Debug.Log($"OnScene async complete, {gameObject.name}");
     }
 }

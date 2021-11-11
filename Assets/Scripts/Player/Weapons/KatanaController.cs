@@ -11,6 +11,7 @@ public class KatanaController : MonoBehaviour
 
     private void Start()
     {
+        weaponCollider = GetComponent<BoxCollider>();
         attackDetails[0] = damage;
     }
 

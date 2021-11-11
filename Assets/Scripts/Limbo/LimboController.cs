@@ -12,14 +12,19 @@ public class LimboController : MonoBehaviour
 
     private int _random;
 
+    private WaitForSeconds wait = new WaitForSeconds(1);
+
+    private void Awake()
+    {
+        sceneController = FindObjectOfType<SceneController>();
+    }
 
     private void Start()
     {
-        sceneController = FindObjectOfType<SceneController>();
         _random = 1;
     }
 
-    // DESACTIVAR ENEMIGOS, Y TODO LO QUE SE MUEVA
+    // DESACTIVAR ENEMIGOS, Y TODO LO QUE SE MUEVA, METER FADE O ANIMACION
 
     public void ChargeLimboScene(Vector3 position)
     {
@@ -29,15 +34,34 @@ public class LimboController : MonoBehaviour
         {
             limboInfo.limboScene = "Limbo1";
             sceneController.LoadSceneInAdditive("Limbo1", OnSceneComplete);
-            sceneController.ChangePlayerPosition(limboInfo.positionToGoInLimbo1);
+            StartCoroutine(WaitToChange(limboInfo.positionToGoInLimbo1));
 
         }
         else
         {
             limboInfo.limboScene = "Limbo2";
             sceneController.LoadSceneInAdditive("Limbo2", OnSceneComplete);
-            sceneController.ChangePlayerPosition(limboInfo.positionToGoInLimbo2);
+            StartCoroutine(WaitToChange(limboInfo.positionToGoInLimbo2));
         }
+    }
+
+    public void UnloadLimboScene()
+    {
+        if (_random == 1)
+        {
+            sceneController.UnloadSceneInAdditive("Limbo1", OnSceneComplete);
+        }
+        else
+        {
+            sceneController.UnloadSceneInAdditive("Limbo2", OnSceneComplete);
+        }
+            
+    }
+
+    IEnumerator WaitToChange(Vector3 position)
+    {
+        yield return wait;
+        sceneController.ChangePlayerPosition(position);
     }
 
     private void OnSceneComplete()

@@ -160,7 +160,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   facingDirection: 1
-  speed: 2
+  speed: 5
   rigidBody: {fileID: 0}
   material: {fileID: 2100000, guid: 80ccb082f4bfaba49a10affedba31440, type: 2}
   model: {fileID: 1319148770661044507}
@@ -178,7 +178,7 @@ MonoBehaviour:
   isFall: 0
   canCheck: 0
   timeToRecover: 4
-  chaseVelocity: 6
+  chaseVelocity: 8
   chaseRadius: 8
   knockbackForce: 3
   knockbackDuration: 1

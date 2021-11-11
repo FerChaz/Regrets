@@ -23,6 +23,8 @@ public class ExitLimbo : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            // FADE O ANIMACION
+            limboInfo.isPlayerInLimbo = false;
             sceneController.ChangePlayerPosition(limboInfo.deathPosition);
             sceneController.UnloadSceneInAdditive(limboInfo.limboScene, OnSceneComplete);
         }

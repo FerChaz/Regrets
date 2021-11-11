@@ -64,7 +64,7 @@
     <Compile Include="Assets\AmplifyShaderEditor\Examples\Official\SimpleGPUInstancing\SimpleGPUInstancingExample.cs" />
     <Compile Include="Assets\Scripts\UI\EnableCanvas.cs" />
     <Compile Include="Assets\Scripts\Enemies\FlyEnemies\FlyEnemyCombatController.cs" />
-    <Compile Include="Assets\Scripts\Limbo\Quests\LimboCuestEnemy.cs" />
+    <Compile Include="Assets\Scripts\Limbo\Quests\LimboQuestEnemy.cs" />
     <Compile Include="Assets\Scripts\Enemies\GroundEnemies\States\PatrolGroundEnemyState.cs" />
     <Compile Include="Assets\Scripts\Player\DeathRespawnAndRecover.cs" />
     <Compile Include="Assets\Scripts\Enemies\GroundEnemies\States\FallenGroundEnemyState.cs" />
@@ -77,10 +77,11 @@
     <Compile Include="Assets\Dialogue\DialogueSystem\Interactable.cs" />
     <Compile Include="Assets\MeleeWeaponTrail\Scripts\MeleeWeaponTrail.cs" />
     <Compile Include="Assets\Scripts\Walls &amp; Doors\DoorToPayController.cs" />
+    <Compile Include="Assets\Scripts\Enemies\Boss\States\BossRollState.cs" />
     <Compile Include="Assets\Scripts\Enemies\FlyEnemies\States\KnockbackFlyEnemyState.cs" />
     <Compile Include="Assets\Scripts\Player\Habilities\Dash\EnableDash.cs" />
     <Compile Include="Assets\Scripts\Player\Habilities\Move\PlayerMove.cs" />
-    <Compile Include="Assets\Scripts\Respawn\DeathRecoverSoul.cs" />
+    <Compile Include="Assets\Scripts\Respawn\RecoverSoulsController.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\LimboInfo.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Player\AnimationsBridges\AnimatorSource.cs" />
@@ -107,6 +108,7 @@
     <Compile Include="Assets\Scripts\Checkpoint\Checkpoint.cs" />
     <Compile Include="Assets\Scripts\Player\AnimationsBridges\PlayerCombatAC.cs" />
     <Compile Include="Assets\Dialogue\DialogueSystem\Response.cs" />
+    <Compile Include="Assets\Scripts\Respawn\RecoverSoul.cs" />
     <Compile Include="Assets\Scripts\Observer\SignalListener.cs" />
     <Compile Include="Assets\Dialogue\DialogueSystem\TypeWriterEffect.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\RespawnInfo.cs" />
@@ -118,8 +120,10 @@
     <Compile Include="Assets\Scripts\Scriptable Objects\SignalSender.cs" />
     <Compile Include="Assets\Scripts\Enemies\FlyEnemies\States\IdleFlyEnemyState.cs" />
     <Compile Include="Assets\Scripts\Limbo\Quests\LimboDestroyEnemiesQuest.cs" />
+    <Compile Include="Assets\Scripts\Enemies\Boss\States\BossAttackState.cs" />
     <Compile Include="Assets\Scripts\MainMenu\ExitMenu.cs" />
     <Compile Include="Assets\Scripts\SceneManager\EntryScene.cs" />
+    <Compile Include="Assets\Scripts\Enemies\Boss\States\BossJumpState.cs" />
     <Compile Include="Assets\Scripts\Player\Components\LifeController.cs" />
     <Compile Include="Assets\Scripts\Enemies\GroundEnemies\GroundEnemyDeath.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\AdditiveScenesInfo.cs" />
@@ -134,9 +138,11 @@
     <Compile Include="Assets\Scripts\SceneManager\Simple\SimpleStartingSceneManager.cs" />
     <Compile Include="Assets\Scripts\Enemies\GroundEnemies\States\KnockbackGroundEnemyState.cs" />
     <Compile Include="Assets\Scripts\UI\Main Menu\MainMenu.cs" />
+    <Compile Include="Assets\Scripts\Enemies\Boss\States\BossIdleState.cs" />
     <Compile Include="Assets\Scripts\FSM\FiniteStateMachine.cs" />
     <Compile Include="Assets\Scripts\SceneManager\SceneController.cs" />
     <Compile Include="Assets\Dialogue\DialogueSystem\Dialogue.cs" />
+    <Compile Include="Assets\Scripts\UI\FirstButtonDialogue.cs" />
     <Compile Include="Assets\Scripts\Enemies\GroundEnemies\GroundEnemyCombatController.cs" />
     <Compile Include="Assets\Animations\Animations\Kaori\Attack\Scripts\Transition1Behaviour.cs" />
     <Compile Include="Assets\Scripts\SceneManager\StartingScene.cs" />
@@ -144,6 +150,7 @@
     <Compile Include="Assets\Scripts\Player\AudioBridges\AudioManager.cs" />
     <Compile Include="Assets\Scripts\Enemies\Boss\BossController.cs" />
     <Compile Include="Assets\Scripts\UI\CheckCamera.cs" />
+    <Compile Include="Assets\Scripts\Enemies\Boss\States\BossDeathState.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemyLifeController.cs" />
     <Compile Include="Assets\Scripts\Player\Components\SoulController.cs" />
     <Compile Include="Assets\Scripts\Enemies\FlyEnemies\FlyEnemyDeath.cs" />
@@ -166,7 +173,9 @@
     <Compile Include="Assets\Scripts\SceneManager\ExitScene.cs" />
     <Compile Include="Assets\Scripts\Limbo\ExitLimbo.cs" />
     <Compile Include="Assets\AmplifyShaderEditor\Examples\Official\Smear\SimpleMoveExample.cs" />
+    <Compile Include="Assets\Scripts\Limbo\Quests\EnemyCounter.cs" />
     <Compile Include="Assets\Scripts\Enemies\Spikes\SpikesController.cs" />
+    <Compile Include="Assets\Dialogue\DialogueSystem\BlockMovement\BlockMovement.cs" />
     <Compile Include="Assets\Scripts\Player\AudioBridges\FXSource.cs" />
     <Compile Include="Assets\AmplifyShaderEditor\Examples\Community\ForceShield\ForceShieldDestroyBall.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\IntValue.cs" />
@@ -175,13 +184,11 @@
     <Compile Include="Assets\Dialogue\DialogueSystem\ResponseHandler.cs" />
     <Compile Include="Assets\Animations\Animations\Kaori\Attack\Scripts\Transition2Behaviour.cs" />
     <Compile Include="Assets\Scripts\Player\AudioBridges\BridgePlayerAudio.cs" />
-    <Compile Include="Assets\Scripts\Enemies\Boss\States\BossIdleState.cs" />
-    <Compile Include="Assets\Scripts\Enemies\Boss\States\BossAttackState.cs" />
-    <Compile Include="Assets\Scripts\Enemies\Boss\States\BossJumpState.cs" />
-    <Compile Include="Assets\Scripts\Enemies\Boss\States\BossRollState.cs" />
-    <Compile Include="Assets\Scripts\Enemies\Boss\States\BossDeathState.cs" />
-    <Compile Include="Assets\Dialogue\DialogueSystem\BlockMovement\BlockMovement.cs" />
-    <Compile Include="Assets\Scripts\UI\FirstButtonDialogue.cs" />
+    <Compile Include="Assets\Scripts\ProgressController\DESEncryption.cs" />
+    <Compile Include="Assets\Scripts\ProgressController\SessionData.cs" />
+    <Compile Include="Assets\Scripts\ProgressController\ProgresSO.cs" />
+    <Compile Include="Assets\Scripts\ProgressController\DataController\DataController.cs" />
+    <Compile Include="Assets\Scripts\Scriptable Objects\Status.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Fantasy Adventure Environment\Shaders\VS_InstancedIndirect.cginc" />

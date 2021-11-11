@@ -28,7 +28,7 @@ public class Checkpoint : MonoBehaviour
     // private DataController _data                                     // Guardar: posicion, escenas aditivas, currency
 
 
-    private void Start()
+    private void Awake()
     {
         _particle = GetComponentInChildren<ParticleSystem>();
         _lifeController = FindObjectOfType<LifeController>();
@@ -41,7 +41,15 @@ public class Checkpoint : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            canvas.SetActive(true);
+            if (respawnInfo.isRespawning)
+            {
+                respawnInfo.isRespawning = false;
+                Revive();
+            }
+            else
+            {
+                canvas.SetActive(true);
+            }
         }
     }
 
@@ -68,26 +76,21 @@ public class Checkpoint : MonoBehaviour
         respawnInfo.additiveScenesToCharge = scenesToChargeInAdditive;
         respawnInfo.checkpointActivename = gameObject.name;
 
-        if (_particle.gameObject.active)
-        {
-            _particle.Play();
-        }
+        _particle.Play();
     }
 
     public void Revive()
     {
         // GUARDAR DATOS EN DATA
-
-        _lifeController.RestoreMaxLife();
-
+        
         canvas.SetActive(false);
         _particle.Play();
 
-        objectsToActivate.SetActive(true);
+        objectsToActivate.SetActive(true);                      // Enable enemies
 
         foreach (GameObject entrance in entrancesToDisable)
         {
-            entrance.SetActive(false);
+            entrance.SetActive(false);                          // Disable other entrances
         }
 
         foreach (string scene in scenesToChargeInAdditive)
@@ -101,7 +104,7 @@ public class Checkpoint : MonoBehaviour
 
     private void OnSceneComplete()
     {
-        Debug.Log("OnScene async complete");
+        Debug.Log($"OnScene async complete {gameObject.name}");
     }
 
 }

@@ -8,6 +8,12 @@ public class MainMenu : MonoBehaviour
     public GameObject opciones;
     public GameObject mainMenu;
     public string nameScense;
+
+    private void Awake()
+    {
+        Cursor.visible = true;
+    }
+
     public void Play()
     {
         SceneManager.LoadScene(nameScense);

@@ -12331,6 +12331,8 @@ MonoBehaviour:
   additiveScenes:
   - Hall
   - MainLevel
+  actualScene: Conexion
+  sceneInfo: {fileID: 11400000, guid: f345fc04864938a4b8f05d6929e96ad6, type: 2}
 --- !u!1 &350276448
 GameObject:
   m_ObjectHideFlags: 0
@@ -12563,6 +12565,8 @@ MonoBehaviour:
   additiveScenes:
   - Hall
   - MainLevel
+  actualScene: Conexion
+  sceneInfo: {fileID: 11400000, guid: f345fc04864938a4b8f05d6929e96ad6, type: 2}
 --- !u!1 &385740702
 GameObject:
   m_ObjectHideFlags: 0
@@ -14344,6 +14348,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   comboPossible: 1
+  doCombo: 0
+  katana: {fileID: 0}
 --- !u!114 &603803753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18276,16 +18282,17 @@ MonoBehaviour:
   sceneToRespawn: 
   respawnInfo: {fileID: 11400000, guid: f109a9748cb379b4d8e8478798f474ad, type: 2}
   soulRecoveryData: {fileID: 11400000, guid: 0d55266bc5806974a9620bf273e65772, type: 2}
-  additiveScenesInSceneToGoScriptableObject: {fileID: 11400000, guid: f345fc04864938a4b8f05d6929e96ad6, type: 2}
+  additiveSceneInfo: {fileID: 0}
+  recover: {fileID: 0}
   sceneController: {fileID: 0}
   playerController: {fileID: 0}
   soulsController: {fileID: 0}
-  limbo: {fileID: 0}
+  limboController: {fileID: 0}
   checkpoint: {fileID: 0}
   respawnController: {fileID: 0}
+  isFirstDead: 0
   deathPosition: {x: 0, y: 0, z: 0}
   limboInfo: {fileID: 11400000, guid: 4ca05c4432d5c7c4fb7410f830c269c0, type: 2}
-  actualSceneName: {fileID: 11400000, guid: 7c485d32b06a9a84a9d439f0ba8f1d05, type: 2}
 --- !u!114 &1210340176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20049,6 +20056,7 @@ MonoBehaviour:
   soulManager: {fileID: 0}
   _chestAnimator: {fileID: 0}
   _isClosed: 1
+  chestState: {fileID: 11400000, guid: 34ea3314b1786b04eb0cf07637eac4ce, type: 2}
 --- !u!65 &1403970514
 BoxCollider:
   m_ObjectHideFlags: 0

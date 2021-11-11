@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu]
 public class WallsAndDoorsStates : ScriptableObject
 {
-    public bool isBroken;
-    public bool isOpen;
+    public bool isWallBroken;
+    public bool isChestOpen;
+    public bool isDoorOpen;
 }

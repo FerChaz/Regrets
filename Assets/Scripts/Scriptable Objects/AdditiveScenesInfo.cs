@@ -6,10 +6,10 @@ using UnityEngine;
 public class AdditiveScenesInfo : ScriptableObject
 {
     public List<string> additiveScenes;
-    public Vector3 playerPositionToGo;
-
-    public Vector2 cameraMinPosition;
-    public Vector2 cameraMaxPosition;
-
     public string actualScene;
+    //public Vector3 playerPositionToGo;
+
+    //public Vector2 cameraMinPosition;
+    //public Vector2 cameraMaxPosition;
+
 }

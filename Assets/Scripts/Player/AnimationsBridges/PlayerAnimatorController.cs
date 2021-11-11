@@ -13,9 +13,6 @@ public class PlayerAnimatorController : MonoBehaviour
     private const string DASH = "Dash";
     private const string SPEEDY = "SpeedY";
 
-    private float inputDirection;
-
-
     //-- START & UPDATE ------------------------------------------------------------------------------------------------------------
 
     private void Start()
@@ -28,16 +25,10 @@ public class PlayerAnimatorController : MonoBehaviour
         Animator.StringToHash(SPEEDY);
     }
 
-    private void Update()
-    {
-        Run();
-    }
-
     //-- MOVE ----------------------------------------------------------------------------------------------------------------------
 
-    public void Run()
+    public void Run(float inputDirection)
     {
-        inputDirection = Input.GetAxisRaw("Horizontal");
         _animator.SetFloat(SPEED, inputDirection);
     }
 

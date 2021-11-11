@@ -57,14 +57,16 @@ public class BossController : MonoBehaviour
 
     //-- START & UPDATE ------------------------------------------------------------------------------------------------------------
 
-    private void Start()
+    private void Awake()
     {
         rigidBody = GetComponent<Rigidbody>();
         animatorController = GetComponentInChildren<BossAnimatorController>();
         boxCollider = GetComponent<CapsuleCollider>();
         parabolaController = GetComponent<ParabolaController>();
+    }
 
-        facingDirection = 1;
+    private void Start()
+    {
         isAnyStateRunning = true;
         canCheckJumpFinish = false;
         //_life = 5;

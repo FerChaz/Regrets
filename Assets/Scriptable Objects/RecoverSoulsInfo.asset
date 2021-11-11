@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da1398351f9455a4c82927d5cdd1b102, type: 3}
   m_Name: RecoverSoulsInfo
   m_EditorClassIdentifier: 
-  totalSouls: 5
-  deathPosition: {x: 140.79881, y: -24.278282, z: 0}
+  totalSouls: 0
+  deathPosition: {x: -299.0033, y: 0.6938455, z: 0}
   deathScene: 0
   respawnScene: 
+  needRecover: 0

@@ -21,6 +21,20 @@ public class StartingScene : MonoBehaviour
 
     private void OnSceneComplete()
     {
-        Debug.Log("OnScene async complete");
+        Debug.Log($"OnScene async complete, {gameObject.name}");
     }
+
+
+
+    public void LoadSceneAndPosition(string scene, Vector3 position)
+    {
+        sceneToGo = scene;
+        playerPosition = position;
+
+
+        sceneManager.LoadSceneInAdditive(sceneToGo, OnSceneComplete);
+        sceneManager.ChangePlayerPosition(playerPosition);
+
+    }
+
 }

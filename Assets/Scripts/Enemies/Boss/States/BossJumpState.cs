@@ -19,6 +19,8 @@ public class BossJumpState : State
 
         if (_bossController != null)
         {
+            Debug.Log($"Jump");
+
             _bossController.isAnyStateRunning = true;
 
             _bossController.rigidBody.useGravity = false;
@@ -72,35 +74,7 @@ public class BossJumpState : State
 
     private void SetJumpVelocity()
     {
-        if (distance > 50f)
-        {
-            _bossController.parabolaController.Speed = 70f;
-            //Debug.Log($"Distance: {distance}, Speed: {_bossController.parabolaController.Speed}");
-        }
-        else if (distance > 40f)
-        {
-            _bossController.parabolaController.Speed = 60f;
-            //Debug.Log($"Distance: {distance}, Speed: {_bossController.parabolaController.Speed}");
-        }
-        else if (distance > 30f)
-        {
-            _bossController.parabolaController.Speed = 50f;
-            //Debug.Log($"Distance: {distance}, Speed: {_bossController.parabolaController.Speed}");
-        }
-        else if (distance > 20f)
-        {
-            _bossController.parabolaController.Speed = 40f;
-            //Debug.Log($"Distance: {distance}, Speed: {_bossController.parabolaController.Speed}");
-        }
-        else if (distance > 10f)
-        {
-            _bossController.parabolaController.Speed = 30f;
-            //Debug.Log($"Distance: {distance}, Speed: {_bossController.parabolaController.Speed}");
-        }
-        else
-        {
-            _bossController.parabolaController.Speed = 20f;
-            //Debug.Log($"Distance: {distance}, Speed: {_bossController.parabolaController.Speed}");
-        }
+        Debug.Log($"{distance}");
+        _bossController.parabolaController.Speed = distance + 30f;
     }
 }

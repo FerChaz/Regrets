@@ -21897,6 +21897,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   comboPossible: 1
+  doCombo: 0
+  katana: {fileID: 0}
 --- !u!114 &502451289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25539,6 +25541,8 @@ MonoBehaviour:
   additiveScenes:
   - MainLevel
   - Hall
+  actualScene: DashZone
+  sceneInfo: {fileID: 11400000, guid: f345fc04864938a4b8f05d6929e96ad6, type: 2}
 --- !u!1001 &608374460
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30160,7 +30164,7 @@ Transform:
   - {fileID: 1085431925}
   - {fileID: 291747094}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &758155177
 PrefabInstance:
@@ -31972,7 +31976,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 330315055}
+      - m_Target: {fileID: 221791073}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -36201,7 +36205,7 @@ Transform:
   m_Children:
   - {fileID: 888673707}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &926584768
 PrefabInstance:
@@ -37164,8 +37168,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 946710461}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -128.12, y: -108.63, z: 0}
-  m_LocalScale: {x: 10.2238, y: 1.6493949, z: 6.41}
+  m_LocalPosition: {x: -128.24, y: -108.91, z: 0}
+  m_LocalScale: {x: 11.1183815, y: 1.6493949, z: 6.41}
   m_Children: []
   m_Father: {fileID: 1141536162}
   m_RootOrder: 57
@@ -37378,7 +37382,7 @@ MonoBehaviour:
   - Hall
   checkpointSceneName: DashZone
   respawnInfo: {fileID: 11400000, guid: f109a9748cb379b4d8e8478798f474ad, type: 2}
-  additiveScenesScriptableObject: {fileID: 0}
+  additiveScenesScriptableObject: {fileID: 11400000, guid: f345fc04864938a4b8f05d6929e96ad6, type: 2}
   objectsToActivate: {fileID: 721547418}
   entrancesToDisable:
   - {fileID: 1989928217}
@@ -42453,72 +42457,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 52bd415e8a4c00443a1c4e86c280cd34, type: 3}
   m_PrefabInstance: {fileID: 1878167529}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1085273316
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1649101072}
-    m_Modifications:
-    - target: {fileID: 6896665038082074468, guid: 8af40d9a049a44945b674cba3bfeece9, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6896665038082074468, guid: 8af40d9a049a44945b674cba3bfeece9, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6896665038082074468, guid: 8af40d9a049a44945b674cba3bfeece9, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6896665038082074468, guid: 8af40d9a049a44945b674cba3bfeece9, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6896665038082074468, guid: 8af40d9a049a44945b674cba3bfeece9, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6896665038082074468, guid: 8af40d9a049a44945b674cba3bfeece9, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6896665038082074468, guid: 8af40d9a049a44945b674cba3bfeece9, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6896665038082074468, guid: 8af40d9a049a44945b674cba3bfeece9, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6896665038082074468, guid: 8af40d9a049a44945b674cba3bfeece9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6896665038082074468, guid: 8af40d9a049a44945b674cba3bfeece9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6896665038082074468, guid: 8af40d9a049a44945b674cba3bfeece9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6896665038082074521, guid: 8af40d9a049a44945b674cba3bfeece9, type: 3}
-      propertyPath: m_Name
-      value: RecoverSouls
-      objectReference: {fileID: 0}
-    - target: {fileID: 6896665038082074522, guid: 8af40d9a049a44945b674cba3bfeece9, type: 3}
-      propertyPath: sceneOfGameObject
-      value: DashZone
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 8af40d9a049a44945b674cba3bfeece9, type: 3}
---- !u!4 &1085273317 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6896665038082074468, guid: 8af40d9a049a44945b674cba3bfeece9, type: 3}
-  m_PrefabInstance: {fileID: 1085273316}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1085431923
 GameObject:
   m_ObjectHideFlags: 0
@@ -43040,7 +42978,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1111264867
 PrefabInstance:
@@ -45996,16 +45934,17 @@ MonoBehaviour:
   sceneToRespawn: 
   respawnInfo: {fileID: 11400000, guid: f109a9748cb379b4d8e8478798f474ad, type: 2}
   soulRecoveryData: {fileID: 11400000, guid: 0d55266bc5806974a9620bf273e65772, type: 2}
-  additiveScenesInSceneToGoScriptableObject: {fileID: 11400000, guid: f345fc04864938a4b8f05d6929e96ad6, type: 2}
+  additiveSceneInfo: {fileID: 0}
+  recover: {fileID: 0}
   sceneController: {fileID: 0}
   playerController: {fileID: 0}
   soulsController: {fileID: 0}
   limbo: {fileID: 0}
   checkpoint: {fileID: 0}
   respawnController: {fileID: 0}
+  isFirstDead: 0
   deathPosition: {x: 0, y: 0, z: 0}
   limboInfo: {fileID: 11400000, guid: 4ca05c4432d5c7c4fb7410f830c269c0, type: 2}
-  actualSceneName: {fileID: 11400000, guid: 7c485d32b06a9a84a9d439f0ba8f1d05, type: 2}
 --- !u!114 &1208352818
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52070,6 +52009,8 @@ MonoBehaviour:
   additiveScenes:
   - MainLevel
   - Hall
+  actualScene: DashZone
+  sceneInfo: {fileID: 11400000, guid: f345fc04864938a4b8f05d6929e96ad6, type: 2}
 --- !u!4 &1388007209
 Transform:
   m_ObjectHideFlags: 0
@@ -58540,7 +58481,7 @@ Transform:
   m_LocalScale: {x: 116.197426, y: 24.556469, z: 6.41}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1590924083
 MonoBehaviour:
@@ -60948,37 +60889,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52bd415e8a4c00443a1c4e86c280cd34, type: 3}
---- !u!1 &1649101071
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1649101072}
-  m_Layer: 0
-  m_Name: ---- RECOVERSOULS ----
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1649101072
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1649101071}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1085273317}
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1650102801
 GameObject:
   m_ObjectHideFlags: 0
@@ -61930,7 +61840,7 @@ Transform:
   - {fileID: 948380062}
   - {fileID: 1560193681}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1686184165
 PrefabInstance:
@@ -68202,51 +68112,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 52bd415e8a4c00443a1c4e86c280cd34, type: 3}
   m_PrefabInstance: {fileID: 1876118190}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1876130905
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1876130907}
-  - component: {fileID: 1876130906}
-  m_Layer: 0
-  m_Name: LimboController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1876130906
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1876130905}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f2a0376761296349b4b8d32c17bda84, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneController: {fileID: 0}
-  limboInfo: {fileID: 11400000, guid: 4ca05c4432d5c7c4fb7410f830c269c0, type: 2}
---- !u!4 &1876130907
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1876130905}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1979872728}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1876551390
 GameObject:
   m_ObjectHideFlags: 0
@@ -76471,7 +76336,7 @@ Transform:
   - {fileID: 1208352822}
   - {fileID: 1060801837}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1963862469
 PrefabInstance:
@@ -76941,37 +76806,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 52bd415e8a4c00443a1c4e86c280cd34, type: 3}
   m_PrefabInstance: {fileID: 1978866052}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1979872727
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1979872728}
-  m_Layer: 0
-  m_Name: --- LIMBO CONTROLLER ---
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1979872728
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1979872727}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1876130907}
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1983222217
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -77341,6 +77175,8 @@ MonoBehaviour:
   additiveScenes:
   - MainLevel
   - Hall
+  actualScene: DashZone
+  sceneInfo: {fileID: 11400000, guid: f345fc04864938a4b8f05d6929e96ad6, type: 2}
 --- !u!1001 &1995871293
 PrefabInstance:
   m_ObjectHideFlags: 0

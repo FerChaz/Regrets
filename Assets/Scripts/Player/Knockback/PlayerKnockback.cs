@@ -31,7 +31,8 @@ public class PlayerKnockback : PlayerHabilities
         //bridgePlayerAnimator.PlayAnimation("GettingDamage");          // KNOCKBACK / GET DAMAGE ANIMATION
         //bridgePlayerAudio.ReproduceFX("KnockBack");                   // KNOCKBACK / GET DAMAGE FX
 
-        _player.WaitTime(_player.timeToWait);
+        _player.CantMoveUntil(_player.timeToWait);
+        
     }
 
     //-- SPIKES KNOCKBACK ----------------------------------------------------------------------------------------------------------
@@ -52,6 +53,6 @@ public class PlayerKnockback : PlayerHabilities
             _player.Flip();
         }
 
-        //StartCoroutine(WaitTime(timeToWait));
+        _player.CantMoveUntil(_player.timeToWait);
     }
 }

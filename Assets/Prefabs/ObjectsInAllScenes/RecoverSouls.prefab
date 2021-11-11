@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6896665038082074468}
   - component: {fileID: 6896665038082074523}
-  - component: {fileID: 6896665038082074522}
+  - component: {fileID: 6447337351696258789}
   m_Layer: 0
   m_Name: RecoverSouls
   m_TagString: Untagged
@@ -47,7 +47,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.677614, y: 4.2699165, z: 1}
   m_Center: {x: 0.069082856, y: -1.6119318, z: 0}
---- !u!114 &6896665038082074522
+--- !u!114 &6447337351696258789
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -56,13 +56,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6896665038082074521}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33abae856a802ab44a00bc2162cea506, type: 3}
+  m_Script: {fileID: 11500000, guid: a962957a5d9b8f848a6e5078bb57e15b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  recoverData: {fileID: 11400000, guid: 0d55266bc5806974a9620bf273e65772, type: 2}
-  soulController: {fileID: 0}
-  particle: {fileID: 6896665036628279342}
-  additiveScenesInSceneToGoScriptableObject: {fileID: 11400000, guid: f345fc04864938a4b8f05d6929e96ad6, type: 2}
 --- !u!1 &6896665038502530222
 GameObject:
   m_ObjectHideFlags: 0
@@ -270,11 +266,6 @@ PrefabInstance:
 --- !u!4 &6896665036614033618 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 499650, guid: cdea235694a86bd4eb61ae7cffd8de49, type: 3}
-  m_PrefabInstance: {fileID: 6896665036614008592}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &6896665036628279342 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 19808062, guid: cdea235694a86bd4eb61ae7cffd8de49, type: 3}
   m_PrefabInstance: {fileID: 6896665036614008592}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6896665037641299887

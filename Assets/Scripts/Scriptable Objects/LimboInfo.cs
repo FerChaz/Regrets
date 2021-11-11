@@ -13,4 +13,6 @@ public class LimboInfo : ScriptableObject
     public string limboScene;
 
     public string deathScene;
+
+    public bool isPlayerInLimbo;
 }

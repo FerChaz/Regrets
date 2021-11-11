@@ -64,14 +64,19 @@ public class PlayerController : MonoBehaviour
 
     //-- START & UPDATE ------------------------------------------------------------------------------------------------------------
 
-    void Start()
+    private void Awake()
     {
         rigidBody = GetComponent<Rigidbody>();
+        deathRespawn = GetComponent<DeathRespawnAndRecover>();
+    }
+
+    void Start()
+    {
         rigidBody.useGravity = false;
         respawn.respawnPosition = new Vector3(-283f, -1.81f, 0.0f);
         //audioManager = GetComponent<AudioManager>();
 
-        deathRespawn = GetComponent<DeathRespawnAndRecover>();
+        
         playerRotation = new Vector3(
             playerModel.transform.eulerAngles.x,
             playerModel.transform.eulerAngles.y,
@@ -200,7 +205,7 @@ public class PlayerController : MonoBehaviour
             Flip();
         }
 
-        WaitTime(timeToWait + 1f);
+        CantMoveUntil(timeToWait + 1f);
     }
 
     
@@ -236,18 +241,18 @@ public class PlayerController : MonoBehaviour
 
     //-- OTHERS --------------------------------------------------------------------------------------------------------------------
 
-    public void WaitTime(float time) {
+    public void CantMoveUntil(float time) {
+
+        canMove = false;
+        canJump = false;
+        canDash = false;
+
         StartCoroutine(WaitTimeCO(time));
     }
 
     IEnumerator WaitTimeCO(float time)
     {
-        canMove = false;
-        canJump = false;
-        canDash = false;
-
         yield return new WaitForSeconds(time);
-
         ChangeCanDoAnyMovement();
     }
 

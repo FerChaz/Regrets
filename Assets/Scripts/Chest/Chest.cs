@@ -12,18 +12,34 @@ public class Chest : MonoBehaviour
 
     public bool _isClosed;
 
-    private void Start()
+    public WallsAndDoorsStates chestState;
+
+    private void Awake()
     {
         _chestAnimator = GetComponentInChildren<Animator>();
         soulManager = FindObjectOfType<SoulController>();
+    }
+
+    private void Start()
+    {
+        if (chestState.isChestOpen)
+        {
+            _isClosed = false;
+            _chestAnimator.SetBool("Open", true);
+            this.enabled = false;
+        }
+        else
+        {
+            _isClosed = true;
+        }
     }
 
     public void GetDamage(float[] damage)
     {
         if (_isClosed)
         {
-            Debug.Log($"Funciona");
             _isClosed = false;
+            chestState.isChestOpen = true;
             soulManager.AddSouls(totalSouls);
 
             _chestAnimator.SetBool("Open", true);

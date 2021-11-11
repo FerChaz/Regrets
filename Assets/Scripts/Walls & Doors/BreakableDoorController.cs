@@ -10,7 +10,7 @@ public class BreakableDoorController : MonoBehaviour
 
     public GameObject parentToDestroy;
 
-    //public WallsAndDoorsStates isAlreadyBroken;
+    public WallsAndDoorsStates isAlreadyBroken;
 
     //private Animator doorAnimator;
 
@@ -18,10 +18,10 @@ public class BreakableDoorController : MonoBehaviour
     {
         _currentLife = maxLife;
 
-        //if (isAlreadyBroken.isBroken)
-        //{
-        //    gameObject.SetActive(false);
-        //}
+        if (isAlreadyBroken.isWallBroken)
+        {
+            DestroyWall();
+        }
         //doorAnimator = GetComponent<Animator>();
     }
 
@@ -39,6 +39,7 @@ public class BreakableDoorController : MonoBehaviour
             // Animacion rompiendose
             // Con un event en la animacion destruir gameobject
             //isAlreadyBroken.isBroken = true;
+            isAlreadyBroken.isWallBroken = true;
             DestroyWall();
         }
     }

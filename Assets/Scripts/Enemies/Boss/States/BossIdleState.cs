@@ -17,6 +17,8 @@ public class BossIdleState : State
 
         if (_bossController != null)
         {
+            Debug.Log($"Idle");
+
             _bossController.isAnyStateRunning = true;
             _totalIdleTime = 1.5f;
             ApplyIdle();
@@ -40,6 +42,7 @@ public class BossIdleState : State
 
     public override void ExitState()
     {
+        Flip();
         _bossController.animatorController.endAttackAnimation = false;
     }
 
@@ -56,10 +59,12 @@ public class BossIdleState : State
     {
         if (_bossController.player.transform.position.x > _bossController.transform.position.x && _bossController.facingDirection < 0)
         {
+            Debug.Log($"Flip");
             _bossController.Flip();
         }
         else if (_bossController.player.transform.position.x < _bossController.transform.position.x && _bossController.facingDirection > 0)
         {
+            Debug.Log($"Flip");
             _bossController.Flip();
         }
     }

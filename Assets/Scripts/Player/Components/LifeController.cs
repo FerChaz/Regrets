@@ -38,14 +38,17 @@ public class LifeController : MonoBehaviour
 
     //-- START ---------------------------------------------------------------------------------------------------------------------
 
+    private void Awake()
+    {
+        colliderLifeManager = GetComponent<BoxCollider>();
+        playerController = GetComponentInParent<PlayerController>();
+        knockbackController = GetComponentInParent<PlayerKnockback>();
+        soulsController = FindObjectOfType<SoulController>();
+    }
+
     private void Start()
     {
         currentLife.initialValue = maxLife;
-        colliderLifeManager = GetComponent<BoxCollider>();
-
-        playerController = GetComponentInParent<PlayerController>();
-        knockbackController = GetComponentInParent<PlayerKnockback>();
-
         _scale = model.transform.localScale;
     }
 
@@ -117,7 +120,7 @@ public class LifeController : MonoBehaviour
 
     private void Death()
     {
-        deathFade.SetActive(true);
+        //deathFade.SetActive(true);
 
         // ACTIVAR ANIMACION
         playerController.Death();

@@ -17,18 +17,22 @@ public class PlayerCombatController : MonoBehaviour
 
     public GameObject weapon;
     public GameObject player;
-    private Animator playerAnimator;
     private float weaponHideCooldown;
 
+    private PlayerCombatAC playerAnimator;
 
     private float[] attackDetails = new float[2];
 
     //-- START & UPDATE ------------------------------------------------------------------------------------------------------------
 
+    private void Awake()
+    {
+        playerAnimator = player.GetComponentInChildren<PlayerCombatAC>();
+    }
+
     private void Start()
     {
         attackDetails[0] = attackDamage;
-        playerAnimator = player.GetComponentInChildren<Animator>();
 
     }
 
@@ -48,7 +52,6 @@ public class PlayerCombatController : MonoBehaviour
     }
 
     //-- ATTACK --------------------------------------------------------------------------------------------------------------------
-    // HAY QUE HACER OTRO SCRIPT SOLO PARA LA KATANA
 
     private void CheckCombatInput()
     {
@@ -60,14 +63,9 @@ public class PlayerCombatController : MonoBehaviour
                 //ParticleSystem weaponTrails = weapon.GetComponentInChildren(typeof(ParticleSystem), true) as ParticleSystem;
                 //weaponTrails.Play();
 
-                //playerAnimator.SetBool("Attacking", true);
-                //playerAnimator.SetTrigger("Attack");
-                //playerAnimator.Play("Katana-hit");
+                playerAnimator.Attack();
+
                 weaponHideCooldown = 3;
-
-                playerAnimator.SetTrigger("Attack");
-
-                //CheckAttackHitBox();
             }
         }
 

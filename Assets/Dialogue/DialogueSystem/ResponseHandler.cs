@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-//using UnityEngine.UI;
+using UnityEngine.UI;
 public class ResponseHandler : MonoBehaviour
 {
     [SerializeField] private RectTransform responseBox;
@@ -35,7 +35,7 @@ public class ResponseHandler : MonoBehaviour
             GameObject responseButton = Instantiate(responseButtonTemplate.gameObject, responseContainer);
             responseButton.gameObject.SetActive(true);
             responseButton.GetComponent<TMP_Text>().text = response.ResponseText;
-            //responseButton.GetComponent<Button>().onClick.AddListener(() => OnPickedResponse(response, responseIndex));
+            responseButton.GetComponent<Button>().onClick.AddListener(() => OnPickedResponse(response, responseIndex));
 
             tempResponses.Add(responseButton);
 

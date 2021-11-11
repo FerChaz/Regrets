@@ -11,8 +11,11 @@ public class RespawnController : MonoBehaviour
 
     public RespawnInfo respawnInfo;
     public AdditiveScenesInfo additiveScenesInfo;
+    public GameObject checkpointObject;
 
-    private void Start()
+    private WaitForSeconds wait = new WaitForSeconds(1);
+
+    private void Awake()
     {
         sceneController = FindObjectOfType<SceneController>();
     }
@@ -26,23 +29,32 @@ public class RespawnController : MonoBehaviour
 
         foreach (string scene in additiveScenesInfo.additiveScenes)
         {
-            sceneController.UnloadSceneInAdditive(scene, OnSceneComplete);
+            if(scene != additiveScenesInfo.actualScene)
+            {
+                sceneController.UnloadSceneInAdditive(scene, OnSceneComplete);
+            }
         }
 
         sceneController.LoadSceneInAdditive(respawnInfo.sceneToRespawn, OnSceneComplete);
+        respawnInfo.isRespawning = true;
 
-        sceneController.ChangePlayerPosition(respawnInfo.respawnPosition);
+        StartCoroutine(WaitToChange());
 
         //Desactivar Fade
-        checkpoint = FindObjectOfType<Checkpoint>();
-        checkpoint.Revive();
-
-
+        
     }
+
+
+    IEnumerator WaitToChange()
+    {
+        yield return wait;
+        sceneController.ChangePlayerPosition(respawnInfo.respawnPosition);
+    }
+
 
     private void OnSceneComplete()
     {
-        Debug.Log("OnScene async complete");
+        Debug.Log($"OnScene async complete, {gameObject.name}");
     }
 
 }

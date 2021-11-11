@@ -15,6 +15,8 @@ public class BossRollState : State
 
         if (_bossController != null)
         {
+            Debug.Log($"Roll");
+
             _bossController.isAnyStateRunning = true;
             ApplyRoll(_bossController.facingDirection, _bossController.rollSpeed, _bossController.heigh);
             _bossController.animatorController.Run();
@@ -23,7 +25,7 @@ public class BossRollState : State
 
     public override void UpdateState(float delta)
     {
-        if (_bossController.wallDetected)
+        if (_bossController.wallDetected || !_bossController.groundDetected)
         {
             _bossController.isAnyStateRunning = false;
         }

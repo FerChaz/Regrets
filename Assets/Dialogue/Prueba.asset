@@ -17,6 +17,6 @@ MonoBehaviour:
   - Tenes hambre?
   responses:
   - responseText: Si
-    dialogObject: {fileID: 11400000, guid: 447969b92306f28478a967d173118673, type: 2}
+    dialogObject: {fileID: 11400000, guid: b494c837141ed4343ab243e707275af2, type: 2}
   - responseText: No
-    dialogObject: {fileID: 0}
+    dialogObject: {fileID: 11400000, guid: 4fa577e73534d584792346a528d03b0e, type: 2}

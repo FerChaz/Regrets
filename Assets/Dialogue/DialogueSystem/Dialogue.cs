@@ -10,16 +10,28 @@ public class Dialogue : MonoBehaviour
 
     private ResponseHandler responseHandler;
     private TypeWriterEffect typeWriterEffect;
-    private void Start()
+
+    private PlayerController player;
+
+    private void Awake()
     {
         typeWriterEffect = GetComponent<TypeWriterEffect>();
         responseHandler = GetComponent<ResponseHandler>();
+        player = FindObjectOfType<PlayerController>();
+    }
+
+    private void Start()
+    {
         CloseDialogueBox();
     }
 
     public void ShowDialogue(DialogObject dialogObject)
     {
         IsOpen = true;
+        player.CanDoAnyMovement(false);
+
+        Cursor.visible = true;
+
         dialogueBox.SetActive(true);
         StartCoroutine(StepThroughDialogue(dialogObject));
     }
@@ -76,6 +88,10 @@ public class Dialogue : MonoBehaviour
     public void CloseDialogueBox()
     {
         IsOpen = false;
+        player.CanDoAnyMovement(true);
+
+        Cursor.visible = false;
+
         dialogueBox.SetActive(false);
         textLabel.text = string.Empty;
     }

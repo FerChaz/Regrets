@@ -8,32 +8,18 @@ public class BlockMovement : MonoBehaviour
     public Interactable interactable { get; set; }
     public Dialogue Dialogue => dialogue;
 
-
-    private PlayerController player;
-
-    private void Start()
-    {
-        player = FindObjectOfType<PlayerController>();
-    }
-
-    private void Update()
+    public void Update()
     {
         if (dialogue.IsOpen)
         {
-            player.CanDoAnyMovement(false);
-        }
-        else
-        {
-            player.CanDoAnyMovement(true);
+            return;
         }
 
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             OpenDialog();
         }
-
     }
-
 
     public void OpenDialog()
     {

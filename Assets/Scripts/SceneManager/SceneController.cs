@@ -12,7 +12,7 @@ public class SceneController : MonoBehaviour
 
     private UnityAction _onTaskComplete;
 
-    private void Start()
+    private void Awake()
     {
         player = FindObjectOfType<PlayerController>().gameObject;
         mainCamera = FindObjectOfType<MainCamera>().gameObject;
@@ -42,7 +42,6 @@ public class SceneController : MonoBehaviour
 
     private void OnAsyncOpCompleted(AsyncOperation obj)
     {
-        Debug.Log($"Se completo {obj}");
         _onTaskComplete?.Invoke();
     }
 

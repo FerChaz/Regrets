@@ -17,6 +17,7 @@ public class BossAttackState : State
 
         if (_bossController != null)
         {
+            Debug.Log($"Attack");
             _totalAttackTime = 1.5f;
             _bossController.isAnyStateRunning = true;
             _bossController.animatorController.Attack();

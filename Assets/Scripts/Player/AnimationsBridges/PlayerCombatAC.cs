@@ -7,6 +7,7 @@ public class PlayerCombatAC : MonoBehaviour
     private Animator _animator;
 
     public bool comboPossible = false;
+    public bool doCombo;
 
     private const string ATTACK = "Attack";
     private const string COMBO = "Combo";
@@ -16,23 +17,19 @@ public class PlayerCombatAC : MonoBehaviour
     private void Start()
     {
         _animator = GetComponent<Animator>();
+        katana = FindObjectOfType<KatanaController>();
+
+        doCombo = false;
 
         Animator.StringToHash(ATTACK);
         Animator.StringToHash(COMBO);
-    }
-
-    private void Update()
-    {
-        if (Input.GetButtonDown("Attack"))              // Que el controlador de combate llame a esta funcion y no el update
-        {
-            Attack();
-        }
     }
 
     public void Attack()
     {
         if (comboPossible)
         {
+            doCombo = true;
             _animator.SetBool(COMBO, true);
         }
         else
@@ -44,12 +41,26 @@ public class PlayerCombatAC : MonoBehaviour
 
     public void CanCombo()
     {
+        doCombo = false;
+        _animator.SetBool(COMBO, false);
         comboPossible = true;
     }
 
     public void FinishCombo()
     {
+        if (!doCombo)
+        {
+            comboPossible = false;
+            _animator.SetBool(COMBO, false);
+        }
+        
+    }
+
+    public void EndCombo()
+    {
+        doCombo = false;
         comboPossible = false;
+        _animator.SetBool(COMBO, false);
     }
 
 

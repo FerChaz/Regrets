@@ -9,11 +9,14 @@ public class PlayerMove : PlayerHabilities
     [Header("Movement Variables")]
     [SerializeField] private float speedMovement;
 
+    private float inputDirection;
+
     //-- START & UPDATE ------------------------------------------------------------------------------------------------------------
 
     private void Update()
     {
         Move();
+        CheckInput();
     }
 
     //-- MOVE ----------------------------------------------------------------------------------------------------------------------
@@ -34,6 +37,22 @@ public class PlayerMove : PlayerHabilities
         }
 
         _player.rigidBody.velocity = movement;
+    }
+
+    //-- CHECK INPUT ---------------------------------------------------------------------------------------------------------------
+
+    private void CheckInput()
+    {
+        if (_player.canMove)
+        {
+            inputDirection = Input.GetAxisRaw("Horizontal");
+        }
+        else
+        {
+            inputDirection = 0;
+        }
+
+        playerAnimatorController.Run(inputDirection);
     }
 
 }
