@@ -13,9 +13,6 @@ public class BossController : MonoBehaviour
     public float heigh;
     public int facingDirection;
 
-    //[Header("Other Variables")]
-    //public int _life;
-
     [Header("Components")]
     public BossAnimatorController animatorController;
     public Rigidbody rigidBody;
@@ -52,7 +49,6 @@ public class BossController : MonoBehaviour
 
     [Header("Player")]
     public GameObject player;
-    //public float distance;
 
 
     //-- START & UPDATE ------------------------------------------------------------------------------------------------------------
@@ -69,7 +65,7 @@ public class BossController : MonoBehaviour
     {
         isAnyStateRunning = true;
         canCheckJumpFinish = false;
-        //_life = 5;
+        rigidBody.useGravity = false;
     }
 
     private void Update()
@@ -77,8 +73,6 @@ public class BossController : MonoBehaviour
         groundDetected = Physics.Raycast(_groundCheck.position, Vector3.down, _groundCheckDistance, _whatIsGround);
         jumpDetected = Physics.Raycast(_jumpCheck.position, Vector3.down, _groundCheckDistance, _whatIsGround);
         wallDetected = Physics.Raycast(_wallCheck.position, Vector3.right * facingDirection, _jumpCheckDistance, _whatIsGround);
-
-        //distance = Vector3.Distance(transform.position, player.transform.position);
     }
 
 
@@ -89,6 +83,12 @@ public class BossController : MonoBehaviour
         transform.Rotate(0.0f, 180.0f, 0.0f);
         facingDirection *= -1;
     }
+
+    public void Entrance()
+    {
+        rigidBody.useGravity = true;
+    }
+
 
 #if UNITY_EDITOR
     private void OnDrawGizmos()

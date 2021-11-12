@@ -188,6 +188,9 @@
     <Compile Include="Assets\Dialogue\DialogueSystem\ResponseHandler.cs" />
     <Compile Include="Assets\Animations\Animations\Kaori\Attack\Scripts\Transition2Behaviour.cs" />
     <Compile Include="Assets\Scripts\Player\AudioBridges\BridgePlayerAudio.cs" />
+    <Compile Include="Assets\Scripts\Events\Boss\PlayerEntranceInBoss.cs" />
+    <Compile Include="Assets\Scripts\Events\Boss\BossEntrance.cs" />
+    <Compile Include="Assets\Scripts\Enemies\Boss\BossCombatController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Fantasy Adventure Environment\Shaders\VS_InstancedIndirect.cginc" />

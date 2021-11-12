@@ -7,6 +7,8 @@ public class BossFSM : FiniteStateMachine
     [SerializeField] private BossController _bossController;
     [SerializeField] private GameObject _player;
 
+    public GameObject endGame;
+
     private float _distance;
     private int _random;
     private int _s;
@@ -194,4 +196,14 @@ public class BossFSM : FiniteStateMachine
         SwitchState(_idleState, _bossController);
         StartCoroutine(GeneralControlCoroutine());
     }
+
+    //--
+
+    public void Death()
+    {
+        endGame.SetActive(true);
+        Destroy(this.gameObject);
+    }
+
+
 }

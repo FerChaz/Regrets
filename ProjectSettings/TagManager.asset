@@ -11,6 +11,7 @@ TagManager:
   - Stone
   - Spikes
   - CameraUI
+  - Boss
   layers:
   - Default
   - TransparentFX
