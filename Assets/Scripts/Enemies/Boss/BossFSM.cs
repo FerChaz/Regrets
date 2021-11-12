@@ -26,6 +26,12 @@ public class BossFSM : FiniteStateMachine
 
     //-- START & UPDATE ------------------------------------------------------------------------------------------------------------
 
+    private void Awake()
+    {
+        _player = FindObjectOfType<PlayerController>().gameObject;
+        _bossController = GetComponent<BossController>();
+    }
+
     private void Start()
     {
         SwitchState(_idleState, _bossController);

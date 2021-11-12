@@ -93,6 +93,7 @@
     <Compile Include="Assets\AmplifyShaderEditor\Examples\Community\Volumetric Pixelization\Pixelize.cs" />
     <Compile Include="Assets\Scripts\Limbo\Quests\FlagCuest.cs" />
     <Compile Include="Assets\Scripts\Enemies\GroundEnemies\GroundEnemyPatrolController.cs" />
+    <Compile Include="Assets\Scripts\ProgressController\DESEncryption.cs" />
     <Compile Include="Assets\AmplifyShaderEditor\Examples\Official\Smear\Smear.cs" />
     <Compile Include="Assets\Scripts\Player\Habilities\PlayerHabilities.cs" />
     <Compile Include="Assets\MeleeWeaponTrail\Scripts\Interpolate.cs" />
@@ -157,6 +158,7 @@
     <Compile Include="Assets\Scripts\Camera\MainCamera.cs" />
     <Compile Include="Assets\Scripts\Enemies\Patrol\PatrolEnemyBase.cs" />
     <Compile Include="Assets\Scripts\FSM\State.cs" />
+    <Compile Include="Assets\Scripts\ProgressController\SessionData.cs" />
     <Compile Include="Assets\Scripts\Walls &amp; Doors\InvisibleWall.cs" />
     <Compile Include="Assets\Dialogue\DialogueSystem\DialogObject.cs" />
     <Compile Include="Assets\Scripts\Limbo\Quests\LimboTimeCuest.cs" />
@@ -173,6 +175,8 @@
     <Compile Include="Assets\Scripts\SceneManager\ExitScene.cs" />
     <Compile Include="Assets\Scripts\Limbo\ExitLimbo.cs" />
     <Compile Include="Assets\AmplifyShaderEditor\Examples\Official\Smear\SimpleMoveExample.cs" />
+    <Compile Include="Assets\Scripts\ProgressController\DataController\DataController.cs" />
+    <Compile Include="Assets\Scripts\Scriptable Objects\Status.cs" />
     <Compile Include="Assets\Scripts\Limbo\Quests\EnemyCounter.cs" />
     <Compile Include="Assets\Scripts\Enemies\Spikes\SpikesController.cs" />
     <Compile Include="Assets\Dialogue\DialogueSystem\BlockMovement\BlockMovement.cs" />
@@ -184,11 +188,6 @@
     <Compile Include="Assets\Dialogue\DialogueSystem\ResponseHandler.cs" />
     <Compile Include="Assets\Animations\Animations\Kaori\Attack\Scripts\Transition2Behaviour.cs" />
     <Compile Include="Assets\Scripts\Player\AudioBridges\BridgePlayerAudio.cs" />
-    <Compile Include="Assets\Scripts\ProgressController\DESEncryption.cs" />
-    <Compile Include="Assets\Scripts\ProgressController\SessionData.cs" />
-    <Compile Include="Assets\Scripts\ProgressController\ProgresSO.cs" />
-    <Compile Include="Assets\Scripts\ProgressController\DataController\DataController.cs" />
-    <Compile Include="Assets\Scripts\Scriptable Objects\Status.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Fantasy Adventure Environment\Shaders\VS_InstancedIndirect.cginc" />

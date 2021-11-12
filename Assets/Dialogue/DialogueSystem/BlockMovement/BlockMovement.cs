@@ -8,17 +8,23 @@ public class BlockMovement : MonoBehaviour
     public Interactable interactable { get; set; }
     public Dialogue Dialogue => dialogue;
 
+
+
     public void Update()
     {
-        if (dialogue.IsOpen)
+        if (dialogue)
         {
-            return;
-        }
+            if (dialogue.IsOpen)
+            {
+                return;
+            }
 
-        if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            OpenDialog();
+            if (Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                OpenDialog();
+            }
         }
+        
     }
 
     public void OpenDialog()

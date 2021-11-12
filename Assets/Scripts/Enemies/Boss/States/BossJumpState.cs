@@ -75,6 +75,14 @@ public class BossJumpState : State
     private void SetJumpVelocity()
     {
         Debug.Log($"{distance}");
-        _bossController.parabolaController.Speed = distance + 30f;
+        if (_bossController.facingDirection == -1)
+        {
+            _bossController.parabolaController.Speed = distance + 50f;
+        }
+        else
+        {
+            _bossController.parabolaController.Speed = distance + 30f;
+        }
+        
     }
 }
