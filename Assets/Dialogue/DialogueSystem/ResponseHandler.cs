@@ -39,6 +39,12 @@ public class ResponseHandler : MonoBehaviour
 
             tempResponses.Add(responseButton);
 
+            if (i==0)
+            {
+                gameObject.GetComponent<FirstSelectedButton>().electionFirstButton = responseButton;
+                gameObject.GetComponent<FirstSelectedButton>().enabled = true;
+            }
+
             responseBoxHeight += responseButtonTemplate.sizeDelta.y;
         }
 
