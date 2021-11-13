@@ -22,6 +22,5 @@ public class KatanaController : MonoBehaviour
             other.transform.SendMessage("GetDamage", attackDetails);
         }
     }
-
     
 }

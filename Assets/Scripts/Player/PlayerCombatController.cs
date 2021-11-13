@@ -38,6 +38,14 @@ public class PlayerCombatController : MonoBehaviour
 
     private void Update()
     {
+        //Cochinada de FER - BORRAR
+        if(!playerAnimator.Animation1IsPlaying())
+        {
+            ParticleSystem weaponTrails = weapon.GetComponentInChildren(typeof(ParticleSystem), true) as ParticleSystem;
+            weaponTrails.Stop();
+        }
+        //-------------------------------
+
         CheckCombatInput();
 
         if (weaponHideCooldown >= 0) 
@@ -48,6 +56,8 @@ public class PlayerCombatController : MonoBehaviour
         {
             weapon.SetActive(false);
         }
+
+        
 
     }
 
@@ -60,8 +70,8 @@ public class PlayerCombatController : MonoBehaviour
             if (combatEnabled)
             {
                 weapon.SetActive(true);
-                //ParticleSystem weaponTrails = weapon.GetComponentInChildren(typeof(ParticleSystem), true) as ParticleSystem;
-                //weaponTrails.Play();
+                ParticleSystem weaponTrails = weapon.GetComponentInChildren(typeof(ParticleSystem), true) as ParticleSystem;
+                weaponTrails.Play();
 
                 playerAnimator.Attack();
 

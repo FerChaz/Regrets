@@ -20,7 +20,7 @@ public class PlayerDash : PlayerHabilities
 
     private void Update()
     {
-        if (dashEnabled)            // Para no preguntar siempre podríamos desactivar este script, y cuando obtengamos el dash lo activamos
+        if (dashEnabled)            // Para no preguntar siempre podrï¿½amos desactivar este script, y cuando obtengamos el dash lo activamos
         {                           // Tengo que preguntar si cuando guardamos en playerprefbs se puede guardar este cambio de activar un componente
             Dash();
         }
@@ -41,6 +41,7 @@ public class PlayerDash : PlayerHabilities
             _player.rigidBody.velocity = Vector3.zero;
 
             isDashing = true;
+            playerAnimatorController.Dash();
 
             dashTimeLeft = dashTime;
             lastDash = Time.time;
