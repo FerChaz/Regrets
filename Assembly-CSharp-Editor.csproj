@@ -1131,13 +1131,13 @@
       <Project>{1016F5F0-060B-B050-A0C6-70F8A7F6D951}</Project>
       <Name>Assembly-CSharp</Name>
     </ProjectReference>
-    <ProjectReference Include="sc.fae.editor.csproj">
-      <Project>{DFBF5E1F-2BE6-6011-8505-24CD10DDDF68}</Project>
-      <Name>sc.fae.editor</Name>
-    </ProjectReference>
     <ProjectReference Include="sc.fae.runtime.csproj">
       <Project>{C370DDB1-51F0-0A6B-4F70-AA100A9F873F}</Project>
       <Name>sc.fae.runtime</Name>
+    </ProjectReference>
+    <ProjectReference Include="sc.fae.editor.csproj">
+      <Project>{DFBF5E1F-2BE6-6011-8505-24CD10DDDF68}</Project>
+      <Name>sc.fae.editor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

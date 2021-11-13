@@ -93,6 +93,7 @@
     <Compile Include="Assets\AmplifyShaderEditor\Examples\Community\Volumetric Pixelization\Pixelize.cs" />
     <Compile Include="Assets\Scripts\Limbo\Quests\FlagCuest.cs" />
     <Compile Include="Assets\Scripts\Enemies\GroundEnemies\GroundEnemyPatrolController.cs" />
+    <Compile Include="Assets\Scripts\Enemies\Boss\BossCombatController.cs" />
     <Compile Include="Assets\Scripts\ProgressController\DESEncryption.cs" />
     <Compile Include="Assets\AmplifyShaderEditor\Examples\Official\Smear\Smear.cs" />
     <Compile Include="Assets\Scripts\Player\Habilities\PlayerHabilities.cs" />
@@ -105,6 +106,7 @@
     <Compile Include="Assets\AmplifyShaderEditor\Examples\Community\Volumetric Pixelization\VolumetricSphere.cs" />
     <Compile Include="Assets\Scripts\Enemies\Coins.cs" />
     <Compile Include="Assets\Scripts\End\EndGame.cs" />
+    <Compile Include="Assets\Scripts\Events\Boss\PlayerEntranceInBoss.cs" />
     <Compile Include="Assets\Scripts\Player\AnimationsBridges\BridgePlayerAnimator.cs" />
     <Compile Include="Assets\Scripts\Checkpoint\Checkpoint.cs" />
     <Compile Include="Assets\Scripts\Player\AnimationsBridges\PlayerCombatAC.cs" />
@@ -125,6 +127,7 @@
     <Compile Include="Assets\Scripts\MainMenu\ExitMenu.cs" />
     <Compile Include="Assets\Scripts\SceneManager\EntryScene.cs" />
     <Compile Include="Assets\Scripts\Enemies\Boss\States\BossJumpState.cs" />
+    <Compile Include="Assets\Scripts\Events\Boss\BossEntrance.cs" />
     <Compile Include="Assets\Scripts\Player\Components\LifeController.cs" />
     <Compile Include="Assets\Scripts\Enemies\GroundEnemies\GroundEnemyDeath.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\AdditiveScenesInfo.cs" />
@@ -188,15 +191,12 @@
     <Compile Include="Assets\Dialogue\DialogueSystem\ResponseHandler.cs" />
     <Compile Include="Assets\Animations\Animations\Kaori\Attack\Scripts\Transition2Behaviour.cs" />
     <Compile Include="Assets\Scripts\Player\AudioBridges\BridgePlayerAudio.cs" />
-    <Compile Include="Assets\Scripts\Events\Boss\PlayerEntranceInBoss.cs" />
-    <Compile Include="Assets\Scripts\Events\Boss\BossEntrance.cs" />
-    <Compile Include="Assets\Scripts\Enemies\Boss\BossCombatController.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Fantasy Adventure Environment\Shaders\VS_InstancedIndirect.cginc" />
+    <None Include="Assets\Packs\Fantasy Adventure Environment\Shaders\VS_InstancedIndirect.cginc" />
     <None Include="Assets\AmplifyShaderEditor\Examples\Official\MultiPassDistortion\DoublePassUnlitTemplate.shader" />
     <None Include="Assets\AmplifyShaderEditor\Examples\Official\StencilExample\RefractionsPanels\AnimatedRefraction.shader" />
-    <None Include="Assets\Fantasy Adventure Environment\Shaders\FAE_Sunshaft.shader" />
+    <None Include="Assets\Packs\Fantasy Adventure Environment\Shaders\FAE_Sunshaft.shader" />
     <None Include="Assets\AmplifyShaderEditor\Plugins\EditorResources\Previews\Preview_CosTime.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\AmplifyShaderEditor\Examples\Official\VertexNormalReconstruction\VertexNormalReconstruction.shader" />
@@ -241,11 +241,11 @@
     <None Include="Assets\AmplifyShaderEditor\Examples\Community\EnvironmentGradient\Credits.txt" />
     <None Include="Assets\AmplifyShaderEditor\Examples\Community\LowPolyWater\LowPolyWater.shader" />
     <None Include="Assets\AmplifyShaderEditor\Examples\Community\ForceShield\ForceShield.shader" />
-    <None Include="Assets\Fantasy Adventure Environment\Shaders\PigmentMapComposite.shader" />
+    <None Include="Assets\Packs\Fantasy Adventure Environment\Shaders\PigmentMapComposite.shader" />
     <None Include="Assets\AmplifyShaderEditor\Plugins\EditorResources\Previews\Preview_TFHCRemap.shader" />
     <None Include="Assets\AmplifyShaderEditor\Plugins\EditorResources\Previews\Preview_PrimitiveIDVariableNode.shader" />
     <None Include="Assets\AmplifyShaderEditor\Examples\Community\Skybox Cubemap Extended\Shaders\Skybox Cubemap Extended.shader" />
-    <None Include="Assets\Fantasy Adventure Environment\Changelog.txt" />
+    <None Include="Assets\Packs\Fantasy Adventure Environment\Changelog.txt" />
     <None Include="Assets\AmplifyShaderEditor\Plugins\EditorResources\Previews\Preview_DecodeLightmapHlpNode.shader" />
     <None Include="Assets\AmplifyShaderEditor\Plugins\EditorResources\Previews\Preview_EncodeFloatRGBAHlpNode.shader" />
     <None Include="Assets\AmplifyShaderEditor\Examples\Official\ParallaxOffsetFakeInterior\ParallaxWindow.shader" />
@@ -253,7 +253,7 @@
     <None Include="Assets\AmplifyShaderEditor\Plugins\EditorResources\Previews\Preview_RadiansOpNode.shader" />
     <None Include="Assets\AmplifyShaderEditor\Plugins\EditorResources\Previews\Preview_RotatorNode.shader" />
     <None Include="Assets\AmplifyShaderEditor\Plugins\EditorResources\Previews\Preview_TFHCPixelateUV.shader" />
-    <None Include="Assets\Fantasy Adventure Environment\Shaders\FAE_Foliage.shader" />
+    <None Include="Assets\Packs\Fantasy Adventure Environment\Shaders\FAE_Foliage.shader" />
     <None Include="Assets\AmplifyShaderEditor\Examples\Community\EnvironmentGradient\MourEnvironmentGradient.shader" />
     <None Include="Assets\AmplifyShaderEditor\Plugins\EditorResources\Previews\Preview_GetLocalVarNode.shader" />
     <None Include="Assets\AmplifyShaderEditor\Examples\DownloadSamplesInstructions.txt" />
@@ -261,8 +261,9 @@
     <None Include="Assets\AmplifyShaderEditor\Examples\Official\XRay\ProceduralWall.shader" />
     <None Include="Assets\AmplifyShaderEditor\Plugins\EditorResources\Previews\Preview_LightColorNode.shader" />
     <None Include="Assets\AmplifyShaderEditor\Plugins\EditorResources\Previews\Preview_FractNode.shader" />
+    <None Include="Assets\Packs\Fantasy Skybox FREE\Readme.txt" />
     <None Include="Assets\AmplifyShaderEditor\Plugins\EditorResources\Previews\Preview_TimeNode.shader" />
-    <None Include="Assets\Fantasy Adventure Environment\Shaders\FAE_TreeTrunk.shader" />
+    <None Include="Assets\Packs\Fantasy Adventure Environment\Shaders\FAE_TreeTrunk.shader" />
     <None Include="Assets\AmplifyShaderEditor\Examples\Official\ScreenSpaceDetail\ScreenSpaceDetail.shader" />
     <None Include="Assets\AmplifyShaderEditor\Examples\Community\SingleChannelMasking\Credits.txt" />
     <None Include="Assets\AmplifyShaderEditor\Plugins\EditorResources\Previews\Preview_LogOpNode.shader" />
@@ -289,11 +290,12 @@
     <None Include="Assets\AmplifyShaderEditor\Plugins\EditorResources\Previews\Preview_EncodeFloatRGHlpNode.shader" />
     <None Include="Assets\AmplifyShaderEditor\Examples\Official\UVLightReveal\UV light.shader" />
     <None Include="Assets\AmplifyShaderEditor\Plugins\EditorResources\Previews\Preview_IndirectDiffuseLight.shader" />
-    <None Include="Assets\Fantasy Adventure Environment\Shaders\FAE_FogSheet.shader" />
+    <None Include="Assets\Packs\Fantasy Adventure Environment\Shaders\FAE_FogSheet.shader" />
     <None Include="Assets\AmplifyShaderEditor\Examples\Official\Extrusion\NormalExtrusion.shader" />
     <None Include="Assets\AmplifyShaderEditor\Examples\Official\StencilExample\Portals\Portal02\StencilDiffuse02.shader" />
     <None Include="Assets\AmplifyShaderEditor\Examples\Community\HologramSimple\Hologram Simple.shader" />
     <None Include="Assets\AmplifyShaderEditor\Plugins\EditorResources\Previews\Preview_SinTimeNode.shader" />
+    <None Include="Assets\Packs\stylezed low poly props\README.txt" />
     <None Include="Assets\AmplifyShaderEditor\Examples\Official\WorldPosSLices\WorldPosSlices.shader" />
     <None Include="Assets\AmplifyShaderEditor\Plugins\EditorResources\Previews\Preview_SwitchByFaceNode.shader" />
     <None Include="Assets\AmplifyShaderEditor\Plugins\EditorResources\Previews\Preview_TFHCCompareGreaterEqual.shader" />
@@ -302,7 +304,7 @@
     <None Include="Assets\AmplifyShaderEditor\Examples\Official\CubemapReflections\CubemapReflections.shader" />
     <None Include="Assets\AmplifyShaderEditor\Examples\Credits.txt" />
     <None Include="Assets\AmplifyShaderEditor\Plugins\EditorResources\Previews\Preview_SimpleTimeNode.shader" />
-    <None Include="Assets\Fantasy Adventure Environment\Shaders\FAE_Cliff_Coverage.shader" />
+    <None Include="Assets\Packs\Fantasy Adventure Environment\Shaders\FAE_Cliff_Coverage.shader" />
     <None Include="Assets\AmplifyShaderEditor\Plugins\EditorResources\Previews\Preview_ObjectScaleNode.shader" />
     <None Include="Assets\AmplifyShaderEditor\Examples\Official\TemplateExamples\Sprites\SpriteMask\SpritesMask.shader" />
     <None Include="Assets\AmplifyShaderEditor\Plugins\EditorResources\Previews\Preview_RoundOpNode.shader" />
@@ -312,7 +314,7 @@
     <None Include="Assets\AmplifyShaderEditor\Plugins\EditorResources\Previews\Preview_PowerNode.shader" />
     <None Include="Assets\AmplifyShaderEditor\Examples\Official\RadialUVDistortion\RadialUVDistortion.shader" />
     <None Include="Assets\AmplifyShaderEditor\Plugins\EditorResources\Previews\Preview_DotProductOpNode.shader" />
-    <None Include="Assets\Fantasy Adventure Environment\Shaders\FAE_TreeBranch.shader" />
+    <None Include="Assets\Packs\Fantasy Adventure Environment\Shaders\FAE_TreeBranch.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\AmplifyShaderEditor\Examples\Official\Substance2018\Readme.txt" />
     <None Include="Assets\AmplifyShaderEditor\Plugins\EditorResources\Previews\Preview_SmoothstepOpNode.shader" />
@@ -336,7 +338,7 @@
     <None Include="Assets\AmplifyShaderEditor\Plugins\EditorResources\Previews\Preview_GrayscaleNode.shader" />
     <None Include="Assets\AmplifyShaderEditor\Plugins\EditorResources\Previews\Preview_VertexBinormalNode.shader" />
     <None Include="Assets\AmplifyShaderEditor\Examples\Official\TriplanarProjection\TriplanarSimple.shader" />
-    <None Include="Assets\Fantasy Adventure Environment\_DemoScenes\Source\_These assets are not officially included, only produced for the demo scene.txt" />
+    <None Include="Assets\Packs\Fantasy Adventure Environment\_DemoScenes\Source\_These assets are not officially included, only produced for the demo scene.txt" />
     <None Include="Assets\AmplifyShaderEditor\Examples\Official\CustomRTRain\Readme.txt" />
     <None Include="Assets\AmplifyShaderEditor\Examples\Official\SimplePotionLiquid\SimpleGlass.shader" />
     <None Include="Assets\AmplifyShaderEditor\Plugins\EditorResources\Previews\Preview_ObjSpaceViewDirHlpNode.shader" />
@@ -350,8 +352,9 @@
     <None Include="Assets\AmplifyShaderEditor\Plugins\EditorResources\Templates\Legacy\Unlit.shader" />
     <None Include="Assets\AmplifyShaderEditor\Plugins\EditorResources\Previews\Preview_ViewDirInputsCoordNode.shader" />
     <None Include="Assets\AmplifyShaderEditor\Plugins\EditorResources\Previews\Preview_SqrtOpNode.shader" />
+    <None Include="Assets\Kaori\Effects\New Amplify Shader.shader" />
     <None Include="Assets\AmplifyShaderEditor\Plugins\EditorResources\Templates\SRP (Legacy)\README.txt" />
-    <None Include="Assets\Fantasy Adventure Environment\_DemoScenes\Source\FAE_WaterfallFoam.shader" />
+    <None Include="Assets\Packs\Fantasy Adventure Environment\_DemoScenes\Source\FAE_WaterfallFoam.shader" />
     <None Include="Assets\AmplifyShaderEditor\Plugins\EditorResources\Previews\Preview_SimpleSubtractOpNode.shader" />
     <None Include="Assets\AmplifyShaderEditor\Examples\Official\RefractedShadows\RefractedShadows.shader" />
     <None Include="Assets\AmplifyShaderEditor\Examples\Official\TextureArray\TextureArray.shader" />
@@ -390,7 +393,7 @@
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\AmplifyShaderEditor\Examples\Official\SimpleTerrain\SimpleTerrainAddPass.shader" />
     <None Include="Assets\AmplifyShaderEditor\Plugins\EditorResources\Previews\Preview_GammaToLinearNode.shader" />
-    <None Include="Assets\Fantasy Adventure Environment\Shaders\FAE_Water.shader" />
+    <None Include="Assets\Packs\Fantasy Adventure Environment\Shaders\FAE_Water.shader" />
     <None Include="Assets\AmplifyShaderEditor\Plugins\EditorResources\Previews\Preview_DdyOpNode.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\AmplifyShaderEditor\Plugins\EditorResources\Previews\Preview_VertexIdVariableNode.shader" />
@@ -429,7 +432,7 @@
     <None Include="Assets\AmplifyShaderEditor\Plugins\EditorResources\Previews\Preview_VertexColorNode.shader" />
     <None Include="Assets\AmplifyShaderEditor\Examples\Official\ScreenSpaceCurvature\ScreenSpaceCurvature.shader" />
     <None Include="Assets\AmplifyShaderEditor\Examples\Community\SingleChannelMasking\SingleChannelMasking.shader" />
-    <None Include="Assets\Fantasy Adventure Environment\Shaders\FAE_TreeBillboard.shader" />
+    <None Include="Assets\Packs\Fantasy Adventure Environment\Shaders\FAE_TreeBillboard.shader" />
     <None Include="Assets\AmplifyShaderEditor\Plugins\EditorResources\Previews\Preview_HSVToRGBNode.shader" />
     <None Include="Assets\AmplifyShaderEditor\Plugins\EditorResources\Previews\Preview_DesaturateNode.shader" />
     <None Include="Assets\AmplifyShaderEditor\Plugins\EditorResources\Previews\Preview_WireNode.shader" />
@@ -480,7 +483,7 @@
     <None Include="Assets\AmplifyShaderEditor\Plugins\EditorResources\Previews\Preview_LODFadeNode.shader" />
     <None Include="Assets\AmplifyShaderEditor\Examples\Official\SimpleRefraction\SimpleRefraction.shader" />
     <None Include="Assets\AmplifyShaderEditor\Examples\Official\Water\Ground.shader" />
-    <None Include="Assets\Fantasy Adventure Environment\PostProcessingAssets\Readme.txt" />
+    <None Include="Assets\Packs\Fantasy Adventure Environment\PostProcessingAssets\Readme.txt" />
     <None Include="Assets\AmplifyShaderEditor\Plugins\EditorResources\Previews\Preview_EncodeViewNormalStereoHlpNode.shader" />
     <None Include="Assets\AmplifyShaderEditor\Plugins\EditorResources\Previews\Preview_CosOpNode.shader" />
     <None Include="Assets\AmplifyShaderEditor\Examples\Official\SimpleTerrain\GrassBlades.shader" />
@@ -495,17 +498,17 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\AmplifyShaderEditor\Plugins\EditorResources\Previews\Preview_SummedBlendNode.shader" />
     <None Include="Assets\AmplifyShaderEditor\Examples\Official\StencilExample\Portals\Portal01\StencilDiffuse01.shader" />
-    <None Include="Assets\Fantasy Adventure Environment\Shaders\FAE_Grass.shader" />
+    <None Include="Assets\Packs\Fantasy Adventure Environment\Shaders\FAE_Grass.shader" />
     <None Include="Assets\AmplifyShaderEditor\Examples\Community\Volumetric Pixelization\Combine Layers.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\AmplifyShaderEditor\Examples\Official\StencilExample\Portals\Portal01\StencilMask01.shader" />
     <None Include="Assets\AmplifyShaderEditor\Plugins\EditorResources\Previews\Preview_TextureArrayNode.shader" />
     <None Include="Assets\AmplifyShaderEditor\Plugins\EditorResources\Previews\Preview_WorldSpaceLightDirHlpNode.shader" />
-    <None Include="Assets\Fantasy Adventure Environment\Shaders\FAE_Cliff.shader" />
+    <None Include="Assets\Packs\Fantasy Adventure Environment\Shaders\FAE_Cliff.shader" />
     <None Include="Assets\AmplifyShaderEditor\Examples\Official\TemplateExamples\UI\MaskedUI\MaskedUI.shader" />
     <None Include="Assets\AmplifyShaderEditor\Plugins\EditorResources\Previews\Preview_SinhOpNode.shader" />
     <None Include="Assets\AmplifyShaderEditor\Plugins\EditorResources\Templates\Legacy\DefaultUnlit.shader" />
-    <None Include="Assets\Fantasy Adventure Environment\_DemoScenes\Source\FAE_Waterfall.shader" />
+    <None Include="Assets\Packs\Fantasy Adventure Environment\_DemoScenes\Source\FAE_Waterfall.shader" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
     <None Include="Assets\AmplifyShaderEditor\Plugins\EditorResources\Previews\Preview_WorldReflectionVector.shader" />
     <None Include="Assets\AmplifyShaderEditor\Plugins\EditorResources\Previews\Preview_SimpleAddOpNode.shader" />
@@ -530,7 +533,7 @@
     <None Include="Assets\AmplifyShaderEditor\Plugins\EditorResources\Previews\Preview_SubstanceSamplerNode.shader" />
     <None Include="Assets\AmplifyShaderEditor\Plugins\EditorResources\Previews\Preview_PannerNode.shader" />
     <None Include="Assets\AmplifyShaderEditor\Plugins\EditorResources\Previews\Preview_SimpleRemainderNode.shader" />
-    <None Include="Assets\Fantasy Adventure Environment\Shaders\FAE_SunshaftParticle.shader" />
+    <None Include="Assets\Packs\Fantasy Adventure Environment\Shaders\FAE_SunshaftParticle.shader" />
     <None Include="Assets\AmplifyShaderEditor\Plugins\EditorResources\Previews\Preview_PiNode.shader" />
     <None Include="Assets\AmplifyShaderEditor\Plugins\EditorResources\Previews\Preview_DynamicAppendNode.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
@@ -1147,13 +1150,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="sc.fae.editor.csproj">
-      <Project>{DFBF5E1F-2BE6-6011-8505-24CD10DDDF68}</Project>
-      <Name>sc.fae.editor</Name>
-    </ProjectReference>
     <ProjectReference Include="sc.fae.runtime.csproj">
       <Project>{C370DDB1-51F0-0A6B-4F70-AA100A9F873F}</Project>
       <Name>sc.fae.runtime</Name>
+    </ProjectReference>
+    <ProjectReference Include="sc.fae.editor.csproj">
+      <Project>{DFBF5E1F-2BE6-6011-8505-24CD10DDDF68}</Project>
+      <Name>sc.fae.editor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
