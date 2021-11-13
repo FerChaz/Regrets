@@ -13,23 +13,44 @@ public class RespawnController : MonoBehaviour
     public AdditiveScenesInfo additiveScenesInfo;
     public GameObject checkpointObject;
 
+    public GameObject transitionCanvas;
+    public Animator canvasAnimator;
+
+    private WaitForSeconds waitFade = new WaitForSeconds(.5f);
     private WaitForSeconds wait = new WaitForSeconds(1);
 
     private void Awake()
     {
         sceneController = FindObjectOfType<SceneController>();
+        transitionCanvas = GameObject.Find("TransitionCanvas");
+        canvasAnimator = transitionCanvas.GetComponentInChildren<Animator>();
     }
 
     public void Respawn()
+    {        
+        CanvasTransition();
+
+        StartCoroutine(WaitForFade());
+    }
+
+    private void CanvasTransition()
     {
-        //Activar Fade
+        // De transparente a negro
+
+        canvasAnimator.SetBool("ToBlack", true);
+    }
+
+    private IEnumerator WaitForFade()
+    {
+        yield return waitFade;
+
         sceneController.ChangePlayerPosition(Vector3.zero);
 
         sceneController.UnloadSceneInAdditive(additiveScenesInfo.actualScene, OnSceneComplete);
 
         foreach (string scene in additiveScenesInfo.additiveScenes)
         {
-            if(scene != additiveScenesInfo.actualScene)
+            if (scene != additiveScenesInfo.actualScene)
             {
                 sceneController.UnloadSceneInAdditive(scene, OnSceneComplete);
             }
@@ -40,12 +61,10 @@ public class RespawnController : MonoBehaviour
 
         StartCoroutine(WaitToChange());
 
-        //Desactivar Fade
-        
     }
 
 
-    IEnumerator WaitToChange()
+        IEnumerator WaitToChange()
     {
         yield return wait;
         sceneController.ChangePlayerPosition(respawnInfo.respawnPosition);

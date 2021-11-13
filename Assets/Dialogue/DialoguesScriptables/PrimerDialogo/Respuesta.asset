@@ -10,8 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 92218030106dfc548b0d21f1a686ad84, type: 3}
-  m_Name: Si
+  m_Name: Respuesta
   m_EditorClassIdentifier: 
   dialogue:
-  - Si che
+  - "\xBFTodav\xEDa sigues aqu\xED? Tengo cosas que hacer"
+  - Cuando avances un poco recuerda visitar mi tienda.
+  - ...
+  - "Si, las parcas tambi\xE9n tienen tiendas"
+  - Por cierto, cada vez que me veas puedes hablarme. Soy muy amigable.
+  - "Pero cuando quieras hablarme acercate a mi, mi audici\xF3n no es muy buena."
   responses: []

@@ -25,8 +25,12 @@ public class Checkpoint : MonoBehaviour
     public GameObject canvas;
 
 
+    public GameObject transitionCanvas;
+    public Animator canvasAnimator;
+
     // private DataController _data                                     // Guardar: posicion, escenas aditivas, currency
 
+    private WaitForSeconds wait = new WaitForSeconds(.5f);
 
     private void Awake()
     {
@@ -34,6 +38,9 @@ public class Checkpoint : MonoBehaviour
         _lifeController = FindObjectOfType<LifeController>();
         _sceneController = FindObjectOfType<SceneController>();
         // _data = FindObjectOfType<DataController>();
+
+        transitionCanvas = GameObject.Find("TransitionCanvas");
+        canvasAnimator = transitionCanvas.GetComponentInChildren<Animator>();
     }
 
 
@@ -100,7 +107,24 @@ public class Checkpoint : MonoBehaviour
 
         additiveScenesScriptableObject.actualScene = checkpointSceneName;
         additiveScenesScriptableObject.additiveScenes = scenesToChargeInAdditive;
+
+        StartCoroutine(WaitForFade());
     }
+
+    private void CanvasTransition()
+    {
+        // De negro a transparente
+
+        canvasAnimator.SetBool("ToBlack", false);
+    }
+
+    private IEnumerator WaitForFade()
+    {
+        yield return wait;
+
+        CanvasTransition();
+    }
+
 
     private void OnSceneComplete()
     {

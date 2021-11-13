@@ -10,11 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 92218030106dfc548b0d21f1a686ad84, type: 3}
-  m_Name: Prueba
+  m_Name: Presentacion
   m_EditorClassIdentifier: 
   dialogue:
-  - Holaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-  - Tenes hambre?
+  - 'Hola soy la Parca. El mejor personaje del juego. '
+  - Digo, del glorioso mundo de la Parca.
+  - "Aqu\xED iria la historia."
+  - SI ACASO RECORDARA UNA.
+  - Pero en fin, preparado?
   responses:
   - responseText: Si
     dialogObject: {fileID: 11400000, guid: b494c837141ed4343ab243e707275af2, type: 2}

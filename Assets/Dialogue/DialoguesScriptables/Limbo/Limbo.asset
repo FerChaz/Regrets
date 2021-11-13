@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92218030106dfc548b0d21f1a686ad84, type: 3}
+  m_Name: Limbo
+  m_EditorClassIdentifier: 
+  dialogue:
+  - "As\xED que has llegado hasta aqu\xED."
+  - "Parece que te ca\xEDste en algo afilado, o los espiritus fueron mucho para ti."
+  - 'Prueba derrotando a los espiritus con forma de Bows*r. '
+  - Capaz te devuelvan al lugar del que vienes.
+  - Al derrotarlos cruza por el portal.
+  - ...
+  - "\xA1\xBFNo conoces a Bows*r?!"
+  - Meh...
+  responses: []

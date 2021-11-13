@@ -11,10 +11,16 @@ public class StartingScene : MonoBehaviour
 
     public GameObject loadingCanvas;
 
+    public RespawnInfo respawnInfo;
+
+    public List<string> additiveScenes;
+
     private void Start()
     {
         sceneManager.LoadSceneInAdditive(sceneToGo, OnSceneComplete);
         sceneManager.ChangePlayerPosition(playerPosition);
+
+        ActualiceCheckpoint();
 
         loadingCanvas.SetActive(false);
     }
@@ -24,6 +30,13 @@ public class StartingScene : MonoBehaviour
         Debug.Log($"OnScene async complete, {gameObject.name}");
     }
 
+    private void ActualiceCheckpoint()
+    {
+        respawnInfo.respawnPosition = playerPosition;
+        respawnInfo.sceneToRespawn = "Intro";
+        respawnInfo.additiveScenesToCharge = additiveScenes;
+        respawnInfo.checkpointActivename = "CheckpointIntro";
+    }
 
 
     public void LoadSceneAndPosition(string scene, Vector3 position)

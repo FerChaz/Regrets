@@ -10,8 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 92218030106dfc548b0d21f1a686ad84, type: 3}
-  m_Name: aaaaaaa
+  m_Name: MainLevel Checkpoint
   m_EditorClassIdentifier: 
   dialogue:
-  - AAAAAAAAAAAAAAA
+  - "\xBFYa le rezaste al buda del principio?"
+  - "Si no, aqu\xED tienes otro."
+  - Dicen que los budas tienen buena memoria y recuerdan el lugar donde les rezaste.
   responses: []

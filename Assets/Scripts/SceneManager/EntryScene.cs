@@ -15,9 +15,16 @@ public class EntryScene : MonoBehaviour
 
     public AdditiveScenesInfo sceneInfo;
 
+    public GameObject transitionCanvas;
+    public Animator canvasAnimator;
+
+    private WaitForSeconds wait = new WaitForSeconds(.5f);
+
     private void Awake()
     {
         _sceneManager = FindObjectOfType<SceneController>();
+        transitionCanvas = GameObject.Find("TransitionCanvas");
+        canvasAnimator = transitionCanvas.GetComponentInChildren<Animator>();
     }
 
 
@@ -39,7 +46,9 @@ public class EntryScene : MonoBehaviour
                 _sceneManager.LoadSceneInAdditive(scene, OnSceneComplete);
             }
 
-            gameObject.SetActive(false);
+            StartCoroutine(WaitForFade());
+
+            
         }
     }
 
@@ -50,7 +59,24 @@ public class EntryScene : MonoBehaviour
         sceneInfo.actualScene = actualScene;
     }
 
-    private void OnSceneComplete()
+    private void CanvasTransition()
+    {
+        // De negro a transparente
+
+        canvasAnimator.SetBool("ToBlack", false);
+    }
+
+    private IEnumerator WaitForFade()
+    {
+        yield return wait;
+
+        CanvasTransition();
+
+        gameObject.SetActive(false);
+    }
+
+
+        private void OnSceneComplete()
     {
         Debug.Log($"OnScene async complete, {gameObject.name}");
     }
