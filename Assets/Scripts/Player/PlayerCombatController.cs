@@ -6,11 +6,7 @@ public class PlayerCombatController : MonoBehaviour
 {
     //-- VARIABLES -----------------------------------------------------------------------------------------------------------------
 
-    [SerializeField] private bool combatEnabled = true;
-
     [SerializeField] private float attack1Radius;
-
-    public int attackDamage;
 
     [SerializeField] private Transform attackHitBoxPos;
     [SerializeField] private LayerMask whatIsDamageable;
@@ -21,7 +17,7 @@ public class PlayerCombatController : MonoBehaviour
 
     private PlayerCombatAC playerAnimator;
 
-    private float[] attackDetails = new float[2];
+    public bool canAttack;
 
     //-- START & UPDATE ------------------------------------------------------------------------------------------------------------
 
@@ -30,11 +26,6 @@ public class PlayerCombatController : MonoBehaviour
         playerAnimator = player.GetComponentInChildren<PlayerCombatAC>();
     }
 
-    private void Start()
-    {
-        attackDetails[0] = attackDamage;
-
-    }
 
     private void Update()
     {
@@ -65,35 +56,20 @@ public class PlayerCombatController : MonoBehaviour
 
     private void CheckCombatInput()
     {
-        if (Input.GetButtonDown("Attack"))
+        if (Input.GetButtonDown("Attack") && canAttack)
         {
-            if (combatEnabled)
-            {
-                weapon.SetActive(true);
-                ParticleSystem weaponTrails = weapon.GetComponentInChildren(typeof(ParticleSystem), true) as ParticleSystem;
-                weaponTrails.Play();
+            weapon.SetActive(true);
+            ParticleSystem weaponTrails = weapon.GetComponentInChildren(typeof(ParticleSystem), true) as ParticleSystem; // ARREGLAR URGENTE
+            weaponTrails.Play();
 
-                playerAnimator.Attack();
+            playerAnimator.Attack();
 
-                weaponHideCooldown = 3;
-            }
+            weaponHideCooldown = 3;
         }
 
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.D) && canAttack)
         {
             TryToExecute();
-        }
-    }
-
-    private void CheckAttackHitBox()
-    {
-        Collider[] detectedObjects = Physics.OverlapSphere(attackHitBoxPos.position, attack1Radius, whatIsDamageable);
-
-        attackDetails[1] = transform.position.x;
-
-        foreach (Collider collider in detectedObjects)
-        {
-            collider.transform.SendMessage("GetDamage", attackDetails);
         }
     }
 

@@ -8,4 +8,5 @@ public class WallsAndDoorsStates : ScriptableObject
     public bool isWallBroken;
     public bool isChestOpen;
     public bool isDoorOpen;
+    public bool eventAlreadyHappened;
 }

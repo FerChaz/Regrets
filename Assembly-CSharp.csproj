@@ -191,6 +191,7 @@
     <Compile Include="Assets\Dialogue\DialogueSystem\ResponseHandler.cs" />
     <Compile Include="Assets\Animations\Animations\Kaori\Attack\Scripts\Transition2Behaviour.cs" />
     <Compile Include="Assets\Scripts\Player\AudioBridges\BridgePlayerAudio.cs" />
+    <Compile Include="Assets\Scripts\UI\Tutorial\Tutorial.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Packs\Fantasy Adventure Environment\Shaders\VS_InstancedIndirect.cginc" />
@@ -1150,13 +1151,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="sc.fae.runtime.csproj">
-      <Project>{C370DDB1-51F0-0A6B-4F70-AA100A9F873F}</Project>
-      <Name>sc.fae.runtime</Name>
-    </ProjectReference>
     <ProjectReference Include="sc.fae.editor.csproj">
       <Project>{DFBF5E1F-2BE6-6011-8505-24CD10DDDF68}</Project>
       <Name>sc.fae.editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="sc.fae.runtime.csproj">
+      <Project>{C370DDB1-51F0-0A6B-4F70-AA100A9F873F}</Project>
+      <Name>sc.fae.runtime</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
