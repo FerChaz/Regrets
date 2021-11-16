@@ -10,7 +10,7 @@ public class BreakableDoorController : MonoBehaviour
 
     public GameObject parentToDestroy;
 
-    public WallsAndDoorsStates isAlreadyBroken;
+    public ObjectStatus isAlreadyBroken;
 
     //private Animator doorAnimator;
 

@@ -6,9 +6,22 @@ using UnityEngine.UI;
 public class Tutorial : MonoBehaviour
 {
     public GameObject canvas;
-    public Image imageToShow;
+    public Image canvasImage;
 
-    public WallsAndDoorsStates eventHappened;
+    public ObjectStatus eventHappened;
+
+    public PlayerController playerController;
+
+    private void Awake()
+    {
+        if (eventHappened.eventAlreadyHappened)
+        {
+            this.gameObject.SetActive(false);
+        }
+
+        playerController = FindObjectOfType<PlayerController>();
+    }
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -20,18 +33,24 @@ public class Tutorial : MonoBehaviour
         UnShow();
     }
 
+
     public void Show()
     {
+        eventHappened.eventAlreadyHappened = true;
         canvas.SetActive(true);
-        // PUT IMAGE
         // FADE IN
     }
 
     public void UnShow()
     {
         // FADE OUT Y DESPUES DESACTIVAR
-        eventHappened.eventAlreadyHappened = true;
+        canvas.SetActive(false);
         this.gameObject.SetActive(false);
+    }
+
+    public void PlayerMovement(bool enabled)
+    {
+        playerController.CanDoAnyMovement(enabled);
     }
 
 }

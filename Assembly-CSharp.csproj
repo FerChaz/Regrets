@@ -68,12 +68,13 @@
     <Compile Include="Assets\Scripts\Enemies\GroundEnemies\States\PatrolGroundEnemyState.cs" />
     <Compile Include="Assets\Scripts\Player\DeathRespawnAndRecover.cs" />
     <Compile Include="Assets\Scripts\Enemies\GroundEnemies\States\FallenGroundEnemyState.cs" />
-    <Compile Include="Assets\Scripts\Scriptable Objects\WallsAndDoorsStates.cs" />
+    <Compile Include="Assets\Scripts\Scriptable Objects\ObjectStatus.cs" />
     <Compile Include="Assets\Scripts\UI\TransicionFade.cs" />
     <Compile Include="Assets\AmplifyShaderEditor\Examples\Community\HighlightAnimated\highlightAnimated.cs" />
     <Compile Include="Assets\Scripts\Enemies\GroundEnemies\States\ChaseGroundEnemyState.cs" />
     <Compile Include="Assets\Animations\Animations\Kaori\Attack\Scripts\IdleBehaviour.cs" />
     <Compile Include="Assets\Scripts\Limbo\LimboController.cs" />
+    <Compile Include="Assets\Scripts\UI\Tutorial\Tutorial.cs" />
     <Compile Include="Assets\Dialogue\DialogueSystem\Interactable.cs" />
     <Compile Include="Assets\MeleeWeaponTrail\Scripts\MeleeWeaponTrail.cs" />
     <Compile Include="Assets\Scripts\Walls &amp; Doors\DoorToPayController.cs" />
@@ -191,7 +192,8 @@
     <Compile Include="Assets\Dialogue\DialogueSystem\ResponseHandler.cs" />
     <Compile Include="Assets\Animations\Animations\Kaori\Attack\Scripts\Transition2Behaviour.cs" />
     <Compile Include="Assets\Scripts\Player\AudioBridges\BridgePlayerAudio.cs" />
-    <Compile Include="Assets\Scripts\UI\Tutorial\Tutorial.cs" />
+    <Compile Include="Assets\Scripts\Inventory\Keys\MarketParcaKey.cs" />
+    <Compile Include="Assets\Scripts\Inventory\PlayerInventoryController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Packs\Fantasy Adventure Environment\Shaders\VS_InstancedIndirect.cginc" />
@@ -413,6 +415,7 @@
     <None Include="Assets\AmplifyShaderEditor\Plugins\EditorResources\Previews\Preview_DecodeViewNormalStereoHlpNode.shader" />
     <None Include="Assets\AmplifyShaderEditor\Plugins\EditorResources\Previews\LinearPreviews.shader" />
     <None Include="Assets\AmplifyShaderEditor\Plugins\EditorResources\Previews\Preview_TangentVertexDataNode.shader" />
+    <None Include="Assets\Packs\Models\Key\readME keys.txt" />
     <None Include="Assets\AmplifyShaderEditor\Plugins\EditorResources\Previews\Preview_DegreesOpNode.shader" />
     <None Include="Assets\AmplifyShaderEditor\Examples\Official\TerrainSnowCoverage\TerrainSnowCoverageFirstPass.shader" />
     <None Include="Assets\AmplifyShaderEditor\Plugins\EditorResources\Previews\Preview_SignOpNode.shader" />

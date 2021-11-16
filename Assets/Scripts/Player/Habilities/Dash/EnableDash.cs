@@ -4,30 +4,31 @@ using UnityEngine;
 
 public class EnableDash : MonoBehaviour
 {
-    //private PlayerDash _playerDash;
+    private PlayerDash _playerDash;
 
-    private bool dashAlreadyActive; // Guardar en persistencia
+    public ObjectStatus activeDash;
+    public Tutorial tutorial;
+    //private bool dashAlreadyActive; // Guardar en persistencia
 
-    private void OnAwake()
+    private void Awake()
     {
-        if (dashAlreadyActive)
+        if (activeDash.eventAlreadyHappened)
         {
             this.gameObject.SetActive(false);
         }
-    }
 
-    private void Start()
-    {
-        //_playerDash = FindObjectOfType<PlayerDash>();
+        _playerDash = FindObjectOfType<PlayerDash>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            //_playerDash.EnableDash();
-            dashAlreadyActive = true;
+            _playerDash.EnableDash();
+            activeDash.eventAlreadyHappened = true;
             // Activar algun canvas que muestre como usarlo, o algun efecto
+            tutorial.PlayerMovement(false);
+            tutorial.Show();
             this.gameObject.SetActive(false);
         }
     }

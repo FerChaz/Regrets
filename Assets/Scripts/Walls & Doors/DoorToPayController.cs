@@ -23,7 +23,7 @@ public class DoorToPayController : MonoBehaviour
 
     private PlayerController player;
 
-    public WallsAndDoorsStates doorState;
+    public ObjectStatus doorState;
 
     //-- START --------------------------------------------
 

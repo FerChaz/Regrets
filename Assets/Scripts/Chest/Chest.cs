@@ -12,7 +12,7 @@ public class Chest : MonoBehaviour
 
     public bool _isClosed;
 
-    public WallsAndDoorsStates chestState;
+    public ObjectStatus chestState;
 
     private void Awake()
     {
