@@ -182,7 +182,7 @@ MonoBehaviour:
   chaseRadius: 8
   knockbackForce: 3
   knockbackDuration: 1
-  knockbackStateDuration: 4
+  knockbackStateDuration: 1
   canvas: {fileID: 1319148771118195658}
   canvasImage: {fileID: 1319148770864374113}
   player: {fileID: 0}

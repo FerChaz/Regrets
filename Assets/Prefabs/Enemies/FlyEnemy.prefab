@@ -517,7 +517,7 @@ MonoBehaviour:
   chargeTime: 5
   knockbackForce: 3
   knockbackDuration: 1
-  knockbackStateDuration: 4
+  knockbackStateDuration: 1
   canvas: {fileID: 3656517817227964460}
   canvasImage: {fileID: 3656517815910670296}
   player: {fileID: 0}

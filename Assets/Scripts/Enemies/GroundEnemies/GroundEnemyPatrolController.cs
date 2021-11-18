@@ -52,6 +52,7 @@ public class GroundEnemyPatrolController : MonoBehaviour
     [Header("Player")]
     public GameObject player;
     public float distanceToPlayer;
+    public float distanceToPlayerY;
 
     //-- ON ENABLE ------------------------------------------------------------------------------------------------------------------
 
@@ -77,6 +78,7 @@ public class GroundEnemyPatrolController : MonoBehaviour
         wallDetected = Physics.Raycast(_wallCheck.position, Vector3.right * facingDirection, _wallCheckDistance, _whatIsGround);
 
         distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
+        distanceToPlayerY = Mathf.Abs(transform.position.y - player.transform.position.y);
     }
 
     
@@ -95,6 +97,7 @@ public class GroundEnemyPatrolController : MonoBehaviour
     }
 
 
+#if UNITY_EDITOR
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.blue;
@@ -106,5 +109,7 @@ public class GroundEnemyPatrolController : MonoBehaviour
 
         Gizmos.DrawWireSphere(transform.position, chaseRadius);
     }
+#endif
+
 
 }

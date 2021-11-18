@@ -1513,7 +1513,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneManager: {fileID: 870034255}
-  playerPosition: {x: -380, y: 1, z: 0}
+  playerPosition: {x: -412, y: 1, z: 0}
   sceneToGo: Intro
   loadingCanvas: {fileID: 858599384}
   respawnInfo: {fileID: 11400000, guid: f109a9748cb379b4d8e8478798f474ad, type: 2}

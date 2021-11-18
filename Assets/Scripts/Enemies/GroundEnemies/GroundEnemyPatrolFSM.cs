@@ -7,9 +7,10 @@ public class GroundEnemyPatrolFSM : FiniteStateMachine
     //-- VARIABLES -----------------------------------------------------------------------------------------------------------------
 
     [SerializeField] private GroundEnemyPatrolController _enemyController;
-    //[SerializeField] private GameObject _player;
     [SerializeField] private EnemyLifeController _enemyLife;
 
+    private bool keepInPatrol;
+    private bool keepInChase;
 
     //-- STATES --------------------------------------------------------------------------------------------------------------------
 
@@ -33,13 +34,6 @@ public class GroundEnemyPatrolFSM : FiniteStateMachine
      * 
      */
 
-    //-- ON ENABLE ------------------------------------------------------------------------------------------------------------------
-
-    /*private void OnEnable()
-    {
-       _player = GameObject.Find("Player");
-    }*/
-
     //-- START ---------------------------------------------------------------------------------------------------------------------
 
     private void Start()
@@ -49,12 +43,26 @@ public class GroundEnemyPatrolFSM : FiniteStateMachine
     }
 
     //-- COROUTINES ----------------------------------------------------------------------------------------------------------------
-
+    
     private IEnumerator PatrolControlCoroutine()
     {
+        keepInPatrol = true;
         StopCoroutine(ChaseControlCoroutine());
-        while (_enemyController.distanceToPlayer > _enemyController.chaseRadius)
+        while (keepInPatrol)
         {
+            if(_enemyController.distanceToPlayer > _enemyController.chaseRadius)
+            {
+                keepInPatrol = true;
+            } 
+            else if (_enemyController.distanceToPlayerY > 2f)
+            {
+                keepInPatrol = true;
+            }
+            else
+            {
+                keepInPatrol = false;
+            }
+
             yield return null;
         }
 
@@ -64,9 +72,23 @@ public class GroundEnemyPatrolFSM : FiniteStateMachine
 
     private IEnumerator ChaseControlCoroutine()
     {
+        keepInPatrol = true;
         StopCoroutine(PatrolControlCoroutine());
-        while (_enemyController.distanceToPlayer < _enemyController.chaseRadius)
+        while (keepInPatrol)
         {
+            if (_enemyController.distanceToPlayer < _enemyController.chaseRadius)
+            {
+                keepInPatrol = true;
+            }
+            else if (_enemyController.distanceToPlayerY <= 2f)
+            {
+                keepInPatrol = true;
+            }
+            else
+            {
+                keepInPatrol = false;
+            }
+
             yield return null;
         }
 

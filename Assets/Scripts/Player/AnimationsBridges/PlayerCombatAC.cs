@@ -78,7 +78,6 @@ public class PlayerCombatAC : MonoBehaviour
     {
         if (_animator.GetCurrentAnimatorStateInfo(0).IsName("Attacks.Attack1") || _animator.GetCurrentAnimatorStateInfo(0).IsName("Attacks.Attack2") || _animator.GetCurrentAnimatorStateInfo(0).IsName("Attacks.Attack3"))
         {
-            Debug.Log("true");
             return true;
         }
         return false;
