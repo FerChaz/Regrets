@@ -6,6 +6,7 @@ public class MarketParcaKey : MonoBehaviour
 {
     public PlayerInventoryController playerInventory;
     public ObjectStatus keyStatus;
+    public int keyIdentifier;
 
     private void Awake()
     {
@@ -21,6 +22,7 @@ public class MarketParcaKey : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         keyStatus.eventAlreadyHappened = true;
+        playerInventory.ObtainKey(keyIdentifier);
         this.gameObject.SetActive(false);
     }
 

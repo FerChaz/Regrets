@@ -8,7 +8,10 @@ public class PlayerInventoryController : MonoBehaviour
 
     public List<bool> keys;
 
-
+    public void ObtainKey(int key)
+    {
+        keys[key] = true;
+    }
 
     public bool HasKey(int keyIdentifier)
     {

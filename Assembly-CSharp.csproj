@@ -62,6 +62,7 @@
     <Compile Include="Assets\Scripts\Respawn\RespawnController.cs" />
     <Compile Include="Assets\Scripts\Enemies\FlyEnemies\States\DeathFlyEnemyState.cs" />
     <Compile Include="Assets\AmplifyShaderEditor\Examples\Official\SimpleGPUInstancing\SimpleGPUInstancingExample.cs" />
+    <Compile Include="Assets\Scripts\Inventory\Keys\MarketParcaKey.cs" />
     <Compile Include="Assets\Scripts\UI\EnableCanvas.cs" />
     <Compile Include="Assets\Scripts\Enemies\FlyEnemies\FlyEnemyCombatController.cs" />
     <Compile Include="Assets\Scripts\Limbo\Quests\LimboQuestEnemy.cs" />
@@ -137,8 +138,8 @@
     <Compile Include="Assets\Scripts\Enemies\GroundEnemies\States\DeathGroundEnemyState.cs" />
     <Compile Include="Assets\Scripts\Enemies\GroundEnemies\GroundEnemyPatrolFSM.cs" />
     <Compile Include="Assets\Dialogue\DialogueSystem\DialogueActivator.cs" />
-    <Compile Include="Assets\Scripts\UI\FirstSelectedButton.cs" />
     <Compile Include="Assets\Scripts\MainMenu\MainMenuManager.cs" />
+    <Compile Include="Assets\Scripts\UI\FirstSelectedButton.cs" />
     <Compile Include="Assets\AmplifyShaderEditor\Examples\Official\TemplateExamples\Sprites\SpriteMask\SpriteMaskController.cs" />
     <Compile Include="Assets\Scripts\SceneManager\Simple\SimpleStartingSceneManager.cs" />
     <Compile Include="Assets\Scripts\Enemies\GroundEnemies\States\KnockbackGroundEnemyState.cs" />
@@ -189,11 +190,12 @@
     <Compile Include="Assets\Scripts\Scriptable Objects\IntValue.cs" />
     <Compile Include="Assets\Dialogue\DialogueSystem\ResponseEvent.cs" />
     <Compile Include="Assets\Scripts\Enemies\Boss\BossFSM.cs" />
+    <Compile Include="Assets\Scripts\Inventory\PlayerInventoryController.cs" />
     <Compile Include="Assets\Dialogue\DialogueSystem\ResponseHandler.cs" />
     <Compile Include="Assets\Animations\Animations\Kaori\Attack\Scripts\Transition2Behaviour.cs" />
     <Compile Include="Assets\Scripts\Player\AudioBridges\BridgePlayerAudio.cs" />
-    <Compile Include="Assets\Scripts\Inventory\Keys\MarketParcaKey.cs" />
-    <Compile Include="Assets\Scripts\Inventory\PlayerInventoryController.cs" />
+    <Compile Include="Assets\Scripts\Camera\CameraLimits.cs" />
+    <Compile Include="Assets\Scripts\Camera\CameraMultipliers.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Packs\Fantasy Adventure Environment\Shaders\VS_InstancedIndirect.cginc" />
@@ -1151,6 +1153,12 @@
     </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Polybrush.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Polybrush.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Polybrush">
+      <HintPath>Library\ScriptAssemblies\Unity.Polybrush.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

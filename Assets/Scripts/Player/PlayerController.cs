@@ -53,7 +53,9 @@ public class PlayerController : MonoBehaviour
     private Vector3 _gravity;
 
     //private AudioManager audioManager;
-
+    [Header("Main Camera")]
+    public MainCamera mainCamera;
+    public float lerpCamera;
 
     //-- BRIDGES -------------------------------------------------------------------------------------------------------------------
 
@@ -61,6 +63,7 @@ public class PlayerController : MonoBehaviour
     public BridgePlayerAnimator bridgePlayerAnimator;
     public BridgePlayerAudio bridgePlayerAudio;
 
+    
 
     //-- START & UPDATE ------------------------------------------------------------------------------------------------------------
 
@@ -68,6 +71,7 @@ public class PlayerController : MonoBehaviour
     {
         rigidBody = GetComponent<Rigidbody>();
         deathRespawn = GetComponent<DeathRespawnAndRecover>();
+        mainCamera = FindObjectOfType<MainCamera>();
     }
 
     void Start()
@@ -159,23 +163,29 @@ public class PlayerController : MonoBehaviour
 
     //-- FLIP ----------------------------------------------------------------------------------------------------------------------
 
+    
+
     public void Flip()
     {
         if (canMove)
         {
             if (isFacingRight && inputDirection < 0)
             {
+                mainCamera.FlipCameraX(-7.5f);
                 isFacingRight = !isFacingRight;
                 transform.Rotate(0.0f, 180.0f, 0.0f);
             }
             else if (!isFacingRight && inputDirection > 0)
             {
+                mainCamera.FlipCameraX(7.5f);
                 isFacingRight = !isFacingRight;
                 transform.Rotate(0.0f, 180.0f, 0.0f);
             }
         }
     }
     
+
+
     //-- CHECKGROUND----------------------------------------------------------------------------------------------------------------
 
     private void CheckGround()
