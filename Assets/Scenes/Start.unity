@@ -1413,10 +1413,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1537300092}
   smoothing: 2
+  flipLerpTime: 0.4
   maxPosition: {x: 0, y: 0}
   minPosition: {x: 0, y: 0}
   multiplierX: 7.5
   multiplierY: 4.27
+  canFlip: 0
 --- !u!81 &499729788
 AudioListener:
   m_ObjectHideFlags: 0

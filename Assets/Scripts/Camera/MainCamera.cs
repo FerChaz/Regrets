@@ -20,8 +20,11 @@ public class MainCamera : MonoBehaviour
     private float initialMultiplierX;
     private float initialMultiplierY;
 
+    public bool canFlip;
+
     private void Start()
     {
+        canFlip = true;
         initialMultiplierX = multiplierX;
         initialMultiplierY = multiplierY;
     }
@@ -41,10 +44,15 @@ public class MainCamera : MonoBehaviour
         }
     }
 
+    //-- FLIP ------------------------------------------------------
+
     public void FlipCameraX(float final)
     {
-        StopAllCoroutines();
-        StartCoroutine(Lerp(multiplierX, final));
+        if (canFlip)
+        {
+            StopAllCoroutines();
+            StartCoroutine(Lerp(multiplierX, final));
+        }
     }
 
     private IEnumerator Lerp(float startValue, float endValue)
@@ -62,18 +70,20 @@ public class MainCamera : MonoBehaviour
         multiplierX = endValue;
     }
 
-    public void ChangeMultiplierY(float final)
+    //-- MULTIPLIER Y ------------------------------------------------------
+
+    public void ChangeMultiplierY(float final, float lerpTime)
     {
-        StartCoroutine(LerpY(multiplierY, final));
+        StartCoroutine(LerpY(multiplierY, final, lerpTime));
     }
 
-    private IEnumerator LerpY(float startValue, float endValue)
+    private IEnumerator LerpY(float startValue, float endValue, float lerpTime)
     {
         float timeElapsed = 0;
 
-        while (timeElapsed < flipLerpTime)
+        while (timeElapsed < lerpTime)
         {
-            multiplierY = Mathf.Lerp(startValue, endValue, timeElapsed / flipLerpTime);
+            multiplierY = Mathf.Lerp(startValue, endValue, timeElapsed / lerpTime);
             timeElapsed += Time.deltaTime;
 
             yield return null;
@@ -81,6 +91,35 @@ public class MainCamera : MonoBehaviour
 
         multiplierY = endValue;
     }
+
+    //-- MULTIPLIER X ------------------------------------------------------
+
+    public void ChangeMultiplierX(float final, float lerpTime)
+    {
+        StartCoroutine(LerpX(multiplierX, final, lerpTime));
+    }
+
+    private IEnumerator LerpX(float startValue, float endValue, float lerpTime)
+    {
+        float timeElapsed = 0;
+
+        while (timeElapsed < lerpTime)
+        {
+            multiplierX = Mathf.Lerp(startValue, endValue, timeElapsed / lerpTime);
+            timeElapsed += Time.deltaTime;
+
+            yield return null;
+        }
+
+        multiplierX = endValue;
+    }
+
+    public void EnableFlip(bool enableFlip)
+    {
+        canFlip = enableFlip;
+    }
+
+    //-- RESET -------------------------------------------------------
 
     public void ResetInitValues()
     {
