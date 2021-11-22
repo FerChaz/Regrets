@@ -13,6 +13,7 @@ public class LifeController : MonoBehaviour
     [Header("Invulnerability Variables")]
     [SerializeField] private float invincibilityDeltaTime;
     public float invulnerabilityTime;
+    public float invulnerabilityTimeSpikes;
     private bool invulnerability;
 
     [Header("Components")]
@@ -97,7 +98,7 @@ public class LifeController : MonoBehaviour
                 Death();
             }                
 
-            StartCoroutine(Invulnerability());
+            StartCoroutine(Invulnerability(invulnerabilityTimeSpikes));
         } 
         else if (!invulnerability)
         {
@@ -114,7 +115,7 @@ public class LifeController : MonoBehaviour
                 Death();
             }
 
-            StartCoroutine(Invulnerability());
+            StartCoroutine(Invulnerability(invulnerabilityTime));
         }
     }
 
@@ -131,12 +132,12 @@ public class LifeController : MonoBehaviour
 
     //-- CO-ROUTINE INVULNERABILITY --------------------------------------------------------
 
-    IEnumerator Invulnerability()
+    IEnumerator Invulnerability(float invulTime)
     {
         invulnerability = true;
         colliderLifeManager.enabled = false;
 
-        for (float i = 0; i < invulnerabilityTime; i += invincibilityDeltaTime)
+        for (float i = 0; i < invulTime; i += invincibilityDeltaTime)
         {
             if (model.transform.localScale == _scale)
             {

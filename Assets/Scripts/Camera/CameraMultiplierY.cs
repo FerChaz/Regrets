@@ -5,27 +5,39 @@ using UnityEngine;
 public class CameraMultiplierY : MonoBehaviour
 {
     public MainCamera mainCamera;
+    public PlayerController player;
+    public bool needFaceRight;
 
-    public float multiplerY;
+    public float multiplierY;
 
     public float lerpTime;
 
     private void Awake()
     {
         mainCamera = FindObjectOfType<MainCamera>();
+        player = FindObjectOfType<PlayerController>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && player.isFacingRight == needFaceRight)
         {
-            ChangeMultiplier();
+            ChangeMultiplier(multiplierY);
         }
     }
 
-    private void ChangeMultiplier()
+    private void OnTriggerExit(Collider other)
     {
-        mainCamera.ChangeMultiplierY(multiplerY, lerpTime);
+        if (other.CompareTag("Player"))
+        {
+            ChangeMultiplier(4.27f);                                            // Original multiplier
+        }
+    }
+
+
+    private void ChangeMultiplier(float multiplier)
+    {
+        mainCamera.ChangeMultiplierY(multiplier, lerpTime);
     }
 
 }

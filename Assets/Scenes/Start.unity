@@ -1419,6 +1419,9 @@ MonoBehaviour:
   multiplierX: 7.5
   multiplierY: 4.27
   canFlip: 0
+  velocity: {x: 0, y: 0}
+  smoothTime: {x: 0.05, y: 0.05}
+  positionZ: -30
 --- !u!81 &499729788
 AudioListener:
   m_ObjectHideFlags: 0

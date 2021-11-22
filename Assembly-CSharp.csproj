@@ -70,6 +70,7 @@
     <Compile Include="Assets\Scripts\Player\DeathRespawnAndRecover.cs" />
     <Compile Include="Assets\Scripts\Enemies\GroundEnemies\States\FallenGroundEnemyState.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\ObjectStatus.cs" />
+    <Compile Include="Assets\Scripts\Camera\EnableFlipCamera.cs" />
     <Compile Include="Assets\Scripts\UI\TransicionFade.cs" />
     <Compile Include="Assets\AmplifyShaderEditor\Examples\Community\HighlightAnimated\highlightAnimated.cs" />
     <Compile Include="Assets\Scripts\Enemies\GroundEnemies\States\ChaseGroundEnemyState.cs" />
@@ -178,6 +179,7 @@
     <Compile Include="Assets\Scripts\Scriptable Objects\StringValue.cs" />
     <Compile Include="Assets\UI\PauseUI.cs" />
     <Compile Include="Assets\Scripts\SceneManager\Simple\SimpleSceneManager.cs" />
+    <Compile Include="Assets\Scripts\Camera\CameraMultiplierX.cs" />
     <Compile Include="Assets\Scripts\SceneManager\ExitScene.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraLimits.cs" />
     <Compile Include="Assets\Scripts\Limbo\ExitLimbo.cs" />
@@ -196,8 +198,9 @@
     <Compile Include="Assets\Dialogue\DialogueSystem\ResponseHandler.cs" />
     <Compile Include="Assets\Animations\Animations\Kaori\Attack\Scripts\Transition2Behaviour.cs" />
     <Compile Include="Assets\Scripts\Player\AudioBridges\BridgePlayerAudio.cs" />
-    <Compile Include="Assets\Scripts\Camera\CameraMultiplierX.cs" />
-    <Compile Include="Assets\Scripts\Camera\EnableFlipCamera.cs" />
+    <Compile Include="Assets\Packs\FadeObstructions\Reyn\Visual\Fade\FadeObstructionsManager.cs" />
+    <Compile Include="Assets\Packs\FadeObstructions\Reyn\Visual\Fade\FadeToMe.cs" />
+    <Compile Include="Assets\Packs\FadeObstructions\Reyn\Visual\Fade\FadeObjectOptions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Packs\Fantasy Adventure Environment\Shaders\VS_InstancedIndirect.cginc" />
@@ -487,6 +490,7 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\AmplifyShaderEditor\Plugins\EditorResources\Previews\Preview_BlendNormalsNode.shader" />
     <None Include="Assets\AmplifyShaderEditor\Examples\Community\Melting\Credits.txt" />
+    <None Include="Assets\Packs\FadeObstructions\Readme.txt" />
     <None Include="Assets\AmplifyShaderEditor\Plugins\EditorResources\Previews\Preview_PosterizeNode.shader" />
     <None Include="Assets\AmplifyShaderEditor\Plugins\EditorResources\Previews\Preview_LODFadeNode.shader" />
     <None Include="Assets\AmplifyShaderEditor\Examples\Official\SimpleRefraction\SimpleRefraction.shader" />

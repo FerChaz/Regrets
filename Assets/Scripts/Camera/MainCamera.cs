@@ -8,10 +8,12 @@ public class MainCamera : MonoBehaviour
     [SerializeField] private float smoothing;
     public float flipLerpTime = 0.4f;
 
-    //-- CAPAZ SE PUEDAN HACER CON SCRIPTABLE OBJECTS Y CAMBIARLOS EN CADA ESCENA   
+    //-- CAPAZ SE PUEDAN HACER CON SCRIPTABLE OBJECTS Y CAMBIARLOS EN CADA ESCENA  
+    [Header("Limits")]
     public Vector2 maxPosition;
     public Vector2 minPosition;
 
+    [Header("Multipliers")]
     public float multiplierX;
     public float multiplierY;
 
@@ -22,6 +24,15 @@ public class MainCamera : MonoBehaviour
 
     public bool canFlip;
 
+    public Vector2 velocity;
+    public Vector2 smoothTime;
+    public float positionZ;
+
+    private Vector3 cameraPosition;
+    private float posX;
+    private float posY;
+
+
     private void Start()
     {
         canFlip = true;
@@ -29,20 +40,18 @@ public class MainCamera : MonoBehaviour
         initialMultiplierY = multiplierY;
     }
 
-
-    private void LateUpdate()
+    private void FixedUpdate()
     {
-        if (transform.position != target.position)
-        {
-            targetPosition.Set(target.position.x + multiplierX, target.position.y + multiplierY, transform.position.z);
+        posX = Mathf.SmoothDamp(transform.position.x, target.transform.position.x + multiplierX, ref velocity.x, smoothTime.x);
+        posY = Mathf.SmoothDamp(transform.position.y, target.transform.position.y + multiplierY, ref velocity.y, smoothTime.y);
 
-            // ESTABLECEMOS LOS LÍMITES
-            targetPosition.x = Mathf.Clamp(targetPosition.x, minPosition.x, maxPosition.x);
-            targetPosition.y = Mathf.Clamp(targetPosition.y, minPosition.y, maxPosition.y);
+        cameraPosition.Set(posX, posY, positionZ);
+        transform.position = cameraPosition;
 
-            transform.position = Vector3.Lerp(transform.position, targetPosition, smoothing);
-        }
+        cameraPosition.Set(Mathf.Clamp(transform.position.x, minPosition.x, maxPosition.x), Mathf.Clamp(transform.position.y, minPosition.y, maxPosition.y), positionZ);
+        transform.position = cameraPosition;
     }
+
 
     //-- FLIP ------------------------------------------------------
 

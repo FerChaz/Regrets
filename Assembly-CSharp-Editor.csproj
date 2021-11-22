@@ -487,6 +487,8 @@
     <Compile Include="Assets\AmplifyShaderEditor\Plugins\Editor\Nodes\Textures\TFHCFlipBookUVAnimation.cs" />
     <Compile Include="Assets\AmplifyShaderEditor\Plugins\Editor\Utils\ASEPackageManagerHelper.cs" />
     <Compile Include="Assets\AmplifyShaderEditor\Plugins\Editor\Nodes\SimpleNodes\SimpleDivideOpNode.cs" />
+    <Compile Include="Assets\Packs\FadeObstructions\Reyn\Visual\Fade\Editor\FadeObjectOptionsInspector.cs" />
+    <Compile Include="Assets\Packs\FadeObstructions\Reyn\Visual\Fade\Editor\FadeObstructingObjectsInspector.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
