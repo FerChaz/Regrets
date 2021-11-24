@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\Enemies\FlyEnemies\FlyEnemyCombatController.cs" />
     <Compile Include="Assets\Scripts\Limbo\Quests\LimboQuestEnemy.cs" />
     <Compile Include="Assets\Scripts\Enemies\GroundEnemies\States\PatrolGroundEnemyState.cs" />
+    <Compile Include="Assets\Scripts\Camera\ChangeSmooth.cs" />
     <Compile Include="Assets\Scripts\Player\DeathRespawnAndRecover.cs" />
     <Compile Include="Assets\Scripts\Enemies\GroundEnemies\States\FallenGroundEnemyState.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\ObjectStatus.cs" />
@@ -125,6 +126,7 @@
     <Compile Include="Assets\Scripts\Enemies\FlyEnemies\FlyEnemyController.cs" />
     <Compile Include="Assets\Scripts\Enemies\Patrol\PatrolGroundedEnemy.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\SignalSender.cs" />
+    <Compile Include="Assets\Scripts\Player\Habilities\Move\CanMove.cs" />
     <Compile Include="Assets\Scripts\Enemies\FlyEnemies\States\IdleFlyEnemyState.cs" />
     <Compile Include="Assets\Scripts\Limbo\Quests\LimboDestroyEnemiesQuest.cs" />
     <Compile Include="Assets\Scripts\Enemies\Boss\States\BossAttackState.cs" />
@@ -201,8 +203,8 @@
     <Compile Include="Assets\Packs\FadeObstructions\Reyn\Visual\Fade\FadeObjectOptions.cs" />
     <Compile Include="Assets\Animations\Animations\Kaori\Attack\Scripts\Transition2Behaviour.cs" />
     <Compile Include="Assets\Scripts\Player\AudioBridges\BridgePlayerAudio.cs" />
-    <Compile Include="Assets\Scripts\Camera\ChangeSmooth.cs" />
-    <Compile Include="Assets\Scripts\Player\Habilities\Move\CanMove.cs" />
+    <Compile Include="Assets\Scripts\SceneManager\EnableFade.cs" />
+    <Compile Include="Assets\Scripts\SceneManager\DisableFade.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Packs\Fantasy Adventure Environment\Shaders\VS_InstancedIndirect.cginc" />

@@ -7,6 +7,7 @@ public class PlayerAnimatorController : MonoBehaviour
     //-- VARIABLES -----------------------------------------------------------------------------------------------------------------
 
     private Animator _animator;
+    private PlayerController player;
 
     private const string SPEED = "Speed";
     private string JUMP = "Jump";
@@ -15,10 +16,14 @@ public class PlayerAnimatorController : MonoBehaviour
 
     //-- START & UPDATE ------------------------------------------------------------------------------------------------------------
 
+    private void Awake()
+    {
+        player = FindObjectOfType<PlayerController>();
+        _animator = GetComponent<Animator>();
+    }
+
     private void Start()
     {
-        _animator = GetComponent<Animator>();
-
         Animator.StringToHash(SPEED);
         Animator.StringToHash(JUMP);
         Animator.StringToHash(DASH);
@@ -52,4 +57,17 @@ public class PlayerAnimatorController : MonoBehaviour
     {
         _animator.SetFloat(SPEEDY, speedY);
     }
+
+    //-- 
+
+    public void CanMove()
+    {
+        player.CanDoAnyMovement(true);
+    }
+
+    public void CantMove()
+    {
+        player.CanDoAnyMovement(false);
+    }
+
 }

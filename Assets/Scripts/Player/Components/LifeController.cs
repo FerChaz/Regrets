@@ -37,6 +37,9 @@ public class LifeController : MonoBehaviour
 
     private Vector3 _scale;
 
+    [Header("LowLifeCanvas")]
+    public GameObject lowLifeCanvas;
+
     //-- START ---------------------------------------------------------------------------------------------------------------------
 
     private void Awake()
@@ -66,6 +69,7 @@ public class LifeController : MonoBehaviour
         }
 
         playerHealthSignal.Raise(); // CHANGE UI
+        lowLifeCanvas.SetActive(false);
 
     }
 
@@ -73,6 +77,8 @@ public class LifeController : MonoBehaviour
     {
         currentLife.initialValue = maxLife;
         playerHealthSignal.Raise(); // CHANGE UI
+
+        lowLifeCanvas.SetActive(false);
     }
 
     public void AddMaxLife(int life)
@@ -92,8 +98,13 @@ public class LifeController : MonoBehaviour
             if (currentLife.initialValue > 0)
             {
                 knockbackController.KnockBackGetFromSpikes(direction);
+
+                if (currentLife.initialValue == 1)
+                {
+                    lowLifeCanvas.SetActive(true);
+                }
             }
-            else
+            else 
             {
                 Death();
             }                
@@ -108,6 +119,11 @@ public class LifeController : MonoBehaviour
             {
                 playerHealthSignal.Raise(); // CHANGE UI
                 knockbackController.KnockBackGetFromEnemy(direction);
+
+                if (currentLife.initialValue == 1)
+                {
+                    lowLifeCanvas.SetActive(true);
+                }
 
             }
             else
@@ -127,6 +143,7 @@ public class LifeController : MonoBehaviour
         playerController.Death();
         currentLife.initialValue = maxLife;
         playerHealthSignal.Raise(); // CHANGE UI
+        lowLifeCanvas.SetActive(false);
     }
 
 

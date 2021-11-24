@@ -9,9 +9,14 @@ public class KatanaController : MonoBehaviour
 
     public BoxCollider weaponCollider;
 
-    private void Start()
+    private void Awake()
     {
         weaponCollider = GetComponent<BoxCollider>();
+    }
+
+    private void Start()
+    {
+        
         attackDetails[0] = damage;
     }
 
@@ -22,5 +27,7 @@ public class KatanaController : MonoBehaviour
             other.transform.SendMessage("GetDamage", attackDetails);
         }
     }
+
     
+
 }

@@ -5,22 +5,35 @@ using UnityEngine;
 public class SpikesController : MonoBehaviour
 {
     public LifeController lifeController;
+    public PlayerController player;
     public int damage;
 
-    public GameObject respawnZone;
+    public GameObject respawnZoneLeft;
+    public GameObject respawnZoneRight;
+
+    private Vector3 respawnPosition;
 
     //-- ON ENABLE ------------------------------------------------------------------------------------------------------------------
 
-    private void OnEnable()
+    private void Awake()
     {
         lifeController = FindObjectOfType<LifeController>();
+        player = FindObjectOfType<PlayerController>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("LifeManager"))
         {
-            Vector3 respawnPosition = respawnZone.transform.position;
+            if (player.lastPositionInGround.x > transform.position.x)
+            {
+                respawnPosition = respawnZoneRight.transform.position;
+            }
+            else
+            {
+               respawnPosition = respawnZoneLeft.transform.position;
+            }
+
             lifeController.RecieveDamage(damage, respawnPosition, false);
         }
     }

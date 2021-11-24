@@ -33,6 +33,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] LayerMask whatIsGround;
     public bool isGrounded;
     public Vector3 lastPositionInGround;
+    public bool lastPositionInGroundBool;
+    [SerializeField] LayerMask lastPositionInGroundLayer;
 
     [Header("Coroutine to wait time Variables")]
     [SerializeField] public float timeToWait = 1;
@@ -192,14 +194,20 @@ public class PlayerController : MonoBehaviour
     private void CheckGround()
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundCheckRadius, whatIsGround);
+        lastPositionInGroundBool = Physics.CheckSphere(groundCheck.position, groundCheckRadius, lastPositionInGroundLayer);
+
+        if (isGrounded)
+        {
+            amountOfDash = 1;
+        }
+
     }
 
     public void LastPositionInGround()
     {
-        if (isGrounded)
+        if (lastPositionInGroundBool)
         {
             lastPositionInGround = transform.position;
-            amountOfDash = 1;
         }
     }
 
