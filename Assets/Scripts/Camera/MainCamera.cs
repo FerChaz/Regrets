@@ -5,7 +5,6 @@ using UnityEngine;
 public class MainCamera : MonoBehaviour
 {
     [SerializeField] private Transform target;
-    [SerializeField] private float smoothing;
     public float flipLerpTime = 0.4f;
 
     //-- CAPAZ SE PUEDAN HACER CON SCRIPTABLE OBJECTS Y CAMBIARLOS EN CADA ESCENA  
@@ -17,8 +16,6 @@ public class MainCamera : MonoBehaviour
     public float multiplierX;
     public float multiplierY;
 
-    private Vector3 targetPosition;
-
     private float initialMultiplierX;
     private float initialMultiplierY;
 
@@ -27,6 +24,7 @@ public class MainCamera : MonoBehaviour
     public Vector2 velocity;
     public Vector2 smoothTime;
     public float positionZ;
+    private Vector2 initialSmoothTime = new Vector2(0.05f, 0.05f);
 
     private Vector3 cameraPosition;
     private float posX;
@@ -50,6 +48,16 @@ public class MainCamera : MonoBehaviour
 
         cameraPosition.Set(Mathf.Clamp(transform.position.x, minPosition.x, maxPosition.x), Mathf.Clamp(transform.position.y, minPosition.y, maxPosition.y), positionZ);
         transform.position = cameraPosition;
+    }
+
+    public void ChangeSmoothTimeX(float smooth)
+    {
+
+    }
+
+    public void ChangeSmoothTimeY(float smooth)
+    {
+        smoothTime.y = smooth;
     }
 
 

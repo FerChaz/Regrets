@@ -31,7 +31,7 @@ public class PlayerDash : PlayerHabilities
 
     private void Dash()
     {
-        if (Input.GetButton("Dash") && _player.canDash && (Time.time >= (lastDash + dashCooldown)))
+        if (Input.GetButton("Dash") && _player.canDash && (Time.time >= (lastDash + dashCooldown)) && _player.amountOfDash >= 1)
         {
             _player.canMove = false;
             _player.canJump = false;
@@ -39,6 +39,7 @@ public class PlayerDash : PlayerHabilities
 
             _player.gravityScale = 0;
             _player.rigidBody.velocity = Vector3.zero;
+            _player.amountOfDash--;
 
             isDashing = true;
             playerAnimatorController.Dash();

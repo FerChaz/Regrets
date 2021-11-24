@@ -11,6 +11,7 @@ public class PlayerHabilities : MonoBehaviour
     public BridgePlayerAnimator bridgePlayerAnimator;
     public PlayerAnimatorController playerAnimatorController;
 
+
     protected Vector3 movement;
 
     protected virtual void Start()

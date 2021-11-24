@@ -11,16 +11,24 @@ public class PlayerJump : PlayerHabilities
     public float lowJumpMultiplier = 2f;
     public float jumpVelocity;
 
+    public float normalSmooth;
+    public float smoothJump;
+    public float smoothFall;
+
     private float speedY;
     private bool jumpRequest;
 
     public PlayerDash dashController;
+
+    [Header("Camera")]
+    public MainCamera mainCamera;
 
     //-- START & UPDATE ------------------------------------------------------------------------------------------------------------
 
     protected override void Start()
     {
         dashController = GetComponent<PlayerDash>();
+        mainCamera = FindObjectOfType<MainCamera>();
         base.Start();
     }
 
@@ -28,6 +36,7 @@ public class PlayerJump : PlayerHabilities
     {
         if (Input.GetButtonDown("Jump") && _player.isGrounded && _player.canJump)
         {
+            mainCamera.ChangeSmoothTimeY(smoothJump);
             jumpRequest = true;
         }
 
@@ -36,14 +45,17 @@ public class PlayerJump : PlayerHabilities
             if (_player.rigidBody.velocity.y < 0.0f)
             {
                 _player.gravityScale = fallMultiplier;
+                mainCamera.ChangeSmoothTimeY(smoothFall);
             }
             else if (_player.rigidBody.velocity.y >= 0.0f)
             {
+                mainCamera.ChangeSmoothTimeY(smoothJump);
                 _player.gravityScale = lowJumpMultiplier;
             }
         }
         else
         {
+            //mainCamera.ChangeSmoothTimeY(normalSmooth);
             _player.gravityScale = 0;
         }
         

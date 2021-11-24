@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Dash Variables")]
     public bool canDash = true;
+    public int amountOfDash;
 
     [Header("Ground Check")]
     [SerializeField] private float groundCheckRadius;
@@ -55,7 +56,7 @@ public class PlayerController : MonoBehaviour
     //private AudioManager audioManager;
     [Header("Main Camera")]
     public MainCamera mainCamera;
-    public float lerpCamera;
+    public float multiplierX;
 
     //-- BRIDGES -------------------------------------------------------------------------------------------------------------------
 
@@ -171,13 +172,13 @@ public class PlayerController : MonoBehaviour
         {
             if (isFacingRight && inputDirection < 0)
             {
-                mainCamera.FlipCameraX(-7.5f);
+                mainCamera.FlipCameraX(-multiplierX);
                 isFacingRight = !isFacingRight;
                 transform.Rotate(0.0f, 180.0f, 0.0f);
             }
             else if (!isFacingRight && inputDirection > 0)
             {
-                mainCamera.FlipCameraX(7.5f);
+                mainCamera.FlipCameraX(multiplierX);
                 isFacingRight = !isFacingRight;
                 transform.Rotate(0.0f, 180.0f, 0.0f);
             }
@@ -198,6 +199,7 @@ public class PlayerController : MonoBehaviour
         if (isGrounded)
         {
             lastPositionInGround = transform.position;
+            amountOfDash = 1;
         }
     }
 

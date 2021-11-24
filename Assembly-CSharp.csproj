@@ -104,6 +104,7 @@
     <Compile Include="Assets\AmplifyShaderEditor\Examples\Community\ForceShield\ForceShieldShootBall.cs" />
     <Compile Include="Assets\Scripts\Player\Knockback\PlayerKnockback.cs" />
     <Compile Include="Assets\Scripts\Pause\PauseManager.cs" />
+    <Compile Include="Assets\Packs\FadeObstructions\Reyn\Visual\Fade\FadeToMe.cs" />
     <Compile Include="Assets\Scripts\UI\MainCanvas.cs" />
     <Compile Include="Assets\Scripts\Walls &amp; Doors\BreakableDoorController.cs" />
     <Compile Include="Assets\AmplifyShaderEditor\Examples\Community\Volumetric Pixelization\VolumetricSphere.cs" />
@@ -174,6 +175,7 @@
     <Compile Include="Assets\UI\Scripts\MouseOver.cs" />
     <Compile Include="Assets\Scripts\Enemies\Boss\BossAnimatorController.cs" />
     <Compile Include="Assets\Scripts\Observer\HeartManager.cs" />
+    <Compile Include="Assets\Packs\FadeObstructions\Reyn\Visual\Fade\FadeObstructionsManager.cs" />
     <Compile Include="Assets\Scripts\Player\Weapons\KatanaController.cs" />
     <Compile Include="Assets\Scripts\Player\Habilities\Jump\PlayerJump.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\StringValue.cs" />
@@ -196,11 +198,11 @@
     <Compile Include="Assets\Scripts\Enemies\Boss\BossFSM.cs" />
     <Compile Include="Assets\Scripts\Inventory\PlayerInventoryController.cs" />
     <Compile Include="Assets\Dialogue\DialogueSystem\ResponseHandler.cs" />
+    <Compile Include="Assets\Packs\FadeObstructions\Reyn\Visual\Fade\FadeObjectOptions.cs" />
     <Compile Include="Assets\Animations\Animations\Kaori\Attack\Scripts\Transition2Behaviour.cs" />
     <Compile Include="Assets\Scripts\Player\AudioBridges\BridgePlayerAudio.cs" />
-    <Compile Include="Assets\Packs\FadeObstructions\Reyn\Visual\Fade\FadeObstructionsManager.cs" />
-    <Compile Include="Assets\Packs\FadeObstructions\Reyn\Visual\Fade\FadeToMe.cs" />
-    <Compile Include="Assets\Packs\FadeObstructions\Reyn\Visual\Fade\FadeObjectOptions.cs" />
+    <Compile Include="Assets\Scripts\Camera\ChangeSmooth.cs" />
+    <Compile Include="Assets\Scripts\Player\Habilities\Move\CanMove.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Packs\Fantasy Adventure Environment\Shaders\VS_InstancedIndirect.cginc" />

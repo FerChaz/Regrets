@@ -239,6 +239,7 @@
     <Compile Include="Assets\AmplifyShaderEditor\Plugins\Editor\Nodes\SimpleNodes\SimpleMaxOpNode.cs" />
     <Compile Include="Assets\AmplifyShaderEditor\Plugins\Editor\Nodes\Constants\ShaderVariables\ConstantShaderVariable.cs" />
     <Compile Include="Assets\AmplifyShaderEditor\Plugins\Editor\Nodes\Misc\Transformation\ObjectToWorldTransfNode.cs" />
+    <Compile Include="Assets\Packs\FadeObstructions\Reyn\Visual\Fade\Editor\FadeObstructingObjectsInspector.cs" />
     <Compile Include="Assets\AmplifyShaderEditor\Plugins\Editor\Nodes\Operators\SinhOpNode.cs" />
     <Compile Include="Assets\AmplifyShaderEditor\Plugins\Editor\Actions\ActionData.cs" />
     <Compile Include="Assets\AmplifyShaderEditor\Plugins\Editor\Nodes\Master\AdditionalPragmasHelper.cs" />
@@ -385,6 +386,7 @@
     <Compile Include="Assets\AmplifyShaderEditor\Plugins\Editor\CustomDrawers\EditableIf.cs" />
     <Compile Include="Assets\AmplifyShaderEditor\Plugins\Editor\Wires\OutputPort.cs" />
     <Compile Include="Assets\AmplifyShaderEditor\Plugins\Editor\Nodes\Constants\ShaderVariables\Transform\MVPMatrixNode.cs" />
+    <Compile Include="Assets\Packs\FadeObstructions\Reyn\Visual\Fade\Editor\FadeObjectOptionsInspector.cs" />
     <Compile Include="Assets\AmplifyShaderEditor\Plugins\Editor\Nodes\Misc\MatrixFromVectors.cs" />
     <Compile Include="Assets\AmplifyShaderEditor\Plugins\Editor\Templates\TemplateAdditionalDefinesHelper.cs" />
     <Compile Include="Assets\AmplifyShaderEditor\Plugins\Editor\Nodes\HelperFuncs\LuminanceHlpNode.cs" />
@@ -487,8 +489,6 @@
     <Compile Include="Assets\AmplifyShaderEditor\Plugins\Editor\Nodes\Textures\TFHCFlipBookUVAnimation.cs" />
     <Compile Include="Assets\AmplifyShaderEditor\Plugins\Editor\Utils\ASEPackageManagerHelper.cs" />
     <Compile Include="Assets\AmplifyShaderEditor\Plugins\Editor\Nodes\SimpleNodes\SimpleDivideOpNode.cs" />
-    <Compile Include="Assets\Packs\FadeObstructions\Reyn\Visual\Fade\Editor\FadeObjectOptionsInspector.cs" />
-    <Compile Include="Assets\Packs\FadeObstructions\Reyn\Visual\Fade\Editor\FadeObstructingObjectsInspector.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
