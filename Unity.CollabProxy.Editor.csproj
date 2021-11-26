@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{2EC7032A-78D6-F863-CF16-2B2F36EC8DBA}</ProjectGuid>
+    <ProjectGuid>{5FFA4173-2A07-3AB1-98DE-A5CD40DA07C7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Unity.CollabProxy.Editor</AssemblyName>
@@ -80,8 +80,8 @@
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\Collaborate\Views\IHistoryView.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\Collaborate\Views\HistoryTabPageView.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\Collaborate\Models\IMainModel.cs" />
-    <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\Collaborate\Components\ChangeListElements\ChangeListElement.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\Collaborate\UserInterface\ToolbarButton.cs" />
+    <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\Collaborate\Components\ChangeListElements\ChangeListElement.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\Collaborate\Components\ChangeListElements\BaseChangeListElement.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\Collaborate\Components\AlertBox.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\Collaborate\Views\StartPageView.cs" />
@@ -798,12 +798,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Unity.Settings.Editor.csproj">
+      <Project>{9BAAA8AD-F7F5-9B67-AFCF-05169DF3CEB2}</Project>
+      <Name>Unity.Settings.Editor</Name>
+    </ProjectReference>
     <ProjectReference Include="UnityEngine.TestRunner.csproj">
-      <Project>{B5EBFB41-1B1D-A1B9-DFD0-54EA37DC6277}</Project>
+      <Project>{C1E7EF18-1D51-9DF8-C4C7-E3F5992126C0}</Project>
       <Name>UnityEngine.TestRunner</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEditor.TestRunner.csproj">
-      <Project>{9B793D9E-6977-0767-7135-B22EE8264549}</Project>
+      <Project>{D34A34EC-0CFD-4647-6F35-4389A00709FF}</Project>
       <Name>UnityEditor.TestRunner</Name>
     </ProjectReference>
   </ItemGroup>

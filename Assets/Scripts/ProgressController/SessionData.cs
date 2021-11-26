@@ -3,9 +3,9 @@ using System;
 
 public class SessionData {
 
-	private static GameData GAME_DATA;
+	private static GameData GAME_DATA; 
 
-	private static bool LoadData() {
+	public static bool LoadData() {
         var valid = false;
 
         var data = PlayerPrefs.GetString("data", "");
@@ -59,10 +59,18 @@ public class SessionData {
 [Serializable]
 public class GameData {
     //Put attributes that you want to save during your game.
+    //Player
     public string scenceLoad;
     public Vector3 posision;
     public int souls;
-    
+    //Cofres
+    public bool[] chest;
+    public bool[] wall;
+    //Currency
+    public Vector3 recoverSoulsPosition;
+    public int recoverSoulsCount;
+    public bool needRecover;
+
 
     public GameData() {
         //scenceLoadPlayer=pasamos el val del Avility SO;

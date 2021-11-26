@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.1273174, g: 0.13414761, b: 0.12107885, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731713, g: 0.13414736, b: 0.12107852, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -132,8 +132,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 27071893}
+  - component: {fileID: 27071894}
   m_Layer: 0
-  m_Name: DataController
+  m_Name: LoadController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -153,6 +154,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &27071894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 27071892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a06612d11c901fd4bb899948e5d71a5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infoLoading: {fileID: 11400000, guid: 10f6ad8abc0a9bb4aa63cbeff36544e8, type: 2}
+  soul: {fileID: 11400000, guid: b993c4903f7f99242987ff7ceadbd70e, type: 2}
+  recoverSoulsInfo: {fileID: 11400000, guid: 0d55266bc5806974a9620bf273e65772, type: 2}
+  checkpointScriptableObject: {fileID: 11400000, guid: f109a9748cb379b4d8e8478798f474ad, type: 2}
 --- !u!1 &240121540
 GameObject:
   m_ObjectHideFlags: 0

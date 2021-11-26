@@ -15,13 +15,18 @@ public class StartingScene : MonoBehaviour
 
     public List<string> additiveScenes;
 
+  
     private void Start()
     {
-        sceneManager.LoadSceneInAdditive(sceneToGo, OnSceneComplete);
-        sceneManager.ChangePlayerPosition(playerPosition);
+        
+        sceneManager.LoadSceneInAdditive(respawnInfo.sceneToRespawn, OnSceneComplete);
+        sceneManager.ChangePlayerPosition(respawnInfo.respawnPosition);
+        //sceneManager.LoadSceneInAdditive(sceneToGo, OnSceneComplete);
+        //sceneManager.ChangePlayerPosition(playerPosition);
 
         ActualiceCheckpoint();
 
+        
         loadingCanvas.SetActive(false);
     }
 

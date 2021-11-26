@@ -27,7 +27,6 @@ public class EntryScene : MonoBehaviour
         canvasAnimator = transitionCanvas.GetComponentInChildren<Animator>();
     }
 
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
@@ -51,6 +50,7 @@ public class EntryScene : MonoBehaviour
             
         }
     }
+
 
 
     private void ActualiceSceneInfo()

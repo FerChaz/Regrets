@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{EDECFFE8-99F3-333B-E106-BE988A5B4108}</ProjectGuid>
+    <ProjectGuid>{ED06D3C9-1557-6AFE-A7BE-62ABF7F8748B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Unity.PlasticSCM.Editor</AssemblyName>
@@ -100,12 +100,12 @@
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\UI\DockEditorWindow.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\UI\Avatar\AvatarImages.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\PlasticWindow.cs" />
-    <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\SwitchModeConfirmationDialog.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\UI\UnityEvents.cs" />
+    <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\SwitchModeConfirmationDialog.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\AssetMenu\Dialogs\CheckinDialogOperations.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Developer\UpdateReport\UpdateReportListHeaderState.cs" />
-    <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\UI\Progress\DrawProgressForViews.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\UI\Tree\DrawTreeViewItem.cs" />
+    <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\UI\Progress\DrawProgressForViews.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\IncomingChanges\Developer\DirectoryConflicts\DrawDirectoryResolutionPanel.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Developer\CheckinProgress.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\UI\UnityMenuItem.cs" />
@@ -133,9 +133,9 @@
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\Changesets\LaunchDiffOperations.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\PendingChanges\Dialogs\DependenciesDialog.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\WebApi\CredentialsResponse.cs" />
-    <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\IncomingChanges\Developer\ChangeTreeViewItem.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\AssetsUtils\AssetsPath.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\PendingChanges\PendingChangesSelection.cs" />
+    <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\IncomingChanges\Developer\ChangeTreeViewItem.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\UI\UIElements\LoadingSpinner.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\Diff\DiffTreeView.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\AutoRefresh.cs" />
@@ -151,8 +151,8 @@
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Gluon\UpdateProgress.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\Diff\MergeCategoryTreeViewItem.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\UI\GUIActionRunner.cs" />
-    <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\UI\UnityPlasticGuiMessage.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\WebApi\PlasticScmRestApiClient.cs" />
+    <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\UI\UnityPlasticGuiMessage.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\UI\BoolSetting.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\PendingChanges\Dialogs\LaunchCheckinConflictsDialog.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\AssetMenu\Dialogs\CheckinDialog.cs" />
@@ -196,9 +196,9 @@
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\UI\DrawActionHelpBox.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\UI\DrawSearchField.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\Welcome\DownloadAndInstallOperation.cs" />
-    <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\Diff\DiffPanel.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\IncomingChanges\Developer\DirectoryConflicts\ConflictResolutionState.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Gluon\ProgressOperationHandler.cs" />
+    <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\Diff\DiffPanel.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\PendingChanges\Dialogs\CheckinMergeNeededDialog.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\PendingChanges\PendingChangesTab.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Gluon\UpdateReport\ErrorListViewItem.cs" />
@@ -933,11 +933,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="UnityEngine.TestRunner.csproj">
-      <Project>{B5EBFB41-1B1D-A1B9-DFD0-54EA37DC6277}</Project>
+      <Project>{C1E7EF18-1D51-9DF8-C4C7-E3F5992126C0}</Project>
       <Name>UnityEngine.TestRunner</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEditor.TestRunner.csproj">
-      <Project>{9B793D9E-6977-0767-7135-B22EE8264549}</Project>
+      <Project>{D34A34EC-0CFD-4647-6F35-4389A00709FF}</Project>
       <Name>UnityEditor.TestRunner</Name>
     </ProjectReference>
   </ItemGroup>
