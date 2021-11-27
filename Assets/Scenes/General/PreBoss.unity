@@ -8646,6 +8646,7 @@ MonoBehaviour:
   deathFade: {fileID: 1601270682}
   soulsToRecover: {fileID: 11400000, guid: 0d55266bc5806974a9620bf273e65772, type: 2}
   modelToShow: {fileID: 0}
+  lowLifeCanvas: {fileID: 0}
 --- !u!65 &748534295
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12911,6 +12912,7 @@ MonoBehaviour:
   checkpointSceneName: PreBoss
   respawnInfo: {fileID: 11400000, guid: f109a9748cb379b4d8e8478798f474ad, type: 2}
   additiveScenesScriptableObject: {fileID: 11400000, guid: f345fc04864938a4b8f05d6929e96ad6, type: 2}
+  saveController: {fileID: 0}
   objectsToActivate: {fileID: 10528680}
   entrancesToDisable:
   - {fileID: 3065212831069751155}
