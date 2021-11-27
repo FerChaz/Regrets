@@ -51,10 +51,12 @@ public class DeathRespawnAndRecover : MonoBehaviour
             limboInfo.isPlayerInLimbo = true;
             limboController.ChargeLimboScene(deathPosition);
             // Falta desactivar los objetos en escena
+            Debug.Log($"Entra aca");
         }
         else
         {
-            if(!limboInfo.isPlayerInLimbo){
+            Debug.Log($"Aca no deberia entrar pero entra");
+            if (!limboInfo.isPlayerInLimbo){
 
                 deathPosition = playerController.lastPositionInGround;
             }

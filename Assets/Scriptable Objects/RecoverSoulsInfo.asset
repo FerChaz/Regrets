@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RecoverSoulsInfo
   m_EditorClassIdentifier: 
   totalSouls: 0
-  deathPosition: {x: -299.0033, y: 0.6938455, z: 0}
+  deathPosition: {x: -298.78998, y: -0.4828956, z: 0}
   deathScene: 0
   respawnScene: 
   needRecover: 0

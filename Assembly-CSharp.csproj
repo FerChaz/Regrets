@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Dialogue\DialogueSystem\DialogueResponseEvents.cs" />
+    <Compile Include="Assets\Scripts\ProgressController\DataController\LoadController.cs" />
     <Compile Include="Assets\Scripts\Enemies\FlyEnemies\States\FallenFlyEnemyState.cs" />
     <Compile Include="Assets\Scripts\Player\AnimationsBridges\PlayerAnimatorController.cs" />
     <Compile Include="Assets\Scripts\Respawn\RespawnController.cs" />
@@ -64,6 +65,7 @@
     <Compile Include="Assets\AmplifyShaderEditor\Examples\Official\SimpleGPUInstancing\SimpleGPUInstancingExample.cs" />
     <Compile Include="Assets\Scripts\Inventory\Keys\MarketParcaKey.cs" />
     <Compile Include="Assets\Scripts\UI\EnableCanvas.cs" />
+    <Compile Include="Assets\Scripts\SceneManager\DisableFade.cs" />
     <Compile Include="Assets\Scripts\Enemies\FlyEnemies\FlyEnemyCombatController.cs" />
     <Compile Include="Assets\Scripts\Limbo\Quests\LimboQuestEnemy.cs" />
     <Compile Include="Assets\Scripts\Enemies\GroundEnemies\States\PatrolGroundEnemyState.cs" />
@@ -110,6 +112,7 @@
     <Compile Include="Assets\Scripts\Walls &amp; Doors\BreakableDoorController.cs" />
     <Compile Include="Assets\AmplifyShaderEditor\Examples\Community\Volumetric Pixelization\VolumetricSphere.cs" />
     <Compile Include="Assets\Scripts\Enemies\Coins.cs" />
+    <Compile Include="Assets\Scripts\ProgressController\DataController\SaveController.cs" />
     <Compile Include="Assets\Scripts\End\EndGame.cs" />
     <Compile Include="Assets\Scripts\Events\Boss\PlayerEntranceInBoss.cs" />
     <Compile Include="Assets\Scripts\Player\AnimationsBridges\BridgePlayerAnimator.cs" />
@@ -122,6 +125,7 @@
     <Compile Include="Assets\Scripts\Scriptable Objects\RespawnInfo.cs" />
     <Compile Include="Assets\Scripts\Enemies\FlyEnemies\FlyEnemyFSM.cs" />
     <Compile Include="Assets\Scripts\Player\Habilities\Dash\PlayerDash.cs" />
+    <Compile Include="Assets\Scripts\SceneManager\EnableFade.cs" />
     <Compile Include="Assets\Scripts\Enemies\FlyEnemies\States\ChargeFlyEnemyState.cs" />
     <Compile Include="Assets\Scripts\Enemies\FlyEnemies\FlyEnemyController.cs" />
     <Compile Include="Assets\Scripts\Enemies\Patrol\PatrolGroundedEnemy.cs" />
@@ -165,6 +169,7 @@
     <Compile Include="Assets\Scripts\Enemies\EnemyLifeController.cs" />
     <Compile Include="Assets\Scripts\Player\Components\SoulController.cs" />
     <Compile Include="Assets\Scripts\Enemies\FlyEnemies\FlyEnemyDeath.cs" />
+    <Compile Include="Assets\Scripts\Scriptable Objects\InfoLoading.cs" />
     <Compile Include="Assets\Scripts\Camera\MainCamera.cs" />
     <Compile Include="Assets\Scripts\Enemies\Patrol\PatrolEnemyBase.cs" />
     <Compile Include="Assets\Scripts\FSM\State.cs" />
@@ -188,7 +193,6 @@
     <Compile Include="Assets\Scripts\Camera\CameraLimits.cs" />
     <Compile Include="Assets\Scripts\Limbo\ExitLimbo.cs" />
     <Compile Include="Assets\AmplifyShaderEditor\Examples\Official\Smear\SimpleMoveExample.cs" />
-    <Compile Include="Assets\Scripts\ProgressController\DataController\DataController.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\Status.cs" />
     <Compile Include="Assets\Scripts\Limbo\Quests\EnemyCounter.cs" />
     <Compile Include="Assets\Scripts\Enemies\Spikes\SpikesController.cs" />
@@ -203,8 +207,6 @@
     <Compile Include="Assets\Packs\FadeObstructions\Reyn\Visual\Fade\FadeObjectOptions.cs" />
     <Compile Include="Assets\Animations\Animations\Kaori\Attack\Scripts\Transition2Behaviour.cs" />
     <Compile Include="Assets\Scripts\Player\AudioBridges\BridgePlayerAudio.cs" />
-    <Compile Include="Assets\Scripts\SceneManager\EnableFade.cs" />
-    <Compile Include="Assets\Scripts\SceneManager\DisableFade.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Packs\Fantasy Adventure Environment\Shaders\VS_InstancedIndirect.cginc" />

@@ -80,7 +80,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rigidBody.useGravity = false;
-        respawn.respawnPosition = new Vector3(-283f, -1.81f, 0.0f);
+        //respawn.respawnPosition = new Vector3(-283f, 1f, 0.0f);
         //audioManager = GetComponent<AudioManager>();
 
         
@@ -225,7 +225,7 @@ public class PlayerController : MonoBehaviour
             Flip();
         }
 
-        CantMoveUntil(timeToWait + 1f);
+        //CantMoveUntil(timeToWait + 1f);
     }
 
     

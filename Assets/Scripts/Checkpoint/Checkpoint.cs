@@ -4,48 +4,36 @@ using UnityEngine;
 
 public class Checkpoint : MonoBehaviour
 {
-
     public List<string> scenesToChargeInAdditive;
     public string checkpointSceneName;
 
-
     public RespawnInfo respawnInfo;
     public AdditiveScenesInfo additiveScenesScriptableObject;
-    //public DataController dataController;
-    public Save save;
+    public SaveController saveController;
 
     public GameObject objectsToActivate;
     public List<GameObject> entrancesToDisable;
-    private ParticleSystem _particle;
 
     private LifeController _lifeController;
-
     private SceneController _sceneController;
-
+    private ParticleSystem _particle;
 
     [Header("Canvas")]
     public GameObject canvas;
 
-
+    [Header("Transition Canvas")]
     public GameObject transitionCanvas;
     public Animator canvasAnimator;
-    public GameObject playerReference;
-
-
-    // private DataController _data                                     // Guardar: posicion, escenas aditivas, currency
 
     private WaitForSeconds wait = new WaitForSeconds(.5f);
 
     private void Awake()
     {
-
-        playerReference = GameObject.Find("Player");
-        //dataController = FindObjectOfType<DataController>();
-        save = FindObjectOfType<Save>();
-        _particle = GetComponentInChildren<ParticleSystem>();
+        saveController = FindObjectOfType<SaveController>();
         _lifeController = FindObjectOfType<LifeController>();
         _sceneController = FindObjectOfType<SceneController>();
-        // _data = FindObjectOfType<DataController>();
+
+        _particle = GetComponentInChildren<ParticleSystem>();
 
         transitionCanvas = GameObject.Find("TransitionCanvas");
         canvasAnimator = transitionCanvas.GetComponentInChildren<Animator>();
@@ -80,9 +68,6 @@ public class Checkpoint : MonoBehaviour
 
     public void Pray()
     {
-
-        // GUARDAR DATOS EN DATA
-        
         canvas.SetActive(false);
 
         _lifeController.RestoreMaxLife();
@@ -90,15 +75,14 @@ public class Checkpoint : MonoBehaviour
         respawnInfo.sceneToRespawn = checkpointSceneName;
         respawnInfo.additiveScenesToCharge = scenesToChargeInAdditive;
         respawnInfo.checkpointActivename = gameObject.name;
-        // dataController.SaveData(checkpointSceneName, transform.position);
-        save.SaveData();
+
+        saveController.SaveData();
+
         _particle.Play();
     }
 
     public void Revive()
     {
-        // GUARDAR DATOS EN DATA
-        
         canvas.SetActive(false);
         _particle.Play();
 
@@ -116,22 +100,21 @@ public class Checkpoint : MonoBehaviour
 
         additiveScenesScriptableObject.actualScene = checkpointSceneName;
         additiveScenesScriptableObject.additiveScenes = scenesToChargeInAdditive;
-        // dataController.SaveData(checkpointSceneName, transform.position);
-        save.SaveData();
-        StartCoroutine(WaitForFade());
+
+        saveController.SaveData();
+
+        //StartCoroutine(WaitForFade());
     }
 
     private void CanvasTransition()
     {
         // De negro a transparente
-
         canvasAnimator.SetBool("ToBlack", false);
     }
 
     private IEnumerator WaitForFade()
     {
         yield return wait;
-
         CanvasTransition();
     }
 

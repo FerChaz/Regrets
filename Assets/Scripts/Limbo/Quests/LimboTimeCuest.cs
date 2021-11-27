@@ -17,22 +17,22 @@ public class LimboTimeCuest : MonoBehaviour
 
     private void Awake()
     {
-        timeCuest = (min * 60) + seg;
-        cont.text=($"{min}:{seg}");
+        //timeCuest = (min * 60) + seg;
+        //cont.text=($"{min}:{seg}");
     }
 
     private void Update()
     {
         if (flagActive&&win!=true&&timeCuest>=0.9f)
         {
-            timeCuest -= Time.deltaTime;
+            //timeCuest -= Time.deltaTime;
             if (timeCuest < 1)
             {
                 //PIERDE Y VUELVE AL ULTIMO CHEKPOINT
             }
-            int tempMin = Mathf.FloorToInt(timeCuest / 60);
-            int tempSeg = Mathf.FloorToInt(timeCuest % 60);
-            cont.text = string.Format("{00:00}:{01:00}", tempMin, tempSeg); 
+            //int tempMin = Mathf.FloorToInt(timeCuest / 60);
+            //int tempSeg = Mathf.FloorToInt(timeCuest % 60);
+            //cont.text = string.Format("{00:00}:{01:00}", tempMin, tempSeg); 
         }
         if (win)
         {

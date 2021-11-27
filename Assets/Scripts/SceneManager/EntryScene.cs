@@ -51,8 +51,6 @@ public class EntryScene : MonoBehaviour
         }
     }
 
-
-
     private void ActualiceSceneInfo()
     {
         sceneInfo.additiveScenes = additiveScenes;

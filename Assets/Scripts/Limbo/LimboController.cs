@@ -14,9 +14,15 @@ public class LimboController : MonoBehaviour
 
     private WaitForSeconds wait = new WaitForSeconds(1);
 
+    public GameObject transitionCanvas;
+    public Animator canvasAnimator;
+
+
     private void Awake()
     {
         sceneController = FindObjectOfType<SceneController>();
+        transitionCanvas = GameObject.Find("TransitionCanvas");
+        canvasAnimator = transitionCanvas.GetComponentInChildren<Animator>();
     }
 
     private void Start()
@@ -28,6 +34,7 @@ public class LimboController : MonoBehaviour
 
     public void ChargeLimboScene(Vector3 position)
     {
+        CanvasTransition();
         limboInfo.deathPosition = position;
 
         if (_random == 1)
@@ -62,6 +69,13 @@ public class LimboController : MonoBehaviour
     {
         yield return wait;
         sceneController.ChangePlayerPosition(position);
+        canvasAnimator.SetBool("ToBlack", false);
+    }
+
+    private void CanvasTransition()
+    {
+        // De transparente a negro
+        canvasAnimator.SetBool("ToBlack", true);
     }
 
     private void OnSceneComplete()

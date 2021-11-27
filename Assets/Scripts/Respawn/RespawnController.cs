@@ -64,10 +64,11 @@ public class RespawnController : MonoBehaviour
     }
 
 
-        IEnumerator WaitToChange()
+    IEnumerator WaitToChange()
     {
         yield return wait;
         sceneController.ChangePlayerPosition(respawnInfo.respawnPosition);
+        canvasAnimator.SetBool("ToBlack", false);
     }
 
 

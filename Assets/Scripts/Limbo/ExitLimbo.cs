@@ -14,9 +14,16 @@ public class ExitLimbo : MonoBehaviour
     // ACTIVAR LOS ENEMIGOS
     // DAR UNOS SEGUNDOS DE INVULNERABILIDAD Y ALGUNA ANIMACION
 
+    public GameObject transitionCanvas;
+    public Animator canvasAnimator;
+
+    private WaitForSeconds wait = new WaitForSeconds(.5f);
+
     private void Start()
     {
         sceneController = FindObjectOfType<SceneController>();
+        transitionCanvas = GameObject.Find("TransitionCanvas");
+        canvasAnimator = transitionCanvas.GetComponentInChildren<Animator>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -24,10 +31,26 @@ public class ExitLimbo : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             // FADE O ANIMACION
-            limboInfo.isPlayerInLimbo = false;
-            sceneController.ChangePlayerPosition(limboInfo.deathPosition);
-            sceneController.UnloadSceneInAdditive(limboInfo.limboScene, OnSceneComplete);
+            CanvasTransition();
+
+            StartCoroutine(WaitForFade());
         }
+    }
+
+    private void CanvasTransition()
+    {
+        // De transparente a negro
+        canvasAnimator.SetBool("ToBlack", true);
+    }
+
+    private IEnumerator WaitForFade()
+    {
+        yield return wait;
+
+        limboInfo.isPlayerInLimbo = false;
+        sceneController.ChangePlayerPosition(limboInfo.deathPosition);
+        sceneController.UnloadSceneInAdditive(limboInfo.limboScene, OnSceneComplete);
+        canvasAnimator.SetBool("ToBlack", false);
     }
 
     private void OnSceneComplete()

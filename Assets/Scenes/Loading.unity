@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731713, g: 0.13414736, b: 0.12107852, a: 1}
+  m_IndirectSpecularColor: {r: 0.1273174, g: 0.13414761, b: 0.12107885, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -167,9 +167,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   infoLoading: {fileID: 11400000, guid: 10f6ad8abc0a9bb4aa63cbeff36544e8, type: 2}
-  soul: {fileID: 11400000, guid: b993c4903f7f99242987ff7ceadbd70e, type: 2}
+  souls: {fileID: 11400000, guid: b993c4903f7f99242987ff7ceadbd70e, type: 2}
   recoverSoulsInfo: {fileID: 11400000, guid: 0d55266bc5806974a9620bf273e65772, type: 2}
-  checkpointScriptableObject: {fileID: 11400000, guid: f109a9748cb379b4d8e8478798f474ad, type: 2}
+  respawnInfo: {fileID: 11400000, guid: f109a9748cb379b4d8e8478798f474ad, type: 2}
 --- !u!1 &240121540
 GameObject:
   m_ObjectHideFlags: 0

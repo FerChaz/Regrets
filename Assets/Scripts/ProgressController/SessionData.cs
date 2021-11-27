@@ -59,13 +59,18 @@ public class SessionData {
 [Serializable]
 public class GameData {
     //Put attributes that you want to save during your game.
+
     //Player
-    public string scenceLoad;
-    public Vector3 posision;
-    public int souls;
-    //Cofres
-    public bool[] chest;
-    public bool[] wall;
+    public string spawnScene;
+    public Vector3 spawnPlayerPosition;
+    public int totalSouls;
+
+    //Cofres, puertas, paredes, eventos
+    public bool[] openChests = new bool[3];
+    public bool[] brokenWalls = new bool[2];
+    public bool[] openDoors = new bool[1];
+    public bool[] eventsHappened;
+
     //Currency
     public Vector3 recoverSoulsPosition;
     public int recoverSoulsCount;
@@ -73,9 +78,37 @@ public class GameData {
 
 
     public GameData() {
-        //scenceLoadPlayer=pasamos el val del Avility SO;
-        //soulsPlayer= pasamos el val del Avility SO;     (Renombrar)
-        //x_Player, y_Player, z_Player=pasamos el val del Avility SO;
+
+        spawnScene = "Intro";
+        spawnPlayerPosition.Set(-412f, 1f, 0.0f);           // Posicion inicial en la intro del juego
+
+        // Todos los cofres estan cerrados
+        for (int i = 0; i < openChests.Length; i++)
+        {
+            openChests[i] = false;
+        }
+
+        // Todas las paredes estan sin romper
+        for (int i = 0; i < brokenWalls.Length; i++)
+        {
+            brokenWalls[i] = false;
+        }
+
+        // Todas las puertas estan cerradas
+        for (int i = 0; i < openDoors.Length; i++)
+        {
+            openDoors[i] = false;
+        }
+
+        // Ningun evento ocurrio
+        for (int i = 0; i < eventsHappened.Length; i++)
+        {
+            eventsHappened[i] = false;
+        }
+
+        recoverSoulsPosition.Set(0.0f, 0.0f, 0.0f);
+        recoverSoulsCount = 0;
+        needRecover = false;
     }
 
     public void SaveData() {
