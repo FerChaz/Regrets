@@ -76,7 +76,7 @@ public class Checkpoint : MonoBehaviour
         respawnInfo.additiveScenesToCharge = scenesToChargeInAdditive;
         respawnInfo.checkpointActivename = gameObject.name;
 
-        saveController.SaveData();
+        //saveController.SaveData();
 
         _particle.Play();
     }
@@ -101,7 +101,7 @@ public class Checkpoint : MonoBehaviour
         additiveScenesScriptableObject.actualScene = checkpointSceneName;
         additiveScenesScriptableObject.additiveScenes = scenesToChargeInAdditive;
 
-        saveController.SaveData();
+        //saveController.SaveData();
 
         //StartCoroutine(WaitForFade());
     }

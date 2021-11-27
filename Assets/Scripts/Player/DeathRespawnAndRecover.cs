@@ -51,11 +51,9 @@ public class DeathRespawnAndRecover : MonoBehaviour
             limboInfo.isPlayerInLimbo = true;
             limboController.ChargeLimboScene(deathPosition);
             // Falta desactivar los objetos en escena
-            Debug.Log($"Entra aca");
         }
         else
         {
-            Debug.Log($"Aca no deberia entrar pero entra");
             if (!limboInfo.isPlayerInLimbo){
 
                 deathPosition = playerController.lastPositionInGround;
@@ -82,6 +80,7 @@ public class DeathRespawnAndRecover : MonoBehaviour
 
     private void AssignRecoverSoulData()
     {
+        Debug.Log($"Se asigna");
         soulRecoveryData.needRecover = true;
 
         _totalSoulsToRecover = soulsController.TotalSouls();

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   positionToGoInLimbo1: {x: -50, y: 1005, z: 0}
   positionToGoInLimbo2: {x: 490, y: 1010, z: 0}
-  deathPosition: {x: -298.80017, y: -1.8061543, z: 0}
-  limboScene: Limbo2
+  deathPosition: {x: -251.28998, y: -1.7218869, z: 0}
+  limboScene: Limbo1
   deathScene: Intro
-  isPlayerInLimbo: 1
+  isPlayerInLimbo: 0

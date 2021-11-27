@@ -13,10 +13,7 @@ MonoBehaviour:
   m_Name: LoadingPlayerInfo
   m_EditorClassIdentifier: 
   loadDisponible: 1
-  scenceLoad: Start
-  posision: {x: 297.401, y: -24.879997, z: 0}
-  souls: 0
-  chest: 
-  recoverSoulsPosition: {x: 0, y: 0, z: 0}
-  recoverSoulsCount: 0
-  needRecover: 0
+  openChests: 000000
+  brokenWalls: 0000
+  openDoors: 00
+  eventsHappened: 

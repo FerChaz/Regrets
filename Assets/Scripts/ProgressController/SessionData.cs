@@ -69,7 +69,7 @@ public class GameData {
     public bool[] openChests = new bool[3];
     public bool[] brokenWalls = new bool[2];
     public bool[] openDoors = new bool[1];
-    public bool[] eventsHappened;
+    public bool[] eventsHappened = new bool[0];
 
     //Currency
     public Vector3 recoverSoulsPosition;
