@@ -86,6 +86,8 @@ public class Checkpoint : MonoBehaviour
         canvas.SetActive(false);
         _particle.Play();
 
+        _lifeController.RestoreMaxLife();
+
         objectsToActivate.SetActive(true);                      // Enable enemies
 
         foreach (GameObject entrance in entrancesToDisable)

@@ -80,7 +80,6 @@ public class DeathRespawnAndRecover : MonoBehaviour
 
     private void AssignRecoverSoulData()
     {
-        Debug.Log($"Se asigna");
         soulRecoveryData.needRecover = true;
 
         _totalSoulsToRecover = soulsController.TotalSouls();

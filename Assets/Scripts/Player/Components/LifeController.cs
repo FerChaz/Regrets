@@ -103,13 +103,14 @@ public class LifeController : MonoBehaviour
                 {
                     lowLifeCanvas.SetActive(true);
                 }
+
+                StartCoroutine(Invulnerability(invulnerabilityTime));
             }
             else 
             {
                 Death();
-            }                
-
-            StartCoroutine(Invulnerability(invulnerabilityTimeSpikes));
+                StartCoroutine(Invulnerability(invulnerabilityTime + 2f));
+            }
         } 
         else if (!invulnerability)
         {
@@ -125,13 +126,13 @@ public class LifeController : MonoBehaviour
                     lowLifeCanvas.SetActive(true);
                 }
 
+                StartCoroutine(Invulnerability(invulnerabilityTime));
             }
             else
             {
                 Death();
+                StartCoroutine(Invulnerability(invulnerabilityTime + 2f));
             }
-
-            StartCoroutine(Invulnerability(invulnerabilityTime));
         }
     }
 

@@ -207,6 +207,7 @@
     <Compile Include="Assets\Packs\FadeObstructions\Reyn\Visual\Fade\FadeObjectOptions.cs" />
     <Compile Include="Assets\Animations\Animations\Kaori\Attack\Scripts\Transition2Behaviour.cs" />
     <Compile Include="Assets\Scripts\Player\AudioBridges\BridgePlayerAudio.cs" />
+    <Compile Include="Assets\Scripts\Respawn\RespawnWithoutCheckpoint.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Packs\Fantasy Adventure Environment\Shaders\VS_InstancedIndirect.cginc" />
