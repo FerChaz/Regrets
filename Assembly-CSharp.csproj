@@ -182,6 +182,7 @@
     <Compile Include="Assets\UI\Scripts\MouseOver.cs" />
     <Compile Include="Assets\Scripts\Enemies\Boss\BossAnimatorController.cs" />
     <Compile Include="Assets\Scripts\Observer\HeartManager.cs" />
+    <Compile Include="Assets\Scripts\Respawn\RespawnWithoutCheckpoint.cs" />
     <Compile Include="Assets\Packs\FadeObstructions\Reyn\Visual\Fade\FadeObstructionsManager.cs" />
     <Compile Include="Assets\Scripts\Player\Weapons\KatanaController.cs" />
     <Compile Include="Assets\Scripts\Player\Habilities\Jump\PlayerJump.cs" />
@@ -207,7 +208,6 @@
     <Compile Include="Assets\Packs\FadeObstructions\Reyn\Visual\Fade\FadeObjectOptions.cs" />
     <Compile Include="Assets\Animations\Animations\Kaori\Attack\Scripts\Transition2Behaviour.cs" />
     <Compile Include="Assets\Scripts\Player\AudioBridges\BridgePlayerAudio.cs" />
-    <Compile Include="Assets\Scripts\Respawn\RespawnWithoutCheckpoint.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Packs\Fantasy Adventure Environment\Shaders\VS_InstancedIndirect.cginc" />

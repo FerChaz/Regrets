@@ -18,21 +18,41 @@ public class ExitScene : MonoBehaviour
 
     private WaitForSeconds wait = new WaitForSeconds(.5f);
 
-    private void Start()
+    public PlayerController player;
+    public PlayerAnimatorController playerAnimator;
+    public float topTime = 1;
+    private Vector3 movement;
+    private float direction;
+
+    private void Awake()
     {
         _sceneManager = FindObjectOfType<SceneController>();
         transitionCanvas = GameObject.Find("TransitionCanvas");
         canvasAnimator = transitionCanvas.GetComponentInChildren<Animator>();
+
+        player = FindObjectOfType<PlayerController>();
+        playerAnimator = FindObjectOfType<PlayerAnimatorController>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            if (player.isFacingRight)
+            {
+                direction = 1;
+            }
+            else
+            {
+                direction = -1;
+            }
+
+            StartCoroutine(Move());
             CanvasTransition();
 
             StartCoroutine(WaitForFade());
 
+            movement.Set(15f * direction, 0.0f, 0.0f);
         }
     }
 
@@ -58,6 +78,20 @@ public class ExitScene : MonoBehaviour
 
         _sceneManager.ChangePlayerPosition(playerPositionToGo);
         _sceneManager.UnloadSceneInAdditive(_actualScene, OnSceneComplete);
+    }
+
+    IEnumerator Move()
+    {
+        player.CanDoAnyMovement(false);
+        float timer = 0;
+        while (timer < topTime)
+        {
+            playerAnimator.Run(direction);
+            player.rigidBody.velocity = movement;
+            timer += Time.deltaTime;
+            yield return null;
+        }
+        player.CanDoAnyMovement(true);
     }
 
     private void OnSceneComplete()
