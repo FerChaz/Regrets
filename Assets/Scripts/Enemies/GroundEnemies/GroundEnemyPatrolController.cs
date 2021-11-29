@@ -96,6 +96,11 @@ public class GroundEnemyPatrolController : MonoBehaviour
         canvasImage.fillAmount = normalicedActualBar;
     }
 
+    public void DestroyEnemy()
+    {
+        Destroy(gameObject);
+    }
+
 
 #if UNITY_EDITOR
     private void OnDrawGizmos()

@@ -19,10 +19,15 @@ public class DeathGroundEnemyState : State
         if (_enemyController != null)
         {
             _enemyController.isAnyStateRunning = true;
-            //Destroy(_enemyController);
+            
         }
     }
-    public override void UpdateState(float delta) { }
 
-    public override void ExitState() { }
+    public override void UpdateState(float delta) {
+        // LOGICA DE SONIDO (Creo que hay un metodo para saber si un clip se termino de reproducir)
+    }
+
+    public override void ExitState() {
+        _enemyController.DestroyEnemy();
+    }
 }

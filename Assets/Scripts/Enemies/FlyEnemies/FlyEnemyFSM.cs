@@ -194,8 +194,7 @@ public class FlyEnemyFSM : FiniteStateMachine
     public void Death()
     {
         StopAllCoroutines();
-        Destroy(gameObject);
-        //SwitchState(_deathState, _enemyController);
+        SwitchState(_deathState, _enemyController);
     }
 
 

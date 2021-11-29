@@ -106,6 +106,13 @@ public class FlyEnemyController : MonoBehaviour
         canvasImage.fillAmount = normalicedActualBar;
     }
 
+    public void DestroyEnemy()
+    {
+        Destroy(gameObject);
+    }
+
+
+#if UNITY_EDITOR
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.blue;
@@ -117,5 +124,6 @@ public class FlyEnemyController : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, chaseRadius);
         Gizmos.DrawWireSphere(transform.position, attackRadius);
     }
+#endif
 
 }

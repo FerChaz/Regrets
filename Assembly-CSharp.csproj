@@ -139,7 +139,6 @@
     <Compile Include="Assets\Scripts\Enemies\Boss\States\BossJumpState.cs" />
     <Compile Include="Assets\Scripts\Events\Boss\BossEntrance.cs" />
     <Compile Include="Assets\Scripts\Player\Components\LifeController.cs" />
-    <Compile Include="Assets\Scripts\Enemies\GroundEnemies\GroundEnemyDeath.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\AdditiveScenesInfo.cs" />
     <Compile Include="Assets\Animations\Animations\Kaori\Attack\Scripts\ComboAttacksScript.cs" />
     <Compile Include="Assets\Scripts\Chest\Chest.cs" />
@@ -168,7 +167,6 @@
     <Compile Include="Assets\Scripts\Enemies\Boss\States\BossDeathState.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemyLifeController.cs" />
     <Compile Include="Assets\Scripts\Player\Components\SoulController.cs" />
-    <Compile Include="Assets\Scripts\Enemies\FlyEnemies\FlyEnemyDeath.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\InfoLoading.cs" />
     <Compile Include="Assets\Scripts\Camera\MainCamera.cs" />
     <Compile Include="Assets\Scripts\Enemies\Patrol\PatrolEnemyBase.cs" />
