@@ -13,8 +13,13 @@ public class PlayerDash : PlayerHabilities
     [SerializeField] private float dashTimeLeft;
     [SerializeField] private float dashTime;
 
+    [Header("Sonido Dash")]
+    public AudioSource audioSource;
+    public AudioClip clipDash;
+
     public bool isDashing;
     public bool dashEnabled;       // Guardar en persistencia
+
 
     //-- START & UPDATE ------------------------------------------------------------------------------------------------------------
 
@@ -25,7 +30,6 @@ public class PlayerDash : PlayerHabilities
             Dash();
         }
     }
-
 
     //-- DASH ----------------------------------------------------------------------------------------------------------------------
 
@@ -46,6 +50,8 @@ public class PlayerDash : PlayerHabilities
 
             dashTimeLeft = dashTime;
             lastDash = Time.time;
+            audioSource.clip = clipDash;
+            audioSource.Play();
         }
 
         if (isDashing)
@@ -79,7 +85,7 @@ public class PlayerDash : PlayerHabilities
     }
 
     //-- ENABLE DASH ---------------------------------------------------------------------------------------------------------------
-
+    
     public void EnableDash()
     {
         dashEnabled = true;

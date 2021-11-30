@@ -19,7 +19,9 @@ public class PlayerJump : PlayerHabilities
     private bool jumpRequest;
 
     public PlayerDash dashController;
-
+    [Header("Sonido Jump")]
+    public AudioSource audioSource;
+    public AudioClip clipJump;
     [Header("Camera")]
     public MainCamera mainCamera;
 
@@ -38,6 +40,8 @@ public class PlayerJump : PlayerHabilities
         {
             mainCamera.ChangeSmoothTimeY(smoothJump);
             jumpRequest = true;
+            audioSource.clip = clipJump;
+            audioSource.Play();
         }
 
         if (!dashController.isDashing)

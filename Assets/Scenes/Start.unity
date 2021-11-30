@@ -12851,15 +12851,15 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1537300084}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 63124133adc3d2a43bdd9691ea266af3, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.065
+  m_Volume: 1
   m_Pitch: 1
-  Loop: 1
-  Mute: 1
+  Loop: 0
+  Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
@@ -13118,6 +13118,8 @@ MonoBehaviour:
   smoothJump: 0.125
   smoothFall: 0.05
   dashController: {fileID: 0}
+  audioSource: {fileID: 1537300087}
+  clipJump: {fileID: 8300000, guid: 904b203c439d9da4aa8f97586ea4a643, type: 3}
   mainCamera: {fileID: 0}
 --- !u!114 &1537300096
 MonoBehaviour:
@@ -13153,6 +13155,8 @@ MonoBehaviour:
   lastDash: 0
   dashTimeLeft: 0
   dashTime: 0.15
+  audioSource: {fileID: 1537300087}
+  clipDash: {fileID: 8300000, guid: 63124133adc3d2a43bdd9691ea266af3, type: 3}
   isDashing: 0
   dashEnabled: 1
 --- !u!114 &1537300098
@@ -15548,6 +15552,7 @@ GameObject:
   - component: {fileID: 4453639855390891957}
   - component: {fileID: 3928635820296684817}
   - component: {fileID: 3928635820296684816}
+  - component: {fileID: 3928635820296684818}
   m_Layer: 0
   m_Name: katana-v1
   m_TagString: Untagged
@@ -15585,6 +15590,105 @@ MonoBehaviour:
   - 0
   - 0
   weaponCollider: {fileID: 0}
+  audioSource: {fileID: 3928635820296684818}
+  clipAttackAir: {fileID: 8300000, guid: 48fc9b195b2e14d478faaf9076ca2da7, type: 3}
+  clipAttackHit: {fileID: 8300000, guid: a27624690b875384a9a522546b76e32e, type: 3}
+--- !u!82 &3928635820296684818
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3928635820296684815}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!4 &4100895064356909529
 Transform:
   m_ObjectHideFlags: 0

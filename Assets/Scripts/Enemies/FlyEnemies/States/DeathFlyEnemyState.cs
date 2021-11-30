@@ -19,6 +19,7 @@ public class DeathFlyEnemyState : State
         if (_enemyController != null)
         {
             _enemyController.isAnyStateRunning = true;
+            _enemyController.PlayClipExecuteGroundEnemy();
         }
     }
     public override void UpdateState(float delta) {

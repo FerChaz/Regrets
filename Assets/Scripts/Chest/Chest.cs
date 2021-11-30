@@ -14,6 +14,10 @@ public class Chest : MonoBehaviour
 
     public ObjectStatus chestState;
 
+    [Header("Sonido cofre Apertura")]
+    public AudioClip chestAperture; //Que "buen" ingles 
+    public AudioSource audioSource;
+
     private void Awake()
     {
         _chestAnimator = GetComponentInChildren<Animator>();
@@ -31,6 +35,7 @@ public class Chest : MonoBehaviour
         else
         {
             _isClosed = true;
+            audioSource.clip = chestAperture;
         }
     }
 
@@ -43,6 +48,7 @@ public class Chest : MonoBehaviour
             soulManager.AddSouls(totalSouls);
 
             _chestAnimator.SetBool("Open", true);
+            audioSource.Play();
             // Activar animacion
         }
     }

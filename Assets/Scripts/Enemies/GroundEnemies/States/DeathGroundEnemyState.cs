@@ -19,7 +19,7 @@ public class DeathGroundEnemyState : State
         if (_enemyController != null)
         {
             _enemyController.isAnyStateRunning = true;
-            
+            _enemyController.PlayClipExecuteGroundEnemy();
         }
     }
 

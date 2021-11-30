@@ -54,6 +54,10 @@ public class GroundEnemyPatrolController : MonoBehaviour
     public float distanceToPlayer;
     public float distanceToPlayerY;
 
+    [Header("Sonido")]
+    public AudioClip ejecucion;
+    public AudioSource audioSource;
+
     //-- ON ENABLE ------------------------------------------------------------------------------------------------------------------
 
     private void OnEnable()
@@ -101,6 +105,11 @@ public class GroundEnemyPatrolController : MonoBehaviour
         Destroy(gameObject);
     }
 
+    public void PlayClipExecuteGroundEnemy() //Aplica y reproduce sonido de ejecion
+    {
+        audioSource.clip = ejecucion;
+        audioSource.Play();
+    }
 
 #if UNITY_EDITOR
     private void OnDrawGizmos()

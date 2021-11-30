@@ -9,6 +9,12 @@ public class KatanaController : MonoBehaviour
 
     public BoxCollider weaponCollider;
 
+    [Header("Sonidos Katana")]
+    public AudioSource audioSource;
+    public AudioClip clipAttackAir;
+    public AudioClip clipAttackHit;
+
+
     private void Awake()
     {
         weaponCollider = GetComponent<BoxCollider>();
@@ -24,7 +30,13 @@ public class KatanaController : MonoBehaviour
     {
         if(other.gameObject.layer == 7)
         {
+            audioSource.clip = clipAttackHit;
+            audioSource.Play();
             other.transform.SendMessage("GetDamage", attackDetails);
+        }else
+        {
+            audioSource.clip = clipAttackAir;
+            audioSource.Play();
         }
     }
 

@@ -63,6 +63,9 @@ public class FlyEnemyController : MonoBehaviour
     public GameObject player;
     public float distanceToPlayer;
 
+    [Header("Sonido")]
+    public AudioClip ejecucion;
+    public AudioSource audioSource;
 
     //-- ON ENABLE ------------------------------------------------------------------------------------------------------------------
 
@@ -111,6 +114,11 @@ public class FlyEnemyController : MonoBehaviour
         Destroy(gameObject);
     }
 
+    public void PlayClipExecuteGroundEnemy() //Aplica y reproduce sonido de ejecion
+    {
+        audioSource.clip = ejecucion;
+        audioSource.Play();
+    }
 
 #if UNITY_EDITOR
     private void OnDrawGizmos()
