@@ -7,12 +7,14 @@ public class PlayerController : MonoBehaviour
     //-- VARIABLES -----------------------------------------------------------------------------------------------------------------
 
     [Header("Model & Animations")]
-    [SerializeField] private GameObject playerModel;
+    [SerializeField] public GameObject playerModel;
     [SerializeField] private Animator playerAnimator;
-    private Vector3 playerRotation;
-    private Vector3 playerRotationBack;
-    private Vector3 fixedPlayerRotation;
-    private Vector3 fixedPlayerRotationBack;
+    public Vector3 playerRotation;
+    public Vector3 playerRotationBack;
+    public Vector3 fixedPlayerRotation;
+    public Vector3 fixedPlayerRotationBack;
+
+    public bool useMovePlayerController = true;
 
 
     public float inputDirection;
@@ -117,7 +119,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Move();
+        Move(useMovePlayerController);
         SetGravity();
     }
 
@@ -132,7 +134,7 @@ public class PlayerController : MonoBehaviour
 
     //-- MOVE ----------------------------------------------------------------------------------------------------------------------
 
-    private void Move()
+    private void Move(bool useThis)
     {
         if (inputDirection < 0f && canMove)
         {
@@ -143,7 +145,7 @@ public class PlayerController : MonoBehaviour
         {
             playerModel.transform.eulerAngles = fixedPlayerRotation;
         }
-        else
+        else if (useThis)
         {
             if (!isFacingRight)
             {

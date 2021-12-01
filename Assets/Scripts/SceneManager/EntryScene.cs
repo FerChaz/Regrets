@@ -94,6 +94,16 @@ public class EntryScene : MonoBehaviour
     {
         player.CanDoAnyMovement(false);
         float timer = 0;
+        
+        player.useMovePlayerController = false;
+        if (direction >= 1)
+        {
+            player.playerModel.transform.eulerAngles = player.fixedPlayerRotation;
+        } else
+        {
+            player.playerModel.transform.eulerAngles = player.fixedPlayerRotationBack;
+        }
+        
         while (timer < topTime)
         {
             playerAnimator.Run(direction);
@@ -101,6 +111,15 @@ public class EntryScene : MonoBehaviour
             timer += Time.deltaTime;
             yield return null;
         }
+
+        if (direction >= 1)
+        {
+            player.playerModel.transform.eulerAngles = player.playerRotation;
+        } else
+        {
+            player.playerModel.transform.eulerAngles = player.playerRotationBack;
+        }
+        player.useMovePlayerController = true;
         player.CanDoAnyMovement(true);
         gameObject.SetActive(false);
     }
