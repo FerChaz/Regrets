@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731713, g: 0.13414736, b: 0.12107852, a: 1}
+  m_IndirectSpecularColor: {r: 0.1273174, g: 0.13414761, b: 0.12107885, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2400,37 +2400,6 @@ Transform:
   - {fileID: 1483263969}
   m_Father: {fileID: 494672196}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &118514152
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 118514153}
-  m_Layer: 0
-  m_Name: ------- MUSIC & FX -------
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &118514153
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 118514152}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1968664814}
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &126322797
 PrefabInstance:
@@ -7728,6 +7697,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerModel: {fileID: 614675085}
   playerAnimator: {fileID: 614675089}
+  playerRotation: {x: 0, y: 0, z: 0}
+  playerRotationBack: {x: 0, y: 0, z: 0}
+  fixedPlayerRotation: {x: 0, y: 0, z: 0}
+  fixedPlayerRotationBack: {x: 0, y: 0, z: 0}
+  useMovePlayerController: 1
   inputDirection: 0
   isFacingRight: 1
   canMove: 1
@@ -20645,6 +20619,7 @@ Transform:
   - {fileID: 239280678}
   - {fileID: 1804508737}
   - {fileID: 1173815739}
+  - {fileID: 1968664814}
   m_Father: {fileID: 1006119020}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -21509,7 +21484,7 @@ Transform:
   - {fileID: 464233191}
   - {fileID: 1092601501}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1031888825
 GameObject:
@@ -21611,7 +21586,7 @@ Transform:
   m_Children:
   - {fileID: 249624156}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1052060390
 GameObject:
@@ -33610,8 +33585,12 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 118514153}
+    m_TransformParent: {fileID: 959369528}
     m_Modifications:
+    - target: {fileID: 4525531515621262528, guid: 33df9b944c8c6284ca54092e403f9401, type: 3}
+      propertyPath: m_Volume
+      value: 0.027
+      objectReference: {fileID: 0}
     - target: {fileID: 4525531515621262528, guid: 33df9b944c8c6284ca54092e403f9401, type: 3}
       propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
       value: 0
@@ -33622,7 +33601,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4525531515621262535, guid: 33df9b944c8c6284ca54092e403f9401, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4525531515621262535, guid: 33df9b944c8c6284ca54092e403f9401, type: 3}
       propertyPath: m_LocalPosition.x
@@ -33642,15 +33621,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4525531515621262535, guid: 33df9b944c8c6284ca54092e403f9401, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4525531515621262535, guid: 33df9b944c8c6284ca54092e403f9401, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4525531515621262535, guid: 33df9b944c8c6284ca54092e403f9401, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4525531515621262535, guid: 33df9b944c8c6284ca54092e403f9401, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

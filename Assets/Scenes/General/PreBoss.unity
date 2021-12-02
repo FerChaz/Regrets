@@ -1046,6 +1046,9 @@ MonoBehaviour:
   sceneToGo: Boss
   transitionCanvas: {fileID: 0}
   canvasAnimator: {fileID: 0}
+  player: {fileID: 0}
+  playerAnimator: {fileID: 0}
+  topTime: 1
 --- !u!1 &189512147
 GameObject:
   m_ObjectHideFlags: 0
@@ -2275,6 +2278,8 @@ MonoBehaviour:
   lastDash: 0
   dashTimeLeft: 0
   dashTime: 0.15
+  audioSource: {fileID: 0}
+  clipDash: {fileID: 0}
   isDashing: 0
   dashEnabled: 1
 --- !u!114 &499224915
@@ -2298,6 +2303,8 @@ MonoBehaviour:
   smoothJump: 0
   smoothFall: 0
   dashController: {fileID: 0}
+  audioSource: {fileID: 0}
+  clipJump: {fileID: 0}
   mainCamera: {fileID: 0}
 --- !u!114 &499224916
 MonoBehaviour:
@@ -2374,6 +2381,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerModel: {fileID: 1278631072}
   playerAnimator: {fileID: 1278631076}
+  playerRotation: {x: 0, y: 0, z: 0}
+  playerRotationBack: {x: 0, y: 0, z: 0}
+  fixedPlayerRotation: {x: 0, y: 0, z: 0}
+  fixedPlayerRotationBack: {x: 0, y: 0, z: 0}
+  useMovePlayerController: 1
   inputDirection: 0
   isFacingRight: 1
   canMove: 1
@@ -2680,7 +2692,7 @@ Transform:
   - {fileID: 499224922}
   - {fileID: 1563288527}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &566496575
 GameObject:
@@ -9292,7 +9304,7 @@ Transform:
   - {fileID: 1399785310}
   - {fileID: 1398326178}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: -144.406, z: 0}
 --- !u!1 &819984141
 GameObject:
@@ -9486,7 +9498,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &846823774
 GameObject:
@@ -10639,36 +10651,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1066869655}
   m_Mesh: {fileID: 5185960415523300636, guid: 2d091cd4a09336f499023c4b9bc7a874, type: 3}
---- !u!1 &1069950700
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1069950701}
-  m_Layer: 0
-  m_Name: ------- MUSIC & FX -------
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1069950701
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1069950700}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1089676061
 GameObject:
   m_ObjectHideFlags: 0
@@ -18607,7 +18589,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9095163849187395296, guid: 5eaa9f19b007b484a80c3b6cde3688b9, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 9095163849187395296, guid: 5eaa9f19b007b484a80c3b6cde3688b9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -21449,7 +21431,7 @@ Transform:
   m_Children:
   - {fileID: 1206316253}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3065212829890134000
 GameObject:
@@ -21520,6 +21502,9 @@ MonoBehaviour:
   sceneInfo: {fileID: 11400000, guid: f345fc04864938a4b8f05d6929e96ad6, type: 2}
   transitionCanvas: {fileID: 0}
   canvasAnimator: {fileID: 0}
+  player: {fileID: 0}
+  playerAnimator: {fileID: 0}
+  topTime: 1
 --- !u!65 &3065212830086086759
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21589,6 +21574,9 @@ MonoBehaviour:
   sceneInfo: {fileID: 11400000, guid: f345fc04864938a4b8f05d6929e96ad6, type: 2}
   transitionCanvas: {fileID: 0}
   canvasAnimator: {fileID: 0}
+  player: {fileID: 0}
+  playerAnimator: {fileID: 0}
+  topTime: 1
 --- !u!65 &3065212831069751153
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21655,6 +21643,9 @@ MonoBehaviour:
   sceneToGo: MainLevel
   transitionCanvas: {fileID: 0}
   canvasAnimator: {fileID: 0}
+  player: {fileID: 0}
+  playerAnimator: {fileID: 0}
+  topTime: 1
 --- !u!65 &3065212831145481677
 BoxCollider:
   m_ObjectHideFlags: 0
