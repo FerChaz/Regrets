@@ -35,6 +35,7 @@ public class GroundEnemyPatrolController : MonoBehaviour
     public bool isFall = false;
     public bool canCheck;
     public float timeToRecover = 5;
+    public bool executed = false;
 
     [Header("Chase Variables")]
     public float chaseVelocity = 3.5f;

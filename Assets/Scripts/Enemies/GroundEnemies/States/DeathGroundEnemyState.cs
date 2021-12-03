@@ -9,6 +9,8 @@ public class DeathGroundEnemyState : State
     private GroundEnemyPatrolController _enemyController;
     private Vector3 _movement;
 
+    private float timeToDestroy = 1.5f;
+
 
     //-- INIT, UPDATE & EXIT -------------------------------------------------------------------------------------------------------
 
@@ -18,16 +20,23 @@ public class DeathGroundEnemyState : State
 
         if (_enemyController != null)
         {
+            Debug.Log($"Entra a death");
             _enemyController.isAnyStateRunning = true;
             _enemyController.PlayClipExecuteGroundEnemy();
+            timeToDestroy = 1.5f;
         }
     }
 
     public override void UpdateState(float delta) {
-        // LOGICA DE SONIDO (Creo que hay un metodo para saber si un clip se termino de reproducir)
+        if(timeToDestroy > 0)
+        {
+            timeToDestroy -= delta;
+        }
+        else
+        {
+            _enemyController.DestroyEnemy();
+        }
     }
 
-    public override void ExitState() {
-        _enemyController.DestroyEnemy();
-    }
+    public override void ExitState() { }
 }

@@ -64,9 +64,11 @@ public class GroundEnemyCombatController : MonoBehaviour
     {
         if (enemyController.isFall)
         {
+            enemyController.executed = true;
+            enemyFSM.StopAllCoroutines();
+            enemyFSM.Death();
             _playerLife.RestoreLife(1);
             _playerSouls.AddSouls(soulsToDrop);
-            enemyFSM.Death();
         }
     }
 

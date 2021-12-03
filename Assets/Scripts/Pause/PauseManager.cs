@@ -30,4 +30,9 @@ public class PauseManager : MonoBehaviour
         isActive = !isActive;
         Time.timeScale = (isActive) ? 0 : 1f; //Activa/Detiene el juego con un operador ternario
     }
+
+    public void ShowCursor()
+    {
+        Cursor.visible = true;
+    }
 }
