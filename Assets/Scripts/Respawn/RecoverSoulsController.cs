@@ -7,7 +7,7 @@ public class RecoverSoulsController : MonoBehaviour
     public GameObject model;
     public RecoverSoul recoverSoul;
 
-    // CUANDO PREGUNTAMOS POR LA ESCENA PREGUNTAR SI NO ES NULL
+    private WaitForSeconds wait = new WaitForSeconds(2f);
 
     private void Awake()
     {
@@ -17,6 +17,12 @@ public class RecoverSoulsController : MonoBehaviour
 
     public void Activate()
     {
+        StartCoroutine(WaitToActivate());
+    }
+
+    private IEnumerator WaitToActivate()
+    {
+        yield return wait;
         model.SetActive(true);
         recoverSoul.IsEnabled();
     }

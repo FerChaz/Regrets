@@ -1492,6 +1492,7 @@ MonoBehaviour:
   player: {fileID: 0}
   playerAnimator: {fileID: 0}
   topTime: 1
+  direction: -1
 --- !u!114 &83537197
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3996,6 +3997,7 @@ MonoBehaviour:
   player: {fileID: 0}
   playerAnimator: {fileID: 0}
   topTime: 1
+  direction: 1
 --- !u!114 &329213602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4284,6 +4286,7 @@ MonoBehaviour:
   player: {fileID: 0}
   playerAnimator: {fileID: 0}
   topTime: 1
+  direction: 1
 --- !u!114 &382271789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25640,6 +25643,7 @@ MonoBehaviour:
   player: {fileID: 0}
   playerAnimator: {fileID: 0}
   topTime: 1
+  direction: -1
 --- !u!114 &1648506302
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -32,6 +32,7 @@ public class KatanaController : MonoBehaviour
         {
             audioSource.clip = clipAttackHit;
             audioSource.Play();
+            Debug.Log($"APLICA DAÑO");
             other.transform.SendMessage("GetDamage", attackDetails);
         }else
         {

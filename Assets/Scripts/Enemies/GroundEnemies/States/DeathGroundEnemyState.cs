@@ -20,7 +20,6 @@ public class DeathGroundEnemyState : State
 
         if (_enemyController != null)
         {
-            Debug.Log($"Entra a death");
             _enemyController.isAnyStateRunning = true;
             _enemyController.PlayClipExecuteGroundEnemy();
             timeToDestroy = 1.5f;

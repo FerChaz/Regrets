@@ -179,6 +179,7 @@ MonoBehaviour:
   isFall: 0
   canCheck: 0
   timeToRecover: 4
+  executed: 0
   chaseVelocity: 8
   chaseRadius: 8
   knockbackForce: 3
@@ -252,7 +253,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.2
+  m_Volume: 0.09
   m_Pitch: 1
   Loop: 0
   Mute: 0

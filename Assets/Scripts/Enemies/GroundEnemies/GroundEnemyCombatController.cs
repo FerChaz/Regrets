@@ -27,7 +27,7 @@ public class GroundEnemyCombatController : MonoBehaviour
 
     public void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.CompareTag("LifeManager") && !enemyController.isFall)
+        if (other.gameObject.CompareTag("LifeManager") && !enemyController.isFall && !enemyController.executed)
         {
             Vector3 hitDirection = transform.position;
 
@@ -40,35 +40,42 @@ public class GroundEnemyCombatController : MonoBehaviour
 
     public void GetDamage(float[] damage)
     {
-        _enemyLife.RecieveDamage(damage[0]);
+        if (!enemyController.executed)
+        {
+            Debug.Log($"RECIBE DAÑO");
+            _enemyLife.RecieveDamage(damage[0]);
 
-        if (_enemyLife.currentLife > 0)
-        {
-            enemyFSM.KnockBack();
-        }
-        else
-        {
-            if (enemyController.alreadyFall)
+            if (_enemyLife.currentLife > 0)
             {
-                _playerSouls.AddSouls(soulsToDrop);
-                enemyFSM.Death();
+                enemyFSM.KnockBack();
             }
             else
             {
-                enemyFSM.FallState();
+                if (enemyController.alreadyFall)
+                {
+                    _playerSouls.AddSouls(soulsToDrop);
+                    enemyFSM.Death();
+                }
+                else
+                {
+                    enemyFSM.FallState();
+                }
             }
         }
     }
 
     public void Execute()
     {
-        if (enemyController.isFall)
+        if (!enemyController.executed)
         {
-            enemyController.executed = true;
-            enemyFSM.StopAllCoroutines();
-            enemyFSM.Death();
-            _playerLife.RestoreLife(1);
-            _playerSouls.AddSouls(soulsToDrop);
+            if (enemyController.isFall)
+            {
+                enemyController.executed = true;
+                enemyFSM.StopAllCoroutines();
+                enemyFSM.Death();
+                _playerLife.RestoreLife(1);
+                _playerSouls.AddSouls(soulsToDrop);
+            }
         }
     }
 

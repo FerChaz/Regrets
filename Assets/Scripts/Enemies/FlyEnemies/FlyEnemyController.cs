@@ -42,6 +42,7 @@ public class FlyEnemyController : MonoBehaviour
     public bool isFall = false;
     public bool alreadyFall;
     public float timeToRecover = 5;
+    public bool executed = false;
 
     [Header("Chase & Attack Variables")]
     public int chaseSpeed;

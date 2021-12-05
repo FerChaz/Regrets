@@ -33,6 +33,7 @@ public class PauseManager : MonoBehaviour
 
     public void ShowCursor()
     {
+        ChangePause();
         Cursor.visible = true;
     }
 }
