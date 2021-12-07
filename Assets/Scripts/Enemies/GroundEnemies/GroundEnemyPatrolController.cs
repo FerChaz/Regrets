@@ -58,6 +58,7 @@ public class GroundEnemyPatrolController : MonoBehaviour
     [Header("Sonido")]
     public AudioClip ejecucion;
     public AudioSource audioSource;
+    public AudioControlerEnemy audioControlerEnemy;
 
     //-- ON ENABLE ------------------------------------------------------------------------------------------------------------------
 
@@ -109,6 +110,7 @@ public class GroundEnemyPatrolController : MonoBehaviour
     public void PlayClipExecuteGroundEnemy() //Aplica y reproduce sonido de ejecion
     {
         audioSource.clip = ejecucion;
+        audioControlerEnemy.Death_Enemy();
         audioSource.Play();
     }
 

@@ -67,6 +67,7 @@ public class FlyEnemyController : MonoBehaviour
     [Header("Sonido")]
     public AudioClip ejecucion;
     public AudioSource audioSource;
+    public AudioControlerEnemy audioControlerEnemy;
 
     //-- ON ENABLE ------------------------------------------------------------------------------------------------------------------
 
@@ -118,6 +119,7 @@ public class FlyEnemyController : MonoBehaviour
     public void PlayClipExecuteGroundEnemy() //Aplica y reproduce sonido de ejecion
     {
         audioSource.clip = ejecucion;
+        audioControlerEnemy.Death_Enemy();
         audioSource.Play();
     }
 
