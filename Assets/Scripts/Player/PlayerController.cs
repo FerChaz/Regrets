@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Model & Animations")]
     [SerializeField] public GameObject playerModel;
-    [SerializeField] private Animator playerAnimator;
+    [SerializeField] public Animator playerAnimator;
     public Vector3 playerRotation;
     public Vector3 playerRotationBack;
     public Vector3 fixedPlayerRotation;

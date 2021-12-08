@@ -30,6 +30,7 @@ public class PlayerKnockback : PlayerHabilities
 
         //bridgePlayerAnimator.PlayAnimation("GettingDamage");          // KNOCKBACK / GET DAMAGE ANIMATION
         //bridgePlayerAudio.ReproduceFX("KnockBack");                   // KNOCKBACK / GET DAMAGE FX
+        _player.playerAnimator.SetTrigger("Get Hit");
 
         _player.CantMoveUntil(_player.timeToWait - 0.5f);
         

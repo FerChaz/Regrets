@@ -15,7 +15,7 @@ public class DoorToPayController : MonoBehaviour
 
     public SoulController souls;
 
-    private BoxCollider doorCollider;
+    private BoxCollider[] doorCollider;
 
     public int elevationWhenOpen;
 
@@ -25,11 +25,13 @@ public class DoorToPayController : MonoBehaviour
 
     public ObjectStatus doorState;
 
+    public Animator doorAnimator;
+
     //-- START --------------------------------------------
 
     private void Awake()
     {
-        doorCollider = GetComponent<BoxCollider>();
+        doorCollider = GetComponents<BoxCollider>();
         souls = FindObjectOfType<SoulController>();
         player = FindObjectOfType<PlayerController>();
     }
@@ -39,7 +41,8 @@ public class DoorToPayController : MonoBehaviour
         if (doorState.isDoorOpen)
         {
             transform.Translate(Vector3.up * elevationWhenOpen);
-            doorCollider.enabled = false;
+            doorCollider[0].enabled = false;
+            doorCollider[1].enabled = false;
         }
     }
 
@@ -69,9 +72,11 @@ public class DoorToPayController : MonoBehaviour
         {
             souls.DiscountSouls(soulsToOpen);
             // Iniciar animacion
-            doorCollider.enabled = false;
+            doorCollider[0].enabled = false;
+            doorCollider[1].enabled = false;
             doorState.isDoorOpen = true;
-            transform.Translate(Vector3.up * elevationWhenOpen);
+            doorAnimator.SetBool("Open", true);
+            //transform.Translate(Vector3.up * elevationWhenOpen);
             textToShow.text = "You are free to continue";
         }
         else
