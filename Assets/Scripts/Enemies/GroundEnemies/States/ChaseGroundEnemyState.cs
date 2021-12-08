@@ -36,6 +36,7 @@ public class ChaseGroundEnemyState : State
             else
             {
                 _directionToPlayer = 0;
+                _enemyController._animator.SetBool("walk", false);
             }
 
             _movement.Set(_directionToPlayer * _enemyController.chaseVelocity, _enemyController.rigidBody.velocity.y, 0.0f);
@@ -43,7 +44,6 @@ public class ChaseGroundEnemyState : State
         else
         {
             _movement.Set(0.0f, _enemyController.rigidBody.velocity.y, 0.0f);
-
             //_enemyController.chaseRadius = 4.0f;
         }
 

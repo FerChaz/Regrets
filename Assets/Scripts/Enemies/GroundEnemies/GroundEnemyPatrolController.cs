@@ -15,7 +15,7 @@ public class GroundEnemyPatrolController : MonoBehaviour
     public Rigidbody rigidBody;
     public Material material;
     public GameObject model;
-    //public Animator _animator;
+    public Animator _animator;
 
     [Header("Ground Check Variables")]
     [SerializeField] private Transform _groundCheck;
@@ -70,7 +70,7 @@ public class GroundEnemyPatrolController : MonoBehaviour
     private void Start()
     {
         rigidBody = GetComponent<Rigidbody>();
-        //_animator = GetComponent<Animator>();
+        _animator = GetComponentInChildren<Animator>();
 
         material = GetComponent<Renderer>().material;
         material.color = Color.white;
