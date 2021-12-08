@@ -35,6 +35,7 @@ public class GroundEnemyPatrolController : MonoBehaviour
     public bool isFall = false;
     public bool canCheck;
     public float timeToRecover = 5;
+    public bool executed = false;
 
     [Header("Chase Variables")]
     public float chaseVelocity = 3.5f;
@@ -57,6 +58,7 @@ public class GroundEnemyPatrolController : MonoBehaviour
     [Header("Sonido")]
     public AudioClip ejecucion;
     public AudioSource audioSource;
+    public AudioControlerEnemy audioControlerEnemy;
 
     //-- ON ENABLE ------------------------------------------------------------------------------------------------------------------
 
@@ -108,6 +110,7 @@ public class GroundEnemyPatrolController : MonoBehaviour
     public void PlayClipExecuteGroundEnemy() //Aplica y reproduce sonido de ejecion
     {
         audioSource.clip = ejecucion;
+        audioControlerEnemy.Death_Enemy();
         audioSource.Play();
     }
 

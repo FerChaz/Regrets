@@ -94,9 +94,6 @@ public class GroundEnemyPatrolFSM : FiniteStateMachine
 
         SwitchState(_patrolState, _enemyController);
         StartCoroutine(PatrolControlCoroutine());
-
-        //yield return new WaitForSeconds(2);
-        //_enemyController.chaseRadius = 8.6f;
     }
 
 
@@ -157,9 +154,10 @@ public class GroundEnemyPatrolFSM : FiniteStateMachine
 
         //if (_enemyController.executed)
         //{
+        //    Debug.Log($"EJECUTADO");
         //    Death();
+        //    StopAllCoroutines();
         //}
-        //else 
 
         _enemyLife.RestoreTotalLife();
 
