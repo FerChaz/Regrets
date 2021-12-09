@@ -19,4 +19,6 @@ MonoBehaviour:
   - Las llaves de mi hogar se cayeron en el cementerio y no puedo ir a buscarlas.
   - ...
   - Le tengo demasiado miedo a las tumbas.
-  responses: []
+  responses:
+  - responseText: Continuar
+    dialogObject: {fileID: 11400000, guid: 5e15c6c8b656ceb408070f962e6bd498, type: 2}
