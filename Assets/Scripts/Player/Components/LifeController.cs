@@ -85,6 +85,8 @@ public class LifeController : MonoBehaviour
     {
         maxLife += life;                        // FALTA CAMBIAR LA UI
         currentLife.initialValue = maxLife;
+
+        lowLifeCanvas.SetActive(false);
     }
 
     public void RecieveDamage(int damage, Vector3 direction, bool isEnemy)
@@ -138,9 +140,7 @@ public class LifeController : MonoBehaviour
 
     private void Death()
     {
-        //deathFade.SetActive(true);
-
-        // ACTIVAR ANIMACION
+        knockbackController.DeathKnockBack();
         playerController.Death();
         currentLife.initialValue = maxLife;
         playerHealthSignal.Raise(); // CHANGE UI

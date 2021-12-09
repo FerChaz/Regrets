@@ -69,7 +69,7 @@ public class GroundEnemyPatrolController : MonoBehaviour
 
     //-- START & UPDATE ------------------------------------------------------------------------------------------------------------
 
-    private void Start()
+    private void Awake()
     {
         rigidBody = GetComponent<Rigidbody>();
         _animator = GetComponentInChildren<Animator>();

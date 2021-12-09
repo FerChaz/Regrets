@@ -13,6 +13,10 @@ public class PlayerCombatAC : MonoBehaviour
     private const string COMBO = "Combo";
 
     public KatanaController katana;
+    private int attackCounter = 0;
+
+    public GameObject weapon;
+    public ParticleSystem weaponParticle;
 
     private void Start()
     {
@@ -38,6 +42,10 @@ public class PlayerCombatAC : MonoBehaviour
         }
     }
 
+    public void ReproduceSound(int attackSound)
+    {
+        katana.AttackSound(attackSound);
+    }
 
     public void CanCombo()
     {
@@ -82,5 +90,16 @@ public class PlayerCombatAC : MonoBehaviour
         }
         return false;
     }
+
+    public void StartSlash()
+    {
+        weaponParticle.Play();
+    }
+
+    public void StopSlash()
+    {
+        weaponParticle.Stop();
+    }
+
 
 }

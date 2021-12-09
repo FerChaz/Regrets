@@ -12,6 +12,7 @@ public class KatanaController : MonoBehaviour
     [Header("Sonidos Katana")]
     public AudioSource audioSource;
     public AudioClip clipAttackAir;
+    public List<AudioClip> clipsAttacksAir;
     public AudioClip clipAttackHit;
 
 
@@ -22,21 +23,25 @@ public class KatanaController : MonoBehaviour
 
     private void Start()
     {
-        
         attackDetails[0] = damage;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        audioSource.clip = clipAttackHit;
-        audioSource.Play();
+        
         if (other.gameObject.layer == 7)
         {
-            Debug.Log($"APLICA DAÑO");
+            audioSource.clip = clipAttackHit;
+            audioSource.Play();
             other.transform.SendMessage("GetDamage", attackDetails);
         }
     }
 
-    
+    public void AttackSound(int attackCounter)
+    {
+        audioSource.clip = clipsAttacksAir[attackCounter];
+        audioSource.Play();
+    }
+
 
 }

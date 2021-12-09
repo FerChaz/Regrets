@@ -15,6 +15,11 @@ public class PatrolGroundEnemyState : State
     public override void InitState<T>(T param)
     {
         _enemyController = param as GroundEnemyPatrolController;
+        if (_enemyController != null)
+        {
+            _enemyController._animator.SetBool("walk", true);
+            _enemyController._animator.SetFloat("animSpeed", 1f);
+        }
     }
 
     public override void UpdateState(float delta)

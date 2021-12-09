@@ -20,6 +20,7 @@ public class DeathGroundEnemyState : State
 
         if (_enemyController != null)
         {
+            _enemyController._animator.SetBool("walk", false);
             _enemyController.isAnyStateRunning = true;
             _enemyController.PlayClipExecuteGroundEnemy();
             timeToDestroy = 1.5f;

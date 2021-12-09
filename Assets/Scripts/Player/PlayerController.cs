@@ -56,6 +56,7 @@ public class PlayerController : MonoBehaviour
     public float gravityScale = 1.0f;
     public float globalGravity = -9.81f;
     private Vector3 _gravity;
+    public bool canChangeGravity;
 
     //private AudioManager audioManager;
     [Header("Main Camera")]
@@ -77,12 +78,12 @@ public class PlayerController : MonoBehaviour
         rigidBody = GetComponent<Rigidbody>();
         deathRespawn = GetComponent<DeathRespawnAndRecover>();
         mainCamera = FindObjectOfType<MainCamera>();
+        playerAnimator = GetComponentInChildren<Animator>();
     }
 
     void Start()
     {
         rigidBody.useGravity = false;
-        //respawn.respawnPosition = new Vector3(-283f, 1f, 0.0f);
         //audioManager = GetComponent<AudioManager>();
 
         
@@ -222,10 +223,13 @@ public class PlayerController : MonoBehaviour
 
         deathRespawn.Death();
 
+        playerAnimator.SetTrigger("Death");
+
         if (!isFacingRight)
         {
             Flip();
         }
+
 
         //CantMoveUntil(timeToWait + 1f);
     }
@@ -275,7 +279,9 @@ public class PlayerController : MonoBehaviour
     IEnumerator WaitTimeCO(float time)
     {
         yield return new WaitForSeconds(time);
-        ChangeCanDoAnyMovement();
+        canMove = true;
+        canJump = true;
+        canDash = true;
     }
 
     public void ChangeCanDoAnyMovement()

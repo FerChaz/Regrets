@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.005613903, g: 0.014590438, b: 0.06470939, a: 1}
+  m_IndirectSpecularColor: {r: 0.0056186034, g: 0.01458778, b: 0.06467861, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -455,7 +455,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -13099,7 +13099,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 31c4374aa7fa0264a9a5fee915536017, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.51
+  m_Volume: 0.28
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -13247,6 +13247,7 @@ MonoBehaviour:
   rigidBody: {fileID: 0}
   gravityScale: 1
   globalGravity: -9.81
+  canChangeGravity: 1
   mainCamera: {fileID: 0}
   multiplierX: 3
   bridgePlayerAnimator: {fileID: 1889261197}
@@ -15855,7 +15856,11 @@ MonoBehaviour:
   - 0
   weaponCollider: {fileID: 0}
   audioSource: {fileID: 3928635820296684818}
-  clipAttackAir: {fileID: 8300000, guid: 48fc9b195b2e14d478faaf9076ca2da7, type: 3}
+  clipAttackAir: {fileID: 8300000, guid: b23f13d8897a1bd48a2f00136fa81d3e, type: 3}
+  clipsAttacksAir:
+  - {fileID: 8300000, guid: b23f13d8897a1bd48a2f00136fa81d3e, type: 3}
+  - {fileID: 8300000, guid: 69f828a28ddac8a46ac46afd72391737, type: 3}
+  - {fileID: 8300000, guid: 3f1b71018ba13794f873f7b607d6b3a6, type: 3}
   clipAttackHit: {fileID: 8300000, guid: a27624690b875384a9a522546b76e32e, type: 3}
 --- !u!82 &3928635820296684818
 AudioSource:
@@ -15869,7 +15874,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.139
+  m_Volume: 0.15
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -16426,6 +16431,8 @@ MonoBehaviour:
   comboPossible: 0
   doCombo: 0
   katana: {fileID: 0}
+  weapon: {fileID: 3928635820296684815}
+  weaponParticle: {fileID: 1051218132}
 --- !u!4 &5242377824580999839
 Transform:
   m_ObjectHideFlags: 0

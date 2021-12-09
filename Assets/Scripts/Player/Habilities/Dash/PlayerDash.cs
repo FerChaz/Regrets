@@ -39,6 +39,7 @@ public class PlayerDash : PlayerHabilities
         {
             _player.canMove = false;
             _player.canJump = false;
+            _player.canChangeGravity = false;
 
 
             _player.gravityScale = 0;
@@ -77,6 +78,7 @@ public class PlayerDash : PlayerHabilities
             if (dashTimeLeft <= 0)
             {
                 isDashing = false;
+                _player.canChangeGravity = true;
                 _player.gravityScale = 8f;                      // lowJumpMultiplier in PlayerJump
                 _player.canMove = true;
                 _player.canJump = true;

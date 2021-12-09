@@ -8,14 +8,27 @@ public class AuidoHealtControler : MonoBehaviour
     public AudioClip healtClips;
     public IntValue currentLife;
     public bool active=false;
+
+    private void Start()
+    {
+        audioSource.clip = healtClips;
+    }
+
     private void Update()
     {
-        if (currentLife.initialValue<=2 && active==false) StartHealtClip();
-        if (currentLife.initialValue>=3&&active==true) StopHealtClip();
+        if (currentLife.initialValue == 1 && !active)
+        {
+            StartHealtClip();
+        }
+        else if (currentLife.initialValue > 1 && active)
+        {
+            StopHealtClip();
+        }
+        
     }
+
     private void StartHealtClip()
     {
-        audioSource.clip=healtClips;
         audioSource.Play();
         active = true;
     }

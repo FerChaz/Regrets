@@ -29,14 +29,6 @@ public class PlayerCombatController : MonoBehaviour
 
     private void Update()
     {
-        //Cochinada de FER - BORRAR
-        if(!playerAnimator.Animation1IsPlaying())
-        {
-            ParticleSystem weaponTrails = weapon.GetComponentInChildren(typeof(ParticleSystem), true) as ParticleSystem;
-            weaponTrails.Stop();
-        }
-        //-------------------------------
-
         CheckCombatInput();
 
         if (weaponHideCooldown >= 0) 
@@ -59,9 +51,7 @@ public class PlayerCombatController : MonoBehaviour
         if (Input.GetButtonDown("Attack") && canAttack)
         {
             weapon.SetActive(true);
-            ParticleSystem weaponTrails = weapon.GetComponentInChildren(typeof(ParticleSystem), true) as ParticleSystem; // ARREGLAR URGENTE
-            weaponTrails.Play();
-
+            
             playerAnimator.Attack();
 
             weaponHideCooldown = 3;

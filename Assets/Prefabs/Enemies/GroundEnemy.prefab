@@ -186,6 +186,7 @@ MonoBehaviour:
   rigidBody: {fileID: 0}
   material: {fileID: 2100000, guid: 80ccb082f4bfaba49a10affedba31440, type: 2}
   model: {fileID: 1319148770661044507}
+  _animator: {fileID: 0}
   _groundCheck: {fileID: 1319148771135634141}
   _groundCheckDistance: 0.5
   groundDetected: 0
@@ -275,7 +276,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.09
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -372,7 +373,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   caracteristicSoundEnemis: []
-  death: {fileID: 8300000, guid: 0a2de6c8c9cc61c498b3e85e958a28f6, type: 3}
+  death: {fileID: 8300000, guid: 833603db89f1e044790370f7b37cd266, type: 3}
   recubirDamange: {fileID: 8300000, guid: a27624690b875384a9a522546b76e32e, type: 3}
   audioSource: {fileID: 2043177499268456803}
 --- !u!82 &2043177499268456803
@@ -387,7 +388,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -822,14 +823,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27b298c514be9074398a7194460038e5, type: 3}
---- !u!4 &706338765368831739 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 27b298c514be9074398a7194460038e5, type: 3}
-  m_PrefabInstance: {fileID: 1029022075267369232}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &182039482916533313 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 27b298c514be9074398a7194460038e5, type: 3}
+  m_PrefabInstance: {fileID: 1029022075267369232}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &706338765368831739 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 27b298c514be9074398a7194460038e5, type: 3}
   m_PrefabInstance: {fileID: 1029022075267369232}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2282713445193374878

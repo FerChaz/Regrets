@@ -37,7 +37,7 @@ public class ChaseFlyEnemyState : State
 
             _movement = _direction * _enemyController.chaseSpeed;
             _enemyController.rigidBody.velocity = _movement;
-            _enemyController.model.transform.LookAt(_enemyController.player.transform);
+            //_enemyController.model.transform.LookAt(_enemyController.player.transform);
         }
     }
 

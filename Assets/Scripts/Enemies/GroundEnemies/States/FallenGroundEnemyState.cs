@@ -20,6 +20,7 @@ public class FallenGroundEnemyState : State
 
         if (_enemyController != null)
         {
+            _enemyController._animator.SetBool("walk", false);
             _enemyController.isAnyStateRunning = true;
             _enemyController.isFall = true;
 
@@ -31,6 +32,8 @@ public class FallenGroundEnemyState : State
             _enemyController.material.color = Color.black;
 
             _enemyController.canvas.SetActive(true);
+
+            
             // ACTIVAR ANIMACION O EFECTO DE PARTICULAS
         }
     }
@@ -54,6 +57,8 @@ public class FallenGroundEnemyState : State
         _enemyController.isFall = false;
         _enemyController.material.color = Color.white;
         _enemyController.canvas.SetActive(false);
+
+        //_enemyController._animator.SetBool("walk", true);
     }
 
 }

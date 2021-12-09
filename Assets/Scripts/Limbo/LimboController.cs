@@ -56,14 +56,21 @@ public class LimboController : MonoBehaviour
     {
         if (_random == 1)
         {
-            sceneController.UnloadSceneInAdditive("Limbo1", OnSceneComplete);
+            StartCoroutine(WaitToUnload("Limbo1"));
         }
         else
         {
-            sceneController.UnloadSceneInAdditive("Limbo2", OnSceneComplete);
+            StartCoroutine(WaitToUnload("Limbo2"));
         }
             
     }
+
+    IEnumerator WaitToUnload(string limbo)
+    {
+        yield return wait;
+        sceneController.UnloadSceneInAdditive(limbo, OnSceneComplete);
+    }
+
 
     IEnumerator WaitToChange(Vector3 position)
     {

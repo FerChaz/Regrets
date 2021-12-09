@@ -8,6 +8,7 @@ public class PlayerKnockback : PlayerHabilities
 
     [Header("Knockback Variables")]
     [SerializeField] private Vector3 knockbackForce;
+    private WaitForSeconds wait = new WaitForSeconds(1);
 
 
     //-- ENEMY KNOCKBACK -----------------------------------------------------------------------------------------------------------
@@ -28,11 +29,10 @@ public class PlayerKnockback : PlayerHabilities
 
         _player.rigidBody.AddForce(movement, ForceMode.Impulse);
 
-        //bridgePlayerAnimator.PlayAnimation("GettingDamage");          // KNOCKBACK / GET DAMAGE ANIMATION
         //bridgePlayerAudio.ReproduceFX("KnockBack");                   // KNOCKBACK / GET DAMAGE FX
+        _player.CantMoveUntil(_player.timeToWait - 0.5f);
         _player.playerAnimator.SetTrigger("Get Hit");
 
-        _player.CantMoveUntil(_player.timeToWait - 0.5f);
         
     }
 
@@ -44,7 +44,6 @@ public class PlayerKnockback : PlayerHabilities
         movement.Set(0.0f, knockbackForce.y, 0.0f);
         _player.rigidBody.AddForce(movement, ForceMode.Impulse);
 
-        //bridgePlayerAnimator.PlayAnimation("GettingDamage");          // KNOCKBACK / GET DAMAGE ANIMATION
         //bridgePlayerAudio.ReproduceFX("KnockBack");                   // KNOCKBACK / GET DAMAGE FX
 
         transform.position = respawnZone;
@@ -55,5 +54,25 @@ public class PlayerKnockback : PlayerHabilities
         }
 
         _player.CantMoveUntil(_player.timeToWait - 0.5f);
+        _player.playerAnimator.SetTrigger("Get Hit");
+    }
+
+    //-- DEATH KNOCKBACK -----------------------------------------------------------------------------------------------------------
+
+    public void DeathKnockBack()
+    {
+        _player.canChangeGravity = false;
+        _player.gravityScale = 0;
+        movement.Set(0.0f, 10f, 0.0f);
+        _player.rigidBody.AddForce(movement, ForceMode.Impulse);
+        _player.CantMoveUntil(_player.timeToWait);
+        StartCoroutine(WaitToChangeGravity());
+    }
+
+    IEnumerator WaitToChangeGravity()
+    {
+        yield return wait;
+        _player.gravityScale = 8;
+        _player.canChangeGravity = true;
     }
 }

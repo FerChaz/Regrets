@@ -20,6 +20,8 @@ public class ChaseGroundEnemyState : State
         if (_enemyController != null) 
         {
             _enemyController.material.color = Color.blue;
+            _enemyController._animator.SetBool("walk", true);
+            _enemyController._animator.SetFloat("animSpeed", 3f);
         }
     }
 
@@ -36,7 +38,7 @@ public class ChaseGroundEnemyState : State
             else
             {
                 _directionToPlayer = 0;
-                _enemyController._animator.SetBool("walk", false);
+                //_enemyController._animator.SetBool("walk", false);
             }
 
             _movement.Set(_directionToPlayer * _enemyController.chaseVelocity, _enemyController.rigidBody.velocity.y, 0.0f);
@@ -44,7 +46,6 @@ public class ChaseGroundEnemyState : State
         else
         {
             _movement.Set(0.0f, _enemyController.rigidBody.velocity.y, 0.0f);
-            //_enemyController.chaseRadius = 4.0f;
         }
 
         _enemyController.rigidBody.velocity = _movement;
@@ -52,6 +53,7 @@ public class ChaseGroundEnemyState : State
 
     public override void ExitState() 
     {
+        _enemyController._animator.SetFloat("animSpeed", 1f);
         _enemyController.material.color = Color.white;
     }
 

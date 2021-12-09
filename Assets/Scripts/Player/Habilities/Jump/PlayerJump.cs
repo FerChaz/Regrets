@@ -44,7 +44,8 @@ public class PlayerJump : PlayerHabilities
             audioSource.Play();
         }
 
-        if (!dashController.isDashing)
+        //if (!dashController.isDashing)
+        if (_player.canChangeGravity)
         {
             if (_player.rigidBody.velocity.y < 0.0f)
             {
