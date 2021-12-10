@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.005613903, g: 0.014590438, b: 0.06470939, a: 1}
+  m_IndirectSpecularColor: {r: 0.0056186034, g: 0.01458778, b: 0.06467861, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1880,8 +1880,8 @@ MonoBehaviour:
   sceneManager: {fileID: 870034255}
   loadingCanvas: {fileID: 858599384}
   respawnInfo: {fileID: 11400000, guid: f109a9748cb379b4d8e8478798f474ad, type: 2}
-  initialPosition: {x: 505, y: -22, z: 0}
-  initialScene: PreBoss
+  initialPosition: {x: -412, y: 1, z: 0}
+  initialScene: Intro
 --- !u!4 &540182176
 Transform:
   m_ObjectHideFlags: 0
