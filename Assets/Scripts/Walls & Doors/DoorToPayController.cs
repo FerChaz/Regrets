@@ -27,6 +27,7 @@ public class DoorToPayController : MonoBehaviour
 
     public Animator doorAnimator;
 
+    public AudioDoorControler audioDoorControler;
     //-- START --------------------------------------------
 
     private void Awake()
@@ -34,6 +35,7 @@ public class DoorToPayController : MonoBehaviour
         doorCollider = GetComponents<BoxCollider>();
         souls = FindObjectOfType<SoulController>();
         player = FindObjectOfType<PlayerController>();
+        audioDoorControler = GetComponent<AudioDoorControler>();
     }
 
     private void Start()
@@ -70,6 +72,7 @@ public class DoorToPayController : MonoBehaviour
     {
         if (souls.TotalSouls() >= soulsToOpen)
         {
+            audioDoorControler.ClipOpenDoor(); //Reproduce sonido de apertura de Reja
             souls.DiscountSouls(soulsToOpen);
             // Iniciar animacion
             doorCollider[0].enabled = false;

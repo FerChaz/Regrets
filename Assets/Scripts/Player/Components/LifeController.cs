@@ -40,6 +40,8 @@ public class LifeController : MonoBehaviour
     [Header("LowLifeCanvas")]
     public GameObject lowLifeCanvas;
 
+    [Header("Script Sonido Daño y muerte ")]
+    public AudioRecibeDañoPlayer recibeDañoPlayer;
     //-- START ---------------------------------------------------------------------------------------------------------------------
 
     private void Awake()
@@ -48,6 +50,7 @@ public class LifeController : MonoBehaviour
         playerController = GetComponentInParent<PlayerController>();
         knockbackController = GetComponentInParent<PlayerKnockback>();
         soulsController = FindObjectOfType<SoulController>();
+        recibeDañoPlayer = GetComponent<AudioRecibeDañoPlayer>();
     }
 
     private void Start()
@@ -99,6 +102,7 @@ public class LifeController : MonoBehaviour
 
             if (currentLife.initialValue > 0)
             {
+                recibeDañoPlayer.AudioDañoPlayer();       //   Reproduce el sonido de daño
                 knockbackController.KnockBackGetFromSpikes(direction);
 
                 if (currentLife.initialValue == 1)
@@ -120,6 +124,7 @@ public class LifeController : MonoBehaviour
 
             if (currentLife.initialValue > 0)
             {
+                recibeDañoPlayer.AudioDañoPlayer();       //   Reproduce el sonido de daño
                 playerHealthSignal.Raise(); // CHANGE UI
                 knockbackController.KnockBackGetFromEnemy(direction);
 
@@ -140,6 +145,7 @@ public class LifeController : MonoBehaviour
 
     private void Death()
     {
+        recibeDañoPlayer.AudioMuertePlayer();//Reproduce Audio Muerte
         knockbackController.DeathKnockBack();
         playerController.Death();
         currentLife.initialValue = maxLife;
