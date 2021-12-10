@@ -61,6 +61,7 @@
     <Compile Include="Assets\Scripts\Enemies\FlyEnemies\States\FallenFlyEnemyState.cs" />
     <Compile Include="Assets\Scripts\Player\AnimationsBridges\PlayerAnimatorController.cs" />
     <Compile Include="Assets\Scripts\Respawn\RespawnController.cs" />
+    <Compile Include="Assets\Scripts\Walls &amp; Doors\DesactivatesWalls.cs" />
     <Compile Include="Assets\Scripts\Enemies\FlyEnemies\States\DeathFlyEnemyState.cs" />
     <Compile Include="Assets\AmplifyShaderEditor\Examples\Official\SimpleGPUInstancing\SimpleGPUInstancingExample.cs" />
     <Compile Include="Assets\Scripts\Inventory\MarketKey\MarketParcaKey.cs" />
@@ -131,6 +132,7 @@
     <Compile Include="Assets\Scripts\Player\Habilities\Dash\PlayerDash.cs" />
     <Compile Include="Assets\Scripts\SceneManager\EnableFade.cs" />
     <Compile Include="Assets\Scripts\Enemies\FlyEnemies\States\ChargeFlyEnemyState.cs" />
+    <Compile Include="Assets\Scripts\Walls &amp; Doors\ActivateWall.cs" />
     <Compile Include="Assets\Scripts\Enemies\FlyEnemies\FlyEnemyController.cs" />
     <Compile Include="Assets\Scripts\Enemies\Patrol\PatrolGroundedEnemy.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\SignalSender.cs" />
@@ -177,6 +179,7 @@
     <Compile Include="Assets\Scripts\Enemies\Patrol\PatrolEnemyBase.cs" />
     <Compile Include="Assets\Scripts\FSM\State.cs" />
     <Compile Include="Assets\Scripts\ProgressController\SessionData.cs" />
+    <Compile Include="Assets\Scripts\Inventory\MarketKey\BlockMovePlayer.cs" />
     <Compile Include="Assets\Scripts\Walls &amp; Doors\InvisibleWall.cs" />
     <Compile Include="Assets\Dialogue\DialogueSystem\DialogObject.cs" />
     <Compile Include="Assets\Scripts\Limbo\Quests\LimboTimeCuest.cs" />
@@ -214,9 +217,15 @@
     <Compile Include="Assets\Packs\FadeObstructions\Reyn\Visual\Fade\FadeObjectOptions.cs" />
     <Compile Include="Assets\Animations\Animations\Kaori\Attack\Scripts\Transition2Behaviour.cs" />
     <Compile Include="Assets\Scripts\Player\AudioBridges\BridgePlayerAudio.cs" />
-    <Compile Include="Assets\Scripts\Walls &amp; Doors\ActivateWall.cs" />
-    <Compile Include="Assets\Scripts\Walls &amp; Doors\DesactivatesWalls.cs" />
-    <Compile Include="Assets\Scripts\Inventory\MarketKey\BlockMovePlayer.cs" />
+    <Compile Include="Assets\Packs\PowerUp\Scripts\TakeablePowerUp.cs" />
+    <Compile Include="Assets\Packs\PowerUp\Scripts\Utility\Singleton.cs" />
+    <Compile Include="Assets\Packs\PowerUp\Scripts\PowerUpManager.cs" />
+    <Compile Include="Assets\Packs\PowerUp\Scripts\CustomizablePowerUp.cs" />
+    <Compile Include="Assets\Packs\PowerUp\Scripts\PowerUpRotation.cs" />
+    <Compile Include="Assets\Packs\PowerUp\Scripts\ScaleParticles.cs" />
+    <Compile Include="Assets\Packs\Particle Ribbon by Moonflower Carnivore\Scripts\ReverseNormals.cs" />
+    <Compile Include="Assets\Packs\Particle Ribbon by Moonflower Carnivore\Scripts\randomParticleRotation.cs" />
+    <Compile Include="Assets\Packs\Particle Ribbon by Moonflower Carnivore\Scripts\rotation.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Packs\Fantasy Adventure Environment\Shaders\VS_InstancedIndirect.cginc" />
@@ -258,6 +267,7 @@
     <None Include="Assets\AmplifyShaderEditor\Examples\Official\StencilExample\Portals\Portal03\StencilDiffuse03.shader" />
     <None Include="Assets\AmplifyShaderEditor\CreatingTerrainsWithASE.txt" />
     <None Include="Assets\AmplifyShaderEditor\Plugins\EditorResources\Previews\Preview_ATan2OpNode.shader" />
+    <None Include="Assets\Packs\Particle Ribbon by Moonflower Carnivore\readme_Simple_Particle_Ribbon.txt" />
     <None Include="Assets\AmplifyShaderEditor\Plugins\EditorResources\Previews\Preview_TFHCCompareWithRange.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\AmplifyShaderEditor\Plugins\EditorResources\Previews\Preview_WorldSpaceLightPosNode.shader" />
@@ -341,6 +351,7 @@
     <None Include="Assets\AmplifyShaderEditor\Examples\Official\RadialUVDistortion\RadialUVDistortion.shader" />
     <None Include="Assets\AmplifyShaderEditor\Plugins\EditorResources\Previews\Preview_DotProductOpNode.shader" />
     <None Include="Assets\Packs\Fantasy Adventure Environment\Shaders\FAE_TreeBranch.shader" />
+    <None Include="Assets\Packs\Particle Ribbon by Moonflower Carnivore\Shaders\Particle Alpha Blend HDR.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\AmplifyShaderEditor\Examples\Official\Substance2018\Readme.txt" />
     <None Include="Assets\AmplifyShaderEditor\Plugins\EditorResources\Previews\Preview_SmoothstepOpNode.shader" />
