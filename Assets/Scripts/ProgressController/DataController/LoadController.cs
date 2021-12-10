@@ -24,7 +24,6 @@ public class LoadController : MonoBehaviour
         LoadDoors();
         LoadEvents();
 
-        respawnInfo.isRespawning = true;
         SceneManager.LoadScene("Start");
     }
 
@@ -44,6 +43,7 @@ public class LoadController : MonoBehaviour
     {
         respawnInfo.sceneToRespawn= SessionData.Data.spawnScene;
         respawnInfo.respawnPosition= SessionData.Data.spawnPlayerPosition;
+        respawnInfo.isRespawning = true;
     }
 
     private void LoadChests()

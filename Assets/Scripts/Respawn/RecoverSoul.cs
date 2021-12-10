@@ -35,7 +35,6 @@ public class RecoverSoul : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Debug.Log($"RECUPERA");
             soulController.AddSouls(_totalSouls);
             recoverData.needRecover = false;
             gameObject.SetActive(false);

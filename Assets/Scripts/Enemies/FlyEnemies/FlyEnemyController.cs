@@ -42,6 +42,7 @@ public class FlyEnemyController : MonoBehaviour
     public bool isFall = false;
     public bool alreadyFall;
     public float timeToRecover = 5;
+    public bool executed = false;
 
     [Header("Chase & Attack Variables")]
     public int chaseSpeed;
@@ -66,6 +67,7 @@ public class FlyEnemyController : MonoBehaviour
     [Header("Sonido")]
     public AudioClip ejecucion;
     public AudioSource audioSource;
+    public AudioControlerEnemy audioControlerEnemy;
 
     //-- ON ENABLE ------------------------------------------------------------------------------------------------------------------
 
@@ -117,6 +119,7 @@ public class FlyEnemyController : MonoBehaviour
     public void PlayClipExecuteGroundEnemy() //Aplica y reproduce sonido de ejecion
     {
         audioSource.clip = ejecucion;
+        audioControlerEnemy.Death_Enemy();
         audioSource.Play();
     }
 

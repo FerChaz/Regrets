@@ -22,7 +22,9 @@ public class ExitScene : MonoBehaviour
     public PlayerAnimatorController playerAnimator;
     public float topTime = 1;
     private Vector3 movement;
-    private float direction;
+    public int direction;
+
+
 
     private void Awake()
     {
@@ -38,21 +40,13 @@ public class ExitScene : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            if (player.isFacingRight)
-            {
-                direction = 1;
-            }
-            else
-            {
-                direction = -1;
-            }
-
             StartCoroutine(Move());
+            movement.Set(15f * direction, 0.0f, 0.0f);
+
             CanvasTransition();
 
             StartCoroutine(WaitForFade());
 
-            movement.Set(15f * direction, 0.0f, 0.0f);
         }
     }
 

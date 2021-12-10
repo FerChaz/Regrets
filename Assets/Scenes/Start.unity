@@ -381,6 +381,8 @@ GameObject:
   - component: {fileID: 127244581}
   - component: {fileID: 127244582}
   - component: {fileID: 127244583}
+  - component: {fileID: 127244585}
+  - component: {fileID: 127244584}
   m_Layer: 0
   m_Name: LifeController
   m_TagString: LifeManager
@@ -441,6 +443,118 @@ MonoBehaviour:
   soulsToRecover: {fileID: 11400000, guid: 0d55266bc5806974a9620bf273e65772, type: 2}
   modelToShow: {fileID: 0}
   lowLifeCanvas: {fileID: 1768610486}
+--- !u!82 &127244584
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 127244580}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &127244585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 127244580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64cf59bfadd586b41b85cc8ae413a102, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 127244584}
+  healtClips: {fileID: 8300000, guid: f73175f0c7ec7934ab8a62bfc34ecc60, type: 3}
+  currentLife: {fileID: 11400000, guid: 7ecd07838980fae4a86b735a504a612a, type: 2}
+  active: 0
 --- !u!1 &179574241
 GameObject:
   m_ObjectHideFlags: 0
@@ -902,7 +1016,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &344856937
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1652,6 +1766,8 @@ MonoBehaviour:
   sceneManager: {fileID: 870034255}
   loadingCanvas: {fileID: 858599384}
   respawnInfo: {fileID: 11400000, guid: f109a9748cb379b4d8e8478798f474ad, type: 2}
+  initialPosition: {x: -412, y: 1, z: 0}
+  initialScene: Intro
 --- !u!4 &540182176
 Transform:
   m_ObjectHideFlags: 0
@@ -7697,7 +7813,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.392}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -12981,7 +13097,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 63124133adc3d2a43bdd9691ea266af3, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 31c4374aa7fa0264a9a5fee915536017, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.51
   m_Pitch: 1
@@ -13251,7 +13367,7 @@ MonoBehaviour:
   smoothFall: 0.05
   dashController: {fileID: 0}
   audioSource: {fileID: 1537300087}
-  clipJump: {fileID: 8300000, guid: 904b203c439d9da4aa8f97586ea4a643, type: 3}
+  clipJump: {fileID: 8300000, guid: 8d738c93ab179f64cb50ea545e551938, type: 3}
   mainCamera: {fileID: 0}
 --- !u!114 &1537300096
 MonoBehaviour:
@@ -13288,7 +13404,7 @@ MonoBehaviour:
   dashTimeLeft: 0
   dashTime: 0.15
   audioSource: {fileID: 1537300087}
-  clipDash: {fileID: 8300000, guid: 63124133adc3d2a43bdd9691ea266af3, type: 3}
+  clipDash: {fileID: 8300000, guid: 31c4374aa7fa0264a9a5fee915536017, type: 3}
   isDashing: 0
   dashEnabled: 1
 --- !u!114 &1537300098
@@ -14230,6 +14346,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: MainMenu
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1723961452}
+        m_TargetAssemblyTypeName: PauseManager, Assembly-CSharp
+        m_MethodName: ShowCursor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2105232928
@@ -15741,7 +15869,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.269
+  m_Volume: 0.139
   m_Pitch: 1
   Loop: 0
   Mute: 0

@@ -28,15 +28,12 @@ public class KatanaController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.layer == 7)
+        audioSource.clip = clipAttackHit;
+        audioSource.Play();
+        if (other.gameObject.layer == 7)
         {
-            audioSource.clip = clipAttackHit;
-            audioSource.Play();
+            Debug.Log($"APLICA DAÑO");
             other.transform.SendMessage("GetDamage", attackDetails);
-        }else
-        {
-            audioSource.clip = clipAttackAir;
-            audioSource.Play();
         }
     }
 

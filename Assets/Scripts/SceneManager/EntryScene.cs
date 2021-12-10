@@ -24,7 +24,7 @@ public class EntryScene : MonoBehaviour
     public PlayerAnimatorController playerAnimator;
     public float topTime = 1;
     private Vector3 movement;
-    private float direction;
+    public float direction;
 
     private void Awake()
     {
@@ -40,15 +40,6 @@ public class EntryScene : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            if (player.isFacingRight)
-            {
-                direction = 1;
-            }
-            else
-            {
-                direction = -1;
-            }
-
             ActualiceSceneInfo();
 
             activableObjects.SetActive(true);               // Enable enemies
