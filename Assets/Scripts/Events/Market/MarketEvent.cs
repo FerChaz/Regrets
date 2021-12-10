@@ -4,14 +4,19 @@ using UnityEngine;
 
 public class MarketEvent : MonoBehaviour
 {
-    public ObjectStatus eventHappened;
+    public IntValue dialogueToActive;
+    public int dialogueIdentifier;
 
 
     private void Start()
     {
-        if (eventHappened.eventAlreadyHappened)
+        if(dialogueToActive.initialValue == dialogueIdentifier)
+        {
+            this.gameObject.SetActive(true);
+        }
+        else
         {
             this.gameObject.SetActive(false);
-        }
+        }        
     }
 }

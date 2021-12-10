@@ -28,6 +28,8 @@ public class DoorToPayController : MonoBehaviour
     public Animator doorAnimator;
 
     public AudioDoorControler audioDoorControler;
+    public AudioSource offeringBox;
+
     //-- START --------------------------------------------
 
     private void Awake()
@@ -42,7 +44,7 @@ public class DoorToPayController : MonoBehaviour
     {
         if (doorState.isDoorOpen)
         {
-            transform.Translate(Vector3.up * elevationWhenOpen);
+            doorAnimator.SetBool("Open", true);
             doorCollider[0].enabled = false;
             doorCollider[1].enabled = false;
         }
@@ -55,7 +57,6 @@ public class DoorToPayController : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             canvas.SetActive(true);
-            // Falta el fade de marcos
         }
     }
 
@@ -79,12 +80,12 @@ public class DoorToPayController : MonoBehaviour
             doorCollider[1].enabled = false;
             doorState.isDoorOpen = true;
             doorAnimator.SetBool("Open", true);
-            //transform.Translate(Vector3.up * elevationWhenOpen);
-            textToShow.text = "You are free to continue";
+            offeringBox.Play();
+            textToShow.text = "Puedes continuar";
         }
         else
         {
-            textToShow.text = "Not enough cash stranger";
+            textToShow.text = "No tienes suficientes monedas";
         }
     }
 

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: AlreadyHasKey
   m_EditorClassIdentifier: 
   dialogue:
-  - "Vuelve m\xE1s tarde."
+  - "Ahora estoy ocupado, vuelve m\xE1s tarde."
   responses: []
