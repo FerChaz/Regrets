@@ -694,7 +694,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   caracteristicSoundEnemis: []
-  death: {fileID: 8300000, guid: 37826df83df86524dace9e34fea004dc, type: 3}
+  death: {fileID: 8300000, guid: 032e4040f7e7cf846b3fc94e33c864f3, type: 3}
   recubirDamange: {fileID: 8300000, guid: 5ea75dade63a867419f4ea9fccd5790c, type: 3}
   audioSource: {fileID: 3027953820851067940}
 --- !u!82 &3027953820851067940
