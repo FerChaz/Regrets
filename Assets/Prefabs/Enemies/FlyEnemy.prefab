@@ -537,9 +537,9 @@ MonoBehaviour:
   executed: 0
   chaseSpeed: 7
   chargeSpeed: 7
-  chaseRadius: 17.31
-  attackRadius: 9.32
-  chargeTime: 5
+  chaseRadius: 20
+  attackRadius: 12
+  chargeTime: 6
   knockbackForce: 3
   knockbackDuration: 1
   knockbackStateDuration: 1
@@ -580,6 +580,7 @@ MonoBehaviour:
   enemyFSM: {fileID: 3656517817343023000}
   enemyController: {fileID: 3656517817343022983}
   _enemyLife: {fileID: 3656517817020287617}
+  _player: {fileID: 0}
   _playerLife: {fileID: 0}
   _playerSouls: {fileID: 0}
   damage: 1

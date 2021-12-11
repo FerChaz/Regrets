@@ -16,5 +16,5 @@ MonoBehaviour:
   sceneToRespawn: Intro
   additiveScenesToCharge:
   - MainLevel
-  checkpointActivename: CheckpointMainZone
+  checkpointActivename: Intro
   isRespawning: 0

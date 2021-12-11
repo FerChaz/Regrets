@@ -203,7 +203,7 @@ MonoBehaviour:
   timeToRecover: 4
   executed: 0
   chaseVelocity: 8
-  chaseRadius: 8
+  chaseRadius: 10
   knockbackForce: 3
   knockbackDuration: 1
   knockbackStateDuration: 1
@@ -260,6 +260,7 @@ MonoBehaviour:
   enemyFSM: {fileID: 1319148769853556406}
   enemyController: {fileID: 1319148769853556409}
   _enemyLife: {fileID: 1319148769787936160}
+  _player: {fileID: 0}
   _playerLife: {fileID: 0}
   _playerSouls: {fileID: 0}
   damage: 1

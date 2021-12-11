@@ -9,6 +9,7 @@ public class GroundEnemyCombatController : MonoBehaviour
     [SerializeField] private GroundEnemyPatrolFSM enemyFSM;
     [SerializeField] private GroundEnemyPatrolController enemyController;
     [SerializeField] private EnemyLifeController _enemyLife;
+    [SerializeField] private PlayerController _player;
     [SerializeField] private LifeController _playerLife;
     [SerializeField] private SoulController _playerSouls;
 
@@ -19,6 +20,7 @@ public class GroundEnemyCombatController : MonoBehaviour
 
     private void OnEnable()
     {
+        _player = FindObjectOfType<PlayerController>();
         _playerLife = FindObjectOfType<LifeController>();
         _playerSouls = FindObjectOfType<SoulController>();
     }
@@ -70,6 +72,7 @@ public class GroundEnemyCombatController : MonoBehaviour
         {
             if (enemyController.isFall)
             {
+                _player.Execute();
                 enemyController.executed = true;
                 enemyFSM.StopAllCoroutines();
                 enemyFSM.Death();

@@ -22,6 +22,7 @@ public class KnockbackGroundEnemyState : State
 
         if (_enemyController != null)
         {
+            _enemyController._animator.SetBool("walk", false);
             _enemyController.isAnyStateRunning = true;
 
             ApplyKnockbackDirection();

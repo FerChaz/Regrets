@@ -11,6 +11,7 @@ public class PlayerCombatAC : MonoBehaviour
 
     private const string ATTACK = "Attack";
     private const string COMBO = "Combo";
+    private const string EXECUTE = "Execute";
 
     public KatanaController katana;
     private int attackCounter = 0;
@@ -27,6 +28,12 @@ public class PlayerCombatAC : MonoBehaviour
 
         Animator.StringToHash(ATTACK);
         Animator.StringToHash(COMBO);
+        Animator.StringToHash(EXECUTE);
+    }
+
+    public void Execute()
+    {
+        _animator.SetTrigger(EXECUTE);
     }
 
     public void Attack()

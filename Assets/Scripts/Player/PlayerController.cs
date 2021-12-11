@@ -234,6 +234,13 @@ public class PlayerController : MonoBehaviour
         //CantMoveUntil(timeToWait + 1f);
     }
 
+    //-- EXECUTE -------------------------------------------------------------------------------------------------------------------
+
+    public void Execute()
+    {
+        playerAnimator.SetTrigger("Execute");
+    }
+
     
     //-- AUDIO ---------------------------------------------------------------------------------------------------------------------
     

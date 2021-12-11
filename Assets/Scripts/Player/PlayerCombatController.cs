@@ -77,7 +77,6 @@ public class PlayerCombatController : MonoBehaviour
         }
     }
 
-
     //-- AUXILIAR ------------------------------------------------------------------------------------------------------------------
 
 #if UNITY_EDITOR
