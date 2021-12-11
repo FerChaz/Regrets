@@ -59,6 +59,7 @@
     <Compile Include="Assets\Dialogue\DialogueSystem\DialogueResponseEvents.cs" />
     <Compile Include="Assets\Scripts\ProgressController\DataController\LoadController.cs" />
     <Compile Include="Assets\Scripts\Enemies\FlyEnemies\States\FallenFlyEnemyState.cs" />
+    <Compile Include="Assets\Packs\Particle Ribbon by Moonflower Carnivore\Scripts\randomParticleRotation.cs" />
     <Compile Include="Assets\Scripts\Player\AnimationsBridges\PlayerAnimatorController.cs" />
     <Compile Include="Assets\Scripts\Respawn\RespawnController.cs" />
     <Compile Include="Assets\Scripts\Walls &amp; Doors\DesactivatesWalls.cs" />
@@ -66,6 +67,7 @@
     <Compile Include="Assets\AmplifyShaderEditor\Examples\Official\SimpleGPUInstancing\SimpleGPUInstancingExample.cs" />
     <Compile Include="Assets\Scripts\Inventory\MarketKey\MarketParcaKey.cs" />
     <Compile Include="Assets\Scripts\UI\EnableCanvas.cs" />
+    <Compile Include="Assets\Packs\PowerUp\Scripts\TakeablePowerUp.cs" />
     <Compile Include="Assets\Scripts\SceneManager\DisableFade.cs" />
     <Compile Include="Assets\Scripts\Enemies\FlyEnemies\FlyEnemyCombatController.cs" />
     <Compile Include="Assets\Scripts\Limbo\Quests\LimboQuestEnemy.cs" />
@@ -84,6 +86,7 @@
     <Compile Include="Assets\Scripts\Limbo\LimboController.cs" />
     <Compile Include="Assets\Scripts\UI\Tutorial\Tutorial.cs" />
     <Compile Include="Assets\Dialogue\DialogueSystem\Interactable.cs" />
+    <Compile Include="Assets\Packs\Particle Ribbon by Moonflower Carnivore\Scripts\rotation.cs" />
     <Compile Include="Assets\MeleeWeaponTrail\Scripts\MeleeWeaponTrail.cs" />
     <Compile Include="Assets\Scripts\Walls &amp; Doors\DoorToPayController.cs" />
     <Compile Include="Assets\Scripts\Enemies\Boss\States\BossRollState.cs" />
@@ -140,7 +143,9 @@
     <Compile Include="Assets\Scripts\Enemies\FlyEnemies\States\IdleFlyEnemyState.cs" />
     <Compile Include="Assets\Scripts\Limbo\Quests\LimboDestroyEnemiesQuest.cs" />
     <Compile Include="Assets\Scripts\Enemies\Boss\States\BossAttackState.cs" />
+    <Compile Include="Assets\Packs\PowerUp\Scripts\CustomizablePowerUp.cs" />
     <Compile Include="Assets\Scripts\MainMenu\ExitMenu.cs" />
+    <Compile Include="Assets\Packs\PowerUp\Scripts\PowerUpManager.cs" />
     <Compile Include="Assets\Scripts\SceneManager\EntryScene.cs" />
     <Compile Include="Assets\Scripts\Enemies\Boss\States\BossJumpState.cs" />
     <Compile Include="Assets\Scripts\Events\Boss\BossEntrance.cs" />
@@ -150,6 +155,7 @@
     <Compile Include="Assets\Scripts\Chest\Chest.cs" />
     <Compile Include="Assets\Scripts\Enemies\GroundEnemies\States\DeathGroundEnemyState.cs" />
     <Compile Include="Assets\Scripts\Enemies\GroundEnemies\GroundEnemyPatrolFSM.cs" />
+    <Compile Include="Assets\Packs\PowerUp\Scripts\Utility\Singleton.cs" />
     <Compile Include="Assets\Dialogue\DialogueSystem\DialogueActivator.cs" />
     <Compile Include="Assets\Scripts\MainMenu\MainMenuManager.cs" />
     <Compile Include="Assets\Scripts\UI\FirstSelectedButton.cs" />
@@ -160,6 +166,7 @@
     <Compile Include="Assets\Scripts\Enemies\Boss\States\BossIdleState.cs" />
     <Compile Include="Assets\Scripts\FSM\FiniteStateMachine.cs" />
     <Compile Include="Assets\Scripts\SceneManager\SceneController.cs" />
+    <Compile Include="Assets\Packs\PowerUp\Scripts\PowerUpRotation.cs" />
     <Compile Include="Assets\Dialogue\DialogueSystem\Dialogue.cs" />
     <Compile Include="Assets\Scripts\Enemies\AudioControlerEnemy.cs" />
     <Compile Include="Assets\Scripts\UI\FirstButtonDialogue.cs" />
@@ -167,6 +174,7 @@
     <Compile Include="Assets\Animations\Animations\Kaori\Attack\Scripts\Transition1Behaviour.cs" />
     <Compile Include="Assets\Scripts\SceneManager\StartingScene.cs" />
     <Compile Include="Assets\Scripts\Enemies\FlyEnemies\States\ChaseFlyEnemyState.cs" />
+    <Compile Include="Assets\Packs\Particle Ribbon by Moonflower Carnivore\Scripts\ReverseNormals.cs" />
     <Compile Include="Assets\Scripts\Player\AudioBridges\AudioManager.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraMultiplierY.cs" />
     <Compile Include="Assets\Scripts\Enemies\Boss\BossController.cs" />
@@ -202,6 +210,7 @@
     <Compile Include="Assets\Scripts\SceneManager\ExitScene.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraLimits.cs" />
     <Compile Include="Assets\Scripts\Limbo\ExitLimbo.cs" />
+    <Compile Include="Assets\Packs\PowerUp\Scripts\ScaleParticles.cs" />
     <Compile Include="Assets\AmplifyShaderEditor\Examples\Official\Smear\SimpleMoveExample.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\Status.cs" />
     <Compile Include="Assets\Scripts\Limbo\Quests\EnemyCounter.cs" />
@@ -217,15 +226,9 @@
     <Compile Include="Assets\Packs\FadeObstructions\Reyn\Visual\Fade\FadeObjectOptions.cs" />
     <Compile Include="Assets\Animations\Animations\Kaori\Attack\Scripts\Transition2Behaviour.cs" />
     <Compile Include="Assets\Scripts\Player\AudioBridges\BridgePlayerAudio.cs" />
-    <Compile Include="Assets\Packs\PowerUp\Scripts\TakeablePowerUp.cs" />
-    <Compile Include="Assets\Packs\PowerUp\Scripts\Utility\Singleton.cs" />
-    <Compile Include="Assets\Packs\PowerUp\Scripts\PowerUpManager.cs" />
-    <Compile Include="Assets\Packs\PowerUp\Scripts\CustomizablePowerUp.cs" />
-    <Compile Include="Assets\Packs\PowerUp\Scripts\PowerUpRotation.cs" />
-    <Compile Include="Assets\Packs\PowerUp\Scripts\ScaleParticles.cs" />
-    <Compile Include="Assets\Packs\Particle Ribbon by Moonflower Carnivore\Scripts\ReverseNormals.cs" />
-    <Compile Include="Assets\Packs\Particle Ribbon by Moonflower Carnivore\Scripts\randomParticleRotation.cs" />
-    <Compile Include="Assets\Packs\Particle Ribbon by Moonflower Carnivore\Scripts\rotation.cs" />
+    <Compile Include="Assets\Packs\BrokenVector\UltimateDungeonPack\Scenes\Demo\FPControls\Scripts\MouseCamLook.cs" />
+    <Compile Include="Assets\Packs\BrokenVector\UltimateDungeonPack\Scenes\Demo\FPControls\Scripts\CharacterController.cs" />
+    <Compile Include="Assets\Packs\BrokenVector\UltimateDungeonPack\Scripts\LightImprove.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Packs\Fantasy Adventure Environment\Shaders\VS_InstancedIndirect.cginc" />
