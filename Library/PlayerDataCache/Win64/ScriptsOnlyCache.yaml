@@ -47,6 +47,7 @@ ScriptsOnlyBuild:
     - FadeObjectOptions
     - FadeObstructionsManager
     - FadeToMe
+    - FirstEntry
     - FirstSelectedButton
     - FlagCuest
     - FlyEnemyCombatController
@@ -841,6 +842,113 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 224
       Script: {instanceID: 0}
+    Assets/Scenes/General/House.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 54
+      Script: {instanceID: 0}
+    - Class: 64
+      Script: {instanceID: 0}
+    - Class: 65
+      Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
+    - Class: 90
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 2422}
+    - Class: 114
+      Script: {instanceID: 2664}
+    - Class: 114
+      Script: {instanceID: 3002}
+    - Class: 114
+      Script: {instanceID: 3486}
+    - Class: 114
+      Script: {instanceID: 3510}
+    - Class: 114
+      Script: {instanceID: 3518}
+    - Class: 114
+      Script: {instanceID: 3622}
+    - Class: 114
+      Script: {instanceID: 4018}
+    - Class: 114
+      Script: {instanceID: 4352}
+    - Class: 114
+      Script: {instanceID: 4402}
+    - Class: 114
+      Script: {instanceID: 4500}
+    - Class: 114
+      Script: {instanceID: 4518}
+    - Class: 114
+      Script: {instanceID: 4724}
+    - Class: 114
+      Script: {instanceID: 4844}
+    - Class: 114
+      Script: {instanceID: 4860}
+    - Class: 114
+      Script: {instanceID: 5498}
+    - Class: 114
+      Script: {instanceID: 5612}
+    - Class: 114
+      Script: {instanceID: 6002}
+    - Class: 114
+      Script: {instanceID: 6154}
+    - Class: 114
+      Script: {instanceID: 6264}
+    - Class: 114
+      Script: {instanceID: 6448}
+    - Class: 114
+      Script: {instanceID: 6450}
+    - Class: 114
+      Script: {instanceID: 6632}
+    - Class: 114
+      Script: {instanceID: 6646}
+    - Class: 114
+      Script: {instanceID: 6932}
+    - Class: 114
+      Script: {instanceID: 2074896}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 134
+      Script: {instanceID: 0}
+    - Class: 137
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 198
+      Script: {instanceID: 0}
+    - Class: 199
+      Script: {instanceID: 0}
+    - Class: 205
+      Script: {instanceID: 0}
     Assets/Scenes/General/Intro.unity:
     - Class: 1
       Script: {instanceID: 0}
@@ -928,8 +1036,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 4334}
     - Class: 114
       Script: {instanceID: 4352}
-    - Class: 114
-      Script: {instanceID: 4354}
     - Class: 114
       Script: {instanceID: 4402}
     - Class: 114
@@ -3732,9 +3838,16 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: BridgePlayerAudio
+  - hash:
+      serializedVersion: 2
+      Hash: a09f896170456df54d38bab39255da87
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FirstEntry
   platform: 19
   scenePathNames:
   - Assets/Scenes/Menu/MainMenu.unity
+  - Assets/Scenes/General/House.unity
   - Assets/Scenes/General/Intro.unity
   - Assets/Scenes/General/MainLevel.unity
   - Assets/Scenes/General/DashZone.unity
@@ -3746,4 +3859,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Limbo/Limbo2.unity
   - Assets/Scenes/Start.unity
   - Assets/Scenes/Loading.unity
-  playerPath: C:/Users/Chris/Desktop/UPC/Builds/11-12-2021 PRUEBA 2/Regrets.exe
+  playerPath: C:/Users/Chris/Desktop/UPC/Builds/11-12-2021 Noche 2/Regrets.exe

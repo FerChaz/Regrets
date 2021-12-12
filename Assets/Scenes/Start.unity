@@ -1324,7 +1324,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &324342906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2231,8 +2231,8 @@ MonoBehaviour:
   sceneManager: {fileID: 870034255}
   loadingCanvas: {fileID: 858599384}
   respawnInfo: {fileID: 11400000, guid: f109a9748cb379b4d8e8478798f474ad, type: 2}
-  initialPosition: {x: -412, y: 1, z: 0}
-  initialScene: Intro
+  initialPosition: {x: -485, y: 7.95, z: 0}
+  initialScene: House
 --- !u!4 &540182176
 Transform:
   m_ObjectHideFlags: 0
@@ -14602,7 +14602,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1537300084}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7b17f3054addf4a4885eb6ec39473dee, type: 3}
   m_Name: 

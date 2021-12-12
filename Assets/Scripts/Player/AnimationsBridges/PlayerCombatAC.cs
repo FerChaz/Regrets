@@ -14,7 +14,7 @@ public class PlayerCombatAC : MonoBehaviour
     private const string EXECUTE = "Execute";
 
     public KatanaController katana;
-    private int attackCounter = 0;
+    //private int attackCounter = 0;
 
     public GameObject weapon;
     public ParticleSystem weaponParticle;
