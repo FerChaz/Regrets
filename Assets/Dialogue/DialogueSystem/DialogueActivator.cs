@@ -5,6 +5,12 @@ using UnityEngine;
 public class DialogueActivator : MonoBehaviour, Interactable
 {
     [SerializeField] private DialogObject dialogObject;
+    private BlockMovement _player;
+
+    private void Awake()
+    {
+        _player = FindObjectOfType<BlockMovement>();
+    }
 
     public void UpdateDialogueObject(DialogObject dialogObject)
     {
@@ -15,7 +21,6 @@ public class DialogueActivator : MonoBehaviour, Interactable
     {
         if (other.CompareTag("Player") && other.TryGetComponent(out BlockMovement player))
         {
-            Debug.Log($"Hola");
             player.interactable = this;
         }
     }
@@ -25,12 +30,16 @@ public class DialogueActivator : MonoBehaviour, Interactable
     {
         if (other.CompareTag("Player") && other.TryGetComponent(out BlockMovement player))
         {
-            Debug.Log($"Chau");
             if (player.interactable is DialogueActivator dialogueActivator && dialogueActivator == this)
             {
                 player.interactable = null; 
             }
         }
+    }
+
+    private void OnDisable()
+    {
+        _player.interactable = null;
     }
 
     public void Interact(BlockMovement player)

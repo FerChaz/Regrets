@@ -6,6 +6,7 @@ public class GiveExtraLife : MonoBehaviour
 {
     public LifeController playerLife;
     public ObjectStatus secondConversation;
+    public ObjectStatus thirdConversation;
     public IntValue dialogueToActive;
 
     public GameObject desactivateWhenGiveExtraLife;
@@ -23,11 +24,12 @@ public class GiveExtraLife : MonoBehaviour
 
     public void ChangeDialogue()
     {
-        dialogueToActive.initialValue = 3;
         desactivateWhenGiveExtraLife.gameObject.SetActive(false);
         secondConversation.eventAlreadyHappened = true;
-        activateWhenGiveExtraLife.gameObject.SetActive(true);
+        thirdConversation.eventAlreadyHappened = true;
     }
+
+
 
 
 }

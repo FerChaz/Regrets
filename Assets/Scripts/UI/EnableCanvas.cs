@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnableCanvas : MonoBehaviour
+public class PruebaCanvas : MonoBehaviour
 {
     private GameObject _canvasToEnable;
 

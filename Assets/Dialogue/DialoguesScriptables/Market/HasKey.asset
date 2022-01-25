@@ -17,4 +17,4 @@ MonoBehaviour:
   - Toma esto.
   responses:
   - responseText: Continuar
-    dialogObject: {fileID: 0}
+    dialogObject: {fileID: 11400000, guid: 3ab4e5c445071824faf2d6b492c8f9fd, type: 2}

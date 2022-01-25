@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Key
   m_EditorClassIdentifier: 
   dialogue:
-  - "\xBFYa tienes la llave?"
+  - Vuelve a hablarme cuando la tengas.
   responses: []

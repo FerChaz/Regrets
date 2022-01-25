@@ -13,6 +13,11 @@ public class StartingScene : MonoBehaviour
     public Vector3 initialPosition;
     public string initialScene;
 
+    public Animator playerAnimator;
+
+    public Dialogue dialogue;
+    public DialogObject dialogObject;
+
 
     private void Start()
     {
@@ -33,8 +38,13 @@ public class StartingScene : MonoBehaviour
 
     private IEnumerator WaitToChange(Vector3 position)
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(1.5f);
         sceneManager.ChangePlayerPosition(position);
+
+        yield return new WaitForSeconds(2);
+        dialogue.ShowDialogue(dialogObject);
+        yield return new WaitForSeconds(1);
+        playerAnimator.SetBool("Stand", true);
     }
 
 

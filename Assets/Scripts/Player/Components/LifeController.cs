@@ -42,6 +42,11 @@ public class LifeController : MonoBehaviour
 
     [Header("Script Sonido Daño y muerte ")]
     public AudioRecibeDañoPlayer recibeDañoPlayer;
+
+    public GameObject lifeContainer;
+    public IntValue heartContainers;
+
+
     //-- START ---------------------------------------------------------------------------------------------------------------------
 
     private void Awake()
@@ -88,6 +93,8 @@ public class LifeController : MonoBehaviour
     {
         maxLife += life;                        // FALTA CAMBIAR LA UI
         currentLife.initialValue = maxLife;
+        heartContainers.initialValue++;
+        lifeContainer.SetActive(true);
 
         lowLifeCanvas.SetActive(false);
     }

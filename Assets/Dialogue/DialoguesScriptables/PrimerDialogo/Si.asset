@@ -13,12 +13,37 @@ MonoBehaviour:
   m_Name: Si
   m_EditorClassIdentifier: 
   dialogue:
-  - Comencemos.
-  - Como ya sabes te mueves pulsando las flechas izquierda y derecha.
-  - Puedes elevarte majestuosamente del suelo con la "X".
-  - Capaz te encuentres con algunos espiritus salvajes. Puedes "calmarlos" con la
-    "C".
-  - Una vez "calmados"...
-  - LOS ASESINAS CRUELMENTE CON LA "D".
-  - Y eso es todo, de todas formas ya recordaras tu objetivo.
+  - "\xA1Oye! Despierta."
+  - "S\xE9 que todo esto puede parecerte muy repentino, pero ser\xE9 breve, no tengo
+    mucho tiempo."
+  - Soy la Parca, por lo cual puedes deducir que has muerto.
+  - '...
+
+'
+  - No te ves muy sorprendida.
+  - "En fin, mi trabajo aqu\xED es darte descanso eterno. O eso se supon\xEDa que
+    era."
+  - "Pero tengo una oferta laboral que no podr\xE1s rechazar una vez la escuches."
+  - ...
+  - "Literalmente. Si la rechazas la otra opci\xF3n es, bueno no hay otra opci\xF3n."
+  - Resulta que necesito una aprendiz de Parca. Estamos algo cortos de personal,
+    y yo tengo que atender mi propio negocio.
+  - "Yo seria tu empleador directo, y te ense\xF1ar\xEDa a ser una buena parca. Y
+    tu podr\xEDas darme una mano algunas veces con los negocios que hago."
+  - "\xA1Ambos ganamos! Bueno sobre todo yo, tu no tienes elecci\xF3n."
+  - ...
+  - "Bueno, tomar\xE9 tu silencio como se\xF1al de aceptaci\xF3n. Ya tienes la habilidad
+    de invocar la espada cegadora. Solo tienes que pensar en ella y vendr\xE1 sola
+    a ti. Ya sabes, algo parecido a lo que hacen en algunas series de televisi\xF3n
+    y tambi\xE9n en juego"
+  - "Tu ve tranquila y trata de purgar todos los esp\xEDritus que veas deambulando
+    por all\xED. Te seguir\xE9 de cerca y te enviare mensajes para ayudarte siempre
+    que pueda."
+  - 'Mucha suerte en tu nueva aventura!
+
+'
+  - '...
+
+'
+  - Ya vete.
   responses: []

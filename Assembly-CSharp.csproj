@@ -65,12 +65,14 @@
     <Compile Include="Assets\Packs\BrokenVector\UltimateDungeonPack\Scripts\LightImprove.cs" />
     <Compile Include="Assets\Scripts\Walls &amp; Doors\DesactivatesWalls.cs" />
     <Compile Include="Assets\Scripts\Enemies\FlyEnemies\States\DeathFlyEnemyState.cs" />
+    <Compile Include="Assets\Dialogue\ScriptTalk.cs" />
     <Compile Include="Assets\AmplifyShaderEditor\Examples\Official\SimpleGPUInstancing\SimpleGPUInstancingExample.cs" />
     <Compile Include="Assets\Scripts\Inventory\MarketKey\MarketParcaKey.cs" />
     <Compile Include="Assets\Scripts\UI\EnableCanvas.cs" />
     <Compile Include="Assets\Packs\PowerUp\Scripts\TakeablePowerUp.cs" />
     <Compile Include="Assets\Scripts\SceneManager\DisableFade.cs" />
     <Compile Include="Assets\Scripts\Enemies\FlyEnemies\FlyEnemyCombatController.cs" />
+    <Compile Include="Assets\Scripts\SceneManager\FirstEntry.cs" />
     <Compile Include="Assets\Scripts\Limbo\Quests\LimboQuestEnemy.cs" />
     <Compile Include="Assets\Scripts\Player\AudioBridges\AuidoHealtControler.cs" />
     <Compile Include="Assets\Scripts\Enemies\GroundEnemies\States\PatrolGroundEnemyState.cs" />
@@ -146,6 +148,7 @@
     <Compile Include="Assets\Scripts\Limbo\Quests\LimboDestroyEnemiesQuest.cs" />
     <Compile Include="Assets\Scripts\Enemies\Boss\States\BossAttackState.cs" />
     <Compile Include="Assets\Packs\PowerUp\Scripts\CustomizablePowerUp.cs" />
+    <Compile Include="Assets\Scripts\Events\Market\SecondConversation.cs" />
     <Compile Include="Assets\Scripts\MainMenu\ExitMenu.cs" />
     <Compile Include="Assets\Packs\PowerUp\Scripts\PowerUpManager.cs" />
     <Compile Include="Assets\Scripts\SceneManager\EntryScene.cs" />
@@ -153,6 +156,7 @@
     <Compile Include="Assets\Scripts\Events\Boss\BossEntrance.cs" />
     <Compile Include="Assets\Scripts\Player\Components\LifeController.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\AdditiveScenesInfo.cs" />
+    <Compile Include="Assets\Scripts\Inventory\MarketKey\PruebaHabilitarCanvas.cs" />
     <Compile Include="Assets\Animations\Animations\Kaori\Attack\Scripts\ComboAttacksScript.cs" />
     <Compile Include="Assets\Scripts\Chest\Chest.cs" />
     <Compile Include="Assets\Scripts\Enemies\GroundEnemies\States\DeathGroundEnemyState.cs" />
@@ -168,6 +172,7 @@
     <Compile Include="Assets\Scripts\Enemies\Boss\States\BossIdleState.cs" />
     <Compile Include="Assets\Scripts\FSM\FiniteStateMachine.cs" />
     <Compile Include="Assets\Scripts\SceneManager\SceneController.cs" />
+    <Compile Include="Assets\Scripts\Inventory\MarketKey\EnableDisableDialog.cs" />
     <Compile Include="Assets\Packs\PowerUp\Scripts\PowerUpRotation.cs" />
     <Compile Include="Assets\Dialogue\DialogueSystem\Dialogue.cs" />
     <Compile Include="Assets\Scripts\Enemies\AudioControlerEnemy.cs" />
@@ -195,6 +200,7 @@
     <Compile Include="Assets\Scripts\Limbo\Quests\LimboTimeCuest.cs" />
     <Compile Include="Assets\Packs\BrokenVector\UltimateDungeonPack\Scenes\Demo\FPControls\Scripts\CharacterController.cs" />
     <Compile Include="Assets\Scripts\Player\AudioBridges\AudioWalk.cs" />
+    <Compile Include="Assets\Dialogue\SelectOptionMarket.cs" />
     <Compile Include="Assets\Scripts\Player\AnimationsBridges\BridgeAnimator.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\RecoverSoulsInfo.cs" />
     <Compile Include="Assets\UI\Scripts\MouseOver.cs" />
@@ -229,7 +235,6 @@
     <Compile Include="Assets\Packs\FadeObstructions\Reyn\Visual\Fade\FadeObjectOptions.cs" />
     <Compile Include="Assets\Animations\Animations\Kaori\Attack\Scripts\Transition2Behaviour.cs" />
     <Compile Include="Assets\Scripts\Player\AudioBridges\BridgePlayerAudio.cs" />
-    <Compile Include="Assets\Scripts\SceneManager\FirstEntry.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Packs\Fantasy Adventure Environment\Shaders\VS_InstancedIndirect.cginc" />
