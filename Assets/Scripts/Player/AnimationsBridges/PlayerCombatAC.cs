@@ -14,16 +14,21 @@ public class PlayerCombatAC : MonoBehaviour
     private const string EXECUTE = "Execute";
 
     public KatanaController katana;
+    public PlayerController player;
     //private int attackCounter = 0;
 
     public GameObject weapon;
     public ParticleSystem weaponParticle;
 
-    private void Start()
+    private void Awake()
     {
         _animator = GetComponent<Animator>();
         katana = FindObjectOfType<KatanaController>();
+        player = GetComponentInParent<PlayerController>();
+    }
 
+    private void Start()
+    {
         doCombo = false;
 
         Animator.StringToHash(ATTACK);
@@ -38,14 +43,17 @@ public class PlayerCombatAC : MonoBehaviour
 
     public void Attack()
     {
-        if (comboPossible)
+        if (player.canAttack)
         {
-            doCombo = true;
-            _animator.SetBool(COMBO, true);
-        }
-        else
-        {
-            _animator.SetTrigger(ATTACK);
+            if (comboPossible)
+            {
+                doCombo = true;
+                _animator.SetBool(COMBO, true);
+            }
+            else
+            {
+                _animator.SetTrigger(ATTACK);
+            }
         }
     }
 

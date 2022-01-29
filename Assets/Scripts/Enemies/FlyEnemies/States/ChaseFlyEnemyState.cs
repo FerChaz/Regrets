@@ -10,6 +10,8 @@ public class ChaseFlyEnemyState : State
     private Vector3 _movement;
     private Vector3 _direction;
 
+    private float _directionToPlayer;
+
 
     //-- INIT, UPDATE & EXIT -------------------------------------------------------------------------------------------------------
 
@@ -21,6 +23,17 @@ public class ChaseFlyEnemyState : State
         {
             _enemyController.isAnyStateRunning = true;
             _enemyController.material.color = Color.blue;
+
+
+            _directionToPlayer = _enemyController.player.transform.position.x - _enemyController.transform.position.x;
+
+            if (Mathf.Abs(_directionToPlayer) > 0.7f)
+            {
+                if ((_directionToPlayer > 0 && _enemyController.facingDirection < 0) || (_directionToPlayer < 0 && _enemyController.facingDirection > 0))
+                {
+                    _enemyController.Flip();
+                }
+            }
         }
     }
 

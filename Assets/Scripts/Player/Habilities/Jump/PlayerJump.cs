@@ -74,7 +74,7 @@ public class PlayerJump : PlayerHabilities
         if (jumpRequest)
         {
             _player.rigidBody.AddForce(Vector3.up * jumpVelocity, ForceMode.Impulse);
-            playerAnimatorController.Jump();
+            //playerAnimatorController.Jump();
             jumpRequest = false;
         }
         

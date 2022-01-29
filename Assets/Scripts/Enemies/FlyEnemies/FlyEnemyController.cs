@@ -43,6 +43,7 @@ public class FlyEnemyController : MonoBehaviour
     public bool alreadyFall;
     public float timeToRecover = 5;
     public bool executed = false;
+    public float normalicedActualBar;
 
     [Header("Chase & Attack Variables")]
     public int chaseSpeed;
@@ -107,7 +108,7 @@ public class FlyEnemyController : MonoBehaviour
 
     public void CanvasTimeController(float timeToPass)
     {
-        float normalicedActualBar = timeToPass / knockbackStateDuration;
+        normalicedActualBar = timeToPass / timeToRecover;
         canvasImage.fillAmount = normalicedActualBar;
     }
 

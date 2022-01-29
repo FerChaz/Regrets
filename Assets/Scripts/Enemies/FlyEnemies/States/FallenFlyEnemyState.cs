@@ -44,7 +44,6 @@ public class FallenFlyEnemyState : State
         }
         else
         {
-            
             _timeToRecover -= delta;
             _enemyController.CanvasTimeController(_timeToRecover);
         }

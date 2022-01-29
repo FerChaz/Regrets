@@ -12,6 +12,8 @@ public class ChargeFlyEnemyState : State
 
     private float _totalChargeTime;
 
+    private float _directionToPlayer;
+
 
     //-- INIT, UPDATE & EXIT -------------------------------------------------------------------------------------------------------
 
@@ -51,5 +53,15 @@ public class ChargeFlyEnemyState : State
     public override void ExitState()
     {
         _enemyController.material.color = Color.white;
+
+        _directionToPlayer = _enemyController.player.transform.position.x - _enemyController.transform.position.x;
+
+        if (Mathf.Abs(_directionToPlayer) > 0.7f)
+        {
+            if ((_directionToPlayer > 0 && _enemyController.facingDirection < 0) || (_directionToPlayer < 0 && _enemyController.facingDirection > 0))
+            {
+                _enemyController.Flip();
+            }
+        }
     }
 }

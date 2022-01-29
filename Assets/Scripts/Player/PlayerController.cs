@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     public float inputDirection;
     public bool isFacingRight = true;
     public bool canMove = true;
+    public bool canAttack = true;
 
 
     [Header("Jump Variables")]
@@ -280,6 +281,8 @@ public class PlayerController : MonoBehaviour
         canJump = false;
         canDash = false;
 
+        canAttack = false;
+
         StartCoroutine(WaitTimeCO(time));
     }
 
@@ -289,6 +292,8 @@ public class PlayerController : MonoBehaviour
         canMove = true;
         canJump = true;
         canDash = true;
+
+        canAttack = true;
     }
 
     public void ChangeCanDoAnyMovement()
@@ -296,6 +301,8 @@ public class PlayerController : MonoBehaviour
         canMove = !canMove;
         canJump = !canJump;
         canDash = !canDash;
+
+        canAttack = !canAttack;
     }
 
     public void CanDoAnyMovement(bool canDo)
@@ -303,6 +310,8 @@ public class PlayerController : MonoBehaviour
         canMove = canDo;
         canJump = canDo;
         canDash = canDo;
+
+        canAttack = canDo;
     }
 
 

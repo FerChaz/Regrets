@@ -36,6 +36,7 @@ public class GroundEnemyPatrolController : MonoBehaviour
     public bool canCheck;
     public float timeToRecover = 5;
     public bool executed = false;
+    public float normalicedActualBar;
 
     [Header("Chase Variables")]
     public float chaseVelocity = 3.5f;
@@ -98,7 +99,7 @@ public class GroundEnemyPatrolController : MonoBehaviour
 
     public void CanvasTimeController(float timeToPass)
     {
-        float normalicedActualBar = timeToPass / knockbackStateDuration;
+        normalicedActualBar = timeToPass / timeToRecover;
         canvasImage.fillAmount = normalicedActualBar;
     }
 
