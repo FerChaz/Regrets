@@ -12,6 +12,9 @@ public class GroundEnemyCombatController : MonoBehaviour
     [SerializeField] private PlayerController _player;
     [SerializeField] private LifeController _playerLife;
     [SerializeField] private SoulController _playerSouls;
+    [SerializeField] private float damageDeltaTime;
+    [SerializeField] private float damageTime;
+    private Color materialTrueColor;
 
     public int damage;
     public int soulsToDrop;
@@ -20,6 +23,7 @@ public class GroundEnemyCombatController : MonoBehaviour
 
     private void OnEnable()
     {
+        materialTrueColor = gameObject.GetComponentInChildren<Renderer>().material.GetColor("_MainColor");
         _player = FindObjectOfType<PlayerController>();
         _playerLife = FindObjectOfType<LifeController>();
         _playerSouls = FindObjectOfType<SoulController>();
@@ -44,28 +48,36 @@ public class GroundEnemyCombatController : MonoBehaviour
     {
         if (!enemyController.executed)
         {
-            Debug.Log($"RECIBE DAÑO");
+            Debug.Log($"RECIBE DAï¿½O");
             _enemyLife.RecieveDamage(damage[0]);
 
             if (_enemyLife.currentLife > 0)
-            {
+            {  
+                Debug.Log("color");
+                StartCoroutine(ChangeColorOnDamage(damageTime));
                 enemyFSM.KnockBack();
             }
             else
             {
                 if (enemyController.alreadyFall)
                 {
+                    gameObject.GetComponentInChildren<Renderer>().material.SetColor("_MainColor", Color.black);
                     _playerSouls.AddSouls(soulsToDrop);
                     enemyFSM.Death();
                 }
                 else
                 {
+                    gameObject.GetComponentInChildren<Renderer>().material.SetColor("_MainColor", Color.black);
                     enemyFSM.FallState();
                 }
             }
         }
     }
 
+    public void RestoreColor()
+    {
+        gameObject.GetComponentInChildren<Renderer>().material.SetColor("_MainColor", materialTrueColor);
+    }
     public void Execute()
     {
         if (!enemyController.executed)
@@ -80,6 +92,28 @@ public class GroundEnemyCombatController : MonoBehaviour
                 _playerSouls.AddSouls(soulsToDrop);
             }
         }
+    }
+
+    IEnumerator ChangeColorOnDamage(float damageTime)
+    {
+        Color materialActualColor = materialTrueColor;
+        for (float i = 0; i < damageTime; i += damageDeltaTime)
+        {
+            if (materialActualColor == materialTrueColor)
+            {
+                gameObject.GetComponentInChildren<Renderer>().material.SetColor("_MainColor", Color.red);
+                materialActualColor = Color.red;
+            }
+            else
+            {
+                gameObject.GetComponentInChildren<Renderer>().material.SetColor("_MainColor", materialTrueColor);
+                materialActualColor = materialTrueColor;
+            }
+            
+            yield return new WaitForSeconds(damageDeltaTime);
+        }
+
+        gameObject.GetComponentInChildren<Renderer>().material.SetColor("_MainColor", materialTrueColor);
     }
 
     //-- SPIKES --------------------------------------------------------------------------------------------------------------------

@@ -288,6 +288,8 @@ MonoBehaviour:
   _player: {fileID: 0}
   _playerLife: {fileID: 0}
   _playerSouls: {fileID: 0}
+  damageDeltaTime: 0.2
+  damageTime: 1
   damage: 1
   soulsToDrop: 1
 --- !u!82 &5943570207774459527
@@ -1071,6 +1073,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 27b298c514be9074398a7194460038e5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6372620159720347986, guid: 27b298c514be9074398a7194460038e5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 27b298c514be9074398a7194460038e5, type: 3}
       propertyPath: m_Name

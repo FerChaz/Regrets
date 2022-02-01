@@ -39,6 +39,7 @@ public class FallenFlyEnemyState : State
     {
         if (_timeToRecover <= 0)
         {
+            _enemyController.gameObject.GetComponent<FlyEnemyCombatController>().RestoreColor();
             _enemyController.alreadyFall = true;
             _enemyController.isAnyStateRunning = false;
         }

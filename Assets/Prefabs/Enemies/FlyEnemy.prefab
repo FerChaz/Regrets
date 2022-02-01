@@ -610,6 +610,8 @@ MonoBehaviour:
   _player: {fileID: 0}
   _playerLife: {fileID: 0}
   _playerSouls: {fileID: 0}
+  damageDeltaTime: 0.2
+  damageTime: 1
   damage: 1
   soulsToDrop: 2
 --- !u!82 &2939143864926367712

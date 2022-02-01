@@ -42,6 +42,7 @@ public class FallenGroundEnemyState : State
     {
         if (_timeToRecover <= 0)
         {
+            _enemyController.gameObject.GetComponent<GroundEnemyCombatController>().RestoreColor();
             _enemyController.alreadyFall = true;
             _enemyController.isAnyStateRunning = false;
         }
