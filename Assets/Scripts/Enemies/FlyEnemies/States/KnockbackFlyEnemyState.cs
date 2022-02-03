@@ -14,6 +14,7 @@ public class KnockbackFlyEnemyState : State
     private float _timeToWait;
     private float _knockbackTime;
 
+    private const string MAINCOLOR = "_MainColor";
 
     //-- INIT, UPDATE & EXIT -------------------------------------------------------------------------------------------------------
 
@@ -23,14 +24,14 @@ public class KnockbackFlyEnemyState : State
 
         if (_enemyController != null)
         {
+            _enemyController.material.SetColor(MAINCOLOR, Color.red);
+
             _enemyController.isAnyStateRunning = true;
 
             ApplyKnockbackDirection();
 
             _timeToWait = _enemyController.knockbackStateDuration;
             _knockbackTime = _enemyController.knockbackDuration;
-
-            _enemyController.material.color = Color.red;
         }
     }
 
@@ -58,9 +59,8 @@ public class KnockbackFlyEnemyState : State
         }
     }
 
-    public override void ExitState()
-    {
-        _enemyController.material.color = Color.white;
+    public override void ExitState() {
+        _enemyController.material.SetColor(MAINCOLOR, _enemyController.initColorMaterial);
     }
 
 

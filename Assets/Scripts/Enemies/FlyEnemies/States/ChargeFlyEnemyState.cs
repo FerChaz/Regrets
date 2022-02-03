@@ -26,8 +26,6 @@ public class ChargeFlyEnemyState : State
             _enemyController.isAnyStateRunning = true;
 
             _totalChargeTime = _enemyController.chargeTime;
-
-            _enemyController.material.color = Color.green;
         }
     }
 
@@ -52,7 +50,6 @@ public class ChargeFlyEnemyState : State
 
     public override void ExitState()
     {
-        _enemyController.material.color = Color.white;
 
         _directionToPlayer = _enemyController.player.transform.position.x - _enemyController.transform.position.x;
 

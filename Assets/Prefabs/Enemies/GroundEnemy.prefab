@@ -222,9 +222,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   facingDirection: 1
-  speed: 5
+  speed: 8
   rigidBody: {fileID: 0}
-  material: {fileID: 2100000, guid: 80ccb082f4bfaba49a10affedba31440, type: 2}
   model: {fileID: 1319148770661044507}
   _animator: {fileID: 0}
   _groundCheck: {fileID: 1319148771135634141}
@@ -243,8 +242,8 @@ MonoBehaviour:
   timeToRecover: 4
   executed: 0
   normalicedActualBar: 0
-  chaseVelocity: 8
-  chaseRadius: 10
+  chaseVelocity: 15
+  chaseRadius: 15
   knockbackForce: 3
   knockbackDuration: 1
   knockbackStateDuration: 1
@@ -1081,6 +1080,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 27b298c514be9074398a7194460038e5, type: 3}
       propertyPath: m_Name
       value: noshev1-anim3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 27b298c514be9074398a7194460038e5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27b298c514be9074398a7194460038e5, type: 3}

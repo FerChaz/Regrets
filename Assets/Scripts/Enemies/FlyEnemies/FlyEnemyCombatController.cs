@@ -14,7 +14,7 @@ public class FlyEnemyCombatController : MonoBehaviour
     [SerializeField] private SoulController _playerSouls;
     [SerializeField] private float damageDeltaTime;
     [SerializeField] private float damageTime;
-    private Color materialTrueColor;
+    //private Color materialTrueColor;
 
     public int damage;
     public int soulsToDrop;
@@ -23,7 +23,7 @@ public class FlyEnemyCombatController : MonoBehaviour
 
     private void OnEnable()
     {
-        materialTrueColor = gameObject.GetComponentInChildren<Renderer>().material.GetColor("_MainColor");
+        //materialTrueColor = gameObject.GetComponentInChildren<Renderer>().material.GetColor("_MainColor");
         _player = FindObjectOfType<PlayerController>();
         _playerLife = FindObjectOfType<LifeController>();
         _playerSouls = FindObjectOfType<SoulController>();
@@ -51,27 +51,27 @@ public class FlyEnemyCombatController : MonoBehaviour
 
             if (_enemyLife.currentLife > 0)
             {
-                Debug.Log("color");
-                StartCoroutine(ChangeColorOnDamage(damageTime));
+                //Debug.Log("color");
+                //StartCoroutine(ChangeColorOnDamage(damageTime));
                 enemyFSM.KnockBack();
             }
             else
             {
                 if (enemyController.alreadyFall)
                 {
-                    gameObject.GetComponentInChildren<Renderer>().material.SetColor("_MainColor", Color.black);
+                    //gameObject.GetComponentInChildren<Renderer>().material.SetColor("_MainColor", Color.black);
                     _playerSouls.AddSouls(soulsToDrop);
                     enemyFSM.Death();
                 }
                 else
                 {
-                    gameObject.GetComponentInChildren<Renderer>().material.SetColor("_MainColor", Color.black);
+                    //gameObject.GetComponentInChildren<Renderer>().material.SetColor("_MainColor", Color.black);
                     enemyFSM.FallState();
                 }
             }
         }
     }
-    public void RestoreColor()
+    /*public void RestoreColor()
     {
         gameObject.GetComponentInChildren<Renderer>().material.SetColor("_MainColor", materialTrueColor);
     }
@@ -96,7 +96,7 @@ public class FlyEnemyCombatController : MonoBehaviour
         }
 
         gameObject.GetComponentInChildren<Renderer>().material.SetColor("_MainColor", materialTrueColor);
-    }
+    }*/
 
 
     //-- EXECUTE -------------------------------------------------------------------------------------------------------------------

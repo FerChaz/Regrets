@@ -11,6 +11,7 @@ public class FallenFlyEnemyState : State
 
     private float _timeToRecover;
 
+    private const string MAINCOLOR = "_MainColor";
 
     //-- INIT, UPDATE & EXIT -------------------------------------------------------------------------------------------------------
 
@@ -20,6 +21,8 @@ public class FallenFlyEnemyState : State
 
         if (_enemyController != null)
         {
+            _enemyController.material.SetColor(MAINCOLOR, Color.black);
+
             _enemyController.isAnyStateRunning = true;
             _enemyController.isFall = true;
 
@@ -27,8 +30,6 @@ public class FallenFlyEnemyState : State
 
             _movement.Set(0.0f, 0.0f, 0.0f);
             _enemyController.rigidBody.velocity = _movement;
-
-            _enemyController.material.color = Color.black;
 
             _enemyController.canvas.SetActive(true);
             // ACTIVAR ANIMACION O EFECTO DE PARTICULAS
@@ -39,7 +40,7 @@ public class FallenFlyEnemyState : State
     {
         if (_timeToRecover <= 0)
         {
-            _enemyController.gameObject.GetComponent<FlyEnemyCombatController>().RestoreColor();
+            //_enemyController.gameObject.GetComponent<FlyEnemyCombatController>().RestoreColor();
             _enemyController.alreadyFall = true;
             _enemyController.isAnyStateRunning = false;
         }
@@ -62,8 +63,9 @@ public class FallenFlyEnemyState : State
 
     public override void ExitState()
     {
+        _enemyController.material.SetColor(MAINCOLOR, _enemyController.initColorMaterial);
+
         _enemyController.isFall = false;
-        _enemyController.material.color = Color.white;
         _enemyController.canvas.SetActive(false);
     }
 }

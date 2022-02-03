@@ -9,8 +9,7 @@ public class GroundEnemyPatrolFSM : FiniteStateMachine
     [SerializeField] private GroundEnemyPatrolController _enemyController;
     [SerializeField] private EnemyLifeController _enemyLife;
 
-    private bool keepInPatrol;
-    private bool keepInChase;
+    private bool keepInState;
 
     //-- STATES --------------------------------------------------------------------------------------------------------------------
 
@@ -46,21 +45,21 @@ public class GroundEnemyPatrolFSM : FiniteStateMachine
     
     private IEnumerator PatrolControlCoroutine()
     {
-        keepInPatrol = true;
+        keepInState = true;
         StopCoroutine(ChaseControlCoroutine());
-        while (keepInPatrol)
+        while (keepInState)
         {
             if(_enemyController.distanceToPlayer > _enemyController.chaseRadius)
             {
-                keepInPatrol = true;
+                keepInState = true;
             } 
             else if (_enemyController.distanceToPlayerY > 2f)
             {
-                keepInPatrol = true;
+                keepInState = true;
             }
             else
             {
-                keepInPatrol = false;
+                keepInState = false;
             }
 
             yield return null;
@@ -72,21 +71,21 @@ public class GroundEnemyPatrolFSM : FiniteStateMachine
 
     private IEnumerator ChaseControlCoroutine()
     {
-        keepInPatrol = true;
+        keepInState = true;
         StopCoroutine(PatrolControlCoroutine());
-        while (keepInPatrol)
+        while (keepInState)
         {
             if (_enemyController.distanceToPlayer < _enemyController.chaseRadius)
             {
-                keepInPatrol = true;
+                keepInState = true;
             }
             else if (_enemyController.distanceToPlayerY <= 2f)
             {
-                keepInPatrol = true;
+                keepInState = true;
             }
             else
             {
-                keepInPatrol = false;
+                keepInState = false;
             }
 
             yield return null;

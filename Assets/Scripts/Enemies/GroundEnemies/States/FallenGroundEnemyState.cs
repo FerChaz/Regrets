@@ -11,6 +11,7 @@ public class FallenGroundEnemyState : State
 
     private float _timeToRecover;
 
+    private const string MAINCOLOR = "_MainColor";
 
     //-- INIT, UPDATE & EXIT -------------------------------------------------------------------------------------------------------
 
@@ -20,6 +21,8 @@ public class FallenGroundEnemyState : State
 
         if (_enemyController != null)
         {
+            _enemyController.material.SetColor(MAINCOLOR, Color.black);
+
             _enemyController._animator.SetBool("walk", false);
             _enemyController.isAnyStateRunning = true;
             _enemyController.isFall = true;
@@ -28,8 +31,6 @@ public class FallenGroundEnemyState : State
 
             _movement.Set(0.0f, _enemyController.rigidBody.velocity.y, 0.0f);
             _enemyController.rigidBody.velocity = _movement;
-
-            _enemyController.material.color = Color.black;
 
             _enemyController.canvas.SetActive(true);
 
@@ -42,7 +43,7 @@ public class FallenGroundEnemyState : State
     {
         if (_timeToRecover <= 0)
         {
-            _enemyController.gameObject.GetComponent<GroundEnemyCombatController>().RestoreColor();
+            //_enemyController.gameObject.GetComponent<GroundEnemyCombatController>().RestoreColor();
             _enemyController.alreadyFall = true;
             _enemyController.isAnyStateRunning = false;
         }
@@ -55,8 +56,9 @@ public class FallenGroundEnemyState : State
 
     public override void ExitState()
     {
+        _enemyController.material.SetColor(MAINCOLOR, _enemyController.initColorMaterial);
+
         _enemyController.isFall = false;
-        _enemyController.material.color = Color.white;
         _enemyController.canvas.SetActive(false);
 
         //_enemyController._animator.SetBool("walk", true);

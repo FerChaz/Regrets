@@ -15,8 +15,9 @@ public class FlyEnemyController : MonoBehaviour
     
     [Header("Components")]
     public Rigidbody rigidBody;
-    public Material material;
     public GameObject model;
+    public Color initColorMaterial;
+    public Material material;
     //public Animator animator;
 
     [Header("Ground Check Variables")]
@@ -75,6 +76,8 @@ public class FlyEnemyController : MonoBehaviour
     private void OnEnable()
     {
         player = GameObject.Find("Player");
+        initColorMaterial = gameObject.GetComponentInChildren<Renderer>().material.GetColor("_MainColor");
+        material = gameObject.GetComponentInChildren<Renderer>().material;
     }
 
     //-- START & UPDATE ------------------------------------------------------------------------------------------------------------
@@ -83,9 +86,6 @@ public class FlyEnemyController : MonoBehaviour
     {
         rigidBody = GetComponent<Rigidbody>();
         //_animator = GetComponent<Animator>();
-
-        material = GetComponent<Renderer>().material;
-        material.color = Color.white;
     }
 
     private void Update()

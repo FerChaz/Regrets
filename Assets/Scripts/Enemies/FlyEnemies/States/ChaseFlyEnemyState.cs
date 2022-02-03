@@ -22,7 +22,6 @@ public class ChaseFlyEnemyState : State
         if (_enemyController != null)
         {
             _enemyController.isAnyStateRunning = true;
-            _enemyController.material.color = Color.blue;
 
 
             _directionToPlayer = _enemyController.player.transform.position.x - _enemyController.transform.position.x;
@@ -54,9 +53,6 @@ public class ChaseFlyEnemyState : State
         }
     }
 
-    public override void ExitState() 
-    {
-        _enemyController.material.color = Color.white;
-    }
+    public override void ExitState() {}
 
 }

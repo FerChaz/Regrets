@@ -19,7 +19,6 @@ public class ChaseGroundEnemyState : State
 
         if (_enemyController != null) 
         {
-            _enemyController.material.color = Color.blue;
             _enemyController._animator.SetBool("walk", true);
             _enemyController._animator.SetFloat("animSpeed", 3f);
         }
@@ -54,7 +53,6 @@ public class ChaseGroundEnemyState : State
     public override void ExitState() 
     {
         _enemyController._animator.SetFloat("animSpeed", 1f);
-        _enemyController.material.color = Color.white;
     }
 
 

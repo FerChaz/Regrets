@@ -48,36 +48,35 @@ public class GroundEnemyCombatController : MonoBehaviour
     {
         if (!enemyController.executed)
         {
-            Debug.Log($"RECIBE DA�O");
             _enemyLife.RecieveDamage(damage[0]);
 
             if (_enemyLife.currentLife > 0)
             {  
-                Debug.Log("color");
-                StartCoroutine(ChangeColorOnDamage(damageTime));
+                //StartCoroutine(ChangeColorOnDamage(damageTime));
                 enemyFSM.KnockBack();
             }
             else
             {
                 if (enemyController.alreadyFall)
                 {
-                    gameObject.GetComponentInChildren<Renderer>().material.SetColor("_MainColor", Color.black);
+                    //gameObject.GetComponentInChildren<Renderer>().material.SetColor("_MainColor", Color.black);
                     _playerSouls.AddSouls(soulsToDrop);
                     enemyFSM.Death();
                 }
                 else
                 {
-                    gameObject.GetComponentInChildren<Renderer>().material.SetColor("_MainColor", Color.black);
+                    //gameObject.GetComponentInChildren<Renderer>().material.SetColor("_MainColor", Color.black);
                     enemyFSM.FallState();
                 }
             }
         }
     }
 
-    public void RestoreColor()
+    /*public void RestoreColor()
     {
         gameObject.GetComponentInChildren<Renderer>().material.SetColor("_MainColor", materialTrueColor);
-    }
+    }*/
+
     public void Execute()
     {
         if (!enemyController.executed)
@@ -94,7 +93,7 @@ public class GroundEnemyCombatController : MonoBehaviour
         }
     }
 
-    IEnumerator ChangeColorOnDamage(float damageTime)
+    /*IEnumerator ChangeColorOnDamage(float damageTime)
     {
         Color materialActualColor = materialTrueColor;
         for (float i = 0; i < damageTime; i += damageDeltaTime)
@@ -114,7 +113,7 @@ public class GroundEnemyCombatController : MonoBehaviour
         }
 
         gameObject.GetComponentInChildren<Renderer>().material.SetColor("_MainColor", materialTrueColor);
-    }
+    }*/
 
     //-- SPIKES --------------------------------------------------------------------------------------------------------------------
 
